@@ -1,0 +1,22 @@
+[
+  {
+    "listing": "/learn/rstudio/objects/index.html",
+    "items": []
+  },
+  {
+    "listing": "/learn/i2ds.html",
+    "items": [
+      "/learn/I2DS/i2ds2021/index.html",
+      "/learn/I2DS/i2ds2022/index.html"
+    ]
+  },
+  {
+    "listing": "/learn/rstudio.html",
+    "items": [
+      "/learn/rstudio/example/index.html",
+      "/learn/rstudio/objects/index.html",
+      "/learn/rstudio/social_media_scraping/index.html",
+      "/learn/rstudio/stata_to_r/index.html"
+    ]
+  }
+]

@@ -1,0 +1,48 @@
+website:
+ # cookie-consent:
+ #   type: express
+ #   style: interstitial
+ #   palette: dark
+ #   policy-url: www.hertiecodingclub.com
+ #   prefs-text: "text"
+  #google-analytics: "G-HJEMN0LJY7"
+  title: "Ethics <span style='font-size: 18px;'>&#x2715;</span> Data Science"
+  #site-url: https://www.hertiecodingclub.com/
+  #favicon: images/logo.png
+  page-footer:
+    left: 
+      - text: "{{< fa regular copyright size=s >}} 2023 "
+        href: https://creativecommons.org/licenses/by/2.0/
+    center:  · {{< fa brands r-project >}} · [![](https://quarto.org/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org/)  engine ·
+    right:
+      - text: "{{< fa brands github size=lg >}}"
+        href: https://github.com
+      - text: "{{< fa brands x-twitter size=lg >}}"
+        href: https://twitter.com
+      - text: "{{< fa brands linkedin size=lg >}}"
+        href: https://www.linkedin.com
+  navbar:
+    #logo:
+    #href: https://www.hertiecodingclub.com/
+    collapse-below: lg
+    pinned: true
+    left:
+      - id: howto
+        icon: house-fill
+        href: index.qmd
+        text: "Home"
+      - text: "{{< fa solid address-card >}} Ethics"
+        href: learn/rstudio.qmd
+      - text: "{{< fa solid landmark >}} Data Science"
+        href: learn/rstudio.qmd
+      - text: "{{< fa solid laptop-code >}} For instructors"
+        href: learn/rstudio.qmd
+      - text: "{{< fa solid laptop-code >}} About"
+        href: learn/rstudio.qmd
+comments:
+  giscus:
+    repo: jurjoroa/dseweb
+    
+
+
+
