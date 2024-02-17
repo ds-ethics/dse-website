@@ -18,5 +18,14 @@
       "/learn/rstudio/social_media_scraping/index.html",
       "/learn/rstudio/stata_to_r/index.html"
     ]
+  },
+  {
+    "listing": "/data_science/data_science.html",
+    "items": [
+      "/data_science/ds/example/index.html",
+      "/data_science/ds/stata_to_r/index.html",
+      "/data_science/ds/social_media_scraping/index.html",
+      "/data_science/ds/objects/index.html"
+    ]
   }
 ]

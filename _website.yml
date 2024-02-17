@@ -34,9 +34,11 @@ website:
       - text: "{{< fa solid address-card >}} Ethics"
         href: learn/rstudio.qmd
       - text: "{{< fa solid landmark >}} Data Science"
-        href: learn/rstudio.qmd
+        href: data_science/data_science.qmd
       - text: "{{< fa solid laptop-code >}} For instructors"
-        href: learn/rstudio.qmd
+        href: for_instructors/instructors.qmd
+      - text: "{{< fa solid laptop-code >}} References"
+        href: references/reference.qmd
       - text: "{{< fa solid laptop-code >}} About"
         href: learn/rstudio.qmd
 comments:

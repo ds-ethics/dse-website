@@ -397,5 +397,103 @@
     "title": "Your Document Title",
     "section": "Subsection Title",
     "text": "Subsection Title\nDetails about the subsection. This can include code snippets, explanations, or any relevant information.\n\n# R code goes here\n\n# Example\n\nx &lt;- 1:10\n\ny &lt;- x^2\n\nplot(x, y)"
+  },
+  {
+    "objectID": "data_science/data_science.html",
+    "href": "data_science/data_science.html",
+    "title": "Ethics <span style='font-size: 18px;'>&#x2715;</span> Data Science",
+    "section": "",
+    "text": "In today’s data-driven world, the power of data science transcends industries, influencing decisions, shaping strategies, and transforming futures. Yet, for many, the field remains shrouded in jargon and complexity. That’s where we step in. Whether you’re a professional looking to leverage data in your field, a student eager to expand your horizons, or simply a data enthusiast, our platform is designed with you in mind.\nThrough a blend of engaging articles, interactive tutorials, and real-world examples, we break down key data science concepts into digestible pieces. From the basics of data analysis and visualization to the intricacies of machine learning and artificial intelligence, we provide a comprehensive learning journey that’s both enjoyable and informative. Our goal is to empower you with the knowledge and skills you need to thrive in the data-driven world."
+  },
+  {
+    "objectID": "data_science/data_science.html#learn-r",
+    "href": "data_science/data_science.html#learn-r",
+    "title": "Learn R",
+    "section": "Learn R",
+    "text": "Learn R\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nIntroduction to Social Media Scraping\n\n\nLearn the basic tools for scraping Twitter Data in R\n\n\n\n\nTwitter\n\n\nWebscraping\n\n\nText\n\n\n \n\n\n\n\nApr 18, 2023\n\n\nLukas Lehmann\n\n\n12 min\n\n\n\n\n\n\n  \n\n\n\n\nUnderstanding R Objects: Naming, Data Structures and Classes in R\n\n\nThis is why R is so powerful: all kind of objects and possibilites. Naming objects, understand structures is crucial to learn\n\n\n\n\nRstudio\n\n\nObjects\n\n\n \n\n\n\n\nApr 16, 2023\n\n\nJorge Roa\n\n\n18 min\n\n\n\n\n\n\n  \n\n\n\n\nYour Document Title\n\n\nSubtitle or Brief Description\n\n\n\n\nCategory1\n\n\nCategory2\n\n\nCategory3\n\n\n \n\n\n\n\nInvalid Date\n\n\nYour Name\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nMaking the Transition? A Guide for switching from Stata to R\n\n\nIf you use Stata for your analysis, but you are curious or want to switch to the R world, this is your guide for it.\n\n\n\n\nR\n\n\nStata\n\n\nTransition\n\n\n \n\n\n\n\nApr 23, 2023\n\n\nJorge Roa\n\n\n12 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "data_science/data_science.html#data-science",
+    "href": "data_science/data_science.html#data-science",
+    "title": "Ethics <span style='font-size: 18px;'>&#x2715;</span> Data Science",
+    "section": "Data Science",
+    "text": "Data Science\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nYour Document Title\n\n\nSubtitle or Brief Description\n\n\n\n\nIntermediate\n\n\nCategory2\n\n\nCategory3\n\n\n \n\n\n\n\nInvalid Date\n\n\nYour Name\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nMaking the Transition? A Guide for switching from Stata to R\n\n\nIf you use Stata for your analysis, but you are curious or want to switch to the R world, this is your guide for it.\n\n\n\n\nR\n\n\nStata\n\n\nTransition\n\n\n \n\n\n\n\nApr 23, 2023\n\n\nJorge Roa\n\n\n12 min\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Social Media Scraping\n\n\nLearn the basic tools for scraping Twitter Data in R\n\n\n\n\nBeginner\n\n\nWebscraping\n\n\nText\n\n\n \n\n\n\n\nApr 18, 2023\n\n\nLukas Lehmann\n\n\n12 min\n\n\n\n\n\n\n  \n\n\n\n\nUnderstanding R Objects: Naming, Data Structures and Classes in R\n\n\nThis is why R is so powerful: all kind of objects and possibilites. Naming objects, understand structures is crucial to learn\n\n\n\n\nAdvanced\n\n\nObjects\n\n\n \n\n\n\n\nApr 16, 2023\n\n\nJorge Roa\n\n\n18 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "data_science/ds/social_media_scraping/index.html",
+    "href": "data_science/ds/social_media_scraping/index.html",
+    "title": "Introduction to Social Media Scraping",
+    "section": "",
+    "text": "NEWS\n\n\n\nWith the next Twitter regulations, The free package comes with rate-limited access to v2 tweet posting and media upload endpoints, with a posting limit of 1,500 tweets per month at the app level. If you want to access to posting tweets are up to 3,000 per month, and for reading, it’s up to 10,000 tweets per month, you will need to pay 100 USD per month. However, you can sill acces to databases and use this tutorial to analyze text in general."
+  },
+  {
+    "objectID": "data_science/ds/social_media_scraping/index.html#loading-in-packages-and-authorizing-rtweet",
+    "href": "data_science/ds/social_media_scraping/index.html#loading-in-packages-and-authorizing-rtweet",
+    "title": "Introduction to Social Media Scraping",
+    "section": "Loading in packages and authorizing rtweet",
+    "text": "Loading in packages and authorizing rtweet\nSo the first thing we want to do is load in the packages we’ll be using to scrape and manipulate our data. The most important of those is rtweet, which is the one we’ll be using to interact with the Twitter API.\nIn order to scrape tweets, you’ll need a Twitter developer account and have to make a Twitter app. This is actually a pretty simple process (and won’t require any coding). Here’s a step-by-step guide\n\npacman::p_load(rtweet, tidyverse, ggplot2, utils, tm, SnowballC, caTools, \n               rpart, topicmodels, tidytext, wordcloud, lexicon, reshape2,\n               sentimentr)\n\nRunning the code above (without the #’s) will prompt a dialogue box to pop up on your screen asking you for a bearer token. You can find that on the Twitter developer page. I made the last two lines into comments so that this can be knit into HTML smoothly."
+  },
+  {
+    "objectID": "data_science/ds/social_media_scraping/index.html#corpus",
+    "href": "data_science/ds/social_media_scraping/index.html#corpus",
+    "title": "Introduction to Social Media Scraping",
+    "section": "Corpus",
+    "text": "Corpus\nIn natural language processing (NLP), a corpus is a collection of written or spoken language that is used as a basis for analysis. A corpus can be made up of many different types of texts, including books, articles, speeches, social media posts, and more. Here, we will make a corpus of documents using just the full_text part of green tweets\n\ncorpus1 &lt;- Corpus(VectorSource(green$full_text))\n\nNow we need to clean our text a bit. Change to lower case and remove punctuation!\n\ncorpus1 &lt;- tm_map(corpus1, tolower)\ncorpus1 &lt;- tm_map(corpus1, removePunctuation)\n#We need to remove stop words to get meaningful results from this exercise. \n#We'll remove words like \"me\", \"is\", \"was\"\nstopwords(\"english\")[1:50]\n\n [1] \"i\"          \"me\"         \"my\"         \"myself\"     \"we\"        \n [6] \"our\"        \"ours\"       \"ourselves\"  \"you\"        \"your\"      \n[11] \"yours\"      \"yourself\"   \"yourselves\" \"he\"         \"him\"       \n[16] \"his\"        \"himself\"    \"she\"        \"her\"        \"hers\"      \n[21] \"herself\"    \"it\"         \"its\"        \"itself\"     \"they\"      \n[26] \"them\"       \"their\"      \"theirs\"     \"themselves\" \"what\"      \n[31] \"which\"      \"who\"        \"whom\"       \"this\"       \"that\"      \n[36] \"these\"      \"those\"      \"am\"         \"is\"         \"are\"       \n[41] \"was\"        \"were\"       \"be\"         \"been\"       \"being\"     \n[46] \"have\"       \"has\"        \"had\"        \"having\"     \"do\"        \n\ncorpus1 &lt;- tm_map(corpus1, removeWords, (stopwords(\"english\")))\n#We need to clean the words in the corpus further by \"stemming\" words\n#A word like \"understand\" and \"understands\" will both become \"understand\"\ncorpus1 &lt;- tm_map(corpus1, stemDocument)"
+  },
+  {
+    "objectID": "data_science/ds/social_media_scraping/index.html#document-term-matrix",
+    "href": "data_science/ds/social_media_scraping/index.html#document-term-matrix",
+    "title": "Introduction to Social Media Scraping",
+    "section": "Document Term Matrix",
+    "text": "Document Term Matrix\nSo, a DTM is a way of representing a collection of text documents quantitativelythat allows us to do some cool stuff with them. It’s basically a matrix where the rows correspond to the documents in the collection, and the columns correspond to the unique words or terms that appear in the documents. Each cell in the matrix represents the frequency of a particular term in a particular document.\n\n#creates a document term matrix, which is necessary for building a topic model\nDTM1 &lt;- DocumentTermMatrix(corpus1)\n#Here we can see the most frequently used terms\nfrequent_ge_20 &lt;- findFreqTerms(DTM1, lowfreq = 100)\nfrequent_ge_20\n\n [1] \"amp\"       \"green\"     \"like\"      \"store\"     \"day\"       \"…\"        \n [7] \"’s\"        \"light\"     \"one\"       \"year\"      \"figur\"     \"red\"      \n[13] \"buddha\"    \"fasc1nat\"  \"four\"      \"f…\"        \"philippin\" \"pray\"     \n[19] \"purchas\"   \"spent\"     \"woman\""
+  },
+  {
+    "objectID": "data_science/ds/social_media_scraping/index.html#lets-create-the-topic-model-well-start-with-5-topics",
+    "href": "data_science/ds/social_media_scraping/index.html#lets-create-the-topic-model-well-start-with-5-topics",
+    "title": "Introduction to Social Media Scraping",
+    "section": "Let’s create the topic model! We’ll start with 5 topics",
+    "text": "Let’s create the topic model! We’ll start with 5 topics\nThe code snippet performs topic modeling on a corpus of text data represented as a Document-Term Matrix (DTM) using the Latent Dirichlet Allocation (LDA) algorithm. The LDA() function from the topic models package is used to create a model with 7 topics and a specified random seed for reproducibility. The resulting model is stored in the green_lda1 object.\n\n#Perform LDA topic modeling on a Document-Term Matrix (DTM) with 7 topics\ngreen_lda1 &lt;- LDA(DTM1, k = 7, control = list(seed = 1234))\n\n#Print the model summary\ngreen_lda1\n\nA LDA_VEM topic model with 7 topics.\n\n#Convert the model's beta matrix to a tidy format\ngreen_topics1 &lt;- tidy(green_lda1, matrix = \"beta\")\n\ngreen_top_terms1 &lt;- green_topics1 %&gt;%\n  group_by(topic) %&gt;% #Group the terms by topic\n  slice_max(beta, n = 10) %&gt;% #Top 10 terms with the highest probabilities\n  ungroup() %&gt;% #Remove the grouping attribute from the data frame\n  arrange(topic, -beta) #Sort the data frame by topic index and term probability"
+  },
+  {
+    "objectID": "data_science/ds/social_media_scraping/index.html#word-cloud-of-biden-tweets",
+    "href": "data_science/ds/social_media_scraping/index.html#word-cloud-of-biden-tweets",
+    "title": "Introduction to Social Media Scraping",
+    "section": "Word Cloud of Biden Tweets",
+    "text": "Word Cloud of Biden Tweets\n\nCode# Create custom color palette\nmy_palette &lt;- brewer.pal(8, \"Dark2\")\n\n# Create word cloud with larger font size and custom layout\nwordcloud(words_data2$word, \n          words_data2$n, \n          max.words = 200, \n          colors = my_palette, \n          scale = c(5, 0.3),\n          random.order = FALSE,\n          rot.per = 0.25,\n          random.color = TRUE,\n          main = \"Word Cloud of Biden Tweets\")"
+  },
+  {
+    "objectID": "data_science/ds/social_media_scraping/index.html#comparison-cloud-of-biden-tweets-by-sentiment",
+    "href": "data_science/ds/social_media_scraping/index.html#comparison-cloud-of-biden-tweets-by-sentiment",
+    "title": "Introduction to Social Media Scraping",
+    "section": "Comparison Cloud of Biden Tweets by Sentiment",
+    "text": "Comparison Cloud of Biden Tweets by Sentiment\nNow let’s make a word cloud from those tweets but highlight which words are positive and which are negative\n\n#Select and tokenize words\nwords_data &lt;- biden_tweets %&gt;% \n  select(text) %&gt;%\n  unnest_tokens(word, text) \n\n#Get sentiment scores for each word using the bing lexicon\nsentiment_scores &lt;- words_data2 %&gt;%\n  inner_join(get_sentiments(\"bing\"))\n\n#Count the number of words in each sentiment category\nsentiment_counts &lt;- sentiment_scores %&gt;%\n  count(sentiment, sort = TRUE)\n\n#Create a list of profanity words to remove from the dataset\nprofanity_list &lt;- unique(tolower(lexicon::profanity_alvarez))\n\n#Filter out stop words and profanity words from the dataset\nfiltered_words_data &lt;- words_data %&gt;%\n  filter(!word %in% c('https', 't.co', 'he\\'s', 'i\\'m', 'it\\'s', profanity_list))\n\n#Get sentiment scores for each filtered word using the bing lexicon\nfiltered_sentiment_scores &lt;- filtered_words_data %&gt;%\n  inner_join(get_sentiments(\"bing\"))"
+  },
+  {
+    "objectID": "data_science/ds/social_media_scraping/index.html#cloud",
+    "href": "data_science/ds/social_media_scraping/index.html#cloud",
+    "title": "Introduction to Social Media Scraping",
+    "section": "Cloud",
+    "text": "Cloud\n\nCode#Count the number of filtered words with each sentiment score\nword_sentiment_counts &lt;- filtered_sentiment_scores %&gt;%\n  count(word, sentiment, sort = TRUE) %&gt;%\n  acast(word ~ sentiment, value.var = \"n\", fill = 0)\n\n#Create a comparison cloud using the word and sentiment counts\ncomparison.cloud(word_sentiment_counts, \n                  colors = c(\"red\", \"blue\"),\n                  max.words = Inf)"
+  },
+  {
+    "objectID": "data_science/ds/example/index.html",
+    "href": "data_science/ds/example/index.html",
+    "title": "Your Document Title",
+    "section": "",
+    "text": "Your important content or announcement goes here."
+  },
+  {
+    "objectID": "data_science/ds/example/index.html#important-section-title",
+    "href": "data_science/ds/example/index.html#important-section-title",
+    "title": "Your Document Title",
+    "section": "",
+    "text": "Your important content or announcement goes here."
+  },
+  {
+    "objectID": "data_science/ds/example/index.html#subsection-title",
+    "href": "data_science/ds/example/index.html#subsection-title",
+    "title": "Your Document Title",
+    "section": "Subsection Title",
+    "text": "Subsection Title\nDetails about the subsection. This can include code snippets, explanations, or any relevant information.\n\n# R code goes here\n\n# Example\n\nx &lt;- 1:10\n\ny &lt;- x^2\n\nplot(x, y)"
   }
 ]

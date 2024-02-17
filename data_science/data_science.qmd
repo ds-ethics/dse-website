@@ -1,0 +1,92 @@
+---
+title: ""
+listing:
+  - id: data_science
+    contents: "ds/*/index.qmd"
+    type: default
+    fields: [image, date, title, subtitle, categories, author, reading-time]  
+    sort: "date desc"
+    # categories: cloud
+    sort-ui: true
+    filter-ui: true
+    page-size: 10
+page-layout: full
+title-block-banner: false
+include-in-header: meta.html
+comments: false
+---
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    var categories = document.querySelectorAll('.listing-category');
+    categories.forEach(function(category) {
+        var textContent = category.textContent.trim();
+        if (textContent === 'Intermediate') {
+            category.classList.add('intermediate-category');
+        } else if (textContent === 'Beginner') {
+            category.classList.add('beginner-category');
+        } else if (textContent === 'Advanced') {
+            category.classList.add('advanced-category');
+        }
+    });
+});
+
+</script>
+
+
+
+
+<style>
+.beginner-category {
+    /* Styles for "Beginner" */
+    border-color: #7DAEDB !important; /* Sky Blue border */
+    background-color: #AEDFF8; /* Light Blue background */
+    color: #ffffff; /* White text */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.intermediate-category {
+    /* Styles for "Intermediate" */
+    background-color: #FFA500; /* Orange background */
+    border-color: #FFA500 !important; /* Orange border */
+    color: #ffffff; /* White text */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.advanced-category {
+    /* Styles for "Advanced" */
+    background-color: #6A0DAD; /* Purple background */
+    border-color: #6A0DAD !important; /* Purple border */
+    color: #ffffff; /* White text */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Optional: Add hover effects */
+.beginner-category:hover {
+    background-color: #8AC0E2; /* Brighter Blue on hover */
+}
+
+.intermediate-category:hover {
+    background-color: #FF8C00; /* Darker Orange on hover */
+}
+
+.advanced-category:hover {
+    background-color: #7D26CD; /* Darker Purple on hover */
+}
+
+</style>
+
+
+
+In today's data-driven world, the power of data science transcends industries, influencing decisions, shaping strategies, and transforming futures. Yet, for many, the field remains shrouded in jargon and complexity. That's where we step in. Whether you're a professional looking to leverage data in your field, a student eager to expand your horizons, or simply a data enthusiast, our platform is designed with you in mind.
+
+Through a blend of engaging articles, interactive tutorials, and real-world examples, we break down key data science concepts into digestible pieces. From the basics of data analysis and visualization to the intricacies of machine learning and artificial intelligence, we provide a comprehensive learning journey that's both enjoyable and informative. Our goal is to empower you with the knowledge and skills you need to thrive in the data-driven world.
+
+
+
+## Data Science  
+
+
+::: {#data_science}
+:::
