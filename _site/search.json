@@ -135,16 +135,16 @@
   {
     "objectID": "references/reference.html",
     "href": "references/reference.html",
-    "title": "References",
+    "title": "{{< fa solid scale-balanced >}} Ethics <span style='font-size: 18px;'>&#x2715;</span> Data Science {{< fa solid code-branch >}}",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nNo matching items"
+    "text": "Examples of using Observable with reactable in Quarto, based on the Observable JS Penguins example from the Quarto documentation.\nSource code: observable-reactable.qmd"
   },
   {
     "objectID": "references/reference.html#references",
     "href": "references/reference.html#references",
     "title": "References",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nNo matching items"
+    "text": "Date\n\n\nTitle\n\n\nSubtitle\n\n\nCategories\n\n\nAuthor\n\n\nReading Time\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "data_science/i2ds.html",
@@ -376,5 +376,19 @@
     "title": "Ethics",
     "section": "Subsection Title",
     "text": "Subsection Title\nDetails about the subsection. This can include code snippets, explanations, or any relevant information.\n\n# R code goes here\n\n# Example\n\nx &lt;- 1:10\n\ny &lt;- x^2\n\nplot(x, y)\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nCite this page: Lehmann, L. (2023, April 18). Introduction to Social Media Scraping. Hertie Coding Club. URL"
+  },
+  {
+    "objectID": "references/reference.html#using-observable-inputs-to-filter-reactable",
+    "href": "references/reference.html#using-observable-inputs-to-filter-reactable",
+    "title": "{{< fa solid scale-balanced >}} Ethics <span style='font-size: 18px;'>&#x2715;</span> Data Science {{< fa solid code-branch >}}",
+    "section": "Using Observable Inputs to filter reactable",
+    "text": "Using Observable Inputs to filter reactable\n\nviewof billLengthMin = Inputs.range(\n  [32, 50], \n  { value: 35, step: 1, label: \"Bill length (min):\" }\n)\n\nviewof islands = Inputs.checkbox(\n  [\"Torgersen\", \"Biscoe\", \"Dream\"], \n  { value: [\"Torgersen\", \"Biscoe\"], label: \"Islands:\" }\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReactable.setFilter('tbl', 'bill_length', billLengthMin)\n\n\n\n\n\n\n\nReactable.setFilter('tbl', 'island', islands)"
+  },
+  {
+    "objectID": "references/reference.html#using-reactable-to-filter-observable-charts",
+    "href": "references/reference.html#using-reactable-to-filter-observable-charts",
+    "title": "{{< fa solid scale-balanced >}} Ethics <span style='font-size: 18px;'>&#x2715;</span> Data Science {{< fa solid code-branch >}}",
+    "section": "Using reactable to filter Observable charts",
+    "text": "Using reactable to filter Observable charts\n\n// Create an Observable value that automatically tracks the table's filtered data\nfilteredData = Generators.observe(change =&gt; {\n  return Reactable.onStateChange('tbl-input', state =&gt; {\n    change(state.sortedData)\n  })\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\nPenguin body mass by sex and species\n\nPlot.rectY(filteredData, \n  Plot.binX(\n    { y: \"count\" }, \n    { x: \"body_mass\", fill: \"species\", thresholds: 20 }\n  ))\n  .plot({\n    facet: {\n      data: filteredData,\n      x: \"sex\",\n      y: \"species\",\n      marginRight: 80\n    },\n    marks: [\n      Plot.frame(),\n    ]\n  }\n)"
   }
 ]
