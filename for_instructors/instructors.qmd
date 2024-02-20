@@ -1,8 +1,8 @@
 ---
-title: "Learn R"
+title: ""
 listing:
-  - id: learn-r
-    contents: "rstudio/*/index.qmd"
+  - id: for-instructors
+    contents: "guide/*/index.qmd"
     type: default
     fields: [image, date, title, subtitle, categories, author, reading-time]  
     sort: "date desc"
@@ -16,7 +16,11 @@ include-in-header: meta.html
 comments: false
 ---
 
-## Learn R
 
-::: {#learn-r}
+
+Welcome to the "For Instructors" section of "Data Science X Ethics" – a dedicated space where education meets innovation at the crossroads of data science and ethical responsibility. As educators shaping the next generation of data scientists, your role in integrating ethical considerations into the technical curriculum is more crucial than ever. In this era of rapid technological advancement, teaching data science is not just about coding, algorithms, and data analysis; it's equally about instilling a strong ethical foundation in your students. Click here to access the [Instructor's Guide](https://quarto.org/docs/presentations/revealjs/demo/#/title-slide) for "Data Science X Ethics."
+
+## For instructors
+
+::: {#for-instructors}
 :::

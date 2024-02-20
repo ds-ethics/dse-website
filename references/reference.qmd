@@ -1,8 +1,8 @@
 ---
-title: "Learn R"
+title: "References"
 listing:
-  - id: learn-r
-    contents: "rstudio/*/index.qmd"
+  - id: reference
+    contents: "reference/index.qmd"
     type: default
     fields: [image, date, title, subtitle, categories, author, reading-time]  
     sort: "date desc"
@@ -16,7 +16,7 @@ include-in-header: meta.html
 comments: false
 ---
 
-## Learn R
+## References
 
-::: {#learn-r}
+::: {#reference}
 :::

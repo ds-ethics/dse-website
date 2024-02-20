@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', function () {
 <style>
 .beginner-category {
     /* Styles for "Beginner" */
-    border-color: #7DAEDB !important; /* Sky Blue border */
-    background-color: #AEDFF8; /* Light Blue background */
+    border-color: #4C8CBF !important; /* Sky Blue border */
+    background-color: #7FB2E5; /* Light Blue background */
     color: #ffffff; /* White text */
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /* Optional: Add hover effects */
 .beginner-category:hover {
-    background-color: #8AC0E2; /* Brighter Blue on hover */
+    background-color: #4D9EDB; /* Brighter Blue on hover */
 }
 
 .intermediate-category:hover {

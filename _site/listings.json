@@ -1,29 +1,36 @@
 [
   {
-    "listing": "/learn/rstudio/objects/index.html",
+    "listing": "/for_instructors/instructors.html",
+    "items": [
+      "/for_instructors/guide/ds/index.html",
+      "/for_instructors/guide/ethics/index.html"
+    ]
+  },
+  {
+    "listing": "/ethic/ethics.html",
+    "items": [
+      "/ethic/ethic/example/index.html"
+    ]
+  },
+  {
+    "listing": "/references/reference.html",
     "items": []
   },
   {
-    "listing": "/learn/i2ds.html",
+    "listing": "/data_science/i2ds.html",
     "items": [
-      "/learn/I2DS/i2ds2021/index.html",
-      "/learn/I2DS/i2ds2022/index.html"
+      "/data_science/I2DS/i2ds2021/index.html",
+      "/data_science/I2DS/i2ds2022/index.html"
     ]
   },
   {
-    "listing": "/learn/rstudio.html",
-    "items": [
-      "/learn/rstudio/example/index.html",
-      "/learn/rstudio/objects/index.html",
-      "/learn/rstudio/social_media_scraping/index.html",
-      "/learn/rstudio/stata_to_r/index.html"
-    ]
+    "listing": "/data_science/ds/objects/index.html",
+    "items": []
   },
   {
     "listing": "/data_science/data_science.html",
     "items": [
       "/data_science/ds/example/index.html",
-      "/data_science/ds/stata_to_r/index.html",
       "/data_science/ds/social_media_scraping/index.html",
       "/data_science/ds/objects/index.html"
     ]

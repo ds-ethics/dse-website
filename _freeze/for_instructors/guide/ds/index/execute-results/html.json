@@ -1,0 +1,16 @@
+{
+  "hash": "248da29a392bd21294fafd5e919e67cc",
+  "result": {
+    "markdown": "---\ntitle: \"Data Science\"\nsubtitle: \"Subtitle or Brief Description\"\nauthor: \"Your Name\"\ndate: \"YYYY-MM-DD\"\ncategories: [\"Category1\", \"Category2\", \"Category3\"]\ntoc: true\ndraft: false\ncode-link: true\ncode-copy: true\ntitle-block-banner: true\ncomments: false\nimage: images/Social.png #path/to/image.png\ninclude-in-header: meta.html\nfilters:\n   - lightbox\nlightbox: \n  match: auto\n  effect: fade\n  desc-position: left\n  css-class: \"lightwidth\"\n---\n\n\n::: {.callout-type}\n## Important Section Title\n\nYour important content or announcement goes here.\n:::\n\n# Main Section Title \n\nIntroduction or opening paragraph goes here. This section introduces the main topics or content of the document.\n\n## Subsection Title\n\nDetails about the subsection. This can include code snippets, explanations, or any relevant information.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# R code goes here\n\n# Example\n\nx <- 1:10\n\ny <- x^2\n\nplot(x, y)\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n\n::: {.callout-note}\nCite this page: Lehmann, L. (2023, April 18). *Introduction to Social Media Scraping*. Hertie Coding Club. [URL](https://www.hertiecodingclub.com/learn/rstudio/social_media_scraping/)\n:::",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

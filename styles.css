@@ -18,20 +18,23 @@ div.nav-footer-center i.fa-brands.fa-r-project {
 
 .wrap
 {
-  margin-left: 10px;
   display:flex;
-  align-items:space-around;
+   justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 .tile
 {
-  width:100%;
+  width:70%;
   height:38vh;
-  margin:10px;
+  margin:20px;
   background-color:#99aeff;
+    justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
   display:inline-block;
   background-size:cover;
   position:relative;
   cursor:pointer;
+  border-radius:20px;
   transition: all 0.4s ease-out;
   box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.44);
   overflow:hidden;
@@ -157,8 +160,6 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
   .wrap {
     display: flex;
     flex-wrap: wrap; /* Allow items to wrap onto the next line */
-    align-items: flex-start; /* Changed from 'space-around' which is not a valid value for align-items */
-    justify-content: space-around; /* This will space out the items on each line */
   }
 }
 
@@ -470,13 +471,13 @@ li.nav-item {
 }
 
 .navbar-brand{
-  color: #c0041c !important;
+  color: #FF7F50 !important;
 }
 
 
 .navbar .navbar-nav .nav-link.active {
     font-weight: 700 !important;
-    color: #DE2424 !important;
+    color: #FF7F50 !important;
 }
 
 .navbar-brand, .navbar-nav li.nav-item a.nav-link {
@@ -507,7 +508,7 @@ li.nav-item {
   width: 0%;
   content: '.'; /* make invisible, dot beneath links */
   color: transparent;
-  background: #DE2424;
+  background: #FF7F50;
   height: 2px;
 
 }
@@ -523,29 +524,29 @@ a.nav-link:hover:after {
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-    color: #DE2424 !important;
+    color: #FF7F50 !important;
 }
 
 
 p > a:hover {
-  color: #DE2424;
+  color: #FF7F50;
   text-decoration: none;
 }
 
 p > a {
-  color: #DE2424;
+  color: #FF7F50;
   text-decoration: none;
 }
 
 p > a:not(.lightbox) {
   position: relative;
-  color: #DE2424;
+  color: #FF7F50;
   text-decoration: none;
 }
 
 
 ul.share li a {
-    background-color: #DE2424;
+    background-color: #FF7F50;
 }
 
 p > a:before:not(img, #TOC) {
@@ -555,7 +556,7 @@ p > a:before:not(img, #TOC) {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #DE2424;
+  background-color: #FF7F50;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out 0s;
@@ -2182,8 +2183,8 @@ code span.dv {
 /*card events software fer*/
 
 .image-right {
-  border: 2.5px solid #BF041C;
-  background: black; 
+  border: 2.5px solid #FF7F50;
+  background: linear-gradient(to right, rgba(46, 49, 146, 0.8), rgba(27, 255, 255, 0.8));
   border-radius: 10px;
   color: white;
   transition: all 0.5s ease-in-out;
@@ -2405,20 +2406,20 @@ div.listing-subtitle,
 }
 
 #quarto-header .quarto-category{
-   border: 1px solid #BF041C;
+   border: 1px solid #FF7F50;
    color: white;
 }
 
 #peer .listing-category{
    color: white;
-   border: 1px solid #BF041C;
+   border: 1px solid #FF7F50;
 }
 
 
 div.body div.listing-categories div.listing-category{
   
    color: white;
-   border: 1px solid #BF041C;
+   border: 1px solid #FF7F50;
   
 }
 
