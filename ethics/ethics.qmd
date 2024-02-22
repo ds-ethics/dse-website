@@ -2,7 +2,7 @@
 title: ""
 listing:
   - id: ethics
-    contents: "ethic/*/index.qmd"
+    contents: "ethics/*/index.qmd"
     type: default
     fields: [image, date, title, subtitle, categories, author, reading-time]  
     sort: "date desc"

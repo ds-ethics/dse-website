@@ -158,7 +158,7 @@ comments: false
 
 
   <div class="tile"> 
-  <a href="../ethic/ethics.html" style="text-decoration: none; color: inherit;" target="_blank">
+  <a href="../ethics/ethics.html" style="text-decoration: none; color: inherit;" target="_blank">
   <img src='https://images.unsplash.com/photo-1422393462206-207b0fbd8d6b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80'/>
   <div class="text-cards">
   <h1> Ethics for non-ethicists</h1>

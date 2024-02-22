@@ -32,7 +32,7 @@ website:
         href: index.qmd
         text: "Home"
       - text: "{{< fa solid scale-balanced >}} Ethics"
-        href: ethic/ethics.qmd
+        href: ethics/ethics.qmd
       - text: "{{< fa solid laptop-code >}} Data Science"
         href: data_science/data_science.qmd
       - text: "{{< fa solid landmark >}} For instructors"
