@@ -1,0 +1,91 @@
+---
+title: "Privacy"
+subtitle: "What is it good for?"
+author:
+  - name: Johannes Himmelreich
+    id: jh
+    orcid: 0000-0002-2163-0082
+    email: jrhimmel@syr.edu
+    affiliation: 
+      - name: Maxwell School at Syracuse University
+        city: Syracuse
+        state: NY
+        url: www.syracuse.edu
+date: "2024-02-26"
+categories: ["Foundational Concept", "Privacy", "Data Collection"]
+toc: true
+draft: false
+code-link: true
+code-copy: true
+title-block-banner: true
+comments: false
+image: images/Social.png #path/to/image.png
+include-in-header: meta.html
+filters:
+   - lightbox
+lightbox: 
+  match: auto
+  effect: fade
+  desc-position: left
+  css-class: "lightwidth"
+---
+
+::: callout-note
+## Main idea
+
+You have no idea what privacy is. But you still know what you need to do to protect it.
+:::
+
+# Introduction
+
+Parks & Recreation is a great TV series. Here is one scene that we'll return to in our discussion of privacy.
+
+{{< video https://www.youtube.com/embed/8xn1rO1oQmk >}}
+
+Perhaps you have felt like Ron Swanson, the male protagonist, does in this clip: You came to feel the limits of your privacy and there was little you could do — short of throwing all your devices in the trash.
+
+This module aims to improve conversations and discussions about privacy.
+
+# Privacy Today
+
+We all have been like Ron Swanson here. You too may have been surprised, for example, when you learn how easy it is to buy your location data, your credit score, or find out your address and phone number. Except to the cynic (who isn't surprised by any bad news), the realization that "it learns information about me" should be a familiar one.
+
+But in another way, we're not like Ron Swanson at all. Throwing away our devices to protect privacy at all costs is just not something we would do. In some sense you don't have a real choice that would give you full privacy.
+
+This is the **pathology of privacy today**: Everyone lacks awares of the limits of their privacy. Moreover, there are limits to what people can do to safeguard their privacy.
+
+## Information problems
+
+Sometimes, you know how limited your privacy is. You remember there were privacy settings in that app that you just couldn't bother to check. And you know that online advertisers track you. And you know that you signed something at your doctor's office about sharing your patient data.
+
+But often, privacy today is violated unwittingly. For one, it's basically impossible to be aware of all the ways in which your data is collected, analyzed, and shared. Similarly, nobody can possibly read all the terms and conditions and privacy policies that they are agreeing to.
+
+In short, there is an information problem: Individuals don't know — and, to some extent, cannot know — all they need to know to safeguard their privacy. And, arguably, we shouldn't spend much of our time and mental energy on protecting our privacy.
+
+## Choice problems
+
+The second part of the state of individual privacy today has to do with choices. We cannot throw away all of our devices, like Ron Swanson does. The options that we have to protect our privacy, even when we are aware of them, is practically limited. Metadata collection that is required by law is hard to opt out of. Even tech-savvy individuals are outgunned by the professional data, surveillance, and security industry.
+
+And then, we also have a cognitive system that is easy to exploit. As such, websites and apps use various forms of deception to get you to do things.[^1] You end up subscribing to a service without knowing, agreeing to terms without having read them, or clicking "Continue" because the other button, "No," was made hard to see.
+
+[^1]: See <https://www.deceptive.design>
+
+::: column-margin
+![Deceptive design](images/alexapattern-01.jpeg){width="337"}
+:::
+
+In sum, **privacy is inadvertently infringed on a regular basis** in two respects
+
+1.  Individuals hold **false beliefs** about the state of their privacy and the options in front of them
+
+2.  Individuals have limited options to safeguard their privacy
+
+These two points are practically necessary. That is, given how things are, these are two starting points that we cannot change. You can only read so many terms and conditions, if you can read any, and there is only so much you can do.
+
+# Against Consent
+
+All of this is bad news for consent.
+
+as
+
+# Data Protection Instead of Privacy
