@@ -1,0 +1,123 @@
+---
+title: "Privacy Activity"
+subtitle: "A simulation on privacy and election data analytics"
+author:
+  - name: Johannes Himmelreich
+    id: jh
+    orcid: 0000-0002-2163-0082
+    email: jrhimmel@syr.edu
+    affiliation: 
+      - name: Maxwell School at Syracuse University
+        city: Syracuse
+        state: NY
+        url: www.syracuse.edu
+date: "2024-02-28"
+categories: ["Activity", "Privacy", "Data Collection"]
+toc: true
+draft: true
+code-link: true
+code-copy: true
+title-block-banner: true
+comments: false
+image: images/Social.png #path/to/image.png
+include-in-header: meta.html
+filters:
+   - lightbox
+lightbox: 
+  match: auto
+  effect: fade
+  desc-position: left
+  css-class: "lightwidth"
+---
+
+# A Political Campaign
+
+**Scenario: Campaign.**  You work for a political campaign. The general election is one year away and the main contenders (parties or candidates) have been identified. Your opponent party and their candidates have a notably problematic track record: In the past they have sought to undermine the legitimacy of elections by claiming, without evidence, that there has been voter fraud. They, in fact, previously enouraged their supporters to use violence against elected officials to further their own demands in disregard of democratic processes. They publicly meet and present themselves with political actors that reputable civil society organization consider anti-semitic or racist. They have promoted friends or family members into important cabinet positions or use their power over law. 
+
+The campaign strategy team predicts that the election will be close. They assume that understanding potential voters will be crucial: predicting what issues they care about, what communication is effective, and how they can be reached. They contend that the campaign needs more data to better understand voters. They seek to ask the campaign's data science team to acquire social media data and link these data to your exisiting data. The existing data includes public individuals' public records (such as address, voting history, or phone number) and interactions with canvassers and the campaign (such as their email, responses on door, donations, etc.). The social media data include platforms such as Instagram, TikTok, YouTube, or reddit. The strategists want the data science team to cast the net widely in the platforms covered and the data included (e.g. also images or videos). Moreover, the strategy team would like these data to be continously updated for situational awareness and in order to analyze the effectiveness of their communications and canvassing. The strategy team suggests that the data science team explore all options of  acquiring social media data, such as data brokers, data leaks (which tabulate, for example, email addresses with which otherwise anonymous social media accounts are registered), or scrape the data yourself.  
+
+## Role Play
+
+We simulate a meeting between two campaign strategists, two members of the data science team, and one representative of campaign volunteers. You prepare for one of the three roles, as assigned by your instructor. Identify your aims, develop a rough meeting strategy, and prepare what you want to say in the meeting. 
+
+## Discussion Questions
+
+Assume you are the lead data scientist of the campaign and you attend the meeting:
+
+1. What should you do? 
+2. Is there any principle or red line that you use to decide what to do?
+3. What do you, as the lead data scientist of the campaign, see are your responsibilities in this situation?
+
+# Good Data Science
+
+Read through the ACM Code of Ethics. There are numerous codes of ethics --- by professional or academic associations, private or public organizations --- that might be relevant. This particular one is a good start because it is both relatively detailed and developed.
+
+## Discussion Questions
+
+1. Which concepts or principles from the code of ethics apply to the scenario above?
+2. How could the data science team draw on the code in response to the ask by the campaign strategy team?
+3. Given the code of ethics, would you change any of your answers to the first set of discussion questions above? 
+
+# Privacy
+
+Philosopher Helen Nissenbaum argues that privacy should be analyzed relative to a context. She defends the theory known as *contextual integrity* (see required reading). 
+
+## Prompts
+
+1. What examples of privacy violations can you think of? Draw on the theory of contextual integrity to explain how privacy was violated in these examples.
+2. Use the contextual integrity theory to analyze the scenario of the role play above: who are the relevant parties and their interests? What general social values should be upheld? What are relevant context-specific values?
+3. Imagine again you are the data science lead of the political campaign. Write a follow-up email to the strategy team summarizing your response to their ask. Draw on both the ethics code and the theory of contextual integrity where you find it helpful or appropriate. 
+
+
+# Teaching Note
+
+The ethics sesison is structured around a central scenario and combines two parts. In the first part, students are asked to imagine themselves in the scenario and grapple with the ethical issues pre-theoretically. The second part introduces students to a particular theory of privacy. Students revisit the scenario from the first part, with this theory in hand, to face a new challenge.
+
+The session could be structured as follows:
+
+- Introduction (15 min)
+- A Political Campaign: Scenario and role play (45 min)
+- What is a good data scientist? (45 min)
+- Break (15 min)
+- Privacy in Context (30 min)
+    - Communication exercise (30 min)
+- Conclusion (15 min)
+
+## Learning Outcomes
+
+Engagement with the scenario and the theory aims to contribute to the following learning outcomes.
+
+- to experience how ethical challenges might not always be obvious; identifying them is a matter of perception/ 
+- to identity conflicts between values or reasons and illustrate them with an example
+- to describe a practical conception of privacy relevant to data science
+- to navigate expectations from other teams and individuals within their organization
+- to communicate to such others the ethical concerns that they perceive
+
+## Course Materials
+
+This session is mostly based on discussion. This is driven by the following assumptions: (1) each individual has some role to play --- or has some responsibility --- to ensure the the ethical conduct of their team and organization; (2) no specific knowledge or skill is requiered to engage in discussions about ethics.[^1] As such, the material necessary for the session is contained above.
+
+**Scenario and discussion.** The scenario is designed to elicit a conflict between privacy and democracy, broadly speaking. Considerations of privacy would support pushing back against the request from the campaign strategy team. These considerations are broadly non-consequentialist in that the reaons against using social media data are not only that doing so would lead to bad results but that doing so would be in itself wrong (for example, because it violates legitimate expectations or because it protects important interests). Considerations of self-interest and democracy --- which relate in particular to the un-democratic behavior of the opponents --- recommend following the request of the stategy team. These considerations are somewhat consequentialist, that is, what speaks in favor of fulfilling the strategy team's ask is that doing so would lead to good results: the own party's chances of gaining political power are increased, the chances of the un-democratic opponent winning are decreased. The scenario is inspired by a potential candidacy of Donald Trump in the 2024 election but given developments in democracies around the globe, such democratic backsliding into authoritairanism should have wide applicability and following this inspiration too closely risks losing a certain degree of idealization and abstraction which can be useful for the purposes here.
+
+[^1]: For a greater discussion of these assumptions and a further lesson plan for teaching ethics see Himmelreich \& Cohen (2021).
+
+**Good data science.** The aim of this section twofold: (1) to motivate that data scientists have different moral responsibilities in virtue of their professional role; (2) to introduce concepts that can easily be related to examples and thus ``filled with life''. Although the initial scenario also pursues the first aim --- to illustrate that data scientists will face ethical dilemmas --- this engagement with a code of ethics highlights that there is broad agreement within society or, at least, within the profession of computer science that even technical roles comprise moral responsibilities. 
+
+**Lecture on privacy.** Nissenbaum's theory of privacy as contextual integrity should be intoduced by the instructor in a lecture. Lecture slides are provided in the materials attached to this document. The students will have read Nissenbaum (2011). In preparation for the lecture, the instructor might consult Nissenbaum (2015) for a policy-related motivation of contextual privacy as well as for a discussion of how the idea of a ``context'' ought to be understood. For a more general background on issues of privacy see van den Hoven et al. (2020).
+
+
+### References
+#### Required Reading
+
+* Nissenbaum, H. (2011). A Contextual Approach to Privacy Online. Daedalus, 140(4), 32–48. https://doi.org/10.1162/DAED_a_00113
+
+* ACM Code of Ethics and Professional Conduct. (n.d.). Retrieved September 19, 2018, from https://www.acm.org/code-of-ethics
+
+#### Further Literature
+
+* Himmelreich, J., \& Cohen, J. (2021). Teaching moral reasoning: Why and how to use the trolley problem. Journal of Public Affairs Education, 27(4), 451–471. https://doi.org/10.1080/15236803.2021.1966591
+
+* Nissenbaum, H. (2015). Respecting Context to Protect Privacy: Why Meaning Matters. Science and Engineering Ethics. https://doi.org/10.1007/s11948-015-9674-9
+
+* van den Hoven, J., Blaauw, M., Pieters, W., \& Warnier, M. (2020). Privacy and Information Technology. In E. N. Zalta (Ed.), The Stanford Encyclopedia of Philosophy (Summer 2020). Metaphysics Research Lab, Stanford University.  https://plato.stanford.edu/archives/sum2020/entries/it-privacy
+:::
