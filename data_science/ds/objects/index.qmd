@@ -32,6 +32,10 @@ listing:
     contents: gallery.yml
 ---
 
+
+
+
+
 # Objects in R
 
 ------------------------------------------------------------------------
@@ -1019,3 +1023,84 @@ Alarid-Escudero, F., Krijkamp, E. M., Pechlivanoglou, P., Jalal, H., Kao, S. Z.,
 ::: callout-note
 Cite this page: Roa, J. (2023, April 16). *Understanding R Objects: Data Structures and Classes in R*. Hertie Coding Club. [URL](https://www.hertiecodingclub.com/learn/rstudio/rstudio101/)
 :::
+
+
+
+
+```{=HTML}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function initCodewindow() {
+        const svg_buttons = `<svg viewBox="0 0 420 100" style="width:55px"><circle fill="#ff5f57" cx="50" cy="50" r="50"/><circle fill="#febc2e" cx="210" cy="50" r="50"/><circle fill="#28c840" cx="370" cy="50" r="50"/></svg>`;
+        const svg_sass = `
+<svg viewBox="0 0 512 384" style="height:1em">
+  <path fill="#CF649A" d="M256,0C114.615,0,0,114.615,0,256s114.615,256,256,256s256-114.615,256-256S397.385,0,256,0z M256,490.182
+    c-129.234,0-234.182-104.948-234.182-234.182S126.766,21.818,256,21.818S490.182,126.766,490.182,256S385.234,490.182,256,490.182z"/>
+</svg>`;
+        const svg_r = `
+<svg viewBox="0 0 724 561" style="height:1em">
+  <circle fill="#276DC3" cx="362" cy="280.5" r="280"/>
+  <text x="50%" y="50%" text-anchor="middle" fill="white" font-size="300" dy=".3em">R</text>
+</svg>`;
+        const svg_python = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="height: 1em; width: 1em;">...</svg>`;
+        const svg_html = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height:1em">...</svg>`;
+        // Add more SVG definitions as needed...
+
+        var codewindows = document.querySelectorAll(".codewindow");
+
+        codewindows.forEach(function(content) {
+            var new_content = document.createElement("div");
+            new_content.classList.add("codewindow");
+
+            var header = document.createElement("div");
+            header.classList.add("header");
+            header.innerHTML = svg_buttons;
+
+            var file = document.createElement("div");
+            file.classList.add("file");
+            
+            // Conditional SVG additions based on classList of content
+            if (content.classList.contains("sass")) {
+                file.innerHTML += svg_sass;
+            }
+            if (content.classList.contains("r")) {
+                file.innerHTML += svg_r;
+            }
+            if (content.classList.contains("python")) {
+                file.innerHTML += svg_python;
+            }
+            if (content.classList.contains("html")) {
+                file.innerHTML += svg_html;
+            }
+            // Add more conditions for other SVGs...
+
+            var file_name = content.querySelector("p");
+            if (file_name !== null) {
+                file.innerHTML += file_name.innerText;
+            }
+
+            var textarea = document.createElement("div");
+            textarea.classList.add("textarea");
+            var originalContent = content.querySelector("div,iframe");
+            if(originalContent) {
+                textarea.appendChild(originalContent);
+            }
+
+            header.appendChild(file);
+            new_content.appendChild(header);
+            new_content.appendChild(textarea);
+
+            content.innerHTML = new_content.innerHTML;
+
+            if (content.getAttribute("width")) {
+                content.style.width = content.getAttribute("width");
+            }
+        });
+    }
+
+    initCodewindow();
+});
+</script>
+
+```

@@ -11,8 +11,6 @@ div.nav-footer-center i.fa-brands.fa-r-project {
 }
 
 
-
-
 /* first two sections */
 
 
@@ -1943,39 +1941,12 @@ transform: scale(1.3);
 /**/
 
 
-
-.cell-output-stdout pre code {
-  background-color: #E8E8E8;
-}
-
-
 /*
 code span {
   color: #007BA5;
 }
 */
 /*modify code*/
-
-div.sourceCode {
-  background: #2a2a2a;
-  border: 3px solid #F3182E;
-  border-style: ;
-  font-size: .9em;
-}
-
-div.sourceCode#text {
-  background: linear-gradient(to right, rgba(0, 4, 40, 0.9), rgba(0, 78, 146, 0.9));
-  border: 3px solid #F3182E;
-  border-style: ;
-  font-size: 1.1em;
-}
-
-div.sourceCode pre code {
-  color:white;
-}
-
-
-
 
 /*
 code span.at {
@@ -1996,14 +1967,6 @@ code span.an {
 */
 
 /*functions with arguments*/
-code span.fu {
-  color: #0567E4;
-  font-weight: bold;
-}
-
-code {
-  color: #0567E4;
-}
 
 
 
@@ -2013,7 +1976,6 @@ code {
 
 /*arrows, parenthesis*/
 
-code span.ot { color: #C60115; }
 
 /*
 
@@ -2035,21 +1997,6 @@ code span.al {
 }
 
 */
-
-/*Packages and variables*/
-code span.va {
-  color:  #f54657 !important;
-  font-weight: bold;
-}
-
-code.sourceCode python #text{
-  color:  #F3182E !important;
-}
-
-/*Strings*/
-code span.st {
-  color: #b9ca4a;
-}
 
 
 
@@ -2097,10 +2044,7 @@ code span.fl {
  */
 
 /* modify comments */
-code span.co {
-  color: #60b5ff !important;
-}
-/**/
+
 
 /* 
 code span.cv {

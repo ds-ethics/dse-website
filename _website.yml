@@ -11,9 +11,9 @@ website:
   #favicon: images/logo.png
   page-footer:
     left: 
-      - text: "{{< fa regular copyright size=s >}} 2023 "
+      - text: "{{< fa regular copyright size=s >}} 2024"
         href: https://creativecommons.org/licenses/by/2.0/
-    center:  · {{< fa brands r-project >}} · [![](https://quarto.org/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org/)  engine ·
+    center: · [![](https://quarto.org/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org/)  engine ·
     right:
       - text: "{{< fa brands github size=lg >}}"
         href: https://github.com
@@ -22,6 +22,7 @@ website:
       - text: "{{< fa brands linkedin size=lg >}}"
         href: https://www.linkedin.com
   navbar:
+    type: false
     #logo:
     #href: https://www.hertiecodingclub.com/
     collapse-below: lg

@@ -1,0 +1,69 @@
+---
+title: "Untitled"
+format: html
+editor: visual
+---
+
+
+
+<style>
+
+.codewindow {
+  overflow-wrap: anywhere;
+  margin-bottom: 36px;
+  font-size: 1em;
+  font-family: monospace;
+  background: white;
+  border-radius: 10px;
+  box-shadow: #26394d 0px 20px 30px -10px;
+}
+ 
+.codewindow .header {
+  display: flex;
+  background: #e2e8f0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-left: 16px;
+  gap: 16px;
+  height: 30px;
+}
+
+.codewindow .header .file {
+  margin-top: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  background: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 90%;
+  align-items: center;
+  gap: 4px;
+}
+
+.codewindow .textarea {
+  padding: 11px;
+}
+ 
+.codewindow .textarea .sourceCode {
+  background: unset;
+  border: unset;
+  font-size: unset;
+}
+
+.codewindow .textarea pre {
+  font-size: unset;
+}
+
+</style>
+
+
+
+::: {.codewindow .R}
+styles.scss
+```{scss}
+.pink {
+  color: pink;
+}
+```
+:::
