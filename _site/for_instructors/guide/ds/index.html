@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.24">
-
+<meta name="generator" content="quarto-1.4.551">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title> Ethics ✕ Data Science </title>
+<meta name="author" content="Your Name">
+<title> Ethics ✕ Data Science  - Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +18,64 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
-
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -66,31 +101,29 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<style>html{ scroll-behavior: smooth; }</style>
-<!-- Primary Meta Tags -->
-<title>Hertie Coding Club - Everybody can learn to code</title>
+}</script><style>html{ scroll-behavior: smooth; }</style>
+<!-- Primary Meta Tags --><title>Hertie Coding Club - Everybody can learn to code</title>
 <meta name="title" content="Hertie Coding Club - Everybody can learn to code">
 <meta name="description" content="Welcome to the Hertie Coding Club! Our goal as a club is to help everyone and between us learn coding skills and show that coding is for everyone, no matter our background.">
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
+<!-- Open Graph / Facebook --><meta property="og:type" content="website">
 <meta property="og:url" content="https://www.hertiecodingclub.com">
-<meta property="og:title" content=" Ethics ✕ Data Science ">
-<meta property="og:description" content="">
-
-
-<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content=" Ethics ✕ Data Science  - Data Science">
+<meta property="og:description" content="Subtitle or Brief Description">
+<!-- Primary Meta Tags --><title>Hertie Coding Club - RStudio 101</title>
+<meta name="title" content="Hertie Coding Club - Enable Multithread with data.table in Mac/Intel chips">
+<meta name="description" content="Learn the basics of R: open a project, setting a working directory and navigate RStudio interface">
+<!-- Open Graph / Facebook --><meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hertiecodingclub.com/learn/rstudio/rstudio101/">
+<meta property="og:title" content="Hertie Coding Club - RStudio 101">
+<meta property="og:description" content="Learn the basics of R: open a project, setting a working directory and navigate RStudio interface">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
-
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title"><i class="fa-solid fa-scale-balanced" aria-label="scale-balanced"></i> Ethics <span style="font-size: 18px;">✕</span> Data Science <i class="fa-solid fa-code-branch" aria-label="code-branch"></i></span>
     </a>
   </div>
@@ -100,230 +133,126 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house-fill" role="img">
+<li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> <i class="bi bi-house-fill" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./ethics/ethics.html"> 
+    <a class="nav-link" href="../../../ethic/ethics.html"> 
 <span class="menu-text"><i class="fa-solid fa-scale-balanced" aria-label="scale-balanced"></i> Ethics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./data_science/data_science.html"> 
+    <a class="nav-link" href="../../../data_science/data_science.html"> 
 <span class="menu-text"><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> Data Science</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./for_instructors/instructors.html"> 
+    <a class="nav-link" href="../../../for_instructors/instructors.html"> 
 <span class="menu-text"><i class="fa-solid fa-landmark" aria-label="landmark"></i> For instructors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./references/reference.html"> 
+    <a class="nav-link" href="../../../references/reference.html"> 
 <span class="menu-text"><i class="fa-solid fa-newspaper" aria-label="newspaper"></i> References</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about/about_us.html"> 
+    <a class="nav-link" href="../../../about/about_us.html"> 
 <span class="menu-text"><i class="fa-solid fa-hand-point-up" aria-label="hand-point-up"></i> About</span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
+    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Data Science</h1>
+            <p class="subtitle lead">Subtitle or Brief Description</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Category1</div>
+                <div class="quarto-category">Category2</div>
+                <div class="quarto-category">Category3</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Your Name </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Invalid Date</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#important-section-title" id="toc-important-section-title" class="nav-link active" data-scroll-target="#important-section-title">Important Section Title</a></li>
+  <li>
+<a href="#main-section-title" id="toc-main-section-title" class="nav-link" data-scroll-target="#main-section-title">Main Section Title</a>
+  <ul class="collapse">
+<li><a href="#subsection-title" id="toc-subsection-title" class="nav-link" data-scroll-target="#subsection-title">Subsection Title</a></li>
+  </ul>
+</li>
+  </ul></nav>
+    </div>
 <!-- main -->
-
-
-
-
-
-
-   <title>Animation Test</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <style>
-        .subtitle {
-            font-size: 18px;
-            font-weight: normal;
-            color: white;
-            animation: fadeInUp; 
-            animation-duration: 7s; 
-        }
-
-        #animation-container {
-            position: relative;
-            width: 100%;
-            background: linear-gradient(to right, #2E3192, #1BFFFF);  /* Add black background color */
-            flex-direction: column; 
-            height: 120vh; 
-            margin-top: -90px; 
-            background-size: cover; 
-            background-position: center; 
-            background-repeat: no-repeat; 
-            overflow: hidden; 
-            overflow: clip;  
-            contain: content; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-        }
-
-        #animation-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 50px;
-            font-weight: bold;
-            color: white;
-            animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
-            animation-duration: 5s; /* don't forget to set a duration! */
-        }
-        
-        /* Media query for desktop screens */
-@media screen and (min-width: 1024px) {
-    .subtitle {
-        font-size: 24px; /* Bigger font size for desktop */
-    }
-
-    #animation-text {
-        font-size: 80px; /* Even larger font size for the main animation text */
-    }
-}
-
-
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(3, .5fr); /* 3 columns with equal width */
-    gap: 10px; /* Space between grid items */
-    justify-content: center; /* Center grid items horizontally */
-    align-items: center; /* Center grid items vertically */
-    margin-top: 20px; /* Add some space at the top */
-}
-
-/* Optional: Responsive adjustments */
-@media screen and (max-width: 600px) {
-    .image-grid {
-        grid-template-columns: 1fr; /* Stack images in one column on smaller screens */
-    }
-}
-    </style>
-
-    
-    <div id="animation-container">
-        <div id="animation-text">
-            Ethics for Data Science
-            <div class="subtitle">
-                Ethics for non-ethicists and Data Science for non-data scientists
-                <i class="fa-solid fa-scale-balanced"></i> 
-                <i class="fa-solid fa-code"></i> 
-            </div>
-            <br>
-            <br>
-            <div class="subtitle">
-            Supported by: 
-            </div>
-<div class="image-grid">
-    <img src="images/APSIA-logo.png" alt="Image Description" style="width: 40%; animation: fadeInUp; animation-duration: 10s;">
-    <img src="images/hertie.png" alt="Image Description" style="width: 50%; animation: fadeInUp; animation-duration: 10s;">
-    <img src="images/syr.png" alt="Image Description" style="width: 50%; animation: fadeInUp; animation-duration: 10s;">
+<main class="content quarto-banner-title-block" id="quarto-document-content"><section id="important-section-title" class="level2 callout-type"><h2 class="anchored" data-anchor-id="important-section-title">Important Section Title</h2>
+<p>Your important content or announcement goes here.</p>
+</section><section id="main-section-title" class="level1"><h1>Main Section Title</h1>
+<p>Introduction or opening paragraph goes here. This section introduces the main topics or content of the document.</p>
+<section id="subsection-title" class="level2"><h2 class="anchored" data-anchor-id="subsection-title">Subsection Title</h2>
+<p>Details about the subsection. This can include code snippets, explanations, or any relevant information.</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># R code goes here</span></span>
+<span></span>
+<span><span class="co"># Example</span></span>
+<span></span>
+<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span></span>
+<span></span>
+<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">^</span><span class="fl">2</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
 </div>
-
-        </div>
-
-        <canvas id="canvas"></canvas>
-        <button class="btn-21"> 
-            <span> Learn more </span> 
-        </button>
-        <canvas id="demo-canvas"></canvas>
-    </div>
-
-
-
-<section class="section">
-  <div class="image-box" data-reveal="left">
-    <img src="images/berlin.jpg" alt="" class="img">
-  </div>
-  <div class="content-box">
-    <h2 class="title" data-reveal="left">
-      Ethics for non-ethicists
-    </h2>
-    <p class="text" data-reveal="left">
-      Ethics for non-ethicists is a broad topic that aims to introduce the fundamental concepts and principles of ethical theory and moral philosophy to individuals without a formal background in ethics. The goal is to provide a foundational understanding of how ethical decisions are made, the various ethical frameworks that can guide decision-making, and the importance of ethical considerations in personal, professional, and public life.
-    </p>
-  </div>
-  <div class="content-box">
-    <h2 class="title" data-reveal="left">
-      Data Science for non-data scientists 
-    </h2>
-    <p class="text" data-reveal="left" style="font-size: 10em;">
-      Data science for non-data scientists involves introducing the core principles, tools, and applications of data science in a way that is accessible and relevant to individuals without a technical background. The aim is to demystify data science and show how it can be applied in various fields to inform decision-making, solve problems, and uncover insights. 
-    </p>
-  </div>
-  <div class="image-box" data-reveal="left">
-    <img src="images/berlin2.jpg" alt="" class="img">
-    </div>
-    
-</section>
-
-<div class="container-footer1">
-
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Cite this page: Lehmann, L. (2023, April 18). <em>Introduction to Social Media Scraping</em>. Hertie Coding Club. <a href="https://www.hertiecodingclub.com/learn/rstudio/social_media_scraping/">URL</a></p>
+</div>
 </div>
 
 
-<div class="wrap" style="margin-top: 100px;">
-
-<div class="tile"> 
-<a href="../data_science/data_science.html" style="text-decoration: none; color: inherit;" target="_blank">
-  <img src="https://images.unsplash.com/photo-1464054313797-e27fb58e90a9?dpr=1&amp;auto=format&amp;crop=entropy&amp;fit=crop&amp;w=1500&amp;h=996&amp;q=80">
-  <div class="text-cards">
-  <h1> Data Science for non-data scientists </h1>
-  <h2 class="animate-text"> More lorem ipsum bacon ipsum.</h2>
-  <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
-      </div>
-  </a></div><a href="../data_science/data_science.html" style="text-decoration: none; color: inherit;" target="_blank">
-
-
-  </a>
-
-
-  <div class="tile"> 
-  <a href="../ethics/ethics.html" style="text-decoration: none; color: inherit;" target="_blank">
-  <img src="https://images.unsplash.com/photo-1422393462206-207b0fbd8d6b?dpr=1&amp;auto=format&amp;crop=entropy&amp;fit=crop&amp;w=1500&amp;h=1000&amp;q=80">
-  <div class="text-cards">
-  <h1> Ethics for non-ethicists</h1>
-  <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-  <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
-  </div>
- </a></div><a href="../ethics/ethics.html" style="text-decoration: none; color: inherit;" target="_blank">
- 
-</a></div><a href="../ethics/ethics.html" style="text-decoration: none; color: inherit;" target="_blank">
-
-  
-</a></div><a href="../ethics/ethics.html" style="text-decoration: none; color: inherit;" target="_blank">
-
- 
-
-<div class="container-footer2">
-
-
-
-</div>
-
-    <script src="assets/js/demo-2.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-    <script src="assets/js/rAF.js"></script>
-    <script src="assets/js/layer_home.js"></script>
-</a>
-
-
-
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -343,6 +272,150 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -737,24 +810,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
- <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="https://creativecommons.org/licenses/by/2.0/">
 <p><i class="fa-regular fa-copyright fa-s" aria-label="copyright"></i> 2024</p>
 </a>
   </li>  
 </ul>
-    </div>   
-    <div class="nav-footer-center"><a href="../ethics/ethics.html" style="text-decoration: none; color: inherit;" target="_blank">
-</a><p><a href="../ethics/ethics.html" style="text-decoration: none; color: inherit;" target="_blank">· </a><a href="https://quarto.org/"><img src="https://quarto.org/quarto.png" class="img-fluid" alt="Quarto" width="65"></a> engine ·</p>
+</div>   
+    <div class="nav-footer-center">
+<p>· <a href="https://quarto.org/"><img src="https://quarto.org/quarto.png" class="img-fluid" alt="Quarto" width="65"></a> engine ·</p>
 </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="https://github.com">
 <p><i class="fa-brands fa-github fa-lg" aria-label="github"></i></p>
 </a>
@@ -770,12 +842,34 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
-</footer>
+</footer><script>var lightboxQuarto = GLightbox({"skin":"lightwidth","closeEffect":"fade","descPosition":"left","selector":".lightbox","openEffect":"fade","loop":false});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
-
-
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
