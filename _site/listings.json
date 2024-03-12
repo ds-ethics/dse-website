@@ -30,5 +30,13 @@
       "/data_science/ds/social_media_scraping/index.html",
       "/data_science/ds/objects/index.html"
     ]
+  },
+  {
+    "listing": "/ethics/ethics.html",
+    "items": [
+      "/ethics/ethics/approaches/index.html",
+      "/ethics/ethics/example/index.html",
+      "/ethics/ethics/privacy/index.html"
+    ]
   }
 ]

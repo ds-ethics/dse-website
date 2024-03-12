@@ -1941,12 +1941,42 @@ transform: scale(1.3);
 /**/
 
 
+
+
+.cell-output-stdout pre code {
+  background-color: #E8E8E8;
+}
+
+
+
 /*
 code span {
   color: #007BA5;
 }
 */
 /*modify code*/
+
+div.sourceCode {
+  background: #2a2a2a;
+  border: 3px solid #FF7F50;
+  border-style: ;
+  font-size: .9em;
+}
+
+
+div.sourceCode#text {
+  background: linear-gradient(to right, rgba(0, 4, 40, 0.9), rgba(0, 78, 146, 0.9));
+  border: 3px solid #F3182E;
+  border-style: ;
+  font-size: 1.1em;
+}
+
+div.sourceCode pre code {
+  color:red;
+}
+
+
+
 
 /*
 code span.at {
@@ -1967,6 +1997,14 @@ code span.an {
 */
 
 /*functions with arguments*/
+code span.fu {
+  color: #0567E4;
+  font-weight: bold;
+}
+
+code {
+  color: #0567E4;
+}
 
 
 
@@ -1976,6 +2014,15 @@ code span.an {
 
 /*arrows, parenthesis*/
 
+code span.ot { 
+  color: #C60115 !important;
+  
+}
+
+code span.op { 
+  color: #C60115 !important;
+  
+}
 
 /*
 
@@ -1998,72 +2045,22 @@ code span.al {
 
 */
 
-
-
-/*library
-code span.kw {
-  color: #2C7FAB;
+/*Packages and variables*/
+code span.va {
+  color:  white !important;
+  font-weight: bold;
 }
 
-code span.pp {
-  color: #AD0000;
+code.sourceCode python #text{
+  color:  white !important;
 }
 
-code span.in {
-  color: #5E5E5E;
+/*Strings*/
+code span.st {
+  color: #b9ca4a;
 }
 
-code span.vs {
-  color: #20794D;
-}
 
-code span.wa {
-  color: #5E5E5E;
-  font-style: italic;
-}
-
-code span.do {
-  color: #5E5E5E;
-  font-style: italic;
-}
-
-code span.ch {
-  color: #20794D;
-}
-
-code span.dt {
-  color: #AD0000;
-}
-
-*/
-
-/* modify numbers colors
-code span.fl {
-  color: white;
-}
- */
-
-/* modify comments */
-
-
-/* 
-code span.cv {
-  color: #5E5E5E;
-  font-style: italic;
-}
-
-code span.cn {
-  color: #8f5902;
-}
-
-code span.sc {
-  color: #e78c45;
-}
-
-code span.dv {
-  color: #d54e53;
-}
- */
 
 :not(img) a {
   /* animation properties */

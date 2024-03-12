@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Johannes Himmelreich">
+<meta name="dcterms.date" content="2024-02-26">
 
-<title>{{&lt; fa solid scale-balanced &gt;}} Ethics &lt;span style='font-size: 18px;'&gt;✕&lt;/span&gt; Data Science {{&lt; fa solid code-branch &gt;}} – instructors</title>
+<title>{{&lt; fa solid scale-balanced &gt;}} Ethics &lt;span style='font-size: 18px;'&gt;✕&lt;/span&gt; Data Science {{&lt; fa solid code-branch &gt;}} – Privacy</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,35 +72,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-for-instructors .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-subtitle','listing-categories','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-for-instructors'] = new List('listing-for-instructors', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <style>html{ scroll-behavior: smooth; }</style>
 <!-- Primary Meta Tags -->
 <title>Hertie Coding Club - Everybody can learn to code</title>
@@ -107,60 +81,31 @@ ul.task-list li input[type="checkbox"] {
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.hertiecodingclub.com">
-<meta property="og:title" content=" Ethics ✕ Data Science  -">
-<meta property="og:description" content="">
+<meta property="og:title" content=" Ethics ✕ Data Science  - Privacy">
+<meta property="og:description" content="What is it good for?">
 <!-- Primary Meta Tags -->
-<title>Hertie Coding Club - Learn</title>
-<meta name="title" content="Hertie Coding Club - Learn">
-
+<title>Hertie Coding Club - RStudio 101</title>
+<meta name="title" content="Hertie Coding Club - Enable Multithread with data.table in Mac/Intel chips">
+<meta name="description" content="Learn the basics of R: open a project, setting a working directory and navigate RStudio interface">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.hertiecodingclub.com/learn/rstudio.html">
-<meta property="og:title" content="Hertie Coding Club - Learn">
+<meta property="og:url" content="https://www.hertiecodingclub.com/learn/rstudio/rstudio101/">
+<meta property="og:title" content="Hertie Coding Club - RStudio 101">
+<meta property="og:description" content="Learn the basics of R: open a project, setting a working directory and navigate RStudio interface">
 
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title"><i class="fa-solid fa-scale-balanced" aria-label="scale-balanced"></i> Ethics <span style="font-size: 18px;">✕</span> Data Science <i class="fa-solid fa-code-branch" aria-label="code-branch"></i></span>
     </a>
   </div>
@@ -171,28 +116,28 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> <i class="bi bi-house-fill" role="img">
+    <a class="nav-link" href="../../../index.html"> <i class="bi bi-house-fill" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../ethics/ethics.html"> 
+    <a class="nav-link" href="../../../ethics/ethics.html"> 
 <span class="menu-text"><i class="fa-solid fa-scale-balanced" aria-label="scale-balanced"></i> Ethics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../data_science/data_science.html"> 
+    <a class="nav-link" href="../../../data_science/data_science.html"> 
 <span class="menu-text"><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> Data Science</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../for_instructors/instructors.html" aria-current="page"> 
+    <a class="nav-link" href="../../../for_instructors/instructors.html"> 
 <span class="menu-text"><i class="fa-solid fa-landmark" aria-label="landmark"></i> For instructors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../references/reference.html"> 
+    <a class="nav-link" href="../../../references/reference.html"> 
 <span class="menu-text"><i class="fa-solid fa-newspaper" aria-label="newspaper"></i> References</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about/about_us.html"> 
+    <a class="nav-link" href="../../../about/about_us.html"> 
 <span class="menu-text"><i class="fa-solid fa-hand-point-up" aria-label="hand-point-up"></i> About</span></a>
   </li>  
 </ul>
@@ -203,7 +148,50 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Privacy</h1>
+            <p class="subtitle lead">What is it good for?</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Foundational Concept</div>
+                <div class="quarto-category">Privacy</div>
+                <div class="quarto-category">Data Collection</div>
+              </div>
+                  </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author">Johannes Himmelreich <a href="mailto:jrhimmel@syr.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-2163-0082" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="www.syracuse.edu">
+              Maxwell School at Syracuse University
+              </a>
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 26, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -211,135 +199,93 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#for-instructors" id="toc-for-instructors" class="nav-link active" data-scroll-target="#for-instructors">For instructors</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#privacy-today" id="toc-privacy-today" class="nav-link" data-scroll-target="#privacy-today">Privacy Today</a>
+  <ul class="collapse">
+  <li><a href="#information-problems" id="toc-information-problems" class="nav-link" data-scroll-target="#information-problems">Information problems</a></li>
+  <li><a href="#choice-problems" id="toc-choice-problems" class="nav-link" data-scroll-target="#choice-problems">Choice problems</a></li>
+  </ul></li>
+  <li><a href="#against-consent" id="toc-against-consent" class="nav-link" data-scroll-target="#against-consent">Against Consent</a></li>
+  <li><a href="#data-protection-instead-of-privacy" id="toc-data-protection-instead-of-privacy" class="nav-link" data-scroll-target="#data-protection-instead-of-privacy">Data Protection Instead of Privacy</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
 
-<p>Welcome to the “For Instructors” section of “Data Science X Ethics” – a dedicated space where education meets innovation at the crossroads of data science and ethical responsibility. As educators shaping the next generation of data scientists, your role in integrating ethical considerations into the technical curriculum is more crucial than ever. In this era of rapid technological advancement, teaching data science is not just about coding, algorithms, and data analysis; it’s equally about instilling a strong ethical foundation in your students. Click here to access the <a href="https://quarto.org/docs/presentations/revealjs/demo/#/title-slide">Instructor’s Guide</a> for “Data Science X Ethics.”</p>
-<section id="for-instructors" class="level2">
-<h2 class="anchored" data-anchor-id="for-instructors">For instructors</h2>
-<div id="listing-for-instructors" class="quarto-listing quarto-listing-container-default">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-for-instructors-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-for-instructors'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Category1,Category2,Category3" data-listing-date-sort="NaN" data-listing-file-modified-sort="1708456655167" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="70">
-<div class="thumbnail">
-<p><a href="../for_instructors/guide/ds/index.html" class="no-external"></a></p><a href="../for_instructors/guide/ds/index.html" class="no-external">
-<p><img src="../for_instructors/guide/ds/images/Social.png" class="thumbnail-image"></p>
-</a><p><a href="../for_instructors/guide/ds/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../for_instructors/guide/ds/index.html" class="no-external">Data Science</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../for_instructors/guide/ds/index.html" class="no-external">Subtitle or Brief Description</a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Category1'); return false;">
-Category1
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Category2'); return false;">
-Category2
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Category3'); return false;">
-Category3
-</div>
-</div>
-</div>
-<div class="metadata">
-<a href="../for_instructors/guide/ds/index.html" class="no-external">
-<div class="listing-date">
-Invalid Date
-</div>
-<div class="listing-author">
-Your Name
-</div>
-<div class="listing-reading-time">
-1 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Category1,Category2,Category3" data-listing-date-sort="NaN" data-listing-file-modified-sort="1708456682002" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="70">
-<div class="thumbnail">
-<p><a href="../for_instructors/guide/ethics/index.html" class="no-external"></a></p><a href="../for_instructors/guide/ethics/index.html" class="no-external">
-<p><img src="../for_instructors/guide/ethics/images/Social.png" class="thumbnail-image"></p>
-</a><p><a href="../for_instructors/guide/ethics/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../for_instructors/guide/ethics/index.html" class="no-external">Ethics</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../for_instructors/guide/ethics/index.html" class="no-external">Subtitle or Brief Description</a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Category1'); return false;">
-Category1
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Category2'); return false;">
-Category2
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Category3'); return false;">
-Category3
-</div>
-</div>
-</div>
-<div class="metadata">
-<a href="../for_instructors/guide/ethics/index.html" class="no-external">
-<div class="listing-date">
-Invalid Date
-</div>
-<div class="listing-author">
-Your Name
-</div>
-<div class="listing-reading-time">
-1 min
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Main idea
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You have no idea what privacy is. But you still know what you need to do to protect it.</p>
+</div>
+</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Parks &amp; Recreation is a great TV series. Here is one scene that we’ll return to in our discussion of privacy.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/8xn1rO1oQmk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Perhaps you have felt like Ron Swanson, the male protagonist, does in this clip: You came to feel the limits of your privacy and there was little you could do — short of throwing all your devices in the trash.</p>
+<p>This module aims to improve conversations and discussions about privacy.</p>
+</section>
+<section id="privacy-today" class="level1 page-columns page-full">
+<h1>Privacy Today</h1>
+<p>We all have been like Ron Swanson here. You too may have been surprised, for example, when you learn how easy it is to buy your location data, your credit score, or find out your address and phone number. Except to the cynic (who isn’t surprised by any bad news), the realization that “it learns information about me” should be a familiar one.</p>
+<p>But in another way, we’re not like Ron Swanson at all. Throwing away our devices to protect privacy at all costs is just not something we would do. In some sense you don’t have a real choice that would give you full privacy.</p>
+<p>This is the <strong>pathology of privacy today</strong>: Everyone lacks awares of the limits of their privacy. Moreover, there are limits to what people can do to safeguard their privacy.</p>
+<section id="information-problems" class="level2">
+<h2 class="anchored" data-anchor-id="information-problems">Information problems</h2>
+<p>Sometimes, you know how limited your privacy is. You remember there were privacy settings in that app that you just couldn’t bother to check. And you know that online advertisers track you. And you know that you signed something at your doctor’s office about sharing your patient data.</p>
+<p>But often, privacy today is violated unwittingly. For one, it’s basically impossible to be aware of all the ways in which your data is collected, analyzed, and shared. Similarly, nobody can possibly read all the terms and conditions and privacy policies that they are agreeing to.</p>
+<p>In short, there is an information problem: Individuals don’t know — and, to some extent, cannot know — all they need to know to safeguard their privacy. And, arguably, we shouldn’t spend much of our time and mental energy on protecting our privacy.</p>
+</section>
+<section id="choice-problems" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="choice-problems">Choice problems</h2>
+<p>The second part of the state of individual privacy today has to do with choices. We cannot throw away all of our devices, like Ron Swanson does. The options that we have to protect our privacy, even when we are aware of them, is practically limited. Metadata collection that is required by law is hard to opt out of. Even tech-savvy individuals are outgunned by the professional data, surveillance, and security industry.</p>
+<p>And then, we also have a cognitive system that is easy to exploit. As such, websites and apps use various forms of deception to get you to do things.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> You end up subscribing to a service without knowing, agreeing to terms without having read them, or clicking “Continue” because the other button, “No,” was made hard to see.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/alexapattern-01.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Deceptive design"><img src="images/alexapattern-01.jpeg" class="img-fluid figure-img" width="337" alt="Deceptive design"></a></p>
+<figcaption>Deceptive design</figcaption>
+</figure>
+</div>
+</div></div><p>In sum, <strong>privacy is inadvertently infringed on a regular basis</strong> in two respects</p>
+<ol type="1">
+<li><p>Individuals hold <strong>false beliefs</strong> about the state of their privacy and the options in front of them</p></li>
+<li><p>Individuals have limited options to safeguard their privacy</p></li>
+</ol>
+<p>These two points are practically necessary. That is, given how things are, these are two starting points that we cannot change. You can only read so many terms and conditions, if you can read any, and there is only so much you can do.</p>
+</section>
+</section>
+<section id="against-consent" class="level1">
+<h1>Against Consent</h1>
+<p>All of this is bad news for consent.</p>
+<p>as</p>
+</section>
+<section id="data-protection-instead-of-privacy" class="level1">
+<h1>Data Protection Instead of Privacy</h1>
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>See <a href="https://www.deceptive.design" class="uri">https://www.deceptive.design</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -790,9 +736,34 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"fade","descPosition":"left","openEffect":"fade","selector":".lightbox","skin":"lightwidth","loop":false});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 
 
-<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
