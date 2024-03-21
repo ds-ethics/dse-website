@@ -82,7 +82,7 @@ comments: false
 <body>    
     <div id="animation-container">
         <div id="animation-text">
-            Ethics for Data Science (update)
+            Ethics for Data Science
             <div class="subtitle">
                 Ethics for non-ethicists and Data Science for non-data scientists
                 <i class="fa-solid fa-scale-balanced"></i> 
