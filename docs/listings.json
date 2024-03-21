@@ -7,16 +7,11 @@
     ]
   },
   {
-    "listing": "/ethic/ethics.html",
+    "listing": "/data_science/data_science.html",
     "items": [
-      "/ethic/ethic/example/index.html"
-    ]
-  },
-  {
-    "listing": "/data_science/i2ds.html",
-    "items": [
-      "/data_science/I2DS/i2ds2021/index.html",
-      "/data_science/I2DS/i2ds2022/index.html"
+      "/data_science/ds/example/index.html",
+      "/data_science/ds/social_media_scraping/index.html",
+      "/data_science/ds/objects/index.html"
     ]
   },
   {
@@ -24,11 +19,10 @@
     "items": []
   },
   {
-    "listing": "/data_science/data_science.html",
+    "listing": "/data_science/i2ds.html",
     "items": [
-      "/data_science/ds/example/index.html",
-      "/data_science/ds/social_media_scraping/index.html",
-      "/data_science/ds/objects/index.html"
+      "/data_science/I2DS/i2ds2021/index.html",
+      "/data_science/I2DS/i2ds2022/index.html"
     ]
   },
   {
