@@ -66,6 +66,7 @@ This tutorial is designed for users with a basic understanding of Python and Dee
 #| warning: false
 #| output: false
 
+
 !pip install pandas numpy matplotlib
 !pip install Aequitas
 !pip install keras_tuner
@@ -133,43 +134,313 @@ In this tutorial we are working with the COMPAS Recidivism Risk Score Data and A
 
 The tabular dataset is used in U.S. court proceedings to evaluate the probability of a defendant reoffending. It is available in csv format for free and contains the following information (Source: https://mlr3fairness.mlr-org.com/reference/compas.html#pre-processing) :
 
-* (integer) age : The age of defendants.
+-  (integer) **age** : The age of defendants.
 
-* (factor) c_charge_degree : The charge degree of defendants. F: Felony M: Misdemeanor
+-  (factor) **c_charge_degree** : The charge degree of defendants. F: Felony M: Misdemeanor
 
-* (factor) race: The race of defendants.
+- (factor) **race**: The race of defendants.
 
-* (factor) age_cat: The age category of defendants.
+- (factor) **age_cat**: The age category of defendants.
 
-* (factor) score_text: The score category of defendants.
+- (factor) **score_text**: The score category of defendants.
 
-* (factor) sex: The sex of defendants.
+- (factor) **sex**: The sex of defendants.
 
-* (integer) priors_count: The prior criminal records of defendants.
+- (integer) **priors_count**: The prior criminal records of defendants.
 
-* (integer) days_b_screening_arrest: The count of days between screening date and (original) arrest date. If they are too far apart, that may indicate an error. If the value is negative, that indicate the screening date happened before the arrest date.
+- (integer) **days_b_screening_arrest**: The count of days between screening date and (original) arrest date. If they are too far apart, that may - indicate an error. If the value is negative, that indicate the screening date happened before the arrest date.
 
-* (integer) decile_score: Indicate the risk of recidivism (Min=1, Max=10)
+- (integer) **decile_score**: Indicate the risk of recidivism (Min=1, Max=10)
 
-* (integer) is_recid: Binary variable indicate whether defendant is rearrested at any time.
+- (integer) **is_recid**: Binary variable indicate whether defendant is rearrested at any time.
 
-* (factor) two_year_recid: Binary variable indicate whether defendant is rearrested at within two years.
+- (factor) **two_year_recid**: Binary variable indicate whether defendant is rearrested at within two years.
 
-* (numeric) length_of_stay: The count of days stay in jail.
+- (numeric) **length_of_stay**: The count of days stay in jail.
 
 In the course of the tutorial, we'll also work with a version of the COMPAS data, that was processed to work well with the aequitas package - this version of the dataset can be found in this Github repository: https://github.com/dssg/aequitas/tree/master/examples/data. Here, only a subset of the variables is considered, but it includes all important variables for demonstrating the package's benefits. It includes:
 
-* (integer) entity_id: ID variable
+- (integer) **entity_id**: ID variable
 
-* (integer) score: Risk score of defendants, binary
+- (integer) **score**: Risk score of defendants, binary
 
-* (factor) label_value: Binary variable indicate whether defendant is rearrested
+- (factor) **label_value**: Binary variable indicate whether defendant is rearrested
 
-* (factor) race: The race of defendants.
+- (factor) *race*: The race of defendants.
 
-* (factor) sex: The sex of defendants
+- (factor) **sex**: The sex of defendants
 
-* (factor) age_cat: The age category of defendants
+- (factor) **age_cat**: The age category of defendants
+
+<br>
+
+# Part 1: Data Exploration and Bias Detection
+
+**Note that the first part of this tutorial is largely based on the documentation of the aequitas-library (https://dssg.github.io/aequitas/examples/compas_demo.html?highlight=xtab). Since the COMPAS data is a widely-known and commonly used data set for showing issues with biased data, the authors used it for demonstrating the library's core functions. Instead of linking the documentation, we decided to include the most important features of the library in the first part of our tutorial, partially adapting some code. More, we adjusted some codes in order to show the metrics that were most important to us for demonstrating bias in the compas data.**
+
+<br>
+
+For a first overview of the data, we load it directly from GitHub. Note that we use a version of the Compas data here that is explicitly well-suited for the Aequitas library, with a restricted number of columns and slightly deviating variable names. From printing the first 5 rows, we can retrieve that an ID variable, a (binary) risk score, a (binary) recidivism indicator, and three demographic variables (race, sex, age) are included.
+
+```{python ssl}
+#| output: false
+#| echo: false
+
+import ssl
+
+ssl._create_default_https_context = ssl._create_stdlib_context
+
+```
+
+
+## 1.1 Data Download
+
+```{python load_data}
+
+# Load the data
+
+df_compas_aeq = pd.read_csv("https://raw.githubusercontent.com/dssg/aequitas/master/examples/data/compas_for_aequitas.csv")
+df_compas_aeq.head()
+
+```
+
+<br>
+
+## Exploratory Data Visualization
+
+### Distribution of Defendants by Demographics (Race, Age, Sex) and Risk Scores
+
+<br>
+
+As a first step, we are exploring the distribution of our defendant data with regards to demographic characteristics and the calculated risk scores. As we can see, African-Americans, Caucasians, males, and defendants aged 25-45 are the subgroups that are highly represented in the data. Additionally, we can already see from the plots that African-Americans and defendants aged under 25 are the only subgroups where the majority has been assigned a high risk score.
+
+```{python plot}
+#|code-fold: true
+Reds_palette = sns.diverging_palette(204, 0, n=2)
+
+# Create a figure with 3 subplots (3 rows, 1 column)
+fig, axes = plt.subplots(3, 1, figsize=(8, 16))
+
+# race
+by_race = sns.countplot(
+    ax=axes[0],
+    x="race",
+    hue="score",
+    data=df_compas_aeq,
+    palette=Reds_palette
+)
+
+axes[0].set_title("Distribution of Defendants by Race and Risk Score (Decile)")
+axes[0].set_xlabel("Race")
+axes[0].set_ylabel("Count")
+axes[0].legend(loc='upper right', title='Risk Score Decile')
+axes[0].grid(True, linestyle='--', linewidth=0.5)
+axes[0].tick_params(axis='x', rotation=45)
+
+# sex
+by_sex = sns.countplot(
+    ax=axes[1],
+    x="sex",
+    hue="score",
+    data=df_compas_aeq,
+    palette=Reds_palette
+)
+
+# Add title and labels
+axes[1].set_title("Distribution of Defendants by Sex and Risk Score (Decile)")
+axes[1].set_xlabel("Sex")
+axes[1].set_ylabel("Count")
+
+# sex
+axes[1].legend(loc='upper right', title='Risk Score')
+axes[1].grid(True, linestyle='--', linewidth=0.5)
+axes[1].tick_params(axis='x', rotation=45)
+
+# Create countplot for age
+by_age = sns.countplot(
+    ax=axes[2],
+    x="age_cat",
+    hue="score",
+    data=df_compas_aeq,
+    palette=Reds_palette
+)
+
+axes[2].set_title("Distribution of Defendants by Age and Risk Score (Decile)")
+axes[2].set_xlabel("Age Category")
+axes[2].set_ylabel("Count")
+
+axes[2].legend(loc='upper right', title='Risk Score')
+
+axes[2].grid(True, linestyle='--', linewidth=0.5)
+
+axes[2].tick_params(axis='x', rotation=45)
+
+plt.tight_layout()
+
+plt.show()
+
+```
+
+<br>
+
+## Distribution of Defendants by Demographics and Recidivism
+
+Next, we are looking at the same demographic subgroups and whether the defendants actually committed crime again. We can already see, that there seems to be a mismatch between the assigned risk scores and the recidivism patterns.
+
+
+```{python plot2}
+#|code-fold: true
+
+coolwarm_two_colors = sns.color_palette("coolwarm", n_colors=2)
+coolwarm_palette = sns.color_palette("coolwarm", as_cmap=True)
+
+
+# Create a figure with 3 subplots (3 rows, 1 column)
+fig, axes = plt.subplots(3, 1, figsize=(8, 16))
+
+# Create countplot for race
+label_by_race = sns.countplot(
+    ax=axes[0],
+    x="race",
+    hue="label_value",
+    data=df_compas_aeq,
+    palette=coolwarm_two_colors
+)
+
+# Add title and labels for race
+axes[0].set_title("Levels of recidivism by Race")
+axes[0].set_xlabel("Race")
+axes[0].set_ylabel("Count")
+axes[0].grid(True, linestyle='--', linewidth=0.5)
+axes[0].legend(loc='upper right', title='Recidivism')
+axes[0].tick_params(axis='x', rotation=45)
+
+# Create countplot for sex
+label_by_sex = sns.countplot(
+    ax=axes[1],
+    x="sex",
+    hue="label_value",
+    data=df_compas_aeq,
+    palette=coolwarm_two_colors
+)
+
+# Add title and labels for sex
+axes[1].set_title("Levels of recidivism by Sex")
+axes[1].set_xlabel("Sex")
+axes[1].set_ylabel("Count")
+axes[1].grid(True, linestyle='--', linewidth=0.5)
+axes[1].legend(loc='upper right', title='Recidivism')
+axes[1].tick_params(axis='x', rotation=45)
+
+# Create countplot for age category
+label_by_age = sns.countplot(
+    ax=axes[2],
+    x="age_cat",
+    hue="label_value",
+    data=df_compas_aeq,
+    palette=coolwarm_two_colors
+)
+
+# Add title and labels for age category
+axes[2].set_title("Levels of recidivism by Age Category")
+axes[2].set_xlabel("Age Category")
+axes[2].set_ylabel("Count")
+axes[2].grid(True, linestyle='--', linewidth=0.5)
+axes[2].legend(loc='upper right', title='Recidivism')
+
+# Adjust layout
+plt.tight_layout()
+
+# Display the plot
+plt.show()
+
+
+
+```
+
+<br>
+
+## Introducing the Aequitas-Library
+
+After eyeballing our data set and noticing that there might be some fairness issues, we can now use the Aequitas library to calculate common metrics that indicate biases in subgroups. More specifically, we are using the library's Group() class that evaluates biases across all demographic subgroups in the dataset. Note here that the library requires the input data to have columns named "score" and "label_value". These columns are by default used to calculate the bias metrics.
+
+In order to use Aequitas for your purposes, you should rename the columns that you want to check for potential biases to "score" and "label_value". Additionally, at least one column needs to include grouping information (in our example, several demographic variables). ID variables as entity_id are by default not treated as grouping variables.
+
+The following code chunk calculates these metrices for all demographic subgroups using the get_crosstabs function, based on the risk score and the label_value, which indicates the recidivism.
+
+
+```{python plot2}
+#|code-fold: true
+
+g = Group()
+xtab, _ = g.get_crosstabs(df_compas_aeq)
+xtab
+
+```
+
+<br>
+
+Additionally, we can use list_absolute_metrics() for an improved overview grouped by the demographics and with rounded values for the metrics.
+
+<br>
+
+```{python plot3}
+#|code-fold: true
+
+absolute_metrics = g.list_absolute_metrics(xtab)
+xtab[['attribute_name', 'attribute_value'] + absolute_metrics].round(2)
+
+```
+
+<br>
+
+Next, we can use the information on the metrics that have been calculated by the previous chunk to plot the present biases. For that purpose, the `Plot()` class is used and stored in a variable. Afterwards, this variable can be used to plot the metrics of interest. The next code chunk exemplarily plots the **false positive rate** for all subgroups. In the context of our data, false positive cases are present when defendants are classified high risk although they did not recidivate. As we can see from the plot below, these cases are especially present amoung younger as well as among African- and Native Americans.
+
+Additionally, the colors by default indicate how many respondents are included in the respective subgroup. The exact number can also be retrieved from the bar labels. Referring to the group sizes, you can see that the two races with they highest FPR are of significantly different size: While there are only 18 Native Americans included in our data, a total of nearly 3,700 African-American defendants are present.  
+
+
+```{python plot4}
+#|code-fold: true
+
+aqp = Plot()
+fpr = aqp.plot_group_metric(xtab, 'fpr')
+
+```
+
+
+<br>
+
+For better readability, and when only interested in the rates rather then the absolute numbers, we can switch the axes and rotate the x-axis labels:
+
+<br>
+
+```{python plot5}
+#|code-fold: true
+
+xtab_df = xtab[['attribute_name', 'attribute_value'] + absolute_metrics].round(2).set_index(['attribute_name', 'attribute_value'])
+xtab_df = xtab_df.reset_index()
+
+# Create a figure for the plot
+plt.figure(figsize=(9, 6))
+
+# Create a bar plot for FPR
+ax = sns.barplot(x='attribute_value', y='fpr', hue='attribute_name', data=xtab_df, palette='coolwarm', dodge=True)
+ax.set_xticklabels(ax.get_xticklabels(), rotation=60, ha='right')
+
+
+# Add title and labels
+plt.title('False Positive Rate (FPR) by Attribute')
+plt.xlabel('Attribute Value')
+plt.ylabel('FPR')
+
+# Rotate x-axis labels for better readability
+plt.xticks(rotation=60)
+
+# Show the plot
+plt.show()
+
+```
+
 
 
 

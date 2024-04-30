@@ -11,7 +11,7 @@
 <meta name="author" content="Hannah Schweren">
 <meta name="dcterms.date" content="2023-12-05">
 
-<title>{{&lt; fa solid scale-balanced &gt;}} Ethics &lt;span style='font-size: 18px;'&gt;✕&lt;/span&gt; Data Science {{&lt; fa solid code-branch &gt;}} – quarto-input293936611ae99988</title>
+<title>{{&lt; fa solid scale-balanced &gt;}} Ethics &lt;span style='font-size: 18px;'&gt;✕&lt;/span&gt; Data Science {{&lt; fa solid code-branch &gt;}} – quarto-inputf8caa7eb3db8fef</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -61,7 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
@@ -79,6 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-contrib/animate-4.1.1/animate.min.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -127,6 +130,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:url" content="https://www.hertiecodingclub.com/learn/rstudio/rstudio101/">
 <meta property="og:title" content="Hertie Coding Club - RStudio 101">
 <meta property="og:description" content="Learn the basics of R: open a project, setting a working directory and navigate RStudio interface">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <style>:root{--animate-duration:3s;--animate-delay:2s;--animate-repeat:1}</style>
 <style>:root{--animate-duration:3s;--animate-delay:2s;--animate-repeat:1}</style>
 <style>:root{--animate-duration:3s;--animate-delay:2s;--animate-repeat:1}</style>
@@ -239,6 +245,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#background-and-prerequisites" id="toc-background-and-prerequisites" class="nav-link" data-scroll-target="#background-and-prerequisites">Background and Prerequisites</a></li>
   </ul></li>
   <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description">Data Description</a></li>
+  <li><a href="#part-1-data-exploration-and-bias-detection" id="toc-part-1-data-exploration-and-bias-detection" class="nav-link" data-scroll-target="#part-1-data-exploration-and-bias-detection">Part 1: Data Exploration and Bias Detection</a>
+  <ul class="collapse">
+  <li><a href="#data-download" id="toc-data-download" class="nav-link" data-scroll-target="#data-download">1.1 Data Download</a></li>
+  <li><a href="#exploratory-data-visualization" id="toc-exploratory-data-visualization" class="nav-link" data-scroll-target="#exploratory-data-visualization">Exploratory Data Visualization</a>
+  <ul class="collapse">
+  <li><a href="#distribution-of-defendants-by-demographics-race-age-sex-and-risk-scores" id="toc-distribution-of-defendants-by-demographics-race-age-sex-and-risk-scores" class="nav-link" data-scroll-target="#distribution-of-defendants-by-demographics-race-age-sex-and-risk-scores">Distribution of Defendants by Demographics (Race, Age, Sex) and Risk Scores</a></li>
+  </ul></li>
+  <li><a href="#distribution-of-defendants-by-demographics-and-recidivism" id="toc-distribution-of-defendants-by-demographics-and-recidivism" class="nav-link" data-scroll-target="#distribution-of-defendants-by-demographics-and-recidivism">Distribution of Defendants by Demographics and Recidivism</a></li>
+  <li><a href="#introducing-the-aequitas-library" id="toc-introducing-the-aequitas-library" class="nav-link" data-scroll-target="#introducing-the-aequitas-library">Introducing the Aequitas-Library</a></li>
+  </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -272,7 +288,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>A solid understanding of model training is crucial, as well as knowledge of common machine learning libraries such as <code>Keras</code> and <code>scikit-learn</code>. Users should also be aware of the ethical and policy considerations surrounding machine learning applications, particularly in relation to bias and fairness.</p></li>
 <li><p>Lastly, a conceptual understanding of how neural networks operate, including layers, activation functions, and backpropagation, will enhance the learning experience of the user. Overall, a basic background in machine learning fundamentals will help users to engage more effectively with our tutorial.</p></li>
 </ul>
-<div id="e8f74e80" class="cell" data-message="false" data-execution_count="1">
+<div id="c09a8626" class="cell" data-message="false" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install pandas numpy matplotlib</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install Aequitas</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install keras_tuner</span>
@@ -280,7 +296,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install BlackBoxAuditing</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install tensorflow</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="d122342b" class="cell" data-message="false" data-execution_count="2">
+<div id="48b30feb" class="cell" data-message="false" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data visualization</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -334,29 +350,877 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In this tutorial we are working with the COMPAS Recidivism Risk Score Data and Analysis (Source: Pro Publica, https://www.propublica.org/datastore/dataset/compas-recidivism-risk-score-data-and-analysis) This dataset is a classical example for bias in machine learning. We specifically liked using this dataset as an example because it reveils the possible harmfull negative impact on real world decisions, that algorithms can have and the resulting policy responsibility.</p>
 <p>The tabular dataset is used in U.S. court proceedings to evaluate the probability of a defendant reoffending. It is available in csv format for free and contains the following information (Source: https://mlr3fairness.mlr-org.com/reference/compas.html#pre-processing) :</p>
 <ul>
-<li><p>(integer) age : The age of defendants.</p></li>
-<li><p>(factor) c_charge_degree : The charge degree of defendants. F: Felony M: Misdemeanor</p></li>
-<li><p>(factor) race: The race of defendants.</p></li>
-<li><p>(factor) age_cat: The age category of defendants.</p></li>
-<li><p>(factor) score_text: The score category of defendants.</p></li>
-<li><p>(factor) sex: The sex of defendants.</p></li>
-<li><p>(integer) priors_count: The prior criminal records of defendants.</p></li>
-<li><p>(integer) days_b_screening_arrest: The count of days between screening date and (original) arrest date. If they are too far apart, that may indicate an error. If the value is negative, that indicate the screening date happened before the arrest date.</p></li>
-<li><p>(integer) decile_score: Indicate the risk of recidivism (Min=1, Max=10)</p></li>
-<li><p>(integer) is_recid: Binary variable indicate whether defendant is rearrested at any time.</p></li>
-<li><p>(factor) two_year_recid: Binary variable indicate whether defendant is rearrested at within two years.</p></li>
-<li><p>(numeric) length_of_stay: The count of days stay in jail.</p></li>
+<li><p>(integer) <strong>age</strong> : The age of defendants.</p></li>
+<li><p>(factor) <strong>c_charge_degree</strong> : The charge degree of defendants. F: Felony M: Misdemeanor</p></li>
+<li><p>(factor) <strong>race</strong>: The race of defendants.</p></li>
+<li><p>(factor) <strong>age_cat</strong>: The age category of defendants.</p></li>
+<li><p>(factor) <strong>score_text</strong>: The score category of defendants.</p></li>
+<li><p>(factor) <strong>sex</strong>: The sex of defendants.</p></li>
+<li><p>(integer) <strong>priors_count</strong>: The prior criminal records of defendants.</p></li>
+<li><p>(integer) <strong>days_b_screening_arrest</strong>: The count of days between screening date and (original) arrest date. If they are too far apart, that may - indicate an error. If the value is negative, that indicate the screening date happened before the arrest date.</p></li>
+<li><p>(integer) <strong>decile_score</strong>: Indicate the risk of recidivism (Min=1, Max=10)</p></li>
+<li><p>(integer) <strong>is_recid</strong>: Binary variable indicate whether defendant is rearrested at any time.</p></li>
+<li><p>(factor) <strong>two_year_recid</strong>: Binary variable indicate whether defendant is rearrested at within two years.</p></li>
+<li><p>(numeric) <strong>length_of_stay</strong>: The count of days stay in jail.</p></li>
 </ul>
 <p>In the course of the tutorial, we’ll also work with a version of the COMPAS data, that was processed to work well with the aequitas package - this version of the dataset can be found in this Github repository: https://github.com/dssg/aequitas/tree/master/examples/data. Here, only a subset of the variables is considered, but it includes all important variables for demonstrating the package’s benefits. It includes:</p>
 <ul>
-<li><p>(integer) entity_id: ID variable</p></li>
-<li><p>(integer) score: Risk score of defendants, binary</p></li>
-<li><p>(factor) label_value: Binary variable indicate whether defendant is rearrested</p></li>
-<li><p>(factor) race: The race of defendants.</p></li>
-<li><p>(factor) sex: The sex of defendants</p></li>
-<li><p>(factor) age_cat: The age category of defendants</p></li>
+<li><p>(integer) <strong>entity_id</strong>: ID variable</p></li>
+<li><p>(integer) <strong>score</strong>: Risk score of defendants, binary</p></li>
+<li><p>(factor) <strong>label_value</strong>: Binary variable indicate whether defendant is rearrested</p></li>
+<li><p>(factor) <em>race</em>: The race of defendants.</p></li>
+<li><p>(factor) <strong>sex</strong>: The sex of defendants</p></li>
+<li><p>(factor) <strong>age_cat</strong>: The age category of defendants</p></li>
 </ul>
+<p><br></p>
+</section>
+<section id="part-1-data-exploration-and-bias-detection" class="level1">
+<h1>Part 1: Data Exploration and Bias Detection</h1>
+<p><strong>Note that the first part of this tutorial is largely based on the documentation of the aequitas-library (https://dssg.github.io/aequitas/examples/compas_demo.html?highlight=xtab). Since the COMPAS data is a widely-known and commonly used data set for showing issues with biased data, the authors used it for demonstrating the library’s core functions. Instead of linking the documentation, we decided to include the most important features of the library in the first part of our tutorial, partially adapting some code. More, we adjusted some codes in order to show the metrics that were most important to us for demonstrating bias in the compas data.</strong></p>
+<p><br></p>
+<p>For a first overview of the data, we load it directly from GitHub. Note that we use a version of the Compas data here that is explicitly well-suited for the Aequitas library, with a restricted number of columns and slightly deviating variable names. From printing the first 5 rows, we can retrieve that an ID variable, a (binary) risk score, a (binary) recidivism indicator, and three demographic variables (race, sex, age) are included.</p>
+<section id="data-download" class="level2">
+<h2 class="anchored" data-anchor-id="data-download">1.1 Data Download</h2>
+<div id="d0b36c0f" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df_compas_aeq <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/dssg/aequitas/master/examples/data/compas_for_aequitas.csv"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>df_compas_aeq.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">entity_id</th>
+<th data-quarto-table-cell-role="th">score</th>
+<th data-quarto-table-cell-role="th">label_value</th>
+<th data-quarto-table-cell-role="th">race</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">age_cat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>0.0</td>
+<td>0</td>
+<td>Other</td>
+<td>Male</td>
+<td>Greater than 45</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>3</td>
+<td>0.0</td>
+<td>1</td>
+<td>African-American</td>
+<td>Male</td>
+<td>25 - 45</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>4</td>
+<td>0.0</td>
+<td>1</td>
+<td>African-American</td>
+<td>Male</td>
+<td>Less than 25</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>5</td>
+<td>1.0</td>
+<td>0</td>
+<td>African-American</td>
+<td>Male</td>
+<td>Less than 25</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>6</td>
+<td>0.0</td>
+<td>0</td>
+<td>Other</td>
+<td>Male</td>
+<td>25 - 45</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="exploratory-data-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-data-visualization">Exploratory Data Visualization</h2>
+<section id="distribution-of-defendants-by-demographics-race-age-sex-and-risk-scores" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-of-defendants-by-demographics-race-age-sex-and-risk-scores">Distribution of Defendants by Demographics (Race, Age, Sex) and Risk Scores</h3>
+<p><br></p>
+<p>As a first step, we are exploring the distribution of our defendant data with regards to demographic characteristics and the calculated risk scores. As we can see, African-Americans, Caucasians, males, and defendants aged 25-45 are the subgroups that are highly represented in the data. Additionally, we can already see from the plots that African-Americans and defendants aged under 25 are the only subgroups where the majority has been assigned a high risk score.</p>
+<div id="4f3e2ade" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Reds_palette <span class="op">=</span> sns.diverging_palette(<span class="dv">204</span>, <span class="dv">0</span>, n<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a figure with 3 subplots (3 rows, 1 column)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">16</span>))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># race</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>by_race <span class="op">=</span> sns.countplot(</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">0</span>],</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"race"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">"score"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df_compas_aeq,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span>Reds_palette</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">"Distribution of Defendants by Race and Risk Score (Decile)"</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">"Race"</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">"Count"</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend(loc<span class="op">=</span><span class="st">'upper right'</span>, title<span class="op">=</span><span class="st">'Risk Score Decile'</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].tick_params(axis<span class="op">=</span><span class="st">'x'</span>, rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co"># sex</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>by_sex <span class="op">=</span> sns.countplot(</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">1</span>],</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"sex"</span>,</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">"score"</span>,</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df_compas_aeq,</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span>Reds_palette</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Add title and labels</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">"Distribution of Defendants by Sex and Risk Score (Decile)"</span>)</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">"Sex"</span>)</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">"Count"</span>)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="co"># sex</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].legend(loc<span class="op">=</span><span class="st">'upper right'</span>, title<span class="op">=</span><span class="st">'Risk Score'</span>)</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].tick_params(axis<span class="op">=</span><span class="st">'x'</span>, rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Create countplot for age</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>by_age <span class="op">=</span> sns.countplot(</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">2</span>],</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"age_cat"</span>,</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">"score"</span>,</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df_compas_aeq,</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span>Reds_palette</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_title(<span class="st">"Distribution of Defendants by Age and Risk Score (Decile)"</span>)</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_xlabel(<span class="st">"Age Category"</span>)</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_ylabel(<span class="st">"Count"</span>)</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].legend(loc<span class="op">=</span><span class="st">'upper right'</span>, title<span class="op">=</span><span class="st">'Risk Score'</span>)</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].tick_params(axis<span class="op">=</span><span class="st">'x'</span>, rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="index_files/figure-html/cell-6-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="index_files/figure-html/cell-6-output-1.png" width="739" height="1504" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="distribution-of-defendants-by-demographics-and-recidivism" class="level2">
+<h2 class="anchored" data-anchor-id="distribution-of-defendants-by-demographics-and-recidivism">Distribution of Defendants by Demographics and Recidivism</h2>
+<p>Next, we are looking at the same demographic subgroups and whether the defendants actually committed crime again. We can already see, that there seems to be a mismatch between the assigned risk scores and the recidivism patterns.</p>
+<div id="39e8fbc5" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>coolwarm_two_colors <span class="op">=</span> sns.color_palette(<span class="st">"coolwarm"</span>, n_colors<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>coolwarm_palette <span class="op">=</span> sns.color_palette(<span class="st">"coolwarm"</span>, as_cmap<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a figure with 3 subplots (3 rows, 1 column)</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">16</span>))</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create countplot for race</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>label_by_race <span class="op">=</span> sns.countplot(</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">0</span>],</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"race"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">"label_value"</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df_compas_aeq,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span>coolwarm_two_colors</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Add title and labels for race</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">"Levels of recidivism by Race"</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">"Race"</span>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">"Count"</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend(loc<span class="op">=</span><span class="st">'upper right'</span>, title<span class="op">=</span><span class="st">'Recidivism'</span>)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].tick_params(axis<span class="op">=</span><span class="st">'x'</span>, rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Create countplot for sex</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>label_by_sex <span class="op">=</span> sns.countplot(</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">1</span>],</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"sex"</span>,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">"label_value"</span>,</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df_compas_aeq,</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span>coolwarm_two_colors</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Add title and labels for sex</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">"Levels of recidivism by Sex"</span>)</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">"Sex"</span>)</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">"Count"</span>)</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].legend(loc<span class="op">=</span><span class="st">'upper right'</span>, title<span class="op">=</span><span class="st">'Recidivism'</span>)</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].tick_params(axis<span class="op">=</span><span class="st">'x'</span>, rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Create countplot for age category</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>label_by_age <span class="op">=</span> sns.countplot(</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">2</span>],</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"age_cat"</span>,</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">"label_value"</span>,</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df_compas_aeq,</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span>coolwarm_two_colors</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Add title and labels for age category</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_title(<span class="st">"Levels of recidivism by Age Category"</span>)</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_xlabel(<span class="st">"Age Category"</span>)</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_ylabel(<span class="st">"Count"</span>)</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].legend(loc<span class="op">=</span><span class="st">'upper right'</span>, title<span class="op">=</span><span class="st">'Recidivism'</span>)</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust layout</span></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plot</span></span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="index_files/figure-html/cell-7-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="index_files/figure-html/cell-7-output-1.png" width="735" height="1503" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="introducing-the-aequitas-library" class="level2">
+<h2 class="anchored" data-anchor-id="introducing-the-aequitas-library">Introducing the Aequitas-Library</h2>
+<p>After eyeballing our data set and noticing that there might be some fairness issues, we can now use the Aequitas library to calculate common metrics that indicate biases in subgroups. More specifically, we are using the library’s Group() class that evaluates biases across all demographic subgroups in the dataset. Note here that the library requires the input data to have columns named “score” and “label_value”. These columns are by default used to calculate the bias metrics.</p>
+<p>In order to use Aequitas for your purposes, you should rename the columns that you want to check for potential biases to “score” and “label_value”. Additionally, at least one column needs to include grouping information (in our example, several demographic variables). ID variables as entity_id are by default not treated as grouping variables.</p>
+<p>The following code chunk calculates these metrices for all demographic subgroups using the get_crosstabs function, based on the risk score and the label_value, which indicates the recidivism.</p>
+<div id="d8e7bc91" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> Group()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>xtab, _ <span class="op">=</span> g.get_crosstabs(df_compas_aeq)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>xtab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">model_id</th>
+<th data-quarto-table-cell-role="th">score_threshold</th>
+<th data-quarto-table-cell-role="th">k</th>
+<th data-quarto-table-cell-role="th">attribute_name</th>
+<th data-quarto-table-cell-role="th">attribute_value</th>
+<th data-quarto-table-cell-role="th">accuracy</th>
+<th data-quarto-table-cell-role="th">tpr</th>
+<th data-quarto-table-cell-role="th">tnr</th>
+<th data-quarto-table-cell-role="th">for</th>
+<th data-quarto-table-cell-role="th">fdr</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">pprev</th>
+<th data-quarto-table-cell-role="th">fp</th>
+<th data-quarto-table-cell-role="th">fn</th>
+<th data-quarto-table-cell-role="th">tn</th>
+<th data-quarto-table-cell-role="th">tp</th>
+<th data-quarto-table-cell-role="th">group_label_pos</th>
+<th data-quarto-table-cell-role="th">group_label_neg</th>
+<th data-quarto-table-cell-role="th">group_size</th>
+<th data-quarto-table-cell-role="th">total_entities</th>
+<th data-quarto-table-cell-role="th">prev</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>binary 0/1</td>
+<td>3317</td>
+<td>race</td>
+<td>African-American</td>
+<td>0.638258</td>
+<td>0.720147</td>
+<td>0.551532</td>
+<td>0.349540</td>
+<td>0.370285</td>
+<td>...</td>
+<td>0.588203</td>
+<td>805</td>
+<td>532</td>
+<td>990</td>
+<td>1369</td>
+<td>1901</td>
+<td>1795</td>
+<td>3696</td>
+<td>7214</td>
+<td>0.514340</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0</td>
+<td>binary 0/1</td>
+<td>3317</td>
+<td>race</td>
+<td>Asian</td>
+<td>0.843750</td>
+<td>0.666667</td>
+<td>0.913043</td>
+<td>0.125000</td>
+<td>0.250000</td>
+<td>...</td>
+<td>0.250000</td>
+<td>2</td>
+<td>3</td>
+<td>21</td>
+<td>6</td>
+<td>9</td>
+<td>23</td>
+<td>32</td>
+<td>7214</td>
+<td>0.281250</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>0</td>
+<td>binary 0/1</td>
+<td>3317</td>
+<td>race</td>
+<td>Caucasian</td>
+<td>0.669927</td>
+<td>0.522774</td>
+<td>0.765457</td>
+<td>0.288125</td>
+<td>0.408665</td>
+<td>...</td>
+<td>0.348003</td>
+<td>349</td>
+<td>461</td>
+<td>1139</td>
+<td>505</td>
+<td>966</td>
+<td>1488</td>
+<td>2454</td>
+<td>7214</td>
+<td>0.393643</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>0</td>
+<td>binary 0/1</td>
+<td>3317</td>
+<td>race</td>
+<td>Hispanic</td>
+<td>0.660911</td>
+<td>0.443966</td>
+<td>0.785185</td>
+<td>0.288591</td>
+<td>0.457895</td>
+<td>...</td>
+<td>0.298273</td>
+<td>87</td>
+<td>129</td>
+<td>318</td>
+<td>103</td>
+<td>232</td>
+<td>405</td>
+<td>637</td>
+<td>7214</td>
+<td>0.364207</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0</td>
+<td>binary 0/1</td>
+<td>3317</td>
+<td>race</td>
+<td>Native American</td>
+<td>0.777778</td>
+<td>0.900000</td>
+<td>0.625000</td>
+<td>0.166667</td>
+<td>0.250000</td>
+<td>...</td>
+<td>0.666667</td>
+<td>3</td>
+<td>1</td>
+<td>5</td>
+<td>9</td>
+<td>10</td>
+<td>8</td>
+<td>18</td>
+<td>7214</td>
+<td>0.555556</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>0</td>
+<td>binary 0/1</td>
+<td>3317</td>
+<td>race</td>
+<td>Other</td>
+<td>0.665782</td>
+<td>0.323308</td>
+<td>0.852459</td>
+<td>0.302013</td>
+<td>0.455696</td>
+<td>...</td>
+<td>0.209549</td>
+<td>36</td>
+<td>90</td>
+<td>208</td>
+<td>43</td>
+<td>133</td>
+<td>244</td>
+<td>377</td>
+<td>7214</td>
+<td>0.352785</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>0</td>
+<td>binary 0/1</td>
+<td>3317</td>
+<td>sex</td>
+<td>Female</td>
+<td>0.653763</td>
+<td>0.608434</td>
+<td>0.678930</td>
+<td>0.242537</td>
+<td>0.487310</td>
+<td>...</td>
+<td>0.423656</td>
+<td>288</td>
+<td>195</td>
+<td>609</td>
+<td>303</td>
+<td>498</td>
+<td>897</td>
+<td>1395</td>
+<td>7214</td>
+<td>0.356989</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>0</td>
+<td>binary 0/1</td>
+<td>3317</td>
+<td>sex</td>
+<td>Male</td>
+<td>0.653721</td>
+<td>0.629132</td>
+<td>0.675799</td>
+<td>0.330100</td>
+<td>0.364637</td>
+<td>...</td>
+<td>0.468465</td>
+<td>994</td>
+<td>1021</td>
+<td>2072</td>
+<td>1732</td>
+<td>2753</td>
+<td>3066</td>
+<td>5819</td>
+<td>7214</td>
+<td>0.473105</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>0</td>
+<td>binary 0/1</td>
+<td>3317</td>
+<td>age_cat</td>
+<td>25 - 45</td>
+<td>0.647846</td>
+<td>0.626257</td>
+<td>0.666216</td>
+<td>0.323112</td>
+<td>0.385135</td>
+<td>...</td>
+<td>0.468240</td>
+<td>741</td>
+<td>706</td>
+<td>1479</td>
+<td>1183</td>
+<td>1889</td>
+<td>2220</td>
+<td>4109</td>
+<td>7214</td>
+<td>0.459723</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>0</td>
+<td>binary 0/1</td>
+<td>3317</td>
+<td>age_cat</td>
+<td>Greater than 45</td>
+<td>0.704315</td>
+<td>0.427711</td>
+<td>0.832096</td>
+<td>0.241117</td>
+<td>0.459391</td>
+<td>...</td>
+<td>0.250000</td>
+<td>181</td>
+<td>285</td>
+<td>897</td>
+<td>213</td>
+<td>498</td>
+<td>1078</td>
+<td>1576</td>
+<td>7214</td>
+<td>0.315990</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>0</td>
+<td>binary 0/1</td>
+<td>3317</td>
+<td>age_cat</td>
+<td>Less than 25</td>
+<td>0.617397</td>
+<td>0.739583</td>
+<td>0.458647</td>
+<td>0.424528</td>
+<td>0.360360</td>
+<td>...</td>
+<td>0.653368</td>
+<td>360</td>
+<td>225</td>
+<td>305</td>
+<td>639</td>
+<td>864</td>
+<td>665</td>
+<td>1529</td>
+<td>7214</td>
+<td>0.565075</td>
+</tr>
+</tbody>
+</table>
+
+<p>11 rows × 27 columns</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Additionally, we can use list_absolute_metrics() for an improved overview grouped by the demographics and with rounded values for the metrics.</p>
+<p><br></p>
+<div id="981395f0" class="cell" data-execution_count="8">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>absolute_metrics <span class="op">=</span> g.list_absolute_metrics(xtab)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>xtab[[<span class="st">'attribute_name'</span>, <span class="st">'attribute_value'</span>] <span class="op">+</span> absolute_metrics].<span class="bu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="28">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">attribute_name</th>
+<th data-quarto-table-cell-role="th">attribute_value</th>
+<th data-quarto-table-cell-role="th">accuracy</th>
+<th data-quarto-table-cell-role="th">tpr</th>
+<th data-quarto-table-cell-role="th">tnr</th>
+<th data-quarto-table-cell-role="th">for</th>
+<th data-quarto-table-cell-role="th">fdr</th>
+<th data-quarto-table-cell-role="th">fpr</th>
+<th data-quarto-table-cell-role="th">fnr</th>
+<th data-quarto-table-cell-role="th">npv</th>
+<th data-quarto-table-cell-role="th">precision</th>
+<th data-quarto-table-cell-role="th">ppr</th>
+<th data-quarto-table-cell-role="th">pprev</th>
+<th data-quarto-table-cell-role="th">prev</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>race</td>
+<td>African-American</td>
+<td>0.64</td>
+<td>0.72</td>
+<td>0.55</td>
+<td>0.35</td>
+<td>0.37</td>
+<td>0.45</td>
+<td>0.28</td>
+<td>0.65</td>
+<td>0.63</td>
+<td>0.66</td>
+<td>0.59</td>
+<td>0.51</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>race</td>
+<td>Asian</td>
+<td>0.84</td>
+<td>0.67</td>
+<td>0.91</td>
+<td>0.12</td>
+<td>0.25</td>
+<td>0.09</td>
+<td>0.33</td>
+<td>0.88</td>
+<td>0.75</td>
+<td>0.00</td>
+<td>0.25</td>
+<td>0.28</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>race</td>
+<td>Caucasian</td>
+<td>0.67</td>
+<td>0.52</td>
+<td>0.77</td>
+<td>0.29</td>
+<td>0.41</td>
+<td>0.23</td>
+<td>0.48</td>
+<td>0.71</td>
+<td>0.59</td>
+<td>0.26</td>
+<td>0.35</td>
+<td>0.39</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>race</td>
+<td>Hispanic</td>
+<td>0.66</td>
+<td>0.44</td>
+<td>0.79</td>
+<td>0.29</td>
+<td>0.46</td>
+<td>0.21</td>
+<td>0.56</td>
+<td>0.71</td>
+<td>0.54</td>
+<td>0.06</td>
+<td>0.30</td>
+<td>0.36</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>race</td>
+<td>Native American</td>
+<td>0.78</td>
+<td>0.90</td>
+<td>0.62</td>
+<td>0.17</td>
+<td>0.25</td>
+<td>0.38</td>
+<td>0.10</td>
+<td>0.83</td>
+<td>0.75</td>
+<td>0.00</td>
+<td>0.67</td>
+<td>0.56</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>race</td>
+<td>Other</td>
+<td>0.67</td>
+<td>0.32</td>
+<td>0.85</td>
+<td>0.30</td>
+<td>0.46</td>
+<td>0.15</td>
+<td>0.68</td>
+<td>0.70</td>
+<td>0.54</td>
+<td>0.02</td>
+<td>0.21</td>
+<td>0.35</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>sex</td>
+<td>Female</td>
+<td>0.65</td>
+<td>0.61</td>
+<td>0.68</td>
+<td>0.24</td>
+<td>0.49</td>
+<td>0.32</td>
+<td>0.39</td>
+<td>0.76</td>
+<td>0.51</td>
+<td>0.18</td>
+<td>0.42</td>
+<td>0.36</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>sex</td>
+<td>Male</td>
+<td>0.65</td>
+<td>0.63</td>
+<td>0.68</td>
+<td>0.33</td>
+<td>0.36</td>
+<td>0.32</td>
+<td>0.37</td>
+<td>0.67</td>
+<td>0.64</td>
+<td>0.82</td>
+<td>0.47</td>
+<td>0.47</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>age_cat</td>
+<td>25 - 45</td>
+<td>0.65</td>
+<td>0.63</td>
+<td>0.67</td>
+<td>0.32</td>
+<td>0.39</td>
+<td>0.33</td>
+<td>0.37</td>
+<td>0.68</td>
+<td>0.61</td>
+<td>0.58</td>
+<td>0.47</td>
+<td>0.46</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>age_cat</td>
+<td>Greater than 45</td>
+<td>0.70</td>
+<td>0.43</td>
+<td>0.83</td>
+<td>0.24</td>
+<td>0.46</td>
+<td>0.17</td>
+<td>0.57</td>
+<td>0.76</td>
+<td>0.54</td>
+<td>0.12</td>
+<td>0.25</td>
+<td>0.32</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>age_cat</td>
+<td>Less than 25</td>
+<td>0.62</td>
+<td>0.74</td>
+<td>0.46</td>
+<td>0.42</td>
+<td>0.36</td>
+<td>0.54</td>
+<td>0.26</td>
+<td>0.58</td>
+<td>0.64</td>
+<td>0.30</td>
+<td>0.65</td>
+<td>0.57</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Next, we can use the information on the metrics that have been calculated by the previous chunk to plot the present biases. For that purpose, the <code>Plot()</code> class is used and stored in a variable. Afterwards, this variable can be used to plot the metrics of interest. The next code chunk exemplarily plots the <strong>false positive rate</strong> for all subgroups. In the context of our data, false positive cases are present when defendants are classified high risk although they did not recidivate. As we can see from the plot below, these cases are especially present amoung younger as well as among African- and Native Americans.</p>
+<p>Additionally, the colors by default indicate how many respondents are included in the respective subgroup. The exact number can also be retrieved from the bar labels. Referring to the group sizes, you can see that the two races with they highest FPR are of significantly different size: While there are only 18 Native Americans included in our data, a total of nearly 3,700 African-American defendants are present.</p>
+<div id="44c7b4d0" class="cell" data-execution_count="9">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>aqp <span class="op">=</span> Plot()</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>fpr <span class="op">=</span> aqp.plot_group_metric(xtab, <span class="st">'fpr'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="index_files/figure-html/cell-10-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="index_files/figure-html/cell-10-output-1.png" width="862" height="481" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>For better readability, and when only interested in the rates rather then the absolute numbers, we can switch the axes and rotate the x-axis labels:</p>
+<p><br></p>
+<div id="97700aa1" class="cell" data-execution_count="10">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>xtab_df <span class="op">=</span> xtab[[<span class="st">'attribute_name'</span>, <span class="st">'attribute_value'</span>] <span class="op">+</span> absolute_metrics].<span class="bu">round</span>(<span class="dv">2</span>).set_index([<span class="st">'attribute_name'</span>, <span class="st">'attribute_value'</span>])</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>xtab_df <span class="op">=</span> xtab_df.reset_index()</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a figure for the plot</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">6</span>))</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bar plot for FPR</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.barplot(x<span class="op">=</span><span class="st">'attribute_value'</span>, y<span class="op">=</span><span class="st">'fpr'</span>, hue<span class="op">=</span><span class="st">'attribute_name'</span>, data<span class="op">=</span>xtab_df, palette<span class="op">=</span><span class="st">'coolwarm'</span>, dodge<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels(ax.get_xticklabels(), rotation<span class="op">=</span><span class="dv">60</span>, ha<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Add title and labels</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'False Positive Rate (FPR) by Attribute'</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Attribute Value'</span>)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'FPR'</span>)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Rotate x-axis labels for better readability</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">60</span>)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="index_files/figure-html/cell-11-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="index_files/figure-html/cell-11-output-1.png" width="764" height="689" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
 <hr>
+</section>
 </section>
 <section id="references" class="level1">
 <h1>References</h1>
@@ -849,6 +1713,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"skin":"lightwidth","openEffect":"fade","selector":".lightbox","descPosition":"left","closeEffect":"fade","loop":false});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 
