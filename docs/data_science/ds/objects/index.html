@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.24">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Jorge Roa">
 <meta name="author" content="Carlo Greß">
 <meta name="author" content="Hannah Schweren">
 <meta name="dcterms.date" content="2023-12-05">
-<title>{{}} Ethics &lt;span style="font-size: 18px;"&gt;✕&lt;/span&gt; Data Science {{}} – quarto-input86e8f32de3621bdf</title>
+
+<title>{{&lt; fa solid scale-balanced &gt;}} Ethics &lt;span style='font-size: 18px;'&gt;✕&lt;/span&gt; Data Science {{&lt; fa solid code-branch &gt;}} – quarto-input293936611ae99988</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +24,42 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
+
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
@@ -40,7 +78,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-contrib/animate-4.1.1/animate.min.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../../../site_libs/quarto-contrib/animate-4.1.1/animate.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -66,18 +105,25 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><style>html{ scroll-behavior: smooth; }</style>
-<!-- Primary Meta Tags --><title>Hertie Coding Club - Everybody can learn to code</title>
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<!-- Primary Meta Tags -->
+<title>Hertie Coding Club - Everybody can learn to code</title>
 <meta name="title" content="Hertie Coding Club - Everybody can learn to code">
 <meta name="description" content="Welcome to the Hertie Coding Club! Our goal as a club is to help everyone and between us learn coding skills and show that coding is for everyone, no matter our background.">
-<!-- Open Graph / Facebook --><meta property="og:type" content="website">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
 <meta property="og:url" content="https://www.hertiecodingclub.com">
 <meta property="og:title" content=" Ethics ✕ Data Science  - Bias in AI: detection and mitigation">
 <meta property="og:description" content="Enable users to detect and mitigate bias, using the example of the COMPAS Recidivism Risk Score Data and Analysis Dataset. Users will be equiped with concrete strategies to first detect, and secondly mitigate bias">
-<!-- Primary Meta Tags --><title>Hertie Coding Club - RStudio 101</title>
+<!-- Primary Meta Tags -->
+<title>Hertie Coding Club - RStudio 101</title>
 <meta name="title" content="Hertie Coding Club - Enable Multithread with data.table in Mac/Intel chips">
 <meta name="description" content="Learn the basics of R: open a project, setting a working directory and navigate RStudio interface">
-<!-- Open Graph / Facebook --><meta property="og:type" content="website">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
 <meta property="og:url" content="https://www.hertiecodingclub.com/learn/rstudio/rstudio101/">
 <meta property="og:title" content="Hertie Coding Club - RStudio 101">
 <meta property="og:description" content="Learn the basics of R: open a project, setting a working directory and navigate RStudio interface">
@@ -88,12 +134,17 @@ ul.task-list li input[type="checkbox"] {
 <style>:root{--animate-duration:3s;--animate-delay:2s;--animate-repeat:1}</style>
 <style>:root{--animate-duration:3s;--animate-delay:2s;--animate-repeat:1}</style>
 <style>:root{--animate-duration:3s;--animate-delay:2s;--animate-repeat:1}</style>
+
+
 <link rel="stylesheet" href="../../../styles.css">
 </head>
+
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title"><i class="fa-solid fa-scale-balanced" aria-label="scale-balanced"></i> Ethics <span style="font-size: 18px;">✕</span> Data Science <i class="fa-solid fa-code-branch" aria-label="code-branch"></i></span>
@@ -105,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-<li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link" href="../../../index.html"> <i class="bi bi-house-fill" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
@@ -131,11 +182,15 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text"><i class="fa-solid fa-hand-point-up" aria-label="hand-point-up"></i> About</span></a>
   </li>  
 </ul>
-</div> <!-- /navcollapse -->
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title"><span class="animate__animated animate__fadeInDown" style="display: inline-block;">Bias in AI: detection and mitigation</span></h1>
             <p class="subtitle lead"><span class="animate__animated animate__fadeInDown" style="display: inline-block;">Enable users to detect and mitigate bias, using the example of the COMPAS Recidivism Risk Score Data and Analysis Dataset. Users will be equiped with concrete strategies to first detect, and secondly mitigate bias</span></p>
@@ -174,15 +229,137 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#references" id="toc-references" class="nav-link active" data-scroll-target="#references">References</a></li>
-  </ul></nav>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#background-and-prerequisites" id="toc-background-and-prerequisites" class="nav-link" data-scroll-target="#background-and-prerequisites">Background and Prerequisites</a></li>
+  </ul></li>
+  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description">Data Description</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><hr>
-<section id="references" class="level1"><h1>References</h1>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p><br></p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>This notebook offers a detailed guide that includes both code and explanations aimed at enabling users to identify and counteract bias within data, specifically using the COMPAS Recidivism Risk Score Data and Analysis Dataset as a case study. It provides users with practical strategies to first detect and then mitigate bias, laying a foundational approach for handling biases effectively in algorithmic processes. The tutorial is designed as an introductory step towards fostering an understanding of the biases that can infiltrate algorithms and promoting the development of ethical AI practices. This is particularly critical in contexts where algorithmic decisions intersect with policy-making, potentially influencing societal outcomes. Through this guide, users will not only learn to recognize biases but also implement measures to address these biases, thereby enhancing the fairness and integrity of AI systems in public and private sectors.</p>
+<p><br></p>
+</section>
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>The COMPAS dataset, used by an algorithm predicting recidivism risk, has become a key example in the study of algorithmic bias and fairness. It includes demographic and criminal history data. Analyses revealed racial disparities in risk assessments, with the algorithm tending to overestimate recidivism risk for Black defendants and underestimate it for White defendants.</p>
+<p>This tutorial is divided into three parts:</p>
+<p>1.- <em>Introduction to Bias Detection Metrics</em>: We will introduce different metrics to detect bias, providing a smooth introduction to the topic and helping users gain a better understanding of the issue.</p>
+<p>2.- <em>Replication of Biased Output with a Feed Forward Neural Network</em>: In this step, we will replicate the biased output using a Feed Forward Neural Network. This hands-on exercise will provide users with practical experience in generating predictions and raise awarness for the biased output.</p>
+<p>3.<em>-Mitigation of Detected Bias</em>: The grand finale and most important part of our tutorial! Users will learn effective strategies to mitigate the detected bias. This step is crucial for ethical deep learning, and the tutorial aims to equip users with essential skills dealing with biased results.</p>
+<p>By completing this tutorial, users will acquire valuable skills for future data endeavors. It serves as a foundational step to train users and raise awareness of fairness issues in Deep Learning.</p>
+<p><br></p>
+<section id="background-and-prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="background-and-prerequisites">Background and Prerequisites</h2>
+<p>This tutorial is designed for users with a basic understanding of Python and Deep Learning. Users should have a foundational understanding of key concepts in machine learning and neural networks. Familiarity with Python is essential. Additionally, a grasp of linear algebra and calculus will be beneficial for understanding the mathematical underpinnings of deep learning algorithms.</p>
+<ul>
+<li><p>A solid understanding of model training is crucial, as well as knowledge of common machine learning libraries such as <code>Keras</code> and <code>scikit-learn</code>. Users should also be aware of the ethical and policy considerations surrounding machine learning applications, particularly in relation to bias and fairness.</p></li>
+<li><p>Lastly, a conceptual understanding of how neural networks operate, including layers, activation functions, and backpropagation, will enhance the learning experience of the user. Overall, a basic background in machine learning fundamentals will help users to engage more effectively with our tutorial.</p></li>
+</ul>
+<div id="e8f74e80" class="cell" data-message="false" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install pandas numpy matplotlib</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install Aequitas</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install keras_tuner</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install aif360</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install BlackBoxAuditing</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install tensorflow</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="d122342b" class="cell" data-message="false" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data visualization</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"white"</span>, palette<span class="op">=</span><span class="st">"muted"</span>, color_codes<span class="op">=</span><span class="va">True</span>, context<span class="op">=</span><span class="st">"talk"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython <span class="im">import</span> display</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Data manipulation</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Aequitas library used to audit models for discrimination and bias</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> aequitas.group <span class="im">import</span> Group</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> aequitas.bias <span class="im">import</span> Bias</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> aequitas.fairness <span class="im">import</span> Fairness</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> aequitas.plotting <span class="im">import</span> Plot</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings<span class="op">;</span> warnings.simplefilter(<span class="st">'ignore'</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Machine and deep learning libraries</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow <span class="im">as</span> tf</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> keras.layers <span class="im">import</span> Input, Dense, Dropout</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> keras.models <span class="im">import</span> Model</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> keras.optimizers <span class="im">import</span> Adam</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> keras_tuner <span class="im">as</span> kt</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> keras <span class="im">import</span> Input, Model</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> keras.layers <span class="im">import</span> Dense, Dropout</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> keras.optimizers <span class="im">import</span> Adam</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.utils.class_weight <span class="im">import</span> compute_class_weight</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, roc_auc_score</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> MinMaxScaler, StandardScaler</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> precision_score, recall_score, f1_score, confusion_matrix</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="co"># AI fairness library</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> aif360.algorithms.preprocessing <span class="im">import</span> DisparateImpactRemover</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> aif360.datasets <span class="im">import</span> StandardDataset <span class="im">as</span> Dataset</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> aif360.metrics <span class="im">import</span> BinaryLabelDatasetMetric</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> aif360.algorithms.postprocessing.reject_option_classification <span class="im">import</span> RejectOptionClassification</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> aif360.algorithms.preprocessing.reweighing <span class="im">import</span> Reweighing</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> OrderedDict</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> aif360.metrics <span class="im">import</span> ClassificationMetric</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="data-description" class="level1">
+<h1>Data Description</h1>
+<p>In this tutorial we are working with the COMPAS Recidivism Risk Score Data and Analysis (Source: Pro Publica, https://www.propublica.org/datastore/dataset/compas-recidivism-risk-score-data-and-analysis) This dataset is a classical example for bias in machine learning. We specifically liked using this dataset as an example because it reveils the possible harmfull negative impact on real world decisions, that algorithms can have and the resulting policy responsibility.</p>
+<p>The tabular dataset is used in U.S. court proceedings to evaluate the probability of a defendant reoffending. It is available in csv format for free and contains the following information (Source: https://mlr3fairness.mlr-org.com/reference/compas.html#pre-processing) :</p>
+<ul>
+<li><p>(integer) age : The age of defendants.</p></li>
+<li><p>(factor) c_charge_degree : The charge degree of defendants. F: Felony M: Misdemeanor</p></li>
+<li><p>(factor) race: The race of defendants.</p></li>
+<li><p>(factor) age_cat: The age category of defendants.</p></li>
+<li><p>(factor) score_text: The score category of defendants.</p></li>
+<li><p>(factor) sex: The sex of defendants.</p></li>
+<li><p>(integer) priors_count: The prior criminal records of defendants.</p></li>
+<li><p>(integer) days_b_screening_arrest: The count of days between screening date and (original) arrest date. If they are too far apart, that may indicate an error. If the value is negative, that indicate the screening date happened before the arrest date.</p></li>
+<li><p>(integer) decile_score: Indicate the risk of recidivism (Min=1, Max=10)</p></li>
+<li><p>(integer) is_recid: Binary variable indicate whether defendant is rearrested at any time.</p></li>
+<li><p>(factor) two_year_recid: Binary variable indicate whether defendant is rearrested at within two years.</p></li>
+<li><p>(numeric) length_of_stay: The count of days stay in jail.</p></li>
+</ul>
+<p>In the course of the tutorial, we’ll also work with a version of the COMPAS data, that was processed to work well with the aequitas package - this version of the dataset can be found in this Github repository: https://github.com/dssg/aequitas/tree/master/examples/data. Here, only a subset of the variables is considered, but it includes all important variables for demonstrating the package’s benefits. It includes:</p>
+<ul>
+<li><p>(integer) entity_id: ID variable</p></li>
+<li><p>(integer) score: Risk score of defendants, binary</p></li>
+<li><p>(factor) label_value: Binary variable indicate whether defendant is rearrested</p></li>
+<li><p>(factor) race: The race of defendants.</p></li>
+<li><p>(factor) sex: The sex of defendants</p></li>
+<li><p>(factor) age_cat: The age category of defendants</p></li>
+</ul>
+<hr>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
 <hr>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -194,7 +371,14 @@ References
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Alarid-Escudero, F., Krijkamp, E. M., Pechlivanoglou, P., Jalal, H., Kao, S. Z., Yang, A., &amp; Enns, E. A. (2019). <em>A Need for Change! A Coding Framework for Improving Transparency in Decision Modeling.</em> PharmacoEconomics, 37(11), 1329–1339. <a href="https://doi.org/10.1007/s40273-019-00837-x">URL</a></p>
+<ul>
+<li><p>Regean, Mary. 2021. “Understanding bias and fairness in AI system”. <a href="https://towardsdatascience.com/understanding-bias-and-fairness-in-aisystems-6f7fbfe267f3">URL</a></p></li>
+<li><p>Anaconda, 2021 State of Data Science Report. <a href="https://know.anaconda.com/rs/387-XNW-688/images/Anaconda-2021-SODS-Report-Final.pdf">URL</a></p></li>
+<li><p>Clark, Andrew. September 19, 2022. “Top bias metrics and how they work”. Monitaur. <a href="https://www.monitaur.ai/blog-posts/top-bias-metricsand-how-they-work">URL</a></p></li>
+<li><p>Feldman et al.&nbsp;„Certifying and Removing Disparate Impact“. Proceedings of the 21th ACM SIGKDD International Conference on KnowledgeDiscovery and Data Mining, ACM, 2015, S. 259–68. DOI.org (Crossref), <a href="https://doi.org/10.1145/2783258.2783311">URL</a>.</p></li>
+<li><p>Towards datascience, “AI Fairness — Explanation of Disparate Impact Remover”. <a href="https://towardsdatascience.com/ai-fairness-explanation-of-disparate-impact-remover-ce0da59451f1">URL</a></p></li>
+<li><p>Lee, Nicol Turner, Paul Resnick, and Genie Barton. “Algorithmic bias detection and mitigation: Best practices and policies to reduce consumer harms.” Brookings Institute: Washington, DC, USA 2 (2019)</p></li>
+</ul>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -212,7 +396,10 @@ Note
 </div>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -627,22 +814,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
-<li class="nav-item">
+    <li class="nav-item">
     <a class="nav-link" href="https://creativecommons.org/licenses/by/2.0/">
 <p><i class="fa-regular fa-copyright fa-s" aria-label="copyright"></i> 2024</p>
 </a>
   </li>  
 </ul>
-</div>   
+    </div>   
     <div class="nav-footer-center">
 <p>· <a href="https://quarto.org/"><img src="https://quarto.org/quarto.png" class="img-fluid" alt="Quarto" width="65"></a> engine ·</p>
 </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-<li class="nav-item">
+    <li class="nav-item">
     <a class="nav-link" href="https://github.com">
 <p><i class="fa-brands fa-github fa-lg" aria-label="github"></i></p>
 </a>
@@ -658,9 +846,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
 </ul>
-</div>
+    </div>
   </div>
 </footer>
+
+
 
 
 <script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
