@@ -1,19 +1,18 @@
 ---
-title:  '{{< animate fadeInDown "Understanding R Objects: Naming, Data Structures and Classes in R"delay=.6s >}}'
-subtitle: '{{< animate fadeInDown "This is why R is so powerful: all kind of objects and possibilites. Naming objects, understand structures is crucial to learn"delay=.6s >}}'
-author: ["Jorge Roa"]
-date: "2023-04-16"
-categories: ["Advanced", "Objects"]
+title:  '{{< animate fadeInDown "Bias in AI: detection and mitigation"delay=.6s >}}'
+subtitle: '{{< animate fadeInDown "Enable users to detect and mitigate bias, using the example of the COMPAS Recidivism Risk Score Data and Analysis Dataset. Users will be equiped with concrete strategies to first detect, and secondly mitigate bias"delay=.6s >}}'
+author: ["Jorge Roa", "Carlo Greß", "Hannah Schweren"]
+date: "2023-12-05"
+categories: ["Advanced", "Bias in AI", "Mitigation"]
 toc: true
 draft: false
 code-link: true
 code-copy: true
 title-block-banner: true
 comments: false
-image: images/objects.png
+image: images/dalle.png
 include-in-header: meta.html 
 format: html
-engine: knitr
 filters:
    - lightbox
    - webr
@@ -26,985 +25,1567 @@ webr:
   packages: ['ggplot2', 'dplyr']
   show-startup-message: false
   show-header-message: false
-listing: 
-  - id: eda
-    template: gallery.ejs
-    contents: gallery.yml
+jupyter: python3
+execute:
+  freeze: true
 ---
 
+<br>
 
+# Introduction
 
+This notebook offers a detailed guide that includes both code and explanations aimed at enabling users to identify and counteract bias within data, specifically using the COMPAS Recidivism Risk Score Data and Analysis Dataset as a case study. It provides users with practical strategies to first detect and then mitigate bias, laying a foundational approach for handling biases effectively in algorithmic processes. The tutorial is designed as an introductory step towards fostering an understanding of the biases that can infiltrate algorithms and promoting the development of ethical AI practices. This is particularly critical in contexts where algorithmic decisions intersect with policy-making, potentially influencing societal outcomes. Through this guide, users will not only learn to recognize biases but also implement measures to address these biases, thereby enhancing the fairness and integrity of AI systems in public and private sectors.
 
+<br>
 
-# Objects in R
+# Overview
 
-------------------------------------------------------------------------
+The COMPAS dataset, used by an algorithm predicting recidivism risk, has become a key example in the study of algorithmic bias and fairness. It includes demographic and criminal history data. Analyses revealed racial disparities in risk assessments, with the algorithm tending to overestimate recidivism risk for Black defendants and underestimate it for White defendants.
 
+This tutorial is divided into three parts:
 
-One of the things that define R as an amazing tool to do multiple things are objects. R work with objects that essentialy are data structures that can hold values, but also othr types of data and can be assigned names for easy reference. Objects in R are useful because we can organize and store data in meaningful ways. One of the most importants thigns when you are learning R is understand how to work with these objects because you will have the confidence and knowledge to use it at your better convenience. There are several types of objects in R, including vectors, matrices, data frames, lists, and factors, each with their own characteristics and uses.
+1.- *Introduction to Bias Detection Metrics*: We will introduce different metrics to detect bias, providing a smooth introduction to the topic and helping users gain a better understanding of the issue.
 
-::: callout-warning
-# Assign objects
--   To create an object, give it a name followed by the assignment operator, followed by the value/data type.
--   Assignment operator \<-
--   Shortcut: "Alt + -" on PC, "Option + -" on Mac
-:::
+2.- *Replication of Biased Output with a Feed Forward Neural Network*: In this step, we will replicate the biased output using a Feed Forward Neural Network. This hands-on exercise will provide users with practical experience in generating predictions and raise awarness for the biased output.
 
-::: callout-tip
-# Execute R code in the website
--   You can execute R code within our website!!
--   You can install plots with this code `webr::install("ggplot2")`. However, it may take 2 minutes to run. 
--   You can check in this [link](<https://github.com/r-wasm/webr-repo/blob/main/repo-packages>) which packages are available and datasets
-:::
+3.*-Mitigation of Detected Bias*: The grand finale and most important part of our tutorial! Users will learn effective strategies to mitigate the detected bias. This step is crucial for ethical deep learning, and the tutorial aims to equip users with essential skills dealing with biased results.
 
- 
+By completing this tutorial, users will acquire valuable skills for future data endeavors. It serves as a foundational step to train users and raise awareness of fairness issues in Deep Learning. 
 
-![](images/dataStructures.png){fig-align="center"}
+<br>
 
- 
 
-In this image, you can see the different types of objects that we have and this is the best way to visualize. However, to really understand what is going on, you need to start writing code and start trying using this different type of objects to know them better. In the next lines, I'll write explanations, examples and exercises.
+## Background and Prerequisites
 
+This tutorial is designed for users with a basic understanding of Python and Deep Learning. Users should have a foundational understanding of key concepts in machine learning and neural networks. Familiarity with Python is essential. Additionally, a grasp of linear algebra and calculus will be beneficial for understanding the mathematical underpinnings of deep learning algorithms.
 
- 
+- A solid understanding of model training is crucial, as well as knowledge of common machine learning libraries such as   `Keras` and `scikit-learn`. Users should also be aware of the ethical and policy considerations surrounding machine learning applications, particularly in relation to bias and fairness.
 
+- Lastly, a conceptual understanding of how neural networks operate, including layers, activation functions, and backpropagation, will enhance the learning experience of the user. Overall, a basic background in machine learning fundamentals will help users to engage more effectively with our tutorial.
 
-# Naming Objects
+```{python packages}
+#| message: false
+#| warning: false
+#| output: false
 
-It can be headache naming objects in R since you need to have the creativity to write a short but precise name for your object. Here are some reasons why naming objects in R is so essential. 
 
-- **Use descriptive names**: Choose names that describe the contents or purpose of the object. Avoid using single-letter variable names or abbreviations that are unclear or confusing. For example, use "number_of_widgets" instead of "n" or "num_wgts".
+!pip install pandas numpy matplotlib
+!pip install Aequitas
+!pip install keras_tuner
+!pip install aif360
+!pip install BlackBoxAuditing
+!pip install tensorflow
+```
 
-- **Use lowercase letters**: R is case-sensitive, so it's a good practice to use lowercase letters for object names to avoid confusion.
+```{python libraries}
+#| message: false
+#| warning: false
 
-- **Use underscores to separate words**: Use underscores to separate words in object. For example, use "customer_id" instead of "customerId".
 
-- **Avoid using reserved words**: Avoid using reserved words such as "if", "else", "while", "repeat", "function", "for", etc. as object names since they can be take as functions that have exactly the same name.
+# Data visualization
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set(style="white", palette="muted", color_codes=True, context="talk")
+from IPython import display
 
-- **Keep names short but meaningful**: Object names should be short and easy to type, but also meaningful and descriptive. Avoid overly long names that are cumbersome to type and read.
+# Data manipulation
+import pandas as pd
+import numpy as np
+from tqdm import tqdm
 
+# Aequitas library used to audit models for discrimination and bias
+from aequitas.group import Group
+from aequitas.bias import Bias
+from aequitas.fairness import Fairness
+from aequitas.plotting import Plot
+import matplotlib.pyplot as plt
+import warnings; warnings.simplefilter('ignore')
 
-Personally, I like to name my objects according to the next table:
+# Machine and deep learning libraries
+import tensorflow as tf
+from keras.layers import Input, Dense, Dropout
+from keras.models import Model
+from keras.optimizers import Adam
+import keras_tuner as kt
+from keras import Input, Model
+from keras.layers import Dense, Dropout
+from keras.optimizers import Adam
+from sklearn.utils.class_weight import compute_class_weight
+from sklearn.metrics import accuracy_score, roc_auc_score
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import precision_score, recall_score, f1_score, confusion_matrix
 
-![Alarid et. al. (2019)](images/name.png){fig-align="center"}
+# AI fairness library
+from aif360.algorithms.preprocessing import DisparateImpactRemover
+from aif360.datasets import StandardDataset as Dataset
+from aif360.metrics import BinaryLabelDatasetMetric
+from aif360.algorithms.postprocessing.reject_option_classification import RejectOptionClassification
+from aif360.algorithms.preprocessing.reweighing import Reweighing
+from collections import OrderedDict
+from aif360.metrics import ClassificationMetric
 
-I like it since it gives you structure and clarity about how to name your objects. For example:
+```
 
-This logics applies the same with matrices, arrays, data frames, etc. It's a good practice to follow this criteria since is going to be much easier to identify your objects in your environment. 
+# Data Description
 
- 
+In this tutorial we are working with the COMPAS Recidivism Risk Score Data and Analysis (Source: Pro Publica, https://www.propublica.org/datastore/dataset/compas-recidivism-risk-score-data-and-analysis) This dataset is a classical example for bias in machine learning. We specifically liked using this dataset as an example because it reveils the possible harmfull negative impact on real world decisions, that algorithms can have and the resulting policy responsibility.
 
-# Single Values
+The tabular dataset is used in U.S. court proceedings to evaluate the probability of a defendant reoffending. It is available in csv format for free and contains the following information (Source: https://mlr3fairness.mlr-org.com/reference/compas.html#pre-processing) :
 
-## Numeric values
+-  (integer) **age** : The age of defendants.
 
-A numeric object can be stored as a number.
+-  (factor) **c_charge_degree** : The charge degree of defendants. F: Felony M: Misdemeanor
 
+- (factor) **race**: The race of defendants.
 
-```{r}
+- (factor) **age_cat**: The age category of defendants.
 
-x <- 6
+- (factor) **score_text**: The score category of defendants.
 
-class(x)
+- (factor) **sex**: The sex of defendants.
 
-x
+- (integer) **priors_count**: The prior criminal records of defendants.
 
-```
+- (integer) **days_b_screening_arrest**: The count of days between screening date and (original) arrest date. If they are too far apart, that may - indicate an error. If the value is negative, that indicate the screening date happened before the arrest date.
 
-## Character values
+- (integer) **decile_score**: Indicate the risk of recidivism (Min=1, Max=10)
 
-Stores a sequence of characters, such as letters, numbers, and symbols. A character value is created by enclosing the sequence of characters within quotation marks, either single or double. 
+- (integer) **is_recid**: Binary variable indicate whether defendant is rearrested at any time.
 
+- (factor) **two_year_recid**: Binary variable indicate whether defendant is rearrested at within two years.
 
-```{r}
+- (numeric) **length_of_stay**: The count of days stay in jail.
 
-character <- "Welcome to the Hertie Coding Club"   # creating a character value
+In the course of the tutorial, we'll also work with a version of the COMPAS data, that was processed to work well with the aequitas package - this version of the dataset can be found in this Github repository: https://github.com/dssg/aequitas/tree/master/examples/data. Here, only a subset of the variables is considered, but it includes all important variables for demonstrating the package's benefits. It includes:
 
+- (integer) **entity_id**: ID variable
 
-```
+- (integer) **score**: Risk score of defendants, binary
+
+- (factor) **label_value**: Binary variable indicate whether defendant is rearrested
+
+- (factor) *race*: The race of defendants.
+
+- (factor) **sex**: The sex of defendants
+
+- (factor) **age_cat**: The age category of defendants
 
+<br>
 
-Character values can be combined using the `paste()` or `paste0()` functions, which concatenate two or more character values into a single character value.
+# Part 1: Data Exploration and Bias Detection
 
-```{r}
+**Note that the first part of this tutorial is largely based on the documentation of the aequitas-library (https://dssg.github.io/aequitas/examples/compas_demo.html?highlight=xtab). Since the COMPAS data is a widely-known and commonly used data set for showing issues with biased data, the authors used it for demonstrating the library's core functions. Instead of linking the documentation, we decided to include the most important features of the library in the first part of our tutorial, partially adapting some code. More, we adjusted some codes in order to show the metrics that were most important to us for demonstrating bias in the compas data.**
 
-x <- "Welcome to"
-y <- "the Hertie Coding Club"
-z <- paste(x, y, sep = ": ")
+<br>
 
+For a first overview of the data, we load it directly from GitHub. Note that we use a version of the Compas data here that is explicitly well-suited for the Aequitas library, with a restricted number of columns and slightly deviating variable names. From printing the first 5 rows, we can retrieve that an ID variable, a (binary) risk score, a (binary) recidivism indicator, and three demographic variables (race, sex, age) are included.
 
-class(z)
+```{python ssl}
+#| output: false
+#| echo: false
 
-z
+import ssl
 
+ssl._create_default_https_context = ssl._create_stdlib_context
 
 ```
 
- 
 
-# Vectors
+## 1.1 Data Download
 
-------------------------------------------------------------------------
+```{python load_data}
 
-![](images/vector.png){fig-align="center" width="300"}
+# Load the data
 
-Vectors are one-dimensional arrays of data that contain elements of the same data type, such as numbers or characters. They are a fundamental building block in R and are used extensively in data analysis and statistical computing.
+df_compas_aeq = pd.read_csv("https://raw.githubusercontent.com/dssg/aequitas/master/examples/data/compas_for_aequitas.csv")
+df_compas_aeq.head()
 
-::: callout-tip
-Vectors can be created using the c() function, or by using functions such as seq() and rep(). Vectors can be manipulated using R's built-in vectorized functions, such as sum(), mean(), length(), and many more.
-:::
+```
 
- 
+<br>
 
-In R, you can assign a name to an object using the assignment operator "\<-" or the equal sign "=". Here are multiple way to assign a name to an object.
+## Exploratory Data Visualization
 
-```{r}
+### Distribution of Defendants by Demographics (Race, Age, Sex) and Risk Scores
 
-x <- 2
+<br>
 
-x = 2
+As a first step, we are exploring the distribution of our defendant data with regards to demographic characteristics and the calculated risk scores. As we can see, African-Americans, Caucasians, males, and defendants aged 25-45 are the subgroups that are highly represented in the data. Additionally, we can already see from the plots that African-Americans and defendants aged under 25 are the only subgroups where the majority has been assigned a high risk score.
 
-assign("x", 2)
-```
+```{python plot}
+#|code-fold: true
+Reds_palette = sns.diverging_palette(204, 0, n=2)
 
- 
+# Create a figure with 3 subplots (3 rows, 1 column)
+fig, axes = plt.subplots(3, 1, figsize=(8, 16))
 
-## Create a numeric vector
+# race
+by_race = sns.countplot(
+    ax=axes[0],
+    x="race",
+    hue="score",
+    data=df_compas_aeq,
+    palette=Reds_palette
+)
 
-```{r}
+axes[0].set_title("Distribution of Defendants by Race and Risk Score (Decile)")
+axes[0].set_xlabel("Race")
+axes[0].set_ylabel("Count")
+axes[0].legend(loc='upper right', title='Risk Score Decile')
+axes[0].grid(True, linestyle='--', linewidth=0.5)
+axes[0].tick_params(axis='x', rotation=45)
 
-x <- c(1, 2, 3, 4, 5)
+# sex
+by_sex = sns.countplot(
+    ax=axes[1],
+    x="sex",
+    hue="score",
+    data=df_compas_aeq,
+    palette=Reds_palette
+)
 
-x
+# Add title and labels
+axes[1].set_title("Distribution of Defendants by Sex and Risk Score (Decile)")
+axes[1].set_xlabel("Sex")
+axes[1].set_ylabel("Count")
 
-```
+# sex
+axes[1].legend(loc='upper right', title='Risk Score')
+axes[1].grid(True, linestyle='--', linewidth=0.5)
+axes[1].tick_params(axis='x', rotation=45)
+
+# Create countplot for age
+by_age = sns.countplot(
+    ax=axes[2],
+    x="age_cat",
+    hue="score",
+    data=df_compas_aeq,
+    palette=Reds_palette
+)
 
- 
+axes[2].set_title("Distribution of Defendants by Age and Risk Score (Decile)")
+axes[2].set_xlabel("Age Category")
+axes[2].set_ylabel("Count")
 
-## Access elements of a vector
+axes[2].legend(loc='upper right', title='Risk Score')
 
-Returns the second element of x, which is 2
+axes[2].grid(True, linestyle='--', linewidth=0.5)
 
-```{r}
+axes[2].tick_params(axis='x', rotation=45)
 
-x[2] 
+plt.tight_layout()
 
+plt.show()
+
 ```
 
- 
+<br>
 
-## Perform arithmetic operations
+## Distribution of Defendants by Demographics and Recidivism
 
-Adds 2 to each element of x, resulting in the vector c(3, 4, 5, 6, 7)
+Next, we are looking at the same demographic subgroups and whether the defendants actually committed crime again. We can already see, that there seems to be a mismatch between the assigned risk scores and the recidivism patterns.
 
-```{r}
 
-x + 2 
+```{python plot2}
+#|code-fold: true
 
+coolwarm_two_colors = sns.color_palette("coolwarm", n_colors=2)
+coolwarm_palette = sns.color_palette("coolwarm", as_cmap=True)
 
-```
 
- 
+# Create a figure with 3 subplots (3 rows, 1 column)
+fig, axes = plt.subplots(3, 1, figsize=(8, 16))
 
-## Find the length of a vector:
+# Create countplot for race
+label_by_race = sns.countplot(
+    ax=axes[0],
+    x="race",
+    hue="label_value",
+    data=df_compas_aeq,
+    palette=coolwarm_two_colors
+)
 
-```{r}
+# Add title and labels for race
+axes[0].set_title("Levels of recidivism by Race")
+axes[0].set_xlabel("Race")
+axes[0].set_ylabel("Count")
+axes[0].grid(True, linestyle='--', linewidth=0.5)
+axes[0].legend(loc='upper right', title='Recidivism')
+axes[0].tick_params(axis='x', rotation=45)
 
-length(x) 
+# Create countplot for sex
+label_by_sex = sns.countplot(
+    ax=axes[1],
+    x="sex",
+    hue="label_value",
+    data=df_compas_aeq,
+    palette=coolwarm_two_colors
+)
 
-```
+# Add title and labels for sex
+axes[1].set_title("Levels of recidivism by Sex")
+axes[1].set_xlabel("Sex")
+axes[1].set_ylabel("Count")
+axes[1].grid(True, linestyle='--', linewidth=0.5)
+axes[1].legend(loc='upper right', title='Recidivism')
+axes[1].tick_params(axis='x', rotation=45)
 
- 
+# Create countplot for age category
+label_by_age = sns.countplot(
+    ax=axes[2],
+    x="age_cat",
+    hue="label_value",
+    data=df_compas_aeq,
+    palette=coolwarm_two_colors
+)
 
-## Modify a vector
+# Add title and labels for age category
+axes[2].set_title("Levels of recidivism by Age Category")
+axes[2].set_xlabel("Age Category")
+axes[2].set_ylabel("Count")
+axes[2].grid(True, linestyle='--', linewidth=0.5)
+axes[2].legend(loc='upper right', title='Recidivism')
 
-Changes the third element of x to 10
+# Adjust layout
+plt.tight_layout()
 
-```{r}
+# Display the plot
+plt.show()
 
-x[3] <- 10
 
-x
 
 ```
+
+<br>
 
- 
+## Introducing the Aequitas-Library
 
-## Apply functions to a vector
+After eyeballing our data set and noticing that there might be some fairness issues, we can now use the Aequitas library to calculate common metrics that indicate biases in subgroups. More specifically, we are using the library's Group() class that evaluates biases across all demographic subgroups in the dataset. Note here that the library requires the input data to have columns named "score" and "label_value". These columns are by default used to calculate the bias metrics.
 
-Returns the sum of the elements in x, which is 22
+In order to use Aequitas for your purposes, you should rename the columns that you want to check for potential biases to "score" and "label_value". Additionally, at least one column needs to include grouping information (in our example, several demographic variables). ID variables as entity_id are by default not treated as grouping variables.
 
-```{r}
+The following code chunk calculates these metrices for all demographic subgroups using the get_crosstabs function, based on the risk score and the label_value, which indicates the recidivism.
 
-sum(x) 
 
+```{python plot2}
+#|code-fold: true
+
+g = Group()
+xtab, _ = g.get_crosstabs(df_compas_aeq)
+xtab
+
 ```
+
+<br>
+
+Additionally, we can use list_absolute_metrics() for an improved overview grouped by the demographics and with rounded values for the metrics.
 
-Returns the mean (average) of the elements in x, which is 4.4
+<br>
 
-```{r}
+```{python plot3}
+#|code-fold: true
 
-mean(x)
+absolute_metrics = g.list_absolute_metrics(xtab)
+xtab[['attribute_name', 'attribute_value'] + absolute_metrics].round(2)
 
 ```
 
-Returns the maximum value in x, which is 10
+<br>
 
-```{r}
+Next, we can use the information on the metrics that have been calculated by the previous chunk to plot the present biases. For that purpose, the `Plot()` class is used and stored in a variable. Afterwards, this variable can be used to plot the metrics of interest. The next code chunk exemplarily plots the **false positive rate** for all subgroups. In the context of our data, false positive cases are present when defendants are classified high risk although they did not recidivate. As we can see from the plot below, these cases are especially present amoung younger as well as among African- and Native Americans.
 
-max(x)
+Additionally, the colors by default indicate how many respondents are included in the respective subgroup. The exact number can also be retrieved from the bar labels. Referring to the group sizes, you can see that the two races with they highest FPR are of significantly different size: While there are only 18 Native Americans included in our data, a total of nearly 3,700 African-American defendants are present.  
 
+
+```{python plot4}
+#|code-fold: true
+
+aqp = Plot()
+fpr = aqp.plot_group_metric(xtab, 'fpr')
+
 ```
 
-Returns the minimum value in x, which is 1
 
-```{r}
+<br>
 
-min(x)
+For better readability, and when only interested in the rates rather then the absolute numbers, we can switch the axes and rotate the x-axis labels:
 
-```
+<br>
 
- 
+```{python plot5}
+#|code-fold: true
 
-In addition to numeric values, you can put a wide variety of other data types in a vector in R. Here are some examples:
+xtab_df = xtab[['attribute_name', 'attribute_value'] + absolute_metrics].round(2).set_index(['attribute_name', 'attribute_value'])
+xtab_df = xtab_df.reset_index()
 
+# Create a figure for the plot
+plt.figure(figsize=(9, 6))
 
-## Character values
+# Create a bar plot for FPR
+ax = sns.barplot(x='attribute_value', y='fpr', hue='attribute_name', data=xtab_df, palette='coolwarm', dodge=True)
+ax.set_xticklabels(ax.get_xticklabels(), rotation=60, ha='right')
 
-```{r}
 
-names <- c("Hertie School", "Berlin", "Public Policy")
+# Add title and labels
+plt.title('False Positive Rate (FPR) by Attribute')
+plt.xlabel('Attribute Value')
+plt.ylabel('FPR')
 
-names
+# Rotate x-axis labels for better readability
+plt.xticks(rotation=60)
 
+# Show the plot
+plt.show()
+
 ```
 
- 
+<br>
 
-## Logical values
 
-```{r}
+Besides the FPR, the Aequitas package calculated several further helpful metrices that illustrate biases. In the following code chunk, we present four metrices in total:
 
-flags <- c(TRUE, FALSE, TRUE)
+* The Predicted Positive Rate (PPR): Proportion of positively predicted defendants
 
-flags
-```
+* Predictive Prevalence (PPrev): Positive predicition at higher prevalence in relation to group size
 
- 
+* False Negative Rate: Negative risk predictions, positive score
 
-## Times:
+* False Positive Rate: Positive risk predicition, negative score
 
-```{r}
+We can see that African-Americans and males are largely predicted as having a high-risk score (PPR), which also holds true when considering group size (PPrev), although here, also younger defendants are highly represented. We already discussed FPR, showing that African-Americans are often misclassified as high risk. Looking at the FNR, we can see that African-Americans rather rarely are misclassified as low-risk, while this seems to be especially true with older defendants.
 
-times <- as.POSIXct(c("2022-01-01 10:00:00", "2022-01-01 11:00:00", "2022-01-01 12:00:00"))
 
-times
+```{python plot6}
+#|code-fold: true
 
-```
+# Plot
+fig, axes = plt.subplots(4, 1, figsize=(8, 30))  # 4 rows, 1 column
+palette = sns.color_palette("ocean_r", n_colors=3)
 
- 
+# PPR Plot in the first row (0)
+sns.barplot(x='attribute_value', y='ppr', hue='attribute_name', data=xtab_df, palette=palette, ax=axes[0])
+axes[0].set_title('Positive Predictive Rate (PPR) by Attribute')
+axes[0].set_xlabel('Attribute Value')
+axes[0].set_ylabel('PPR')
+axes[0].tick_params(axis='x', rotation=90)
+axes[0].legend(loc='upper right', title='Category')
 
-# Exercises
+# PPrev Plot in the second row (1)
+sns.barplot(x='attribute_value', y='pprev', hue='attribute_name', data=xtab_df, palette=palette, ax=axes[1])
+axes[1].set_title('Predictive Prevalence (PPrev) by Attribute')
+axes[1].set_xlabel('Attribute Value')
+axes[1].set_ylabel('PPrev')
+axes[1].tick_params(axis='x', rotation=90)
+axes[1].legend(loc='upper center', title='Category')
 
-------------------------------------------------------------------------
+# FNR Plot in the third row (2)
+sns.barplot(x='attribute_value', y='fnr', hue='attribute_name', data=xtab_df, palette=palette, ax=axes[2])
+axes[2].set_title('False Negative Rate (FNR) by Attribute')
+axes[2].set_xlabel('Attribute Value')
+axes[2].set_ylabel('FNR')
+axes[2].tick_params(axis='x', rotation=90)
+axes[2].legend(loc='upper left', title='Category')
 
-1.-Create a numeric vector x with values 1 through 10. Then, calculate the sum of the first 5 elements of x.
+# FPR Plot in the fourth row (3)
+sns.barplot(x='attribute_value', y='fpr', hue='attribute_name', data=xtab_df, palette=palette, ax=axes[3])
+axes[3].set_title('False Positive Rate (FPR) by Attribute')
+axes[3].set_xlabel('Attribute Value')
+axes[3].set_ylabel('FPR')
+axes[3].tick_params(axis='x', rotation=90)
+axes[3].legend(loc='upper center', title='Category')
 
-```{webr-r}
+# Adjust the layout
+plt.tight_layout()
 
+# Show the combined plot
+plt.show()
 
 ```
+
+<br>
 
-**Answer**
+## Calculating the bias using disparity
 
-```{r, eval=FALSE, }
-#| code-fold: true
+Lastly, the Aequitas package lets us compare subgroups by calculating disparaties as a ratio of the desired metric.
 
-# Create a numeric vector containing the numbers 1 through 10
-x <- 1:10
+For example, the disparity of the false positive ratio for black and white defendants can be calculated like this:
 
-# Find the sum of the first five elements of the vector x using indexing
-sum(x[1:5])
+$\text{Disparity}_{FPR} = \frac{FPR{\text{black}}}{FPR{\text{white}}}$
 
+To easily calculate the disparity values for all metrices, we use the `Bias()` class of the Aquitas package and calculate a confusion matrix. Note that for each subgroup, you will need to assign a reference category. Here, we chose to compare all included subgroups to Caucasians, males, and defendants aged 25-45.
 
+```{python disparity}
+#|code-fold: true
+
+b = Bias()
+bdf = b.get_disparity_predefined_groups(xtab, original_df=df_compas_aeq, ref_groups_dict={'race':'Caucasian', 'sex':'Male', 'age_cat':'25 - 45'}, alpha=0.05, mask_significance=True)
+bdf.style
+
 ```
 
-------------------------------------------------------------------------
+<br>
 
-2.-Create a character vector names with the names of your three favorite foods. Then, use indexing to extract the second element of names.
+As before, we can now use this matrix for creating plots in order to visualize disparities between races. In the next plot, we are comparing our reference group to all other races, using the False Positive values (as these can be considered the most problematic in this application).
 
-```{webr-r}
+The size of the boxes indicates the group size, the color and the according scale indicate the disparity between the compared groups. The plot shows that compared to the Caucasian reference group, the False Positive rate for African-American defendants is nearly two times higher, indicating a clear sign of unfairness/bias.
 
+```{python disparity_plot}
+#|code-fold: true
 
+aqp.plot_disparity(bdf, group_metric='fpr_disparity', attribute_name='race', significance_alpha=0.05)
+
 ```
 
-**Answer**
+As an intermediate result, the aequitas-library works well for calculating key bias and fairness metrics and includes helpful functions for intuitively plotting the results. As this first part of the tutorial was aiming on giving a first glance at the data, it was largely built on the aequitas documentation. In the next part, we are shifting the focus away from bias detection and more towards bias mitigation. The second part introcudes a Neural Network that is trained for predicting recidivism and later tuned in order to find the optimal number of units and dropout rate.
 
-```{r, eval=FALSE, }
-#| code-fold: true
 
-# Create a character vector containing the names "pizza", "tacos", and "soup"
-names <- c("pizza", "tacos", "soup")
+# Part 2: Neural Network Classifier for Fair Data Distribution
 
-# Extract the second element of the vector using indexing
-names[2]
 
+### Loading the data
 
+Not that in this version of the data, some more variables/alternative labels are included:
 
-```
+* **two_year_recid**, indicating if the person has recidivated within two years
+
+* **target**, the binary risk score
 
-------------------------------------------------------------------------
+* The charge degree of defendants where F: felony and M: misdemeanor
 
-3.-Create a logical vector flags with values TRUE, FALSE, TRUE, TRUE. Then, use the which() function to find the positions of the TRUE values in flags.
+* **juv_fel_count**, containing the number of juvenile felonies
 
-```{webr-r}
+* **juv_misd_count**, containing the number of juvenile misdemeanors
 
+* **juv_other_count**, containing the number of prior juvenile convictions which are not considered felonies or misdemeanors
 
+* **priors_count**, containing the number of prior crimes committed
+
+
+```{python load_data}
+
+df_compas = pd.read_csv("https://raw.githubusercontent.com/jurjoroa/DeepLearning_bias_NLP/JorgeRoa/data_set.csv")
+df_compas.head()
+
 ```
+
+<br>
+
+First, we are writing some functions that are later used for creating the accuracy and loss plots.
+
+<br>
+
+# Metric Plot
 
-**Answer**
 
-```{r, eval=FALSE, }
-#| code-fold: true
+```{python plot_metric}
+def plot_metric(history, metric):
+    train_metrics = history.history[metric]
+    val_metrics = history.history['val_'+metric]
+    epochs = range(1, len(train_metrics) + 1)
+    plt.plot(epochs, train_metrics, 'bo-',marker=None)
+    plt.plot(epochs, val_metrics, 'ro-',marker=None)
+    plt.title('Training and validation '+ metric)
+    plt.xlabel("Epochs")
+    plt.ylabel(metric)
+    plt.legend(["train_"+metric, 'val_'+metric])
+    plt.show()
 
-# create a logical vector containing the values TRUE, FALSE, TRUE, and TRUE
-flags <- c(TRUE, FALSE, TRUE, TRUE)
+```
+
+<br>
 
-# use the which() function to find the indices of the TRUE values in the vector
-which(flags)
+Next, we are defining function that we can use to fit our feed forward neural network. We are using ReLU-activation functions for the first three layers and a sigmoid activation function for the output layer (since we are dealing with a classification problem). Moreover, we are using binary crossentropy as our loss function and Adaptive Moment Estimation for minimizing the loss function. We tried to experiment with number of layers, the activation functions, and the droupout rates, but received quite similar results.
 
+```{python fit_model}
 
+def nn_classifier(n_features):
+    inputs = Input(shape = (n_features,))
+    dense1 = Dense(40, activation = 'relu')(inputs)
+    dropout1 = Dropout(.4)(dense1)
+    dense2 = Dense(40, activation = 'relu')(dropout1)
+    dropout2 = Dropout(.3)(dense2)
+    dense3 = Dense(32, activation = 'relu')(dropout2)
+    dropout3 = Dropout(.3)(dense3)
+    outputs = Dense(1, activation = 'sigmoid')(dropout3)
+    model = Model(inputs = [inputs], outputs = [outputs])
+    opt = Adam(learning_rate=0.001)
+    model.compile(loss = 'binary_crossentropy', optimizer = opt, metrics = ['accuracy'])
+    return model
+  
 
 ```
+
+<br>
+
+Before fitting our defined model, we need to conduct some more data manipulation steps and define our predictor and target features. First, we one hot encode categorial variables (here: the charge degree). Second, we exclude sex and race from the predictors. We define our target variable to be the binary score whether a defendant committed crime within two years after the first incident. Additionally, the data is normalized using MinMaxScaler().
+
+<br>
+
+
+```{python data_manipulation}
+
+# One Hot encoding for categorical variable
+charge_degree = pd.get_dummies(df_compas['charge_degree'])
 
-------------------------------------------------------------------------
+charge_degree.columns = ['charge_degree_' + str(x) for x in charge_degree.columns]
+df_compas = pd.concat([df_compas, charge_degree], axis=1)
 
-4.-Create a date vector dates with the dates "2022-01-01", "2022-02-01", "2022-03-01", "2022-04-01", "2022-05-01". Then, use the month() function to extract the month of the second date in dates.
+df_compas.drop(['charge_degree'], axis=1, inplace=True)
 
-**Answer**
+X = df_compas.copy()
 
-```{r, eval=FALSE, }
-#| code-fold: true
+# Sensible attributes (we want to exclude them from training to avoid "intentional" bias)
+Z_race = X.pop('race')
+Z_sex = X.pop('sex')
+Z_data = {'race': Z_race, 'sex': Z_sex}
+Z = pd.concat(Z_data, axis = 1)
 
-# Create a Date vector containing five dates using the as.Date() function
-dates <- as.Date(c("2022-01-01", "2022-02-01", "2022-03-01", "2022-04-01", "2022-05-01"))
+# Target: COMPAS risk prediction, 1 = Risk of recidivism, 0 = No risk
+y = X.pop('target')
 
-# Extract the second element of the vector using indexing and find its month using the month() function
-month(dates[2])
+# Actual observed criminal activity reported within 2 years from compas score,
+# 1 = the person committed a crime
+# 0 = Not a recidivist
+y_factual = X.pop('two_year_recid')
+X.head()
 
+np.random.seed(7)
+X_train, X_test, y_train, y_test, y_factual_train, y_factual_test, Z_train, Z_test = train_test_split(X, y, y_factual, Z, test_size = 0.4,
+                                                                    stratify = y, random_state = 7)
+# Normalize the data
+scaler = MinMaxScaler().fit(X_train)
+scale_df = lambda df, scaler: pd.DataFrame(scaler.transform(df), columns = df.columns, index = df.index)
+X_train = X_train.pipe(scale_df, scaler)
+X_test = X_test.pipe(scale_df, scaler)
 
 
 ```
 
-------------------------------------------------------------------------
+<br>
 
-5.-Create a vector x with values 1, 2, 3, 4, 5, and a vector y with values 6, 7, 8, 9, 10. Then, concatenate x and y into a single vector z.
+Now, we can fit our model! We are training over 50 epochs.
 
-```{webr-r}
+<br>
 
+```{python fit_model}
+#|code-fold: true
 
+np.random.seed(7)
+
+clf_1 = nn_classifier(n_features = X_train.shape[1])
+history = clf_1.fit(X_train, y_train.values, epochs = 50, verbose = 2,validation_data = (X_test, y_test))
+
+
 ```
+
+<br>
 
+From the output, we can already tell that the model improved over epochs, as loss decreased and accuracy increased. Let's use our predefined plot_metric function to view the results:
 
-**Answer**
+<br>
 
-```{r, eval=FALSE, }
-#| code-fold: true
+```{python plot_metric}
+#|code-fold: true
 
-# Create two numeric vectors containing 
-# the numbers 1 through 5 and 6 through 10, respectively
-x <- c(1:5)
-y <- c(6:10)
+plot_metric(history, 'loss')
 
-# Concatenate the two vectors to create a 
-# new vector called z using the c() function
-z <- c(x, y)
+```
+
+<br>
 
+```{python plot_metric}
+#|code-fold: true
 
+clf_1.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+plot_metric(history, 'accuracy')
+
 ```
+
 
- 
+<br>
 
-# Lists
+As we can se, the predicitions quickly approach an accuracy value of around 70 to 75 per cent in both training and validation. After 50 epochs, we are left with accuracy values around 75%. Next, we are adapting our NN-classifier using keras and try to find the optimal hyperparameters and see whether we are able to improve the performance. For that purpose, we are adapting the classifier and experiment with varying values for the number of units in each layer, the dropout rates, and the learning rate.
 
-------------------------------------------------------------------------
+<br>
 
-![](images/list.png){fig-align="center" width="300"}
+```{python fit_model}
 
+def nn_classifier(hp, n_features):
+    inputs = Input(shape=(n_features,))
+    x = inputs
 
-A list allow you to store multiple objects of different types. Lists are similar to vectors in that they can store multiple elements, but unlike vectors, the elements of a list can be of different types, such as numeric, character, or even other lists. Each element of a list can be named, allowing you to access and manipulate specific elements of the list by name.
+    # Tuning the number of units in the first dense layer
+    hp_units1 = hp.Int('units1', min_value=32, max_value=512, step=32)
+    x = Dense(units=hp_units1, activation='relu')(x)
+    hp_dropout1 = hp.Float('dropout1', min_value=0.0, max_value=0.5, step=0.1)
+    x = Dropout(rate=hp_dropout1)(x)
 
-Lists are handy since they can allow you to store different outputs simultaneously. For example, when you are running models, the results are stored in lists and you can access to them by specifying `[[]]` and the name of the list inside of the squared brackets. 
+    # Tuning the number of units in the second dense layer
+    hp_units2 = hp.Int('units2', min_value=32, max_value=512, step=32)
+    x = Dense(units=hp_units2, activation='relu')(x)
+    hp_dropout2 = hp.Float('dropout2', min_value=0.0, max_value=0.5, step=0.1)
+    x = Dropout(rate=hp_dropout2)(x)
 
+    # Tuning the number of units in the third dense layer
+    hp_units3 = hp.Int('units3', min_value=32, max_value=512, step=32)
+    x = Dense(units=hp_units3, activation='relu')(x)
+    hp_dropout3 = hp.Float('dropout3', min_value=0.0, max_value=0.5, step=0.1)
+    x = Dropout(rate=hp_dropout3)(x)
 
+    outputs = Dense(1, activation='sigmoid')(x)
 
+    model = Model(inputs=inputs, outputs=outputs)
 
-## A list with different type of vectors
+    # Tuning the learning rate for the optimizer
+    hp_learning_rate = hp.Choice('learning_rate', values=[1e-2, 1e-3, 1e-4])
 
-```{r}
+    model.compile(optimizer=Adam(learning_rate=hp_learning_rate),
+                  loss='binary_crossentropy',
+                  metrics=['accuracy'])
 
+    return model
 
-my_list <- list(numbers = c(1, 2, 3), names = c("Alejandro", "Eduardo", "Fernanda"), statement = c(TRUE, FALSE, TRUE))
+```
+
+<br>
+
+```{python fit_model}
+
+def build_model(hp):
+    return nn_classifier(hp, n_features=X_train.shape[1])
 
-my_list
+# Instantiate the tuner
+tuner = kt.Hyperband(
+    build_model,
+    objective='val_accuracy',
+    max_epochs=50,
+    directory='keras_tuner',
+    project_name='nn_tuning',
+    factor=3,
+    hyperband_iterations=2
+)
 
 ```
 
-## Access an element of the list using indexing
+<br>
 
-We can access an element of the list using indexing, which is really useful when you are doing functions and storing results or calling them. 
+The next chunk takes some time to execute. It used the previously defined tuner for finding the optimal hyperparameter values. We also included early stopping in case that the validation loss is minimized early.
 
-Here this returns the second element of my_list, which is the character vector "names"
 
-```{r}
+<br>
 
 
-my_list[[2]]
+```{python fit_model2}
 
+# Create a callback to stop training early after reaching a certain value for the validation loss
+stop_early = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=5)
 
+# Execute the hyperparameter search
+tuner.search(X_train, y_train, epochs=50, validation_data=(X_test, y_test), callbacks=[stop_early])
+
+# Get the optimal hyperparameters
+best_hps = tuner.get_best_hyperparameters(num_trials=1)[0]
+
+print(f"""
+The hyperparameter search is complete. The optimal number of units in the first densely-connected
+layer is {best_hps.get('units1')}, in the second layer is {best_hps.get('units2')}, and in the third layer is {best_hps.get('units3')}.
+The optimal dropout rates are {best_hps.get('dropout1')}, {best_hps.get('dropout2')}, and {best_hps.get('dropout3')}.
+The optimal learning rate for the optimizer is {best_hps.get('learning_rate')}.
+""")
+
+
 ```
 
+<br>
 
-or also we can access an element of the list using named indexing:
 
-```{r}
+As the previous cell's output shows, we received optimal values for the number of units in each layer, the dropout rates, and the Adam opimizer's learning rate. Ultimately, we fit our original model with the optimal hyperparameters. As we can see, the performance stays relatively constant in comparison with our previous model.
 
+<br>
 
-my_list[["names"]]
+```{python fit_model3}
 
+# Build the model with the optimal hyperparameters and train it on the data
+model = tuner.hypermodel.build(best_hps)
+history = model.fit(X_train, y_train, epochs=50, validation_data=(X_test, y_test))
 
 ```
+
+<br>
 
+# Part 3: Mitigating bias
 
-## Add a new element to the list:
+After having detected and replicated the bias, we now want to introduce different mitigation strategies - we'll begin with two preprocessing techniques, followed by one prost-processing technique - let's dive right in and see what we can do to get fairer results!
 
-Adds a new numeric vector "ages" to my_list
-```{r}
+## 3.1 Data Download
 
-my_list[["ages"]] <- c(25, 30, 35)
+*First* step, as usual, is to get our data:
 
+```{python}
+
+df_compas_bias = pd.read_csv("https://raw.githubusercontent.com/propublica/compas-analysis/master/compas-scores-two-years.csv")
+df_compas_bias.head()
+
 ```
 
 
-We can do the same even with a dataframe inside a list
+<br>
 
-```{r}
+## 3.1 Data Preprocessing
 
-df <- data.frame(name = c("Alejandro", "Eduardo", "Marifer"), 
-                 age = c(30, 27, 17)) # Create the dataframe
+To further work with the data, we need to clean it up and only keep variables that we want to use for our analysis. The following code leaves us with only the relevant variables: We want to focus our tutorial on racial bias in the COMPAS dataset, thus we only keep the data for "African-American" and "Caucasian" individuals.Further, we map the age variables to numeric values, convert "sex" and "charge_degree" (F: Felony M: Misdemeanor) to binary variables. Last but not least, we drop the "start2 and "end" variables after calculating the duration and adding it as a new variable.
 
-my_list[["my_df"]] <- df
+<br>
 
-my_list
-```
+```{python}
 
+#Drop columns that we don't need
+columns_to_drop = ['id', 'name', 'first', 'last', 'compas_screening_date', 'dob', 'age', 'c_jail_in', 'c_jail_out',
+                   'c_case_number', 'c_offense_date', 'c_arrest_date', 'c_charge_desc', 'days_b_screening_arrest',
+                   'decile_score', 'r_case_number', 'r_days_from_arrest', 'r_offense_date', 'c_days_from_compas',
+                   'r_charge_degree', 'r_charge_desc', 'r_jail_in', 'r_jail_out', 'priors_count.1', 'violent_recid',
+                   'is_violent_recid', 'vr_case_number', 'vr_charge_degree', 'vr_offense_date', 'vr_charge_desc',
+                   'type_of_assessment', 'decile_score.1', 'score_text', 'is_recid', 'v_type_of_assessment',
+                   'screening_date', 'v_decile_score', 'v_score_text', 'v_screening_date', 'in_custody', 'out_custody',
+                   'event']
 
+df_compas_bias_w = df_compas_bias.drop(columns=[col for col in columns_to_drop if col in df_compas_bias.columns])
 
-## Create a nested list with two elements:
+### Keep only white and black individuals
+race_map = {'African-American':0, 'Caucasian':1, 'Asian':2, 'Hispanic':3, 'Native American':4, 'Other':5
+}
 
-```{r}
-nested_list <- list(numbers = c(1, 2, 3), list_2 = list(letter = "A", number = 42))
+df_compas_bias_w['race'] = df_compas_bias_w['race'].apply(lambda x: race_map[x])
+df_compas_bias_w = df_compas_bias_w[(df_compas_bias_w.race == 0.) | (df_compas_bias_w.race == 1.)]
 
-nested_list
+# Map age categories to numeric values
+age_map = {'Less than 25': 0, '25 - 45': 1, 'Greater than 45': 2}
+df_compas_bias_w['age_cat'] = df_compas_bias_w['age_cat'].map(age_map)
 
-```
+# Convert sex to binary values (Male: 0, Female: 1)
+sex_map = {'Male': 0, 'Female': 1}
+df_compas_bias_w['sex'] = df_compas_bias_w['sex'].map(sex_map)
 
+# Convert charge degree to binary values (F: 1, M: 0)
+charge_degree_map = {'F': 1., 'M': 0.}
+df_compas_bias_w['c_charge_degree'] = df_compas_bias_w['c_charge_degree'].map(charge_degree_map)
 
-For access a nested element of the list:
+# Calculate duration in days and drop the original 'end' and 'start' columns
+df_compas_bias_w['duration'] = (df_compas_bias_w['end'] - df_compas_bias_w['start'])
 
-```{r}
+#erase start and end
+df_compas_bias_w = df_compas_bias_w.drop(columns=['start', 'end'])
 
-nested_list[["list_2"]][["number"]]  
+df_compas_bias_w.head()
 
 
 ```
 
 
-As you can see, we can access the outputs of the list we want. This is useful since you can apply functions to retrieve your data from a nested list or access to a specific output of your model, for example. 
+<br>
 
+As a next step, we want to separate our independent variables (X) from our target variable (Y) , namely "two_year_recid" (a Binary variable indicating whether the defendant is rearrested at within two years). Also, we use the MinMaxScaler from scikit-learn to normalize our features and the fit_transform method to rescale the features. We then have a look at our data, to see, if everything worked out well.
 
-# Exercises
+<br>
 
-------------------------------------------------------------------------
 
-1.-Create a list with three elements: a numeric vector, a character vector, and a logical vector. Then, add a new element to the list containing a data frame with three columns: "name", "age", and "gender".
+```{python}
 
-```{webr-r}
+# Separate features (X) and target variable (y)
+X = df_compas_bias_w.drop(columns=['two_year_recid']).values
+y = df_compas_bias_w['two_year_recid'].values
 
+# Rescale the features for better performance
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler()
+X = scaler.fit_transform(X)
 
+# Display the first few rows of the modified DataFrame
+df_compas_bias_w.head()
+
 ```
 
-**Answer**
+<br>
 
-```{r, eval=FALSE, }
-#| code-fold: true
+## 3.3 Preprocessing Mitigation Techniques
 
 
-# Create a list with three elements: 
-# a numeric vector, a character vector, and a logical vector
-l_exercise1 <- list(numbers = c(1, 2, 3), 
-                    names = c("Alice", "Bob", "Charlie"), 
-                    logical = c(TRUE, FALSE, TRUE))
 
-# Create a data frame with three columns
-df <- data.frame(name = c("Alice", "Bob", "Charlie"), 
-                 age = c(25, 30, 35), 
-                 gender = c("F", "M", "M"))
 
-# Add the data frame as a fourth element 
-# to the list using the [[]] operator
-l_exercise1[["df"]] <- df
+In the next steps, we will predict, whether an individual will recidivate - in other words, we'll precict the target variable, "two_year_recid". To do this, we firstly split our data in a train and a test set. Then, we fit a logistic regression and print the accuracy and some other metrics.
 
 
 
-```
+<br>
 
-------------------------------------------------------------------------
+```{python}
 
-2.-Create a nested list with two elements: a character vector containing the names of three countries, and a list containing the populations and areas of those countries.
 
-```{webr-r}
 
+### Split to train / test
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-```
+### Fit logistic regression and print accuracy
+clf = LogisticRegression(random_state=42).fit(X_train, y_train)
+y_pred = clf.predict(X_test)
 
+acc = np.sum(y_pred == y_test) / len(y_test)
+print("Accuracy =", np.round(acc, 3))
 
-**Answer**
+# Precision
+precision = precision_score(y_test, y_pred)
+print("Precision =", np.round(precision, 3))
 
-```{r, eval=FALSE, }
-#| code-fold: true
+# Recall
+recall = recall_score(y_test, y_pred)
+print("Recall =", np.round(recall, 3))
 
-# The first element is a character vector containing the names of three countries
-# The second element is a list containing two named vectors: population and area
+# F1 Score
+f1 = f1_score(y_test, y_pred)
+print("F1 Score =", np.round(f1, 3))
 
-l_exercise2 <- list(countries = c("USA", "China", "India"), 
-                    data = list(population = c(328, 1394, 1380), 
-                                area = c(9.8, 9.6, 3.3)))
+# Confusion Matrix
+conf_matrix = confusion_matrix(y_test, y_pred)
+print("Confusion Matrix:\n", conf_matrix)
 
 ```
+
+<br>
 
-------------------------------------------------------------------------
+## Ratio of African-American to Caucasians on the original data vs. in the precicted outcomes
 
-3.- Create a list with four elements: two numeric vectors, a character vector, and a data frame. Then, extract the second element of the character vector and the third column of the data frame.
+Let's have look at the distributions in our data, which plays an important role when dealing with fairness measures - as we learned in the first part of this tutorial. The code calculates the ratio of African-Americans in the data - apparently, for every Caucasian prisoner, there are approximately 1.51 African-American prisoners. The model predicts that African-American prisoners are 2.15 times more likely to reoffend than Caucasian prisoners. **This ratio being higher than the actual ratio of African-American to Caucasian prisoners, indicates a potential bias in the predictions towards expecting higher recidivism among African-American individuals.**
 
-```{webr-r}
+```{python}
 
+# Identifying African-American and Caucasian individuals in the test set
+afr_am = (X_test[:, 2] == 0)
+white = (X_test[:, 2] == 1)
 
+# Predictions for African-American and Caucasian individuals
+pred_afr_am = y_pred[afr_am]
+pred_white = y_pred[white]
+
+# Calculating ratios
+afr_am_to_whites_ratio = afr_am.sum() / white.sum()
+predicted_reoffense_afr_am_to_whites_ratio = pred_afr_am.sum() / pred_white.sum()
+
+# Printing the ratios
+print("Black to white prisoners ratio:", round(afr_am_to_whites_ratio, 2))
+print("Predicted reoffense blacks to whites ratio:", round(predicted_reoffense_afr_am_to_whites_ratio, 2))
+
 ```
 
-**Answer**
+### 3.3.1 Using Disparate Impact Repairing (preprocessing)
 
-```{r, eval=FALSE, }
-#| code-fold: true
+**Disparate Impact** is a fairness metric used to assess the equality of outcomes between two distinct groups: an unprivileged group and a privileged group. It **measures the ratio of the proportion of individuals receiving favorable outcomes in the unprivileged group to that in the privileged group.**
 
+**Disparate impact remover** is a **preprocessing technique that edits feature values to increase group fairness** while preserving rank-ordering within groups
 
-# Create a list with four elements: two numeric vectors, a character vector, and a data frame
-l_exercise3 <- list(x = c(1, 2, 3), y = c(4, 5, 6), 
-                    names = c("Guillermo", "Alonso", "Chivo"), 
-                    df = data.frame(name = c("Guillermo", "Alonso", "Chivo"), 
-                                    age = c(25, 21, 45), 
-                                    gender = c("M", "M", "M")))
+$$
+\frac{\Pr(Y=1|D=\text{unprivileged})}{\Pr(Y=1|D=\text{privileged})}
+$$
 
-# Extract the second element of the names vector using the [[]] operator
-l_exercise3[["names"]][2]
+<br>
 
-# Extract the third column of the df data frame using the [[]] operator
-l_exercise3[["df"]][3]
+To use the remover, let's first create two dataframes, one for the privileged group ("Caucasian") and one for the unprivileged group ("African-American"). Next, we want to plot the distribution of outcomes for each of the two groups and visually see this disparity:
 
+<br>
 
+```{python}
+#|code-fold: true
 
+# Filter the DataFrame into privileged and unprivileged groups
+unprivileged = df_compas_bias_w[df_compas_bias_w['race'] == 0]
+privileged = df_compas_bias_w[df_compas_bias_w['race'] == 1]
 
-```
+# Set up the matplotlib figure
+plt.figure(figsize=(10, 6))
 
-------------------------------------------------------------------------
+# Plot the distribution for the unprivileged group
+sns.distplot(unprivileged['two_year_recid'], hist=False, label='Unprivileged (African-American)')
 
-4.-Create a list with two elements: a numeric vector and a data frame. Then, use the str() function to display the structure of the list.
+# Plot the distribution for the privileged group
+sns.distplot(privileged['two_year_recid'], hist=False, label='Privileged (Caucasian)')
 
-```{webr-r}
+# Add title and labels
+plt.title('Distribution of Outcomes for Privileged and Unprivileged Groups')
+plt.xlabel('Outcome (two_year_recid)')
+plt.ylabel('Density')
 
+# Show the plot
+plt.legend()
+plt.show()
 
 ```
 
-**Answer**
+<br>
 
-```{r, eval=FALSE, }
-#| code-fold: true
+Next, we are creating a StandardDataset object using the AIF360 library, which is designed for fairness-aware machine learningand can be then used with various algorithms and metrics provided by AIF360 to assess and mitigate bias in machine learning models.
 
-# Create a list with two elements: a numeric vector and a data frame
-my_list <- list(x = c(1, 2, 3), 
-                df = data.frame(name = c("Trejo", "Adame", "Rose"), 
-                                age = c(25, 30, 35), 
-                                gender = c("M", "M", "F")))
+<br>
 
-# Display the structure of the list using the str() function
-str(my_list)
+```{python}
 
+protected = 'race' #We chose race as the protected attribute because we are interested in the disparity between African-Americans and Caucasians
 
+# Create a StandardDataset object
+df_protected = Dataset(df_compas_bias_w, #The dataset
+             label_name='two_year_recid', #The label or target variable that we want to predict
+             favorable_classes=[0], #The class we want to consider favorable (0 means no recidivism)
+             protected_attribute_names=[protected], #The attribute we want to test for disparity
+             privileged_classes=[[1]], categorical_features=[],   # 0 -> Black, 1 -> White to match the order of our dataset
+             features_to_keep=['race', 'priors_count', 'duration']) #The features we want to keep in the dataset because they are relevant for our model
 
-
 ```
+
+<br>
 
-------------------------------------------------------------------------
+```{python}
+scaler = MinMaxScaler(copy=False) #We create a scaler object
 
-5.-Create a list with three elements: a numeric vector, a character vector, and a logical vector. Then, use the names() function to assign names to the elements of the list.
+# Splitting the dataset into test and train sets like we did before
+test, train = df_protected.split([0.33], seed=42) #We use a seed to make sure we get the same split every time
 
-```{webr-r}
+# Fitting the scaler on the training features and transforming the training features using the same scaler
+train.features = scaler.fit_transform(train.features) #We fit the scaler on the training features
 
+# Transforming the test features using the same scaler as the one fitted on the training features
+test.features = scaler.transform(test.features) #We transform the test features using the same scaler
 
+# Getting the index of the protected attribute in the feature names list
+index = train.feature_names.index(protected) #We get the index of the protected attribute in the feature names list
 ```
 
+<br>
 
-**Answer**
+The **"repair level" parameter quantifies the extent to which you want to adjust the dataset to correct for disparities between privileged and unprivileged groups.**
 
-```{r, eval=FALSE, }
-#| code-fold: true
+In the follwoing code chunk, we calculate the disparate impact for both privileged (e.g., Caucasians) and unprivileged (e.g., African-Americans) groups, **storing the results in a list for each repair level.**
 
-# Create a list with three elements: a numeric vector, a character vector, and a logical vector
-l_exercise5 <- list(numbers = c(1, 2, 3), 
-                    names = c("Mariana", "Bobby", "Niurka", "Ricardo"), 
-                    logical = c(TRUE, FALSE, TRUE))
+<br>
 
-# Use the names() function to assign names to the elements of the list
-names(l_exercise5) <- c("num", "nam", "log")
+```{python}
 
+np.random.seed(42)
 
 
+# Initialize a list to store the disparate impact values
+DIs = []
 
-```
+# Iterate over each level of repair
+for level in tqdm(np.linspace(0., 1., 11)):
+    # Initialize DisparateImpactRemover with the current level
+    di = DisparateImpactRemover(repair_level=level) #We initialize the DisparateImpactRemover with the current level
+    # Fit and transform the training data
+    train_repd = di.fit_transform(train) #We fit and transform the training data
+    # Transform the test data (do not fit the test data)
+    test_repd = di.fit_transform(test) #We transform the test data (do not fit the test data)
+
+    # Remove the protected attribute before training the model
+    X_tr = np.delete(train_repd.features, index, axis=1) #We remove the protected attribute before training the model
+    X_te = np.delete(test_repd.features, index, axis=1) #We remove the protected attribute before training the model
+    y_tr = train_repd.labels.ravel() #We get the labels for the training set
 
-------------------------------------------------------------------------
+    # Initialize and fit the logistic regression model
+    lmod = LogisticRegression(class_weight='balanced', solver='liblinear') #We initialize and fit the logistic regression model with class_weight='balanced' to account for the imbalance in the dataset
+    lmod.fit(X_tr, y_tr) #We fit the model
 
-6.-Create a list with three elements: a numeric vector, a character vector, and a logical vector. Then, use the length() function to find the length of the character vector.
+    # Predict on the test set and copy the results to a new dataset
+    test_repd_pred = test_repd.copy() #We predict on the test set and copy the results to a new dataset
+    test_repd_pred.labels = lmod.predict(X_te) #We predict on the test set and copy the results to a new dataset
 
-```{webr-r}
+    # Calculate and store the disparate impact
+    p = [{protected: 1}] #We calculate and store the disparate impact for the privileged group (in our case Caucasians)
+    u = [{protected: 0}] #We calculate and store the disparate impact for the unprivileged group (in our case African-Americans)
+    cm = BinaryLabelDatasetMetric(test_repd_pred, privileged_groups=p, unprivileged_groups=u) #We calculate and store the disparate impact for the privileged and unprivileged groups
+    DIs.append(cm.disparate_impact()) #We calculate and store the disparate impact for the privileged and unprivileged groups
 
 
+
 ```
 
+<br>
 
-**Answer**
+The graph we'll create next illustrates the efficacy of the Disparate Impact Remover at different repair levels for reducing racial bias within the context of predicting two-year recidivism. As the repair level increases from 0 (no adjustment) to 1 (full adjustment), the disparate impact metric approaches 1.0, which signifies fair treatment between races; each blue dot is a data point that shows how the fairness of the model, as measured by the disparate impact, changes as we apply different levels of bias mitigation.
 
-```{r, eval=FALSE, }
-#| code-fold: true
+Initially, **with no repair, the metric is close to 0.8, indicating substantial bias against the unprivileged group (likely African-Americans). With full repair, the bias is reduced, but not entirely eliminated**, suggesting some residual unfairness remains or that the repair cannot fully compensate for the existing disparities within the data. The graph underscores the challenge of achieving complete fairness, as represented by the elusive ideal disparate impact value of 1.0, even as efforts are made to correct for bias in predictive modeling for criminal justice.
 
-# Create a list with three elements: a numeric vector, a character vector, and a logical vector
-l_exercise6 <- list(numbers = c(1, 2, 3), 
-                names = c("Mariana", "Bobby", "Niurka"), 
-                logical = c(TRUE, FALSE, TRUE))
+<br>
 
-# Use the length() function to find the length of the "names" vector
-length(l_exercise6[["names"]])
+```{python}
+#|code-fold: true
 
+# Assuming DIs is your list of disparate impact values
+repair_levels = np.linspace(0., 1., 11)
 
-```
+# Assuming DIs is defined before this point
+DIs = DIs[:11]
+
+plt.figure(figsize=(10, 6))
+plt.plot(repair_levels, DIs, marker='o', markersize=8, linewidth=2, label='Disparate Impact')
+
+plt.title('Disparate Impact vs. Repair Level', fontsize=14)
+plt.xlabel('Repair Level', fontsize=12)
+plt.ylabel('Disparate Impact', fontsize=12)
 
- 
+plt.axhline(y=1.0, color='g', linestyle='--', label='Ideal Value')
+plt.plot([0, 1], [0.8, 0.8], 'r', linestyle='-.', label='Threshold')
 
-# Matrices and arrays
+plt.grid(True)
+plt.legend()
+plt.tight_layout()
 
-------------------------------------------------------------------------
+# Display the plot
+plt.show()
 
-![](images/matrix_array.png){fig-align="center" width="300"}
 
-A matrix is a two-dimensional data structure that contains a fixed number of rows and columns. As it showed in the image, matrix can have the same functions as a dataframe, but the difference is how you approach to this object. For example, the elements of a matrix must all be of the same data type, such as numeric or character. Matrices are similar to data frames, but they do not have column names or row names. Usually, this ones are used to mathematic operations or modeling. 
-Arrays, on the other hand, can have any number of dimensions, even including two dimensions for matrices. Arrays can contain elements of different data types, and they are useful for storing and manipulating large amounts of data with complex structures.
+```
+
+<br>
 
+```{python}
+#|code-fold: true
 
-## Createing a matrix
 
-Create a matrix with three rows and four columns:
+# Predict on test using only the features at indices -3 and -1
+y_pred = lmod.predict(X_test[:, [-3, -1]])
 
-```{r}
+# Boolean masks for African-American and Caucasian individuals
+afr_am_mask = (X_test[:, 2] == 0)
+white_mask = (X_test[:, 2] == 1)
 
+# Predictions for African-American and Caucasian individuals
+pred_afr_am = y_pred[afr_am_mask]
+pred_white = y_pred[white_mask]
 
-m_example <- matrix(1:12, nrow = 3, ncol = 4)
+# Calculating the ratio of predicted reoffenses
+predicted_reoffense_afr_am_to_whites_ratio = pred_afr_am.sum() / pred_white.sum()
 
-m_example
+# Printing the predicted reoffense ratio
+print("Predicted reoffense blacks to whites ratio:", np.round(predicted_reoffense_afr_am_to_whites_ratio, 2))
 
 ```
 
-## Access an element of the matrix using indexing
 
-Returns the element in the second row and third column of my_matrix, which is 7
+<br>
 
-```{r}
+And good news: The Ratio dropped from 2.15 to 2.07! So, reparation has worked, we have a less biased result. But, let's be honest, this is not a huge improvement, there still seems to be a decent amount of bias. So, let's try out some other techniques to improve the fairness of the model even further!
 
+## 3.3.2 Reweighting the Data (Preprocessing)
 
-m_example[2, 3] 
+First, let's have a look at the difference in mean outcomes metric of the AIF360 library for unprivileged and privileged groups. A positive value indicates a bias in favor of the privileged group, while a negative value indicates a bias against the unprivileged group. In our case, the latter is the case, with a difference in mean outcomes of -0.126
 
-```
+
 
+```{python}
+#|code-fold: true
 
-## Modify an element of the matrix
 
-Changes the element in the first row and fourth column of my_matrix to 20
+from aif360.metrics import BinaryLabelDatasetMetric
 
-```{r}
+# Define unprivileged and privileged groups.
 
-m_example[1, 4] <- 20  
+privileged_groups = [{'race': 1}]
+unprivileged_groups = [{'race': 0}]
 
-m_example
 
+# Initialize the metric for the original training dataset
+metric_orig_train = BinaryLabelDatasetMetric(train, # train from protected dataset
+                                             unprivileged_groups=unprivileged_groups, # Consideres to be at disadvantage (e.g., Blacks)
+                                             privileged_groups=privileged_groups) # Considered to be at an advantage (e.g., Caucasians)
+
+# Print the difference in mean outcomes between unprivileged and privileged groups
+mean_diff = metric_orig_train.mean_difference() # difference in probabilities of favorable outcomes between the privileged and unprivileged groups.
+#A positive value indicates a bias in favor of the privileged group, while a negative value indicates a bias against the unprivileged group.
+print("Difference in mean outcomes between blacks and whites = %f" % mean_diff)
 ```
+
+<br>
 
 
-## Create an array with three dimensions
+Next, we apply a second mitigation strategy by **performing reweighing on the training dataset** to ensure that the total sum of instance weights for the transformed training dataset (transf_train.instance_weights.sum()) is approximately equal to the total sum of instance weights for the original training dataset (train.instance_weights.sum()). The check is done using an absolute difference and comparing it against a small number, 1e-6, to account for any minor floating-point arithmetic discrepancies.
 
-```{r}
+The result "True" indicates that the reweighing algorithm is functioning as intended in this regard: it's **modifying individual instance weights to address disparities without changing the overall weight sum.** This is important to ensure that the dataset's overall statistical properties remain consistent while individual instances are weighted differently to mitigate bias.
 
-arr_example <- array(1:24, dim = c(2, 3, 4))
 
-arr_example
+
+```{python}
+RW = Reweighing(unprivileged_groups=unprivileged_groups,
+               privileged_groups=privileged_groups)
+RW.fit(train)
+transf_train = RW.transform(train)
+```
 
+```{python}
+### Testing
+np.abs(transf_train.instance_weights.sum()-train.instance_weights.sum())<1e-6
 ```
 
+<br>
 
-## Access an element of the array using indexing
+```{python}
+#|code-fold: true
 
-Returns the element in the second row, third column, and fourth layer of my_array, which is 23
+metric_orig_train = BinaryLabelDatasetMetric(train,
+                                             unprivileged_groups=unprivileged_groups,
+                                             privileged_groups=privileged_groups)
+orig_mean_difference = metric_orig_train.mean_difference()
 
-```{r}
 
-arr_example[2, 3, 4]
+metric_transf_train = BinaryLabelDatasetMetric(transf_train,
+                                               unprivileged_groups=unprivileged_groups,
+                                               privileged_groups=privileged_groups)
+transf_mean_difference = metric_transf_train.mean_difference()
 
+print("Difference in mean outcomes between transformed blacks and whites = %f" % metric_transf_train.mean_difference())
 
 ```
 
-## Modify an element of the array
+<br>
 
-Changes the element in the second row, second column, and first layer of arr_example to 10
+The following plot shows that the transformation of the data does not change the overall statistic properties - the distribution of features stays the same after the transformation.
 
-```{r}
+<br>
 
-arr_example[2, 2, 1] <- 10 
 
-arr_example
 
-```
+
+```{python}
+#|code-fold: true
 
+original_labels = train.labels.ravel()
+transformed_labels = transf_train.labels.ravel()
 
-# Exercises
+original_feature = train.features[:, train.feature_names.index('priors_count')]
+transformed_feature = transf_train.features[:, transf_train.feature_names.index('priors_count')]
 
-------------------------------------------------------------------------
+# Plotting distributions
+fig, axes = plt.subplots(2, 2, figsize=(12, 10))
 
-1.-Create a matrix with four rows and three columns, where each element is the square of its row number.
+# Plot distribution of labels
+sns.histplot(original_labels, ax=axes[0, 0], color="blue", kde=True, stat="density", linewidth=0)
+axes[0, 0].set_title('Original Labels')
+sns.histplot(transformed_labels, ax=axes[0, 1], color="green", kde=True, stat="density", linewidth=0)
+axes[0, 1].set_title('Transformed Labels')
 
-```{webr-r}
+# Plot distribution of a key feature
+sns.histplot(original_feature, ax=axes[1, 0], color="blue", kde=True, stat="density", linewidth=0)
+axes[1, 0].set_title('Original Feature Distribution')
+sns.histplot(transformed_feature, ax=axes[1, 1], color="green", kde=True, stat="density", linewidth=0)
+axes[1, 1].set_title('Transformed Feature Distribution')
 
+plt.tight_layout()
+plt.show()
 
 ```
+
+<br>
+
+## Train Logistic Regression with reweighed dataset
+
+Now, **let's see, if we can train a fairer model, using this preprocessing technique** of reweighting - promising to make our results less bias. First, we neet to train with the tranformed data and then predict our outcome on the transformed test dataset.
 
-**Answer**
+```{python}
 
-```{r, eval=FALSE, }
-#| code-fold: true
 
-# Create a matrix with 4 rows and 3 columns 
-# containing the squares of the numbers 1 through 4
-m_exercise1 <- matrix((1:4)^2, nrow = 4, ncol = 3)
+scale_transf = StandardScaler()
+X_reweighed_train = scale_transf.fit_transform(transf_train.features)
+y_reweighed_train = transf_train.labels.ravel()
 
-# Display the matrix
-m_exercise1
+lmod = LogisticRegression()
+lmod.fit(X_reweighed_train, y_reweighed_train,
+        sample_weight=transf_train.instance_weights)
+y_train_pred = lmod.predict(X_reweighed_train)
 
-# Output
+transf_test = RW.transform(test)
 
-#      [,1] [,2] [,3]
-# [1,]    1    1    1
-# [2,]    4    4    4
-# [3,]    9    9    9
-# [4,]   16   16   16
+scale_transf = StandardScaler()
+X_reweighed_test = scale_transf.fit_transform(transf_test.features)
+y_reweighed_test = transf_test.labels.ravel()
 
+# Predict on test
+y_pred = lmod.predict(X_reweighed_test)
+X_test
+
 ```
+
+<br>
+
+We want to print the calculated ratios, providing insights into the relative proportions of African-American to Caucasian individuals and the predicted reoffense ratios based on the model's predictions on the transformed data, as we did for the original data in the beginning. And wohoo! The **predictions are now closer to the ratio, meaning that our prediction got less biased.** And: we didn't have to sacrifice accuracy for that!
+
+<br>
 
-------------------------------------------------------------------------
+```{python}
+#|code-fold: true
 
-2.-Create a three-dimensional array with dimensions 2 x 3 x 4, where each element is the sum of its three indices.
+# Create boolean masks for African-American and Caucasian groups
+# Make sure these masks are created from the dataset used for the predictions
+afr_am_mask = (transf_test.features[:, 0] == 0)
+white_mask = (transf_test.features[:, 0] == 1)
 
-```{webr-r}
+# Apply the masks to the predictions
+pred_afr_am = y_pred[afr_am_mask]
+pred_white = y_pred[white_mask]
 
+# Calculate the Black to White Prisoners Ratio
+# Count of African-American individuals divided by count of Caucasian individuals
+ratio_afr_am_white = np.sum(afr_am_mask) / np.sum(white_mask)
 
+# Calculate the Predicted Reoffense Ratio for Blacks to Whites
+# Sum of predicted reoffenses for African-Americans divided by sum for Caucasians
+ratio_pred_reoffense = np.sum(pred_afr_am == 1) / np.sum(pred_white == 1)
+
+print("Black to white prisoners ratio:", np.round(ratio_afr_am_white, 2))
+print("Predicted reoffense blacks to whites ratio:", np.round(ratio_pred_reoffense, 2))
+
 ```
 
-**Answer**
+```{python}
+#|code-fold: true
 
-```{r, eval=FALSE, }
-#| code-fold: true
+y_pred = lmod.predict(X_reweighed_test)
 
-l_exercise2 <- list(countries = c("USA", "China", "India"), 
-                    data = list(population = c(328, 1394, 1380), 
-                                area = c(9.8, 9.6, 3.3)))
+acc = np.sum(y_pred == y_reweighed_test) / len(y_reweighed_test)
+print("Accuracy =", np.round(acc, 3))
 
-# $countries
-# [1] "USA"   "China" "India"
-# 
-# $data
-# $data$population
-# [1]  328 1394 1380
-# 
-# $data$area
-# [1] 9.8 9.6 3.3
 
 ```
+
+
 
-------------------------------------------------------------------------
+```{python}
+privileged_groups_new = [{protected: 1}]
+unprivileged_groups_new = [{protected: 0}]
 
-3.-Create a matrix with five rows and two columns, where each element is a random number between 1 and 10.
 
-```{webr-r}
+cm = BinaryLabelDatasetMetric(transf_test.copy(), #
+                              privileged_groups=privileged_groups_new,
+                              unprivileged_groups=unprivileged_groups_new)
 
+DIs.append(cm.disparate_impact())
 
 ```
 
-**Answer**
+<br>
 
-```{r, eval=FALSE, }
-#| code-fold: true
+When we apply the reweighted dataset to train a model and subsequently calculate fairness metrics like Disparate Impact (DI), we typically expect the DI values to move towards 1, signaling reduced bias. The marked increase in DI at this full repair level indicates that the algorithm has substantially adjusted the instance weights, aiming to correct for disparities.
 
-# Create a 5 x 2 matrix with random values between 1 and 10
-m_exercise3 <- matrix(sample(1:10, 10), nrow = 5, ncol = 2)
+<br>
 
-# Display the matrix
-m_exercise3
+```{python}
+#|code-fold: true
 
+# Assuming DIs is your list of disparate impact values with the appropriate length
+plt.figure(figsize=(8, 5))
 
-# Output
+# Plot with increased marker size and line width
+plt.plot(np.linspace(0, 1, 12), DIs, marker='o', markersize=8, linewidth=2, label='Disparate Impact')
 
-#      [,1] [,2]
-# [1,]    3    8
-# [2,]    4    9
-# [3,]    2    7
-# [4,]    6    1
-# [5,]    5   10
+# Green line for the ideal value of DI = 1
+plt.plot([0, 1], [1, 1], 'g', linestyle='--', label='Ideal Value')
 
+# Red line for threshold
+plt.plot([0, 1], [0.8, 0.8], 'r', linestyle='-.', label='Threshold')
 
+plt.ylim([0.7, 1.1])
+
+# Setting font size for labels and title
+plt.ylabel('Disparate Impact (DI)', fontsize=16)
+plt.xlabel('Repair Level', fontsize=16)
+
+# Adding grid, legend, and tight layout
+plt.grid(True)
+plt.legend()
+plt.tight_layout()
+
+
+# Show the plot
+plt.show()
+
 ```
 
-------------------------------------------------------------------------
 
-4.-Use matrix multiplication to multiply a matrix of dimensions 3 x 2 by a matrix of dimensions 2 x 3.
+## Post-processing Mitigation Strategy
 
-Hint: Use `%*%` for matrix multiplication.
+### Reject Option Classification
 
-```{webr-r}
+Last but not least we want to present a post-processing strategy to mitigate bias. The goal of Reject Option Classification is to improve the fairness of predictions made by a classifier. Let's give you an overview of this technique:
 
+- **Classifier Prediction**: First, you have a classifier that has been trained on your dataset and makes predictions about new instances.
 
-```
+- **Confidence Interval**: **Reject Option Classification operates on a confidence interval around the decision boundary of the classifier.** This is where the classifier's certainty about its predictions is lower.
+
+- **Protected Attribute**: It uses a protected attribute (in our case: race) to determine where bias might be present in these uncertain predictions.
+
+- **Favorable Outcomes**: For instances within the confidence interval, if they belong to the unprivileged group, the algorithm can change an unfavorable outcome to a favorable one. Conversely, for the privileged group, it can change a favorable outcome to an unfavorable one.
 
-**Answer**
+- **Fairness Enhancement**: The idea is to **"reject" the initial decision (hence the name) in favor of one that will lead to a more balanced distribution** of positive outcomes between the privileged and unprivileged groups.
 
-```{r, eval=FALSE, }
-#| code-fold: true
+- **Balancing Performance and Fairness**: This method aims to balance the overall performance of the classifier (in terms of accuracy, precision, etc.) with fairness considerations. It seeks to ensure that the positive predictive value (the probability that subjects with a positive screening test truly have the disease) is similar across groups.
 
-# cCeate a 3 x 2 matrix containing the numbers 1 through 6
-m_exercise4_1 <- matrix(c(1, 2, 3, 4, 5, 6), nrow = 3, ncol = 2)
 
-# Create a 2 x 3 matrix containing the numbers 1 through 6 in a different order
-m_exercise4_2 <- matrix(c(2, 1, 4, 3, 6, 5), nrow = 2, ncol = 3)
+```{python}
+#Identifying the Favorable Outcome Index
+pos_ind = np.where(lmod.classes_ == transf_train.favorable_label)[0][0] #We identify the favorable outcome index
 
-# Perform matrix multiplication on the two matrices
-m_multiplication <- m_exercise4_1 %*% m_exercise4_2
+#Fit the scaler on the training data and transform the training features
+scale_transf = StandardScaler() #We fit the scaler on the training data and transform the training features
+X_reweighed_train = scale_transf.fit_transform(transf_train.features) #We fit the scaler on the training data and transform the training features
 
-# Display the result of the matrix multiplication
-m_multiplication
+#Transform the test features using the same scaler
+X_reweighed_test = scale_transf.transform(transf_test.features) #We transform the test features using the same scaler
 
-# Output
-#      [,1] [,2] [,3]
-# [1,]    6   16   26
-# [2,]    9   23   37
-# [3,]   12   30   48
+#Copy the datasets
+transf_train_post = transf_train.copy() #We copy the datasets
+transf_test_post = transf_test.copy() #We copy the datasets
 
+#Predict probabilities and assign scores for the training and test sets
+transf_train_post.scores = lmod.predict_proba(X_reweighed_train)[:, pos_ind].reshape(-1, 1) #We predict probabilities and assign scores for the training and test sets
+transf_test_post.scores = lmod.predict_proba(X_reweighed_test)[:, pos_ind].reshape(-1, 1) #We predict probabilities and assign scores for the training and test sets
 ```
 
-------------------------------------------------------------------------
 
-5.-Use indexing to extract a 2 x 3 sub-array from a 3 x 4 array.
+```{python}
 
-```{webr-r}
 
+metric_ub = 0.05 #We set the upper bound for the metric
+metric_lb = -0.05 #We set the lower bound for the metric
 
-```
+ROC = RejectOptionClassification(unprivileged_groups=unprivileged_groups, #We set the upper bound for the metric
+                                 privileged_groups=privileged_groups, #We set the lower bound for the metric
+                                 low_class_thresh=0.01, #Range of decision thresholds to consider for potential adjustment.
+                                 high_class_thresh=0.99, #Range of decision thresholds to consider for potential adjustment.
+                                  num_class_thresh=100, #Number of decision thresholds to be considered within the specified range
+                                  num_ROC_margin=50, #Number of margins to be examined around the decision threshold where ROC will adjust the classifier's predictions.
+                                  metric_name= 'Statistical parity difference', #Metric used to measure fairness for determining thresholds
+                                  metric_ub=metric_ub, metric_lb=metric_lb) #Upper and lower bound for the fairness metric used to determine thresholds
 
-**Answer**
+ROC = ROC.fit(transf_test, transf_test_post)
 
-```{r, eval=FALSE, }
-#| code-fold: true
 
-# Create a 3 x 4 array containing the numbers 1 through 12
-array_exercise5 <- array(1:12, dim = c(3, 4))
+```
 
-# Extract a 2 x 3 sub-array from rows 2 and 3 and columns 2 through 4
-sub_array_ex5 <- array_exercise5[2:3, 2:4]
+The technique learns how to adjust the decision thresholds based on the scores and labels in transf_test_post such that the fairness metric (Statistical parity difference in this case) falls between the bounds specified earlier (metric_ub and metric_lb). The dataset transf_test is used as a reference for the original decision making, which transf_test_post presumably improves upon.
 
-# Display the sub-array
-sub_array_ex5
 
+```{python}
+#|code-fold: true
 
-# Output
 
-#      [,1] [,2] [,3]
-# [1,]    5    8   11
-# [2,]    6    9   12
+print("Optimal classification threshold (with fairness constraints) = %.4f" % ROC.classification_threshold)
+print("Optimal ROC margin = %.4f" % ROC.ROC_margin)
 
 ```
 
- 
 
-# Data Frame
+ROC algorithm has identified 0.8217 as the decision threshold that best balances the classifier's performance with the fairness constraints that were set. Optimal ROC margin = 0.0146. This margin is where the algorithm is most active in adjusting predictions to improve fairness. if an instance belonging to the unprivileged group has a score slightly below the threshold, it might be pushed above the threshold to receive a favorable outcome. Conversely, an instance from the privileged group with a score just above the threshold might be pulled below it to receive an unfavorable outcome. the Algorithm has found a way to adjust the classifier's predictions to conform to the fairness constraints without excessively compromising its predictive performance
 
-------------------------------------------------------------------------
+The purpose of this function is to evaluate the performance of a classification model from both a standard accuracy perspective and a fairness perspective.
 
-![](images/df.png){fig-align="center" width="300"}
 
-A data frame is the a common object, specially for people that does data wrangling and analyze data. Thos popular object is a tabular data structure where the rows represent observations and columns represent variables.
+```{python}
 
-::: callout-warning
-Data Frames must have columns representing a vector of the same length. If you try to merge a vector of 5 elements and a vector of 4 elements, it will give you an error. 
-:::
+def compute_metrics(dataset_true, dataset_pred,
+                    unprivileged_groups, privileged_groups,
+                    disp=True):
+    """ Compute the key metrics """
+    classified_metric_pred = ClassificationMetric(dataset_true, dataset_pred,
+                                                  unprivileged_groups=unprivileged_groups,
+                                                  privileged_groups=privileged_groups)
+    # Initialize an empty OrderedDict
+    # Compute all required metrics at once
+    metrics = OrderedDict([
+        ("Balanced accuracy", 0.5 * (classified_metric_pred.true_positive_rate() +
+                                     classified_metric_pred.true_negative_rate())),
+        ("Statistical parity difference", classified_metric_pred.statistical_parity_difference()),
+        ("Disparate impact", classified_metric_pred.disparate_impact()),
+        ("Average odds difference", classified_metric_pred.average_odds_difference()),
+        ("Equal opportunity difference", classified_metric_pred.equal_opportunity_difference()),
+        ("Theil index", classified_metric_pred.theil_index())
+    ])
 
-## Create a Data Frame: multiple ways
+    if disp:
+        # Display metrics in a formatted way
+        for metric_name, metric_value in metrics.items():
+            print(f"{metric_name} = {metric_value:.4f}")
 
+    return metrics
+```
 
-1.- Using `data.frame()` function: This is the most common way to create a data frame in R. You can put as many vectors (variables) as you want. 
 
-```{r}
+```{python}
 
-df <- data.frame(x = c(1, 2, 3), 
-                 y = c("a", "b", "c"), 
-                 z = c(TRUE, FALSE, TRUE))
+# Metrics for the transformed test set
+dataset_transf_test_post = ROC.predict(transf_test_post)
 
+metric_test_aft = compute_metrics(transf_test, dataset_transf_test_post,
+                unprivileged_groups, privileged_groups)
+                
 ```
+           
+           
+           
+           
+           
+Using this technique, we get very nice results for both: Our model's performance and its fairness measures.
 
+**Balanced Accuracy (0.8963)** :
 
-2.- Using `read_csv2()`  function: You can also create a data frame by importing data from an external file using the `read.table()` or read.csv() function.
+Good overall accuracy of the model. Balanced accuracy takes into account both the true positive rate and true negative rate.
 
-```{r, eval=FALSE}
+**Statistical Parity Difference (-0.0066)**
 
-df <- read.table("data.txt", header = TRUE)
+ It indicates that the probability of a positive outcome (favorable prediction) is nearly equal for both privileged and unprivileged groups
 
-```
+ **Disparate Impact (0.9852)**
 
-3.- Using `read_excel()` function from the `readxl` package
+A value close to 1 indicates fair treatment between the groups. Specifically, a value of 1 would imply perfect fairness. The model's predictions do not disproportionately favor one group over the other
 
-```{r, eval=FALSE}
+**Average Odds Difference (-0.0173)**
 
-library(readxl)
-df <- read_excel("data.xlsx")
+Equality of odds between unprivileged and privileged groups. A value of 0 would mean perfect equality. The value -0.0173 indicates a small bias against the unprivileged group in terms of false positive and true positive rates, but this bias is relatively minor now.
 
-```
+**Equal Opportunity Difference (-0.0381)**
 
-4.- Using `tibble()` function from the tibble package
+True positive rates between groups. A value of 0 represents equal opportunity. The value -0.0381 suggests a slight bias against the unprivileged group in terms of having true positives or favorable outcomes.
 
-```{r, eval=FALSE}
+**Theil Index (0.1148)**
 
-library(tibble)
-df <- tibble(x = c(1, 2, 3), y = c("a", "b", "c"), z = c(TRUE, FALSE, TRUE))
+Theil index is a measure of inequality. A value of 0 indicates perfect equality, while higher values show greater inequality. A value of 0.1148 indicates some inequality in the model's predictions, but it's not excessively high
 
-```
+## Results and Discussion
+
+The tutorial introduced how to detect bias and helps the user to replicate a biased CNN in order to understand that bias is something, you always have to keep in mind when training your model.
+
+In the last and most central part of the tutorial we introduced different approaches to mitigate bias. To conclude, we can state that **we successfully debiased the data**, as the last list of performance and fairness metric demonstrates. Beginning with relatively high bias, we applied
+- first, we used the **disparate impact remover, showing some, but not an exceptional improvement** in bias metrics.
+- We could reach a better result, applying our second preprocessing strategy, namely **reweighting our data** before training our model with it.
+- Last but not least, we applied a post processing technique, **Reject Option Classification, that also lead to good results, debiasing our data.**
+
+All of these steps demonstrate that there are **different strategies for each part of our data and model pipeline **to adress bias and find strategies to come to fairer results.
+
+
+## Limitations
+
+The greatest limitation of this tutorial potentially comes from the chosen data source: The COMPAS data already comes in a quite tidy format and previous analyses already identified the most pressing issues of the data set. When applying the detection and mitigation techniques demonstrated in this tutorial, **students and researcher should be aware that alternative data sets need to be carefully cleaned**before calculating bias metrices and applying mitigation strategies.
+
+Moreover, this tutorial focuses on one specific data input type. When **other data types** are considered (e.g. image, video, or time-series), detection and mitigation strategies potentially need to be adapted.
+
+As introduced in the tutorial memo, **there are numerous distinct types of biases** that can occur in the machine/deep learning pipeline. This tutorial focused on biased data, especially on representation bias. Applied to different data sets, students and researchers should also check for other types of bias (e.g. measurement bias). Additionally, not only the data should be tested for bias, but also implemented models and model evaluating should be critically exmined.
+
+## Next Steps
+
+
+This tutorial serves as a first introduction to the topic of bias and fairness - we hope that it gave a good overview of the related issues and possible solutions to tackle them. As next steps we propose that users of the tutorial look for **another dataset and try to apply the newly acquired tools** (unfortuately it is not a challenge to find biased datasets on Kaggle or other online platforms).
 
-You can check our other tutorials to handle data frames and start practicing. We also recommend these books from the website for you to go into more detail. 
+To dig deeper in the deep learning application it could be interesting to check out the topic of bias and fairness in other data types like images and text data. It would have exceeded the scope of our tutorial but there are very interesting approaches of bias mitigation in Natural Language Processing, for example the approach of text pertubation to train fairer models (https://ai.meta.com/blog/measure-fairness-and-mitigate-ai-bias/). **For policy application, text data is very important  thus we can only recommend the users to get familiar with such techniques.**
 
-::: {#eda}
-:::
+To conclude, **we know that we could only show a very small part of bias detection and mitigation strategies** - so we don't expect the users to be experts for this area coming out of this tutorial. **More importantly we hope that we might have shifted the user's view on the importance of bias related issues**. This could be a first step to raise awareness for his crucial part of machine and deep learning - which so far is too often ommitted or neglected.
 
 ------------------------------------------------------------------------
 
@@ -1016,8 +1597,17 @@ You can check our other tutorials to handle data frames and start practicing. We
 ::: {.callout-tip}
 ## References
 
-Alarid-Escudero, F., Krijkamp, E. M., Pechlivanoglou, P., Jalal, H., Kao, S. Z., Yang, A., & Enns, E. A. (2019). *A Need for Change! A Coding Framework for Improving Transparency in Decision Modeling.* PharmacoEconomics, 37(11), 1329–1339. [URL](https://doi.org/10.1007/s40273-019-00837-x)
+- Regean, Mary. 2021. "Understanding bias and fairness in AI system". [URL](https://towardsdatascience.com/understanding-bias-and-fairness-in-aisystems-6f7fbfe267f3)
 
+- Anaconda, 2021 State of Data Science Report. [URL](https://know.anaconda.com/rs/387-XNW-688/images/Anaconda-2021-SODS-Report-Final.pdf)
+
+- Clark, Andrew. September 19, 2022. "Top bias metrics and how they work". Monitaur. [URL](https://www.monitaur.ai/blog-posts/top-bias-metricsand-how-they-work)
+
+- Feldman et al. „Certifying and Removing Disparate Impact“. Proceedings of the 21th ACM SIGKDD International Conference on KnowledgeDiscovery and Data Mining, ACM, 2015, S. 259–68. DOI.org (Crossref), [URL](https://doi.org/10.1145/2783258.2783311).
+
+- Towards datascience, "AI Fairness — Explanation of Disparate Impact Remover". [URL](https://towardsdatascience.com/ai-fairness-explanation-of-disparate-impact-remover-ce0da59451f1)
+
+- Lee, Nicol Turner, Paul Resnick, and Genie Barton. "Algorithmic bias detection and mitigation: Best practices and policies to reduce consumer harms." Brookings Institute: Washington, DC, USA 2 (2019)
 :::
 
 ::: callout-note
