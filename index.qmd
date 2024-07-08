@@ -94,7 +94,7 @@ comments: false
             Supported by: 
             </div>
 <div class="image-grid">
-    <img src="images/APSIA-logo.png" alt="Image Description" style="width: 40%; animation: fadeInUp; animation-duration: 10s;">
+    <img src="images/apsia.svg" alt="Image Description" style="width: 40%; animation: fadeInUp; animation-duration: 10s;">
     <img src="images/hertie.png" alt="Image Description" style="width: 50%; animation: fadeInUp; animation-duration: 10s;">
     <img src="images/syr.png" alt="Image Description" style="width: 50%; animation: fadeInUp; animation-duration: 10s;">
 </div>

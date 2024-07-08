@@ -3,11 +3,11 @@ website:
  #   type: express
  #   style: interstitial
  #   palette: dark
- #   policy-url: www.hertiecodingclub.com
+ #   policy-url: https://ds-ethics.org
  #   prefs-text: "text"
   #google-analytics: "G-HJEMN0LJY7"
   title: "{{< fa solid scale-balanced >}} Ethics <span style='font-size: 18px;'>&#x2715;</span> Data Science {{< fa solid code-branch >}}"
-  #site-url: https://www.hertiecodingclub.com/
+  #site-url: https://ds-ethics.org
   #favicon: images/logo.png
   page-footer:
     left: 
@@ -16,7 +16,7 @@ website:
     center: · [![](https://quarto.org/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org/)  engine ·
     right:
       - text: "{{< fa brands github size=lg >}}"
-        href: https://github.com
+        href: https://github.com/ds-ethics
       - text: "{{< fa brands x-twitter size=lg >}}"
         href: https://twitter.com
       - text: "{{< fa brands linkedin size=lg >}}"
@@ -24,7 +24,7 @@ website:
   navbar:
     type: false
     #logo:
-    #href: https://www.hertiecodingclub.com/
+    #href: https://ds-ethics.org
     collapse-below: lg
     pinned: true
     left:
