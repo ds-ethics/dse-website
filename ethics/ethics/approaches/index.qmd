@@ -34,13 +34,13 @@ lightbox:
 ::: callout-note
 ## Main idea
 
-Data science ethics is often seen through the frameworks of responsibility or bias. We add to this the moral practice approach.
+Data science ethics is often seen through the lenses of responsibility or bias. We add to this the moral practice approach.
 :::
 
 ::: callout-important
 ## Theory warning
 
-This module is very theoretical: *meta*-theoretical. It offers a hypothesis about the space of theories of data science ethics.
+This post is very theoretical: *meta*-theoretical. It offers a hypothesis about the space of theories of data science ethics.
 :::
 
 # Introduction
