@@ -82,9 +82,9 @@ comments: false
 <body>    
     <div id="animation-container">
         <div id="animation-text">
-            Ethics for Data Science
+            Ethics &#x2715; Data Science
             <div class="subtitle">
-                Ethics for non-ethicists and Data Science for non-data scientists
+                Resources for teaching Ethics for non-ethicists and Data Science for non-data scientists
                 <i class="fa-solid fa-scale-balanced"></i> 
                 <i class="fa-solid fa-code"></i> 
             </div>
@@ -116,18 +116,30 @@ comments: false
   </div>
   <div class="content-box">
     <h2 class="title" data-reveal="left">
-      Ethics for non-ethicists
+      The Issue
     </h2>
     <p class="text" data-reveal="left">
-      Ethics for non-ethicists is a broad topic that aims to introduce the fundamental concepts and principles of ethical theory and moral philosophy to individuals without a formal background in ethics. The goal is to provide a foundational understanding of how ethical decisions are made, the various ethical frameworks that can guide decision-making, and the importance of ethical considerations in personal, professional, and public life.
+      If you ever taught a course on data science, you likely found yourself in this situation:</p>
+    <ul class="text" data-reveal="left">
+      <li>you want to cover the ethics of data science</li>
+      <li>but have only one or two sessions to do so</li>
+      <li>and students have no background in ethics</li>
+    </ul>
+    <p class="text" data-reveal="left">
+      In short, how do you teach ethics to non-ethicists within a session or two -- and, perhaps, without having much a background in ethics teaching yourself? </p>
+    <p class="text" data-reveal="left">
+      You face a similar issue when you want to teach a course on the ethics of data science: You need to cover the basics of data science, but you have at most two sessions to do so, and your students (and perhaps you yourself) have little no background in data science. In short, you need to teach data science to non-data scientists.
     </p>
   </div>
   <div class="content-box">
     <h2 class="title" data-reveal="left">
-      Data Science for non-data scientists 
+      Ds-ethics.org
     </h2>
     <p class="text" data-reveal="left" style="font-size: 10em;">
-      Data science for non-data scientists involves introducing the core principles, tools, and applications of data science in a way that is accessible and relevant to individuals without a technical background. The aim is to demystify data science and show how it can be applied in various fields to inform decision-making, solve problems, and uncover insights. 
+      Ethics &#x2715; Data Science offers resources and materials to teach data science to non-data scientists and ethics to non-ethicists. We prepare and collect tutorials, teaching ideas, and cases to cover some of the basics of data science and ethics. We aim to capture the latest and best research on the topics, and present it in small modules that could be the basis for individual classroom sessions or self-study. 
+    </p>
+    <p class="text" data-reveal="left" style="font-size: 10em;">
+      Our own background is in professional schools of public policy and public administration, where courses have few prerequisites and students expect to learn a lot in a relatively short amount of time. This project has been generously supported by APSIA, the Association of Professional Schools of International Affairs, the Hertie School Berlin, and the Maxwell School at Syracuse University.
     </p>
   </div>
   <div class="image-box" data-reveal="left">
@@ -147,13 +159,11 @@ comments: false
 <a href="../data_science/data_science.html" style="text-decoration: none; color: inherit;" target="_blank">
   <img src='https://images.unsplash.com/photo-1464054313797-e27fb58e90a9?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=996&q=80'/>
   <div class="text-cards">
-  <h1> Data Science for non-data scientists </h1>
-  <h2 class="animate-text"> More lorem ipsum bacon ipsum.</h2>
-  <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
+  <h1> Data Science for non-data scientists</h1>
+  <h2 class="animate-text">From basics to bias.</h2>
+  <p class="animate-text">Data science for non-data scientists involves introducing the core principles, tools, and applications of data science in a way that is accessible and relevant to individuals without a technical background. The aim is to demystify data science and show how it can be applied in various fields to inform decision-making, solve problems, and uncover insights.</p>
       </div>
   </div>
-
-
   </a>
 
 
@@ -162,11 +172,10 @@ comments: false
   <img src='https://images.unsplash.com/photo-1422393462206-207b0fbd8d6b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80'/>
   <div class="text-cards">
   <h1> Ethics for non-ethicists</h1>
-  <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-  <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
+  <h2 class="animate-text">A core competency for data science.</h2>
+  <p class="animate-text">Ethics develops skills of qualitative analysis, reasoning, and communication. It can hence be a key component of good decision-making and leadership. The goal of ethics in data science is to identify ethical issues, and articulate them, to draw on ethical vocabulary to analyze options, and to evaluate and communicate arguments for and against a decision.</p>
   </div>
  </div>
- 
 </div>
 
   

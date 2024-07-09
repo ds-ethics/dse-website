@@ -42,27 +42,27 @@ Parks & Recreation is a great TV series. Here is one scene that we'll return to 
 
 {{< video https://www.youtube.com/embed/8xn1rO1oQmk >}}
 
-Perhaps you have felt like Ron Swanson, the male protagonist, does in this clip: You came to feel the limits of your privacy and there was little you could do — short of throwing all your devices in the trash.
+Perhaps you have felt like Ron Swanson, the protagonist, does in this clip: You came to feel the limits of your privacy and there was little you could do — short of throwing all your devices in the trash.
 
 This module aims to improve conversations and discussions about privacy.
 
 # Privacy Today
 
-We all have been like Ron Swanson here. You too may have been surprised, for example, when you learn how easy it is to buy your location data, your credit score, or find out your address and phone number. Except to the cynic (who isn't surprised by any bad news), the realization that "it learns information about me" should be a familiar one.
+You probably felt like Ron Swanson: You too may have been surprised to learn how easily someone can buy data on your location, your credit score, or your address and phone number. Except to the cynic (who is never surprised by any bad news), the realization that "it learns information about me" should be a familiar one.
 
 But in another way, we're not like Ron Swanson at all. Throwing away our devices to protect privacy at all costs is just not something we would do. In some sense you don't have a real choice that would give you full privacy.
 
-This is the **pathology of privacy today**: Everyone lacks awares of the limits of their privacy. Moreover, there are limits to what people can do to safeguard their privacy.
+This is the **pathology of privacy today**: Few people realize how limited their privacy is today. At the same time, there isn't much that people can realistically do to safeguard their privacy.
 
-## Information problems
+## What do you know?
 
-Sometimes, you know how limited your privacy is. You remember there were privacy settings in that app that you just couldn't bother to check. And you know that online advertisers track you. And you know that you signed something at your doctor's office about sharing your patient data.
+Sometimes, however, you do know how limited your privacy is. You remember there were privacy settings in that app that you just couldn't bother to check. And you know that online advertisers track you. And you know that you signed something at your doctor's office about sharing your patient data.
 
 But often, privacy today is violated unwittingly. For one, it's basically impossible to be aware of all the ways in which your data is collected, analyzed, and shared. Similarly, nobody can possibly read all the terms and conditions and privacy policies that they are agreeing to.
 
-In short, there is an information problem: Individuals don't know — and, to some extent, cannot know — all they need to know to safeguard their privacy. And, arguably, we shouldn't spend much of our time and mental energy on protecting our privacy.
+In short, there is an **information problem**: Individuals don't know — and, to some extent, cannot know — all they need to know to safeguard their privacy. And, arguably, we shouldn't spend much of our time and mental energy on protecting our privacy.
 
-## Choice problems
+## What can you do?
 
 The second part of the state of individual privacy today has to do with choices. We cannot throw away all of our devices, like Ron Swanson does. The options that we have to protect our privacy, even when we are aware of them, is practically limited. Metadata collection that is required by law is hard to opt out of. Even tech-savvy individuals are outgunned by the professional data, surveillance, and security industry.
 

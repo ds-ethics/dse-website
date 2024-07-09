@@ -250,7 +250,7 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
 
 .text{
   text-align: left !important;
-  line-height: 1.25;
+  line-height: 1.25; 
   color: white !important;
 }
 

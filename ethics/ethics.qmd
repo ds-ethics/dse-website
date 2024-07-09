@@ -16,9 +16,9 @@ include-in-header: meta.html
 comments: false
 ---
 
-Welcome to the "Ethics" section of "Data Science X Ethics," where we delve deep into the heart of responsible innovation and the ethical use of data and technology. In the rapidly evolving landscape of data science, ethical considerations are not just an add-on; they are foundational to creating technology that serves humanity with respect and integrity.
+Ethics develops skills of qualitative analysis, reasoning, and communication. It is a key component of good decision-making and leadership. The goal of ethics in data science is to identify ethical issues, and articulate them, to draw on ethical vocabulary to analyze options, and to evaluate and communicate arguments for and against a decision.
 
-This section is dedicated to exploring the complex ethical questions that arise in the field of data science. It's here that we confront the challenges of balancing innovation with privacy, algorithmic fairness with efficiency, and the pursuit of knowledge with respect for individual rights. Our goal is to provide you with insights, resources, and thought-provoking content that illuminate the ethical dimensions of working with data.
+This section is dedicated to exploring the complex ethical questions that arise in the field of data science. It's here that we confront the challenges of balancing innovation with privacy, algorithmic fairness with efficiency, and the pursuit of insight with respect for individual rights. Our goal is to provide you with resources and thought-provoking content that illuminate the ethical dimensions of working with data.
 
 
 

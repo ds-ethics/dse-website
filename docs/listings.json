@@ -28,9 +28,8 @@
   {
     "listing": "/ethics/ethics.html",
     "items": [
-      "/ethics/ethics/approaches/index.html",
-      "/ethics/ethics/example/index.html",
-      "/ethics/ethics/privacy/index.html"
+      "/ethics/ethics/privacy-considerations/index.html",
+      "/ethics/ethics/approaches/index.html"
     ]
   }
 ]

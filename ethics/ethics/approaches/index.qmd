@@ -1,6 +1,6 @@
 ---
-title: "Frameworks"
-subtitle: "Three frameworks for Data Science Ethics — and why you should think about how you approach the ethics of data science"
+title: "Approaches"
+subtitle: "Three approaches for Data Science Ethics — and why you should think about how you approach the ethics of data science"
 author:
   - name: Johannes Himmelreich
     id: jh
@@ -12,6 +12,7 @@ author:
         state: NY
         url: www.syracuse.edu
 date: "2024-02-22"
+date-modified: "2024-07-09"
 categories: ["Foundational Concepts", "Bias", "Methodology"]
 toc: true
 draft: false
@@ -33,7 +34,7 @@ lightbox:
 ::: callout-note
 ## Main idea
 
-Data science ethics is often seen through the frameworks of responsibility or bias. We add to this the moral practice framework.
+Data science ethics is often seen through the frameworks of responsibility or bias. We add to this the moral practice approach.
 :::
 
 ::: callout-important
@@ -50,27 +51,29 @@ Suppose you could magically make one of three things happen.
 
 2.  Data science will **solve bias**. Data scientists check their implicit biases, teams are more diverse, and data is more representative and inclusive.
 
-3.  Data science will **champion moral reasoning**. Data scientists recognize ethical dilemmas, explain them, and work with others to solve them.
+3.  Data science will **champion reasoning**. Data scientists recognize ethical dilemmas, explain them, and work with others to solve them.
 
-Each of these are good options. Here, we want to make a case for the third.
+Each of these are good options. Here, I want to make a case for the third.
 
-Each of these options stands for a different framework of data science ethics. Each is backed up by a different view of what kinds of ethical challenges data science raises. As such, each of the three options is a set of tools that fits with its respective view of the challenges. We call these three frameworks the *responsibility*, *bias*, and *practice* approach.
+Each of these options stands for a different approach of data science ethics. Each is backed up by a different view of what kinds of ethical challenges data science raises. As such, each of the three options is a set of tools that fits with its respective view of the challenges. I call these three frameworks the *responsibility*, *bias*, and *practice* approach.
 
-It's important to be clear about your framework for the ethics of data science. Depending on what kind of ethical challenges you think data science raises, you need to chose your tools appropriately.
+It's important to be clear about your approach for the ethics of data science. Depending on what kind of ethical challenges you think data science raises, you need to chose your tools appropriately.
 
 ::: callout-tip
-Depending on your framework, you do the ethics of data science differently.
+Think hard on how you approach the ethics of data science. Depending on your approach, you will practice ethics of data science totally differently.
 :::
 
 This module enables you to see the bigger picture in the ethics of data science. And to make your choice of tools more deliberately.
 
 # Responsibility Approach
 
-The first framework to the ethics of data science centers on people. It says that the general problem in the ethics of data science has to to with data scientists themselves. Data scientists lack a sense of responsibility.
+The first framework to the ethics of data science **centers on people**. It says that the general problem in the ethics of data science has to to with data scientists themselves. Data scientists lack a sense of responsibility.
 
-Accordingly, proponents of this approach, such as Cathy O'Neill, argue that data scientists should take a professional oath. Such an oath, taken with the right intention, is a key part of building a sense a professional responsibility. Such oaths are familiar from other professions, such as medicine, engineering, or public administration.
+Accordingly, proponents of this approach, such as Cathy O'Neil, argue that data scientists should take a professional oath. Such an oath, taken with the right intention, is a key part of building a sense a professional responsibility. Such oaths are familiar from other professions, such as medicine, engineering, or public administration. In short, some argue for a **care gap**: a lack of care, empathy, or concern causes irresponsible data science.
 
-A sense of professional responsibility can be built in different ways. For starters, data scientists need to know about the consequences of their work. Data scientists might lack a sense of responsibility, not only because they don't care enough, but because they don't know enough. A high technical complexity, large-scale division of labor, and ideologies might cloud the view of the results of what one is contributing to. And it's not always easy to know, ahead of time, how a data science project will play out in practice. And even if we could, an individuals can often make very little difference. That means: A sense of responsibility, to be effective, needs to be collectively shared and organized --- not an easy thing to do!
+But care is not the only ingredient of responsibility. A sense of professional responsibility can be fostered in several ways. For starters, data scientists need to know how their work is used. After all, a lack of responsibility might be not only due to a lack of care or compassion, but also due a lack of knowledge. There might be a **information gap**: High technical complexity, large-scale division of labor, and ideologies cloud the view of what one is contributing to. This information obstacle stands in the way of responsible data science.
+
+And it's not always easy to know, ahead of time, how a data science project will play out in practice. And even if we could, individuals can often make very little difference. That means: A sense of responsibility, to be effective, needs to be collectively shared and organized --- not an easy thing to do! There is thus, finally an **organization gap** in data science: responsible individuals lack the structures, places, and power to put responsibility into practice together.
 
 The good news is: A lot is being done to build such a shared sense of responsibility in data science. It's hard for data scientists these days not to be confronted with the harms their work may cause. Data science degrees now regularly include education on ethics. And we see emerging legislation to create incentives for data science to care about ethical issues, such as the EU's AI Act. In this way, a sense of responsibility can be incentivised extrinsically, it must not emerge from the individuals or the profession.
 
@@ -78,44 +81,64 @@ In sum, the responsibility approach to the ethics of data science contends that 
 
 # Bias Approach
 
-A second framework centers on bias---or rather: bias*es*, since bias comes in many different forms. One important form of bias is cognitive. The ethics of data science might be about the cognitive biases, or at least, the biases of its practitioners. As one prominent slogan goes: "All models are biased because humans are biased." In addition, an ethics of data science that focuses on bias may also proceed on a structural route. Here the focus is not on biases---implicit or explicit, cognitive or behavioral---of individuals but on the biases *reflected* in the data. Here the slogan could be that "all models are biased because reality is biased." That is, data represents the injustices and inequities that are out there in our very imperfect world. By the principle of garbage in and garbage out, data science then encodes these biases, entrenches them, or even makes them worse.
+A second framework centers on bias---or rather: bias*es*, since bias comes in many different forms. I think it helps to distinguish at least two forms of bias: cognitive and structural.
 
-Again, there is much to this picture. Again, the lessons it imparts were painfully learned. As often with moral progress, society at large and the profession of data science in particular stand in the debt of minority scholars who took on the labor of pointing out what should be obvious. Often failing to "get through," often belittled, discounted, or dismissed.
+The first important form of bias is **cognitive bias**, that is, problematic habits of thought, associations, or assumptions. The ethics of data science might be about the cognitive biases, or at least, the biases of its practitioners. As one prominent slogan goes: "All models are biased because humans are biased." ::: aside What makes some biases *problematic* and other OK is actually a very tricky question. :::
 
-Data science has a lot to do with bias. But issues of bias are still at most one part of the ethics of data science. Constructing a measure of "teacher effectiveness" (e.g. as difference of average grades over time), raises methodological and ethical problems that have only little to do with cognitive or structural biases. Likewise, predicting crime or recidivism is beset with biases; but the ethical problems might have to do with the power of the police or the legitimacy of pre-trial detention more broadly than the historic injustice that is reflected in the data.
+In addition, an ethics of data science that focuses on bias may also proceed on a structural route. Here the focus is not on biases---implicit or explicit, cognitive or behavioral---of individuals but on the biases *reflected* in the data. Here the slogan could be that "all models are biased because reality is biased." That is, data represent the injustices and inequities that are out there in our very imperfect world. By the principle of garbage in and garbage out, data science then encodes these biases, entrenches them, or even makes them worse. **Structural bias**, i.e., problematic group level distributional differences of certain properties such as income, geography, or interaction with institutions, creeps into data science because these differences are captured by data.
 
-As the word "reflected" already suggests, biases in the data are often not themselves the problem but are indicative or are evidence for the problems that lead to these biases in the first place. The ethics of data science thus should speak to these underlying issues and not only to the bias surfaced in data.
+Again, there is much to this picture of ethics as bias mitigation. Again, the lessons it imparts were painfully learned. As often with moral progress, society at large and the profession of data science in particular stand in the debt of minority scholars who took on the labor of pointing out what should be obvious; often failing to "get through," often belittled, discounted, or dismissed.
+
+Data science has a lot to do with bias. But issues of bias are still at most one part of the ethics of data science. The ethics of data science is much broader than bias. For example, constructing a measure of "teacher effectiveness" raises methodological and ethical problems about what it means to be a good teacher, whether collecting the relevant data to measure this violates students' privacy --- issues that have little to do with cognitive or structural biases. Likewise, even paradigmatic examples of bias at work, such as predicting crime or recidivism (where historic injustice is clearly reflected in the data), have to do with more than bias, namely, with the power of the police or the legitimacy of pre-trial detention more broadly.
+
+::: aside
+::: callout-important
+## Limits of "bias"
+
+The ethics of data science is about much more than bias mitigation.
+:::
+:::
+
+As the word "reflected" already suggests, **biases in data are often symptoms** of an underlying problem. They indicate more fundamental problems that cause or sustain biases. The **ethics of data science thus should speak to these underlying problems** and not only to the bias surfaced in data.
 
 # Moral Practice Approach
 
-We are partial to a third answer. The ethics of data science should center on the practice of data science. Data science is hard---not just technically but also morally. It involves moral dilemmas. These dilemmas often hide behind seemingly technical issues. But the dilemmas are real and it does not good to hide them. In other words: "Data Science is a Moral Practice" is the slogan of this third approach.
+I am personally drawn to a third approach. The ethics of data science should center on the practice of data science. The idea here is that data science is hard---not just technically but also morally. It involves moral dilemmas or **trade-offs that hide behind seemingly technical issues**. But the trade-offs are real and it does no good to hide them. The slogan of this third approach would be: "Data Science is a Moral Practice."
 
 When training a model to predict welfare fraud, data scientists need to balance false positives and false negatives. What should be the "exchange rate" between such errors? Similarly, data scientists regularly face a trade-off between accuracy and fairness. This trade-off present itself, for example, in the question of whether, when wanting to predict recidivism, data on arrests for minor, non-violent offenses---where bias is particularly prominent---should be included.
 
-That data science is a moral practice becomes particularly clear when we take data science to be much more than data analysis. Communication plays an important---and often neglected---role in data science. Ethical questions abound in communicating in data science and outside of data analysis more broadly. Are there some projects that a data science team must not take on? How should limits of a product be communicated? How much should be done to protect privacy?
+That data science is a moral practice becomes particularly clear when we take data science to be much **more than data analysis**. Communication plays an important---and often neglected---role in data science. Ethical questions abound in communicating in data science and outside of data analysis more broadly. Are there some projects that a data science team must not take on? How should limits of a product be communicated? How much should be done to protect privacy?
 
 The moral practice approach contends that you find such thorny questions at each step in the lifecycle of a data science project. Data scientists face moral dilemmas. That is, they face decisions to which moral considerations are relevant and these considerations pull in opposite directions. Each option has moral reasons in its favor but also against it. The moral practice approach to data science seeks to understand these dilemmas to allow data scientists---or anyone interested---to reason through these dilemmas together, to disagree better, and come to a decision on firmer ground.
 
-Perhaps the time for the moral practice approach has not yet come. For one, bias and a lack of professional responsibility still pervade data science and all societies at large. As such, we urgently need both the responsibility and the bias approach to the ethics of data science. Moreover, the current social and political environment seems rather inhospitable to an open discourse and moral reasoning. The moral practice approach, however, assumes that decisions are made rationally, that individuals are willing to reason about their decisions, and that moral reasoning can play a role in deliberations. Its assumptions hence seem idealistic, naïve, or Panglossian.
+Perhaps the time for the moral practice approach has not yet come. For one, bias and a lack of professional responsibility still pervade data science and all societies at large. As such, the responsibility and the bias approach are urgently needed --- they fit the problems that anyone in the profession faces. Moreover, in divided societies, the moral practice approach seems idealistic, naïve, or Panglossian. For it requires that decisions are made rationally, that individuals are willing to reason about their decisions, and that moral reasoning can play a role in deliberations. But is this form of deliberation possible today?
 
-We disagree. Moral reasoning can work under the right conditions. It is up to every leader to create these conditions. And we positively reject the cynicism behind the suggestion that "this is not going to work anyway." Moreover, this is a book for the long term. Data science raises old issues---about privacy, justice, and knowledge---anew. These issues are not going away. By contrast, we can hope that the problems that are currently urgent, of problematic biases and a lacking professional responsibility, will be overcome with time.
+I think it is. The appraoch can work under the right conditions. Creating these conditions is up to every team leader. In fact, the **greatest threat to moral progress is cynicism**. I want to positively reject the cynicism behind the suggestion that "this appraoch is not going to work anyway."
 
-# The Difference a Framework Makes
+Finally, the moral practice approach is one for the long term. Data science raises old issues---about privacy, justice, and knowledge---anew. These issues are not going away. By contrast, we can hope that the problems that are currently urgent, of problematic biases and a lacking professional responsibility, will be overcome with time.
 
-How you approach the ethics of data science is a big decision. Each approach comes with own set of strategies or processes --- and things you need to learn and understand.
+# The Difference an Approach Makes
 
-Here are some of the different things you would do on each of the three frameworks.
+How you approach the ethics of data science is a big decision. To summarize, each approach has its own **view on what the problem is** that an ethics of data science addresses. Moreover, each approach comes with own **tools and strategies** that fit the respective problem --- and hence with things you need to learn and understand to practice data science ethics. On each of the three approaches, you'd focus on different things.
 
-+--------------------------------------------------------+------------------------------------------------------------------+--------------------------+
-| Responsibility                                         | Bias                                                             | Moral Practice           |
-+========================================================+==================================================================+==========================+
-| -   professional oath                                  | -   representative data collection                               | -   moral vocabulary     |
-|                                                        |                                                                  |                          |
-| -   awareness of harms caused by data science projects | -   tests for construct validity to avoid biased proxy variables | -   communication skills |
-|                                                        |                                                                  |                          |
-| -   ethics codes                                       | -   team diversity                                               | -   moral reasoning      |
-|                                                        |                                                                  |                          |
-|                                                        | -   training and nudging against (implicit) cognitive bias       | -   research ethics      |
-+--------------------------------------------------------+------------------------------------------------------------------+--------------------------+
+::: column-page-inset-right
++------------+--------------------------------------------------------+------------------------------------------------------------------+----------------------------------+
+|            | Responsibility                                         | Bias                                                             | Moral Practice                   |
++============+========================================================+==================================================================+==================================+
+| **Aim**    | close information gap, care gap, and organization gap  | reduce biases (cognitive, structural)                            | better decision-making processes |
++------------+--------------------------------------------------------+------------------------------------------------------------------+----------------------------------+
+| **Tools**  | -   professional oath                                  | -   representative data collection                               | -   moral vocabulary             |
+|            |                                                        |                                                                  |                                  |
+|            | -   awareness of harms caused by data science projects | -   tests for construct validity to avoid biased proxy variables | -   communication skills         |
+|            |                                                        |                                                                  |                                  |
+|            | -   ethics codes                                       | -   team diversity                                               | -   moral reasoning              |
+|            |                                                        |                                                                  |                                  |
+|            |                                                        | -   training and nudging against (implicit) cognitive bias       | -   research ethics              |
+|            |                                                        |                                                                  |                                  |
+|            |                                                        | -   data debiasing methods                                       |                                  |
++------------+--------------------------------------------------------+------------------------------------------------------------------+----------------------------------+
+:::
 
-The three frameworks are not exclusive in principle. But given realistic limitations you'll have to prioritize which framework to follow in a given situation.
+Even if the ethics of data science may be all about dilemmas, there is no real dilemma here. You can follow all three approaches at once --- at least in principle.
+
+The point of this article is to allow you to choose your approach more deliberately. This article takes a step back and brings a broader landscape of approaches into view. Moreover, you may need to choose after all. Your time and resources are limited. Even if you could pursue all three approaches in principle, you'll probably have to choose what you really want to concentrate on in a given situation. I hope that this article clarifies the choice and helps you make the right one.
