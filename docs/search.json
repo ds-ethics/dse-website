@@ -572,5 +572,33 @@
     "title": "Privacy",
     "section": "What can you do?",
     "text": "What can you do?\nThe second part of the state of individual privacy today has to do with choices. We cannot throw away all of our devices, like Ron Swanson does. The options that we have to protect our privacy, even when we are aware of them, is practically limited. Metadata collection that is required by law is hard to opt out of. Even tech-savvy individuals are outgunned by the professional data, surveillance, and security industry.\nAnd then, we also have a cognitive system that is easy to exploit. As such, websites and apps use various forms of deception to get you to do things.1 You end up subscribing to a service without knowing, agreeing to terms without having read them, or clicking “Continue” because the other button, “No,” was made hard to see.\n\n\n\n\n\nDeceptive design\n\n\nIn sum, privacy is inadvertently infringed on a regular basis in two respects\n\nIndividuals hold false beliefs about the state of their privacy and the options in front of them\nIndividuals have limited options to safeguard their privacy\n\nThese two points are practically necessary. That is, given how things are, these are two starting points that we cannot change. You can only read so many terms and conditions, if you can read any, and there is only so much you can do."
+  },
+  {
+    "objectID": "about/about_us.html#hi",
+    "href": "about/about_us.html#hi",
+    "title": "{{< fa solid scale-balanced >}} Ethics <span style='font-size: 18px;'>&#x2715;</span> Data Science {{< fa solid code-branch >}}",
+    "section": "Hi",
+    "text": "Hi"
+  },
+  {
+    "objectID": "about/about_us.html",
+    "href": "about/about_us.html",
+    "title": "Ethics ✕ Data Science",
+    "section": "",
+    "text": "Ethics ✕ Data Science aims to improve graduate education in international affairs at the intersection of data science and ethics. It rests on the belief that to train the next generation of data science practitioners and researchers, we need to develop ways of teaching approaches that integrate data science and data ethics.\nThe key challenge for graduate programs is how to teach applied ethics for non-ethicists and data science for non-data-scientists.\nData Science has become a key component of social science curricula. As data scientists, we teach our students how to use various data to model, predict and understand human behavior. The tools that we put in our students’ hands are analytically powerful but ethically ambivalent. Despite the potential risks to research subjects and society, we tend to neglect the intellectual and social skills that would enable our students to lead difficult conversations about the values that should guide data collection, analysis, and management.\nData Science has also become a major topic in philosophy and applied ethics. As philosophers, we teach our students about the ethical challenges of the digital age, the permissibility of automated decision making, the limits of digital rights, the meaning of privacy, the demands of responsible scientific practices, and much more. However, we tend to neglect the technical fundamentals necessary to understand and evaluate decisions in the data science workflow.\nEthics ✕ Data Science seeks to provide materials for both areas, teaching scenarios and case studies.\n\n\nEthics ✕ Data Science is a collaboration between Johannes Himmelreich (Maxwell School at Syracuse University) and Simon Munzert (Hertie School).\n\n\n\nThe project was funded by APSIA, the Association of Professional Schools of International Affairs, with a grant from the a APSIA Faculty Fund. The Hertie School supported a two-day workshop in Berlin in 2021."
+  },
+  {
+    "objectID": "about/about_us.html#members",
+    "href": "about/about_us.html#members",
+    "title": "Ethics ✕ Data Science",
+    "section": "",
+    "text": "Ethics ✕ Data Science is a collaboration between Johannes Himmelreich (Maxwell School at Syracuse University) and Simon Munzert (Hertie School)."
+  },
+  {
+    "objectID": "about/about_us.html#funding-acknowledgement",
+    "href": "about/about_us.html#funding-acknowledgement",
+    "title": "Ethics ✕ Data Science",
+    "section": "",
+    "text": "The project was funded by APSIA, the Association of Professional Schools of International Affairs, with a grant from the a APSIA Faculty Fund. The Hertie School supported a two-day workshop in Berlin in 2021."
   }
 ]
