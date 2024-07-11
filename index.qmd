@@ -133,7 +133,7 @@ comments: false
   </div>
   <div class="content-box">
     <h2 class="title" data-reveal="left">
-      Ds-ethics.org
+      Ethics &#x2715; Data Science
     </h2>
     <p class="text" data-reveal="left" style="font-size: 10em;">
       Ethics &#x2715; Data Science offers resources and materials to teach data science to non-data scientists and ethics to non-ethicists. We prepare and collect tutorials, teaching ideas, and cases to cover some of the basics of data science and ethics. We aim to capture the latest and best research on the topics, and present it in small modules that could be the basis for individual classroom sessions or self-study. 

@@ -12,7 +12,7 @@ author:
         state: NY
         url: www.syracuse.edu
 date: "2024-02-22"
-date-modified: "2024-07-09"
+date-modified: "2024-07-11"
 categories: ["Foundational Concepts", "Bias", "Methodology"]
 toc: true
 draft: false
@@ -83,7 +83,11 @@ In sum, the responsibility approach to the ethics of data science contends that 
 
 A second framework centers on bias---or rather: bias*es*, since bias comes in many different forms. I think it helps to distinguish at least two forms of bias: cognitive and structural.
 
-The first important form of bias is **cognitive bias**, that is, problematic habits of thought, associations, or assumptions. The ethics of data science might be about the cognitive biases, or at least, the biases of its practitioners. As one prominent slogan goes: "All models are biased because humans are biased." ::: aside What makes some biases *problematic* and other OK is actually a very tricky question. :::
+The first important form of bias is **cognitive bias**, that is, problematic habits of thought, associations, or assumptions. The ethics of data science might be about the cognitive biases, or at least, the biases of its practitioners. As one prominent slogan goes: "All models are biased because humans are biased." 
+
+::: aside 
+What makes *some* biases problematic and some OK is a very tricky question. 
+:::
 
 In addition, an ethics of data science that focuses on bias may also proceed on a structural route. Here the focus is not on biases---implicit or explicit, cognitive or behavioral---of individuals but on the biases *reflected* in the data. Here the slogan could be that "all models are biased because reality is biased." That is, data represent the injustices and inequities that are out there in our very imperfect world. By the principle of garbage in and garbage out, data science then encodes these biases, entrenches them, or even makes them worse. **Structural bias**, i.e., problematic group level distributional differences of certain properties such as income, geography, or interaction with institutions, creeps into data science because these differences are captured by data.
 
@@ -113,7 +117,7 @@ The moral practice approach contends that you find such thorny questions at each
 
 Perhaps the time for the moral practice approach has not yet come. For one, bias and a lack of professional responsibility still pervade data science and all societies at large. As such, the responsibility and the bias approach are urgently needed --- they fit the problems that anyone in the profession faces. Moreover, in divided societies, the moral practice approach seems idealistic, naïve, or Panglossian. For it requires that decisions are made rationally, that individuals are willing to reason about their decisions, and that moral reasoning can play a role in deliberations. But is this form of deliberation possible today?
 
-I think it is. The appraoch can work under the right conditions. Creating these conditions is up to every team leader. In fact, the **greatest threat to moral progress is cynicism**. I want to positively reject the cynicism behind the suggestion that "this appraoch is not going to work anyway."
+I think it is. The approach can work under the right conditions. Creating these conditions is up to every team leader. In fact, the **greatest threat to moral progress is cynicism**. I want to positively reject the cynicism behind the suggestion that "this approach is not going to work anyway."
 
 Finally, the moral practice approach is one for the long term. Data science raises old issues---about privacy, justice, and knowledge---anew. These issues are not going away. By contrast, we can hope that the problems that are currently urgent, of problematic biases and a lacking professional responsibility, will be overcome with time.
 

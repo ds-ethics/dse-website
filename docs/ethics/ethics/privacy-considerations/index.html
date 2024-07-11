@@ -9,7 +9,7 @@
 <meta name="author" content="Johannes Himmelreich">
 <meta name="dcterms.date" content="2024-02-26">
 
-<title> Ethics ✕ Data Science  - Privacy</title>
+<title> Ethics ✕ Data Science  - The Pathology of Privacy</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,8 +81,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ds-ethics.org">
-<meta property="og:title" content=" Ethics ✕ Data Science  - Privacy">
-<meta property="og:description" content="What is it good for?">
+<meta property="og:title" content=" Ethics ✕ Data Science  - The Pathology of Privacy">
+<meta property="og:description" content="What’s the state of privacy today? Protecting privacy is a collective effort. It follows that consent is over-rated and ignorance is rational. [DRAFT]">
 <!-- Primary Meta Tags -->
 <title>Hertie Coding Club - RStudio 101</title>
 <meta name="title" content="Hertie Coding Club - Enable Multithread with data.table in Mac/Intel chips">
@@ -151,8 +151,8 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Privacy</h1>
-            <p class="subtitle lead">What is it good for?</p>
+      <h1 class="title">The Pathology of Privacy</h1>
+            <p class="subtitle lead">What’s the state of privacy today? Protecting privacy is a collective effort. It follows that consent is over-rated and ignorance is rational. [DRAFT]</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Foundational Concept</div>
                 <div class="quarto-category">Privacy</div>
@@ -200,13 +200,17 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#privacy-today" id="toc-privacy-today" class="nav-link" data-scroll-target="#privacy-today">Privacy Today</a>
+  <li><a href="#the-pathology-of-privacy" id="toc-the-pathology-of-privacy" class="nav-link" data-scroll-target="#the-pathology-of-privacy">The Pathology of Privacy</a>
   <ul class="collapse">
   <li><a href="#what-do-you-know" id="toc-what-do-you-know" class="nav-link" data-scroll-target="#what-do-you-know">What do you know?</a></li>
   <li><a href="#what-can-you-do" id="toc-what-can-you-do" class="nav-link" data-scroll-target="#what-can-you-do">What can you do?</a></li>
   </ul></li>
+  <li><a href="#what-follows" id="toc-what-follows" class="nav-link" data-scroll-target="#what-follows">What follows?</a>
+  <ul class="collapse">
+  <li><a href="#privacy-as-a-collective-property" id="toc-privacy-as-a-collective-property" class="nav-link" data-scroll-target="#privacy-as-a-collective-property">Privacy as a collective property</a></li>
   <li><a href="#against-consent" id="toc-against-consent" class="nav-link" data-scroll-target="#against-consent">Against Consent</a></li>
-  <li><a href="#data-protection-instead-of-privacy" id="toc-data-protection-instead-of-privacy" class="nav-link" data-scroll-target="#data-protection-instead-of-privacy">Data Protection Instead of Privacy</a></li>
+  </ul></li>
+  <li><a href="#what-should-we-do" id="toc-what-should-we-do" class="nav-link" data-scroll-target="#what-should-we-do">What should we do?</a></li>
   </ul>
 </nav>
     </div>
@@ -227,21 +231,37 @@ Main idea
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You have no idea what privacy is. But you still know what you need to do to protect it.</p>
+<p>Protecting privacy is a collective effort. Individuals can only do so much to protect personal information. This undermines the importance of consent and makes it rational to not know the many ways in which your privacy is violated.</p>
 </div>
 </div>
-<section id="introduction" class="level1">
+<section id="introduction" class="level1 page-columns page-full">
 <h1>Introduction</h1>
-<p>Parks &amp; Recreation is a great TV series. Here is one scene that we’ll return to in our discussion of privacy.</p>
+<p>The Parks &amp; Recreation TV series has this character of Ron Swanson who — other than being very fond of breakfast foods — is a freedom-loving individualist with a deep disdain for rules or any dependence on others. He also takes privacy <em>very</em> seriously.</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/8xn1rO1oQmk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p>Perhaps you have felt like Ron Swanson, the protagonist, does in this clip: You came to feel the limits of your privacy and there was little you could do — short of throwing all your devices in the trash.</p>
-<p>This module aims to improve conversations and discussions about privacy.</p>
+<p>Ron’s reaction in this clip is what is surprising and unusual (did I mention he takes privacy <em>very</em> seriously). Whereas his <em>reaction</em> seems like an exaggeration, the <em>situation</em> to which Ron reacts should be familiar to all of us. Especially if you live in a jurisdiction with relatively weak privacy protections, such as the United States, you might wonder once in a while whether, like Ron Swanson, it might be better if you just threw all your devices in the trash.</p>
+<p>But what is it exactly that we’d protect by throwing you phone and you computer away — what is privacy? And why is it valuable? This post won’t answer all these questions (I’ll do that in a separate post). Instead, with this post I want us to get clearer on why privacy is so under threat today. I also want to chip away at some conventional wisdom, namely, the idea that consent is the way to protect privacy. I argue that problems for privacy today are such that consent is not a viable solution.</p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>I’m talking about privacy from the perspective of <em>ethics</em> not law and I concentrate on <em>informational</em> privacy. By contrast, in the United States, privacy is a prominent legal concept and a foundation of liberalism.</p>
+</div></div><p>In short, in this post I discuss why privacy is threatened today and how we should think about defending it. I hope this discussion helps to improve your conversations and discussions about privacy.</p>
 </section>
-<section id="privacy-today" class="level1 page-columns page-full">
-<h1>Privacy Today</h1>
-<p>You probably felt like Ron Swanson: You too may have been surprised to learn how easily someone can buy data on your location, your credit score, or your address and phone number. Except to the cynic (who is never surprised by any bad news), the realization that “it learns information about me” should be a familiar one.</p>
-<p>But in another way, we’re not like Ron Swanson at all. Throwing away our devices to protect privacy at all costs is just not something we would do. In some sense you don’t have a real choice that would give you full privacy.</p>
-<p>This is the <strong>pathology of privacy today</strong>: Few people realize how limited their privacy is today. At the same time, there isn’t much that people can realistically do to safeguard their privacy.</p>
+<section id="the-pathology-of-privacy" class="level1 page-columns page-full">
+<h1>The Pathology of Privacy</h1>
+<p>I’d bet you probably felt like Ron Swanson yourself some time. Go find out how much companies know about you and how little privacy you have. For example, here is a slide from a presentation by LexisNexis, a data company, advertising the range of source from which they aggregate data for identity verification.</p>
+<div class="page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><a href="images/lexis-nexis-network.png" class="lightbox page-columns page-full" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Data used for identity verification by LexisNexis (in 2020)"><img src="images/lexis-nexis-network.png" class="img-fluid figure-img column-page-inset-right" alt="Screenshot of a presentation slide. Logos of various companies — including Visa, Netflix, eBay, BestBuy, and Microsoft — are arranged around a mesh sphere."></a></p>
+<figcaption>Data used for identity verification by LexisNexis (in 2020)</figcaption>
+</figure>
+</div>
+</div>
+<p>In the United States it is relatively easy to get information on individuals’ location, credit score, address, and phone number. To everyone except the cynic — who is never impressed by bad news – Ron’s shock that “it learns information about me” should be familiar.</p>
+<p>Whereas the Ron’s shock might be familiar, his reaction is not. We wouldn’t throw away our devices to protect privacy at all costs. Practically, you often don’t can’t protect your information.</p>
+<p>Relatively well-known is the <strong>paradox of privacy</strong>: Despite a desire for privacy, many people share private information freely. What we do isn’t aligned with how we talk about or value privacy. Behavior is not aligned with stated commitments and preferences for privacy.</p>
+<p>Another less discussed fact is the <strong>pathology of privacy</strong>: You don’t really know how your information is shared and there isn’t much you can do anyway.</p>
+<p>Whereas the paradox of privacy centers on individuals and their choices, the pathology of privacy focuses on the legal structure and typical psychological dispositions. I’d argue the pathology of privacy gets it right: Protecting information is a structural or collective problem.</p>
+<p>Whereas the paradox of privacy insinuates that individuals are inconsistent or irrational, the pathology of privacy suggests the opposite: it’s reasonable to <em>not</em> worry about privacy. Giving up privacy is a precondition for taking part in social life and technological progress. It is rational to give up privacy in exchange for enjoying progress and human connection while hoping that the structural conditions of privacy improve.</p>
 <section id="what-do-you-know" class="level2">
 <h2 class="anchored" data-anchor-id="what-do-you-know">What do you know?</h2>
 <p>Sometimes, however, you do know how limited your privacy is. You remember there were privacy settings in that app that you just couldn’t bother to check. And you know that online advertisers track you. And you know that you signed something at your doctor’s office about sharing your patient data.</p>
@@ -256,29 +276,41 @@ Main idea
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="images/alexapattern-01.jpeg" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Deceptive design"><img src="images/alexapattern-01.jpeg" class="img-fluid figure-img" width="337" alt="Deceptive design"></a></p>
+<p><a href="images/alexapattern-01.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="Deceptive design"><img src="images/alexapattern-01.jpeg" class="img-fluid figure-img" width="337" alt="Deceptive design"></a></p>
 <figcaption>Deceptive design</figcaption>
 </figure>
 </div>
-</div></div><p>In sum, <strong>privacy is inadvertently infringed on a regular basis</strong> in two respects</p>
+</div></div><p>Finally, much information is not unique to individuals. This means that protecting that information is not up to you. How much you can do to protect your privacy has in-principle limits when so many others have — and can share — the same information that you consider personal to you. Because much information is shared across a large number of people, no individual can control how their information is shared. This is sometimes called the <strong>externality of data</strong>.</p>
+<p>One clear example of this is genetic information. Because most genetic information is shared and not unique to one individual, you can’t protect most of your genetic information. You can’t stop you aunt or brother from using a genetic testing service. Still, you would consider your genetic information, even parts of it, to be your personal information.</p>
+<p>Another example TBC</p>
+</section>
+</section>
+<section id="what-follows" class="level1">
+<h1>What follows?</h1>
+<p>In sum, <strong>privacy is inadvertently infringed on a regular basis</strong> in two respects</p>
 <ol type="1">
 <li><p>Individuals hold <strong>false beliefs</strong> about the state of their privacy and the options in front of them</p></li>
 <li><p>Individuals have limited options to safeguard their privacy</p></li>
 </ol>
 <p>These two points are practically necessary. That is, given how things are, these are two starting points that we cannot change. You can only read so many terms and conditions, if you can read any, and there is only so much you can do.</p>
+<section id="privacy-as-a-collective-property" class="level2">
+<h2 class="anchored" data-anchor-id="privacy-as-a-collective-property">Privacy as a collective property</h2>
+<p>TBC</p>
 </section>
-</section>
-<section id="against-consent" class="level1">
-<h1>Against Consent</h1>
+<section id="against-consent" class="level2">
+<h2 class="anchored" data-anchor-id="against-consent">Against Consent</h2>
 <p>All of this is bad news for consent.</p>
-<p>as</p>
 </section>
-<section id="data-protection-instead-of-privacy" class="level1">
-<h1>Data Protection Instead of Privacy</h1>
+</section>
+<section id="what-should-we-do" class="level1">
+<h1>What should we do?</h1>
+<p>The upshot is that we need to rething privacy and how to protect it. I argued that privacy is not up to individuals and that, insofar as that’s true, consent can’t be a tool for privacy policy. When we think about when it is OK to share information about people, we need to take a different approach. What could that look like?</p>
+<p>Data Protection Reasons</p>
 
 
 <div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">Deceptive design</span>
+<span class="glightbox-desc lightbox-desc-1">Data used for identity verification by LexisNexis (in 2020)</span>
+<span class="glightbox-desc lightbox-desc-2">Deceptive design</span>
 </div>
 </section>
 
@@ -739,7 +771,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"left","skin":"lightwidth","closeEffect":"fade","loop":false,"openEffect":"fade"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"fade","skin":"lightwidth","selector":".lightbox","loop":false,"descPosition":"left","openEffect":"fade"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
