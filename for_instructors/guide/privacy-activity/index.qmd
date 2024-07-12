@@ -14,7 +14,7 @@ author:
 date: "2024-02-28"
 categories: ["Activity", "Privacy", "Data Collection"]
 toc: true
-draft: true
+draft: false
 code-link: true
 code-copy: true
 title-block-banner: true

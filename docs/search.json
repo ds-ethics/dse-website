@@ -11,7 +11,7 @@
     "href": "for_instructors/instructors.html#for-instructors",
     "title": "{{< fa solid scale-balanced >}} Ethics <span style='font-size: 18px;'>&#x2715;</span> Data Science {{< fa solid code-branch >}}",
     "section": "For instructors",
-    "text": "For instructors\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nData Science\n\n\nSubtitle or Brief Description\n\n\n\nCategory1\n\n\nCategory2\n\n\nCategory3\n\n\n\n\n\n\nInvalid Date\n\n\nYour Name\n\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\nEthics\n\n\nSubtitle or Brief Description\n\n\n\nCategory1\n\n\nCategory2\n\n\nCategory3\n\n\n\n\n\n\nInvalid Date\n\n\nYour Name\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+    "text": "For instructors\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nPrivacy Activity\n\n\nA simulation on privacy and election data analytics\n\n\n\nActivity\n\n\nPrivacy\n\n\nData Collection\n\n\n\n\n\n\nFeb 28, 2024\n\n\nJohannes Himmelreich\n\n\n8 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "for_instructors/guide/ethics/index.html",
@@ -368,7 +368,7 @@
     "href": "ethics/ethics.html#ethics",
     "title": "{{< fa solid scale-balanced >}} Ethics <span style='font-size: 18px;'>&#x2715;</span> Data Science {{< fa solid code-branch >}}",
     "section": "Ethics",
-    "text": "Ethics\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nThe Pathology of Privacy\n\n\nWhat’s the state of privacy today? Protecting privacy is a collective effort. It follows that consent is over-rated and ignorance is rational. [DRAFT]\n\n\n\nFoundational Concept\n\n\nPrivacy\n\n\nData Collection\n\n\n\n\n\n\nFeb 26, 2024\n\n\nJohannes Himmelreich\n\n\n7 min\n\n\n\n\n\n\n\n\n\n\n\n\nApproaches\n\n\nThree approaches for Data Science Ethics — and why you should think about how you approach the ethics of data science\n\n\n\nFoundational Concepts\n\n\nBias\n\n\nMethodology\n\n\n\n\n\n\nFeb 22, 2024\n\n\nJohannes Himmelreich\n\n\n17 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Ethics\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nThe Pathology of Privacy\n\n\nWhat’s the state of privacy today? Protecting privacy is a collective effort. It follows that consent is over-rated and ignorance is rational.\n\n\n\nFoundational Concept\n\n\nPrivacy\n\n\nData Collection\n\n\n\n\n\n\nFeb 26, 2024\n\n\nJohannes Himmelreich\n\n\n10 min\n\n\n\n\n\n\n\n\n\n\n\n\nApproaches\n\n\nThree approaches for Data Science Ethics — and why you should think about how you approach the ethics of data science\n\n\n\nFoundational Concepts\n\n\nBias\n\n\nMethodology\n\n\n\n\n\n\nFeb 22, 2024\n\n\nJohannes Himmelreich\n\n\n17 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "ethics/ethics/privacy/index.html",
@@ -600,5 +600,47 @@
     "title": "The Pathology of Privacy",
     "section": "Against Consent",
     "text": "Against Consent\nAll of this is bad news for consent."
+  },
+  {
+    "objectID": "ethics/ethics/pathology-of-privacy/index.html",
+    "href": "ethics/ethics/pathology-of-privacy/index.html",
+    "title": "The Pathology of Privacy",
+    "section": "",
+    "text": "Main idea\n\n\n\nProtecting privacy is a collective effort. Individuals can only do so much to protect personal information. This undermines the importance of consent and makes it rational to not know the many ways in which your privacy is violated."
+  },
+  {
+    "objectID": "ethics/ethics/pathology-of-privacy/index.html#what-do-you-know",
+    "href": "ethics/ethics/pathology-of-privacy/index.html#what-do-you-know",
+    "title": "The Pathology of Privacy",
+    "section": "What do you know?",
+    "text": "What do you know?\nSometimes, however, you do know how limited your privacy is. You remember there were privacy settings in that app that you just couldn’t bother to check. And you know that online advertisers track you. And you know that you signed something at your doctor’s office about sharing your patient data.\nBut often, privacy today is violated unwittingly. For one, it’s basically impossible to be aware of all the ways in which your data is collected, analyzed, and shared. Similarly, nobody can possibly read all the terms and conditions and privacy policies that they are agreeing to.\nIn short, there is an information problem: Individuals don’t know — and, to some extent, cannot know — all they need to know to safeguard their privacy. And, arguably, we shouldn’t spend much of our time and mental energy on protecting our privacy."
+  },
+  {
+    "objectID": "ethics/ethics/pathology-of-privacy/index.html#what-can-you-do",
+    "href": "ethics/ethics/pathology-of-privacy/index.html#what-can-you-do",
+    "title": "The Pathology of Privacy",
+    "section": "What can you do?",
+    "text": "What can you do?\nThe second part of the state of individual privacy today has to do with choices. We cannot throw away all of our devices, like Ron Swanson does. The options that we have to protect our privacy, even when we are aware of them, is practically limited. Metadata collection that is required by law is hard to opt out of. Even tech-savvy individuals are outgunned by the professional data, surveillance, and security industry.\nAnd then, we also have a cognitive system that is easy to exploit. As such, websites and apps use various forms of deception to get you to do things.1 You end up subscribing to a service without knowing, agreeing to terms without having read them, or clicking “Continue” because the other button, “No,” was made hard to see.\n\n\n\n\n\nDeceptive design\n\n\nFinally, much information is not unique to individuals. This means that protecting that information is not up to you. How much you can do to protect your privacy has in-principle limits when so many others have — and can share — the same information that you consider personal to you. Because much information is shared across a large number of people, no individual can control how their information is shared. This is sometimes called the externality of data.\nOne clear example of this is genetic information. Because most genetic information is shared and not unique to one individual, you can’t protect most of your genetic information. You can’t stop you aunt or brother from using a genetic testing service. Still, you would consider your genetic information, even parts of it, to be your personal information.\nAnother example is tastes in music, books, movies, or fashion. Conditional on features such as age, income, gender, race, nationality, and job, peoples’ tastes in music, books, or fashion are somewhat similar. This means that even if you don’t share with Amazon what music, books, movies, or clothes you like, if someone does, who is enough like you, Amazon can infer this information about you."
+  },
+  {
+    "objectID": "ethics/ethics/pathology-of-privacy/index.html#privacy-as-a-collective-property",
+    "href": "ethics/ethics/pathology-of-privacy/index.html#privacy-as-a-collective-property",
+    "title": "The Pathology of Privacy",
+    "section": "Privacy as a collective property",
+    "text": "Privacy as a collective property\nPrivacy can still be protected — just not by individuals on their own. The protection of privacy is a collective action problem. Collectively, with the right norms or laws and their enforcement, we can protect our privacy. It is only that, as individuals there is only so much that each of us can do.\nTogether, however, we could make terms and conditions more accessible and informative, we could foster competition and alternatives to services and products where currently we find it hard to opt-out (interoperability can counter the natural monopoly tendency of social networks, for example).\nIn fact, such a collective approach to safeguarding privacy is necessary because of the externality of data. Norms are required to restrict how others share information because their doing so affects me — and might harm me. My great cousin and I own shared information, i.e., our genetic data. Insofar as it is a potential harm to me if this data were passed on to a third party, harm prevention could be one reason to restrict how and with whom my great cousin can share our shared information."
+  },
+  {
+    "objectID": "ethics/ethics/pathology-of-privacy/index.html#against-consent",
+    "href": "ethics/ethics/pathology-of-privacy/index.html#against-consent",
+    "title": "The Pathology of Privacy",
+    "section": "Against Consent",
+    "text": "Against Consent\nWe should abandon one idea that is deeply associated with privacy: consent. Typically, we think of consent as a sufficient condition for waiving privacy claims. That is, if someone agrees to share information that is theirs, then it’s OK to use their data. For example, if someone consents that the picture they uploaded to an online photo service is used by that service to train a generative AI model, then it is OK for the service to do so, since the customer consented to their photos being used in this way.\nOf course, consent only plays this role of making things OK that otherwise wouldn’t be OK if this consent is informed consent. And, crucially, in many cases in which we click “I agree” online, our consent is somewhat uninformed because of the pathology of privacy (we can’t process and know all the ways in which our data will be used, and we often lack a meaningful alternative to agreeing). As such, consent can only play a very limited role in privacy governance for practical reasons — because the bar for meaningful or informed consent is so high that, in practice, we can’t reach it.\nHowever, the externality of data — that personal information is often shared between individuals — is a further reason to abandon consent in privacy governance. Whereas the issue of informed consent is a practical limit to make consent worthwhile (we don’t have the time to make up our mind), the externality of data is an in-principle limit on using consent: the consent isn’t mine to give since the data isn’t only about me."
+  },
+  {
+    "objectID": "ethics/ethics/pathology-of-privacy/index.html#footnotes",
+    "href": "ethics/ethics/pathology-of-privacy/index.html#footnotes",
+    "title": "The Pathology of Privacy",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nSee https://www.deceptive.design↩︎"
   }
 ]

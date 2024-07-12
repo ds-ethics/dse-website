@@ -1,6 +1,6 @@
 ---
 title: "The Pathology of Privacy"
-subtitle: "What's the state of privacy today? Protecting privacy is a collective effort. It follows that consent is over-rated and ignorance is rational. [DRAFT]"
+subtitle: "What's the state of privacy today? Protecting privacy is a collective effort. It follows that consent is over-rated and ignorance is rational."
 author:
   - name: Johannes Himmelreich
     id: jh
@@ -12,6 +12,7 @@ author:
         state: NY
         url: www.syracuse.edu
 date: "2024-02-26"
+date-modified: "2024-07-12"
 categories: ["Foundational Concept", "Privacy", "Data Collection"]
 toc: true
 draft: false
@@ -96,30 +97,39 @@ Finally, much information is not unique to individuals. This means that protecti
 
 One clear example of this is genetic information. Because most genetic information is shared and not unique to one individual, you can't protect most of your genetic information. You can't stop you aunt or brother from using a genetic testing service. Still, you would consider your genetic information, even parts of it, to be your personal information.
 
-Another example TBC
+Another example is tastes in music, books, movies, or fashion. Conditional on features such as age, income, gender, race, nationality, and job, peoples' tastes in music, books, or fashion are somewhat similar. This means that even if _you_ don't share with Amazon what music, books, movies, or clothes you like, if someone does, who is enough like you, Amazon can infer this information about you. 
 
 # What follows?
 
 In sum, **privacy is inadvertently infringed on a regular basis** in two respects
 
-1.  Individuals hold **false beliefs** about the state of their privacy and the options in front of them
+1.  Individuals hold **false beliefs** about the state of their privacy and the options in front of them (because of deceptive design, the vastness of data collection, or ridiculously obscure terms and conditions).
 
-2.  Individuals have limited options to safeguard their privacy
+2.  Individuals have limited options to safeguard their privacy (because many things you can't opt-out of in practice, and because of the externality of data that much personal information is not unique to individuals)
 
-These two points are practically necessary. That is, given how things are, these are two starting points that we cannot change. You can only read so many terms and conditions, if you can read any, and there is only so much you can do.
+These two points, to my mind, describe in a nutshell the conditions of privacy --- or lack thereof --- today. What do we take away from this?
 
 ## Privacy as a collective property
 
-TBC
+Privacy can still be protected --- just not by individuals on their own. The protection of privacy is a collective action problem. Collectively, with the right norms or laws and their enforcement, we can protect our privacy. It is only that, as individuals there is only so much that each of us can do.
+
+Together, however, we could make terms and conditions more accessible and informative, we could foster competition and alternatives to services and products where currently we find it hard to opt-out (interoperability can counter the natural monopoly tendency of social networks, for example). 
+
+In fact, such a collective approach to safeguarding privacy is necessary because of the externality of data. Norms are required to restrict how others share information because their doing so affects me --- and might harm me. My great cousin and I own shared information, i.e., our genetic data. Insofar as it is a potential harm to me if this data were passed on to a third party, harm prevention could be _one_ reason to restrict how and with whom my great cousin can share our shared information.  
 
 ## Against Consent
 
-All of this is bad news for consent.
+We should abandon one idea that is deeply associated with privacy: consent. Typically, we think of consent as a sufficient condition for waiving privacy claims. That is, if someone agrees to share information that is theirs, then it's OK to use their data. For example, if someone consents that the picture they uploaded to an online photo service is used by that service to train a generative AI model, then it is OK for the service to do so, since the customer consented to their photos being used in this way.
+
+Of course, consent only plays this role of making things OK that otherwise wouldn't be OK if this consent is _informed_ consent. And, crucially, in many cases in which we click "I agree" online, our consent is somewhat uninformed because of the pathology of privacy (we can't process and know all the ways in which our data will be used, and we often lack a meaningful alternative to agreeing). As such, consent can only play a very limited role in privacy governance for practical reasons --- because the bar for _meaningful_ or _informed_ consent is so high that, in practice, we can't reach it.
+
+However, the externality of data --- that personal information is often shared between individuals --- is a further reason to abandon consent in privacy governance. Whereas the issue of informed consent is a practical limit to make consent worthwhile (we don't have the time to make up our mind), the externality of data is an in-principle limit on using consent: the consent isn't mine to give since the data isn't only about me. 
 
 # What should we do?
 
-The upshot is that we need to rething privacy and how to protect it. I argued that privacy is not up to individuals and that, insofar as that's true, consent can't be a tool for privacy policy. When we think about when it is OK to share information about people, we need to take a different approach. What could that look like?
+The upshot is that we need to rethink privacy how to protect it. I argued that privacy is not up to individuals and that, insofar as that's true, consent can't be a tool for privacy governance. When we think about when it is OK to share information about people, we need to take a different approach. What could that look like?
 
-Data Protection Reasons
+The short answer is, we need collective privacy governance in the form of norms (such as laws) and enforcement (not only through the state but also though watchdog organizations).  
 
+The long answer would require another post. Maybe I'll write that in the future. In the meantime: there is really no shortage of proposals on what privacy laws could look like, what kind of enforcement we would need, and why privacy is still worth protecting. The main aim of this post was to move our attention away from consent and individualist approaches to privacy governance to make the case for a collective approach --- for which, luckily, we are not entirely unprepared.
 

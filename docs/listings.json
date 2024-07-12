@@ -2,8 +2,7 @@
   {
     "listing": "/for_instructors/instructors.html",
     "items": [
-      "/for_instructors/guide/ds/index.html",
-      "/for_instructors/guide/ethics/index.html"
+      "/for_instructors/guide/privacy-activity/index.html"
     ]
   },
   {
@@ -28,7 +27,7 @@
   {
     "listing": "/ethics/ethics.html",
     "items": [
-      "/ethics/ethics/privacy-considerations/index.html",
+      "/ethics/ethics/pathology-of-privacy/index.html",
       "/ethics/ethics/approaches/index.html"
     ]
   }
