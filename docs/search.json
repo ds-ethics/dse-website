@@ -541,9 +541,9 @@
   {
     "objectID": "about/about_us.html",
     "href": "about/about_us.html",
-    "title": "Ethics ✕ Data Science",
+    "title": "About this project",
     "section": "",
-    "text": "Ethics ✕ Data Science aims to improve graduate education in international affairs at the intersection of data science and ethics. It rests on the belief that to train the next generation of data science practitioners and researchers, we need to develop ways of teaching approaches that integrate data science and data ethics.\nThe key challenge for graduate programs is how to teach applied ethics for non-ethicists and data science for non-data-scientists.\nData Science has become a key component of social science curricula. As data scientists, we teach our students how to use various data to model, predict and understand human behavior. The tools that we put in our students’ hands are analytically powerful but ethically ambivalent. Despite the potential risks to research subjects and society, we tend to neglect the intellectual and social skills that would enable our students to lead difficult conversations about the values that should guide data collection, analysis, and management.\nData Science has also become a major topic in philosophy and applied ethics. As philosophers, we teach our students about the ethical challenges of the digital age, the permissibility of automated decision making, the limits of digital rights, the meaning of privacy, the demands of responsible scientific practices, and much more. However, we tend to neglect the technical fundamentals necessary to understand and evaluate decisions in the data science workflow.\nEthics ✕ Data Science seeks to provide materials for both areas, teaching scenarios and case studies.\n\n\nEthics ✕ Data Science is a collaboration between Johannes Himmelreich (Maxwell School at Syracuse University) and Simon Munzert (Hertie School).\n\n\n\nThe project was funded by APSIA, the Association of Professional Schools of International Affairs, with a grant from the a APSIA Faculty Fund. The Hertie School supported a two-day workshop in Berlin in 2021."
+    "text": "Ethics ✕ Data Science aims to improve graduate education at the intersection of data science and ethics. It rests on the belief that to train the next generation of data science practitioners and researchers, we need to develop ways of teaching approaches that integrate data science and data ethics. The key challenge for graduate programs is how to teach applied ethics for non-ethicists and data science for non-data-scientists.\nData Science has become a key component of social science curricula. As data scientists, we teach our students how to use various data to model, predict and understand human behavior. The tools that we put in our students’ hands are analytically powerful but ethically ambivalent. Despite the potential risks to research subjects and society, we tend to neglect the intellectual and social skills that would enable our students to lead difficult conversations about the values that should guide data collection, analysis, and management.\nData Science has also become a major topic in philosophy and applied ethics. As philosophers, we teach our students about the ethical challenges of the digital age, the permissibility of automated decision making, the limits of digital rights, the meaning of privacy, the demands of responsible scientific practices, and much more. However, we tend to neglect the technical fundamentals necessary to understand and evaluate decisions in the data science workflow.\nEthics ✕ Data Science seeks to provide materials for both areas, teaching scenarios and case studies.\n\n\nEthics ✕ Data Science is a collaboration between Johannes Himmelreich (Maxwell School at Syracuse University) and Simon Munzert (Hertie School). The project was supported by Jorge Roa.\n\n\n\nThe project was funded by APSIA, the Association of Professional Schools of International Affairs, with a grant from the a APSIA Faculty Fund. The Hertie School supported a two-day workshop in Berlin in 2021."
   },
   {
     "objectID": "about/about_us.html#members",
@@ -555,7 +555,7 @@
   {
     "objectID": "about/about_us.html#funding-acknowledgement",
     "href": "about/about_us.html#funding-acknowledgement",
-    "title": "Ethics ✕ Data Science",
+    "title": "About this project",
     "section": "",
     "text": "The project was funded by APSIA, the Association of Professional Schools of International Affairs, with a grant from the a APSIA Faculty Fund. The Hertie School supported a two-day workshop in Berlin in 2021."
   },
@@ -642,5 +642,12 @@
     "title": "The Pathology of Privacy",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nSee https://www.deceptive.design↩︎"
+  },
+  {
+    "objectID": "about/about_us.html#contributors",
+    "href": "about/about_us.html#contributors",
+    "title": "About this project",
+    "section": "",
+    "text": "Ethics ✕ Data Science is a collaboration between Johannes Himmelreich (Maxwell School at Syracuse University) and Simon Munzert (Hertie School). The project was supported by Jorge Roa."
   }
 ]

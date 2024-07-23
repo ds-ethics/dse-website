@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.538">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -153,16 +153,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="ethics-data-science" class="level1">
-<h1>Ethics ✕ Data Science</h1>
-<p>Ethics ✕ Data Science aims to <strong>improve graduate education in international affairs</strong> at the intersection of data science and ethics. It rests on the belief that to train the next generation of data science practitioners and researchers, we need to develop ways of teaching approaches that integrate data science and data ethics.</p>
-<p>The <strong>key challenge</strong> for graduate programs is how to teach applied ethics for non-ethicists and data science for non-data-scientists.</p>
-<p>Data Science has become a key component of social science curricula. <em>As data scientists</em>, we teach our students how to use various data to model, predict and understand human behavior. The tools that we put in our students’ hands are analytically powerful but ethically ambivalent. Despite the potential risks to research subjects and society, we tend to neglect the intellectual and social skills that would enable our students to lead difficult conversations about the values that should guide data collection, analysis, and management.</p>
-<p>Data Science has also become a major topic in philosophy and applied ethics. <em>As philosophers</em>, we teach our students about the ethical challenges of the digital age, the permissibility of automated decision making, the limits of digital rights, the meaning of privacy, the demands of responsible scientific practices, and much more. However, we tend to neglect the technical fundamentals necessary to understand and evaluate decisions in the data science workflow.</p>
+<section id="about-this-project" class="level1">
+<h1>About this project</h1>
+<p>Ethics ✕ Data Science aims to <strong>improve graduate education</strong> at the intersection of data science and ethics. It rests on the belief that to train the next generation of data science practitioners and researchers, we need to develop ways of teaching approaches that integrate data science and data ethics. The <strong>key challenge</strong> for graduate programs is how to teach applied ethics for non-ethicists and data science for non-data-scientists.</p>
+<p>Data Science has become a key component of social science curricula. <mark style="background-color: #a6001a; color: white">As data scientists</mark>, we teach our students how to use various data to model, predict and understand human behavior. The tools that we put in our students’ hands are analytically powerful but ethically ambivalent. Despite the potential risks to research subjects and society, we tend to neglect the intellectual and social skills that would enable our students to lead difficult conversations about the values that should guide data collection, analysis, and management.</p>
+<p>Data Science has also become a major topic in philosophy and applied ethics. <mark style="background-color: #222081; color: white">As philosophers</mark>, we teach our students about the ethical challenges of the digital age, the permissibility of automated decision making, the limits of digital rights, the meaning of privacy, the demands of responsible scientific practices, and much more. However, we tend to neglect the technical fundamentals necessary to understand and evaluate decisions in the data science workflow.</p>
 <p>Ethics ✕ Data Science seeks to provide materials for both areas, teaching scenarios and case studies.</p>
-<section id="members" class="level2">
-<h2 class="anchored" data-anchor-id="members">Members</h2>
-<p>Ethics ✕ Data Science is a collaboration between <a href="https://www.johanneshimmelreich.net">Johannes Himmelreich</a> (Maxwell School at Syracuse University) and <a href="https://simonmunzert.com">Simon Munzert</a> (Hertie School).</p>
+<section id="contributors" class="level2">
+<h2 class="anchored" data-anchor-id="contributors">Contributors</h2>
+<p>Ethics ✕ Data Science is a collaboration between <a href="https://www.johanneshimmelreich.net">Johannes Himmelreich</a> (Maxwell School at Syracuse University) and <a href="https://simonmunzert.com">Simon Munzert</a> (Hertie School). The project was supported by <a href="https://www.linkedin.com/in/jorge-roac">Jorge Roa</a>.</p>
 </section>
 <section id="funding-acknowledgement" class="level2">
 <h2 class="anchored" data-anchor-id="funding-acknowledgement">Funding Acknowledgement</h2>
@@ -276,11 +275,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
           // target, if specified
           link.setAttribute("target", "_blank");
           if (link.getAttribute("rel") === null) {
@@ -322,11 +316,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -374,12 +364,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {

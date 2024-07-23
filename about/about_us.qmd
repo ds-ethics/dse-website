@@ -6,21 +6,22 @@ include-in-header: meta.html
 comments: false
 ---
 
-# Ethics &#x2715; Data Science
-Ethics &#x2715; Data Science aims to **improve graduate education in international affairs** at the intersection of data science and ethics. It rests on the belief that to train the next generation of data science practitioners and researchers, we need to develop ways of teaching approaches that integrate data science and data ethics. 
+# About this project
 
-The **key challenge** for graduate programs is how to teach applied ethics for non-ethicists and data science for non-data-scientists.
+Ethics &#x2715; Data Science aims to **improve graduate education** at the intersection of data science and ethics. It rests on the belief that to train the next generation of data science practitioners and researchers, we need to develop ways of teaching approaches that integrate data science and data ethics. The **key challenge** for graduate programs is how to teach applied ethics for non-ethicists and data science for non-data-scientists.
 
-Data Science has become a key component of social science curricula. *As data scientists*, we teach our students how to use various data to model, predict and understand human behavior. The tools that we put in our students’ hands are analytically powerful but ethically ambivalent. Despite the potential risks to research subjects and society, we tend to neglect the intellectual and social skills that would enable our students to lead difficult conversations about the values that should guide data collection, analysis, and management.
+Data Science has become a key component of social science curricula. <mark style="background-color: #a6001a; color: white">As data scientists</mark>, we teach our students how to use various data to model, predict and understand human behavior. The tools that we put in our students’ hands are analytically powerful but ethically ambivalent. Despite the potential risks to research subjects and society, we tend to neglect the intellectual and social skills that would enable our students to lead difficult conversations about the values that should guide data collection, analysis, and management.
 
-Data Science has also become a major topic in philosophy and applied ethics. *As philosophers*, we teach our students about the ethical challenges of the digital age, the permissibility of automated decision making, the limits of digital rights, the meaning of privacy, the demands of responsible scientific practices, and much more. However, we tend to neglect the technical fundamentals necessary to understand and evaluate decisions in the data science workflow.
+Data Science has also become a major topic in philosophy and applied ethics. <mark style="background-color: #222081; color: white">As philosophers</mark>, we teach our students about the ethical challenges of the digital age, the permissibility of automated decision making, the limits of digital rights, the meaning of privacy, the demands of responsible scientific practices, and much more. However, we tend to neglect the technical fundamentals necessary to understand and evaluate decisions in the data science workflow.
 
 Ethics &#x2715; Data Science seeks to provide materials for both areas, teaching scenarios and case studies.
 
-## Members
-Ethics &#x2715; Data Science is a collaboration between [Johannes Himmelreich](https://www.johanneshimmelreich.net) (Maxwell School at Syracuse University) and [Simon Munzert](https://simonmunzert.com) (Hertie School).
+## Contributors
+
+Ethics &#x2715; Data Science is a collaboration between [Johannes Himmelreich](https://www.johanneshimmelreich.net) (Maxwell School at Syracuse University) and [Simon Munzert](https://simonmunzert.com) (Hertie School). The project was supported by [Jorge Roa](https://www.linkedin.com/in/jorge-roac).
 
 ## Funding Acknowledgement
+
 The project was funded by [APSIA](https://apsia.org), the Association of Professional Schools of International Affairs, with a grant from the a APSIA Faculty Fund. The Hertie School supported a two-day workshop in Berlin in 2021.
 
 
