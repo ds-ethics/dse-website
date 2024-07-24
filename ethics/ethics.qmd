@@ -12,9 +12,11 @@ listing:
     page-size: 10
 page-layout: full
 title-block-banner: false
-include-in-header: meta.html
+include-in-header: ../meta.html
 comments: false
 ---
+
+# Overview
 
 Ethics develops skills of qualitative analysis, reasoning, and communication. It is a key component of good decision-making and leadership. The goal of ethics in data science is to identify ethical issues, and articulate them, to draw on ethical vocabulary to analyze options, and to evaluate and communicate arguments for and against a decision.
 

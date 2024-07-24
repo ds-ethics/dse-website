@@ -1,0 +1,16 @@
+---
+page-layout: full
+toc: false
+title-block-banner: false
+include-in-header: ../meta.html
+comments: false
+---
+
+# A guide to resources
+
+
+## Ethics resources
+
+
+## Data science resources
+

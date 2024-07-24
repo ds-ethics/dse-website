@@ -39,7 +39,7 @@ website:
       - text: "{{< fa solid landmark >}} For instructors"
         href: for_instructors/instructors.qmd
       - text: "{{< fa solid newspaper >}} Resources"
-        href: references/reference.qmd
+        href: resources/resources.qmd
       - text: "{{< fa solid hand-point-up >}} About"
         href: about/about_us.qmd
 comments:

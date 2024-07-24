@@ -2,7 +2,7 @@
 page-layout: full
 toc: false
 title-block-banner: false
-include-in-header: meta.html
+include-in-header: ../meta.html
 comments: false
 ---
 

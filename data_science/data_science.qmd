@@ -12,7 +12,7 @@ listing:
     page-size: 10
 page-layout: full
 title-block-banner: false
-include-in-header: meta.html
+include-in-header: ../meta.html
 comments: false
 ---
 
@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </style>
 
 
+# Overview
 
 In today's data-driven world, the power of data science transcends industries, influencing decisions, shaping strategies, and transforming futures. Yet, for many, the field remains shrouded in jargon and complexity. That's where we step in. Whether you're a professional looking to leverage data in your field, a student eager to expand your horizons, or simply a data enthusiast, our platform is designed with you in mind.
 

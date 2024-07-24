@@ -12,15 +12,22 @@ listing:
     page-size: 10
 page-layout: full
 title-block-banner: false
-include-in-header: meta.html
+include-in-header: ../meta.html
 comments: false
 ---
 
 
+# For instructors
 
-Welcome to the "For Instructors" section of "Data Science X Ethics" – a dedicated space where education meets innovation at the crossroads of data science and ethical responsibility. As educators shaping the next generation of data scientists, your role in integrating ethical considerations into the technical curriculum is more crucial than ever. In this era of rapid technological advancement, teaching data science is not just about coding, algorithms, and data analysis; it's equally about instilling a strong ethical foundation in your students. Click here to access the [Instructor's Guide](https://quarto.org/docs/presentations/revealjs/demo/#/title-slide) for "Data Science X Ethics."
+Welcome to the "For Instructors" section of "Data Science X Ethics". As educators shaping the next generation of data scientists, your role in integrating ethical considerations into the technical curriculum is more crucial than ever. In this era of rapid technological advancement, teaching data science is not just about coding, algorithms, and data analysis; it's equally about instilling a strong ethical foundation in your students. At the same time, if your audience is not primarily composed of ethicists, you may find it challenging to teach data science in a way that resonates with your students.
 
-## For instructors
+We have compiled a set of resources in the sections <a href="../ethics/ethics.html">Ethics</a> and <a href="../data_science/data_science.html"> 
+Data Science</a>. Those resources come in a modular format, i.e., they can be used as standalone units or combined to create a comprehensive course. We have designed these resources to be accessible to non-ethicists and non-data scientists, making it easier for you to integrate them into your curriculum.
+
+In addition, below you find introductory slide decks that you can use to introduce the topics of ethics and data science to your students. Feel free to use and adapt these slides to suit your teaching style and audience.
+
+
+## Slide decks
 
 ::: {#for-instructors}
 :::

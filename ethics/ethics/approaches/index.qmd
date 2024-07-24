@@ -1,6 +1,6 @@
 ---
-title: "Approaches"
-subtitle: "Three approaches for Data Science Ethics — and why you should think about how you approach the ethics of data science"
+title: "Thre approaches for data science ethics"
+subtitle: "Three approaches - and why you should think about how you approach the ethics of data science"
 author:
   - name: Johannes Himmelreich
     id: jh

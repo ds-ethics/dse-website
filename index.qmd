@@ -100,16 +100,13 @@ comments: false
 </div>
 
         </div>
-
-        <canvas id="canvas"></canvas>
-        <canvas id="demo-canvas"></canvas>
+<!--        <canvas id="demo-canvas"></canvas> -->
     </div>
-
 
 
 <section class="section">
   <div class="image-box">
-    <img src="images/philosophers-dalle.jpeg" alt="" class="img">
+    <img src="images/philosophers-dalle.jpeg" alt="" class="img" style='height: 100%; width: 100%; object-fit: contain'>
   </div>
   <div class="content-box">
     <h2 class="title">
@@ -133,7 +130,7 @@ comments: false
     </p>
   </div>
   <div class="image-box">
-    <img src="images/datascientists-dalle.jpeg" alt="" class="img">
+      <img src="images/datascientists-dalle.jpeg" alt="" class="img" style='height: 100%; width: 100%; object-fit: contain'>
     </div>
     
 </section>

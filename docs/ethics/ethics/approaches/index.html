@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.538">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Johannes Himmelreich">
 <meta name="dcterms.date" content="2024-02-22">
 
-<title> Ethics ✕ Data Science  - Approaches</title>
+<title> Ethics ✕ Data Science  - Thre approaches for data science ethics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,8 +78,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ds-ethics.org">
-<meta property="og:title" content=" Ethics ✕ Data Science  - Approaches">
-<meta property="og:description" content="Three approaches for Data Science Ethics — and why you should think about how you approach the ethics of data science">
+<meta property="og:title" content=" Ethics ✕ Data Science  - Thre approaches for data science ethics">
+<meta property="og:description" content="Three approaches - and why you should think about how you approach the ethics of data science">
 <!-- Primary Meta Tags -->
 <title>Hertie Coding Club - RStudio 101</title>
 <meta name="title" content="Hertie Coding Club - Enable Multithread with data.table in Mac/Intel chips">
@@ -130,8 +130,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text"><i class="fa-solid fa-landmark" aria-label="landmark"></i> For instructors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../references/reference.html"> 
-<span class="menu-text"><i class="fa-solid fa-newspaper" aria-label="newspaper"></i> References</span></a>
+    <a class="nav-link" href="../../../resources/resources.html"> 
+<span class="menu-text"><i class="fa-solid fa-newspaper" aria-label="newspaper"></i> Resources</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../../about/about_us.html"> 
@@ -148,8 +148,8 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Approaches</h1>
-            <p class="subtitle lead">Three approaches for Data Science Ethics — and why you should think about how you approach the ethics of data science</p>
+      <h1 class="title">Thre approaches for data science ethics</h1>
+            <p class="subtitle lead">Three approaches - and why you should think about how you approach the ethics of data science</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Foundational Concepts</div>
                 <div class="quarto-category">Bias</div>
@@ -187,7 +187,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">July 9, 2024</p>
+        <p class="date-modified">July 11, 2024</p>
       </div>
     </div>
       
@@ -284,7 +284,7 @@ Tip
 <p>The first important form of bias is <strong>cognitive bias</strong>, that is, problematic habits of thought, associations, or assumptions. The ethics of data science might be about the cognitive biases, or at least, the biases of its practitioners. As one prominent slogan goes: “All models are biased because humans are biased.”</p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p>What makes some biases <em>problematic</em> and other OK is actually a very tricky question.</p>
+<p>What makes <em>some</em> biases problematic and some OK is a very tricky question.</p>
 </div></div><p>In addition, an ethics of data science that focuses on bias may also proceed on a structural route. Here the focus is not on biases—implicit or explicit, cognitive or behavioral—of individuals but on the biases <em>reflected</em> in the data. Here the slogan could be that “all models are biased because reality is biased.” That is, data represent the injustices and inequities that are out there in our very imperfect world. By the principle of garbage in and garbage out, data science then encodes these biases, entrenches them, or even makes them worse. <strong>Structural bias</strong>, i.e., problematic group level distributional differences of certain properties such as income, geography, or interaction with institutions, creeps into data science because these differences are captured by data.</p>
 <p>Again, there is much to this picture of ethics as bias mitigation. Again, the lessons it imparts were painfully learned. As often with moral progress, society at large and the profession of data science in particular stand in the debt of minority scholars who took on the labor of pointing out what should be obvious; often failing to “get through,” often belittled, discounted, or dismissed.</p>
 <p>Data science has a lot to do with bias. But issues of bias are still at most one part of the ethics of data science. The ethics of data science is much broader than bias. For example, constructing a measure of “teacher effectiveness” raises methodological and ethical problems about what it means to be a good teacher, whether collecting the relevant data to measure this violates students’ privacy — issues that have little to do with cognitive or structural biases. Likewise, even paradigmatic examples of bias at work, such as predicting crime or recidivism (where historic injustice is clearly reflected in the data), have to do with more than bias, namely, with the power of the police or the legitimacy of pre-trial detention more broadly.</p>
@@ -319,7 +319,7 @@ Limits of “bias”
 <h1>The Difference an Approach Makes</h1>
 <p>How you approach the ethics of data science is a big decision. To summarize, each approach has its own <strong>view on what the problem is</strong> that an ethics of data science addresses. Moreover, each approach comes with own <strong>tools and strategies</strong> that fit the respective problem — and hence with things you need to learn and understand to practice data science ethics. On each of the three approaches, you’d focus on different things.</p>
 <div class="column-page-inset-right">
-<table class="caption-top table">
+<table class="table">
 <colgroup>
 <col style="width: 7%">
 <col style="width: 32%">
@@ -462,11 +462,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
           // target, if specified
           link.setAttribute("target", "_blank");
           if (link.getAttribute("rel") === null) {
@@ -508,11 +503,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -560,12 +551,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {
