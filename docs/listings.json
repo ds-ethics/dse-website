@@ -1,7 +1,9 @@
 [
   {
     "listing": "/for_instructors/instructors.html",
-    "items": []
+    "items": [
+      "/for_instructors/slides/approaches/index.html"
+    ]
   },
   {
     "listing": "/data_science/data_science.html",

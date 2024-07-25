@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title> Ethics ✕ Data Science  -</title>
+<title> Ethics ✕ Data Science </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,35 +67,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-for-instructors .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-subtitle','listing-categories','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: [],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-for-instructors'] = new List('listing-for-instructors', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <style>html{ scroll-behavior: smooth; }</style>
 <!-- Primary Meta Tags -->
 <title>Ethics ✕ Data Science - Resources for Teaching and Learning</title>
@@ -107,38 +76,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ds-ethics.org">
-<meta property="og:title" content=" Ethics ✕ Data Science  -">
+<meta property="og:title" content=" Ethics ✕ Data Science ">
 <meta property="og:description" content="">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -178,10 +118,6 @@ window.Quarto = {
 <span class="menu-text"><i class="fa-solid fa-landmark" aria-label="landmark"></i> For instructors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resources/resources.html"> 
-<span class="menu-text"><i class="fa-solid fa-newspaper" aria-label="newspaper"></i> Resources</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../about/about_us.html"> 
 <span class="menu-text"><i class="fa-solid fa-hand-point-up" aria-label="hand-point-up"></i> About</span></a>
   </li>  
@@ -196,20 +132,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#for-instructors" id="toc-for-instructors" class="nav-link active" data-scroll-target="#for-instructors">For instructors</a>
-  <ul class="collapse">
-  <li><a href="#slide-decks" id="toc-slide-decks" class="nav-link" data-scroll-target="#slide-decks">Slide decks</a></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 
 
@@ -218,43 +143,42 @@ window.Quarto = {
 <h1>For instructors</h1>
 <p>Welcome to the “For Instructors” section of “Data Science X Ethics”. As educators shaping the next generation of data scientists, your role in integrating ethical considerations into the technical curriculum is more crucial than ever. In this era of rapid technological advancement, teaching data science is not just about coding, algorithms, and data analysis; it’s equally about instilling a strong ethical foundation in your students. At the same time, if your audience is not primarily composed of ethicists, you may find it challenging to teach data science in a way that resonates with your students.</p>
 <p>We have compiled a set of resources in the sections <a href="../ethics/ethics.html">Ethics</a> and <a href="../data_science/data_science.html"> Data Science</a>. Those resources come in a modular format, i.e., they can be used as standalone units or combined to create a comprehensive course. We have designed these resources to be accessible to non-ethicists and non-data scientists, making it easier for you to integrate them into your curriculum.</p>
-<p>In addition, below you find introductory slide decks that you can use to introduce the topics of ethics and data science to your students. Feel free to use and adapt these slides to suit your teaching style and audience.</p>
+<p>In addition, below you find introductory slide decks that you can use to introduce the topics of ethics and data science to your students. Feel free to use and adapt these slides to suit your teaching style and audience. The raw RMarkdown files are stored in this <a href="https://github.com/ds-ethics/dse-slides">GitHub repository</a> so you can easily modify them to fit your needs.</p>
 <section id="slide-decks" class="level2">
 <h2 class="anchored" data-anchor-id="slide-decks">Slide decks</h2>
-<div id="listing-for-instructors" class="quarto-listing quarto-listing-container-default">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-for-instructors-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-for-instructors'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-
+<style type="text/css">
+.tg  {border:none;border-collapse:collapse;border-color:#ccc;border-spacing:0;}
+.tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:0px;color:#333;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:0px;color:#333;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c10m{background-color:#f9f9f9;border-color:#000000;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-mcqj{border-color:#000000;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-73oq{border-color:#000000;text-align:left;vertical-align:top}
+.tg .tg-i817{background-color:#f9f9f9;border-color:#000000;text-align:left;vertical-align:top}
+@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}</style>
+<div class="tg-wrap"><table class="tg"><tbody>
+  <tr>
+    <td class="tg-mcqj"></td>
+    <td class="tg-73oq"></td>
+  </tr>
+  <tr>
+    <td class="tg-c10m"><a href="https://raw.githack.com/ds-ethics/dse-slides/main/ds-01-intro/ds-01-intro.html"><img src="https://raw.githack.com/ds-ethics/dse-slides/main/ds-01-intro/ds-01-intro-title.png" width="400" height="225"></a></td>
+    <td class="tg-i817"><a href="https://raw.githack.com/ds-ethics/dse-slides/main/ds-01-intro/ds-01-intro.html"><img src="https://raw.githack.com/ds-ethics/dse-slides/main/ds-01-intro/ds-01-intro-toc.png" width="400" height="225"></a></td>
+  </tr>
+  <tr>
+    <td class="tg-mcqj"><a href="https://raw.githack.com/ds-ethics/dse-slides/main/ds-02-bigdata/ds-02-bigdata.html"><img src="https://raw.githack.com/ds-ethics/dse-slides/main/ds-02-bigdata/ds-02-bigdata-title.png" width="400" height="225"></a></td>
+    <td class="tg-73oq"><a href="https://raw.githack.com/ds-ethics/dse-slides/main/ds-02-bigdata/ds-02-bigdata.html"><img src="https://raw.githack.com/ds-ethics/dse-slides/main/ds-02-bigdata/ds-02-bigdata-toc.png" width="400" height="225"></a></td>
+  </tr>
+  <tr>
+    <td class="tg-c10m"><a href="https://raw.githack.com/ds-ethics/dse-slides/main/ds-03-machinelearning/ds-03-machinelearning.html"><img src="https://raw.githack.com/ds-ethics/dse-slides/main/ds-03-machinelearning/ds-03-machinelearning-title.png" width="400" height="225"></a></td>
+    <td class="tg-i817"><a href="https://raw.githack.com/ds-ethics/dse-slides/main/ds-03-machinelearning/ds-03-machinelearning.html"><img src="https://raw.githack.com/ds-ethics/dse-slides/main/ds-03-machinelearning/ds-03-machinelearning-toc.png" width="400" height="225"></a></td>
+  </tr>
+  <tr>
+    <td class="tg-mcqj"><a href="https://raw.githack.com/ds-ethics/dse-slides/main/ds-04-everydayethics/ds-04-everydayethics.html"><img src="https://raw.githack.com/ds-ethics/dse-slides/main/ds-04-everydayethics/ds-04-everydayethics-title.png" width="400" height="225"></a></td>
+    <td class="tg-73oq"><a href="https://raw.githack.com/ds-ethics/dse-slides/main/ds-04-everydayethics/ds-04-everydayethics.html"><img src="https://raw.githack.com/ds-ethics/dse-slides/main/ds-04-everydayethics/ds-04-everydayethics-toc.png" width="400" height="225"></a></td>
+  </tr>
+</tbody></table></div>
 
 
 </section>

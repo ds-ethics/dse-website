@@ -38,8 +38,6 @@ website:
         href: data_science/data_science.qmd
       - text: "{{< fa solid landmark >}} For instructors"
         href: for_instructors/instructors.qmd
-      - text: "{{< fa solid newspaper >}} Resources"
-        href: resources/resources.qmd
       - text: "{{< fa solid hand-point-up >}} About"
         href: about/about_us.qmd
 comments:
