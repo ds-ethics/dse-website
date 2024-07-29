@@ -218,6 +218,32 @@ Note
 <p><strong>What is an API?</strong><br> A web API (Application Programming Interface) is a set of rules and protocols that allows different software applications to communicate with each other over the internet. A popular form of a web API for data scientists is one that allows applications to access data stored in a database or other data source over the internet. It provides endpoints through which users can send requests to retrieve certain data. For example, a weather data API lets applications request current weather information and forecasts from a weather service’s database.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Everyday data science ethics: Is data collection from APIs a good thing?</strong><br> Using web data APIs is generally considered better from a data ethics perspective compared to crawling or scraping data from the web for several reasons:</p>
+<ol type="1">
+<li>
+<strong>Consent and Permission:</strong> APIs are like an open invitation. When you use them, you’re playing by the data provider’s rules and getting the data with their blessing.</li>
+<li>
+<strong>Data Accuracy and Integrity:</strong> APIs give you clean, structured data, which means fewer mistakes and more reliable info. No need to worry about messy data or errors creeping in.</li>
+<li>
+<strong>Respect for Resources:</strong> Scraping can hammer a website’s server and mess things up for other users. APIs are built for automated access and can handle your requests without causing a fuss.</li>
+<li>
+<strong>Privacy and Security:</strong> APIs often require you to log in and prove you have permission to access the data. This keeps private info secure and makes sure only the right people see it.</li>
+<li>
+<strong>Legal Compliance:</strong> Using APIs makes it more likely that you are on the right side of the law. You’re following the provider’s terms of service, so you’re less likely to run into legal trouble for things like copyright issues or unauthorized data use.</li>
+</ol>
+<p>All that being said, using an API does not automatically make your data collection ethical. You still need to consider the data provider’s terms of service, privacy policies, and any other ethical considerations that apply to the data you’re collecting.</p>
+</div>
+</div>
 </section><section id="gathering-wikipedia-pageviews-to-measure-public-attention" class="level1"><h1>Gathering Wikipedia Pageviews to measure public attention</h1>
 <hr>
 <p>The code chunks below demonstrates how to collect and graphically display pageviews data using the Wikimedia Analytic API. Usually, in order to access data from an API, the user has to engage with the <a href="https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/">documentation</a> to figure out how the endpoints work, under which condition and how the data can be used, etc. In our case, interaction with the API using the R software has been made straightforward with a dedicated R client. That client is provided via the <a href="https://cran.r-project.org/web//packages/pageviews/index.html">pageviews package</a>.</p>
@@ -271,7 +297,8 @@ Note
 <span>  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Pageviews of Philosophers on English Wikipedia"</span>,</span>
 <span>       x <span class="op">=</span> <span class="st">"Date"</span>,</span>
 <span>       y <span class="op">=</span> <span class="st">"Pageviews"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span>, legend.title <span class="op">=</span> <span class="fu">element_blank</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
@@ -283,8 +310,19 @@ Note
 </section><section id="conclusion" class="level1"><h1>Conclusion</h1>
 <hr>
 <p>Collecting and analyzing Wikipedia data is straightforward and completely free. This allows researchers to utilize and examine a vast amount of data, providing valuable insights to human knowledge production and consumption. Social science research is increasingly incorporating these advancements, as seen in recent studies (e.g., <a href="https://doi.org/10.1177/0894439317703579">Göbel and Munzert 2018</a>; <a href="https://doi.org/10.1038/s41562-019-0541-6">Shi et al.&nbsp;2019</a>).</p>
-<p>However, using Wikipedia data comes with limitations and challenges. Since entries can be read and edited by both humans and machines, the accuracy of content and validity of metadata are not guaranteed. Researchers should also consider that Wikipedia data relies heavily on user-driven content creation, editing, and usage. This reliance can lead to systematic selection bias and issues with data equivalence (e.g., articles on historical political figures may receive fewer views and edits than those on active politicians, for reasons unrelated to their actual significance).</p>
-<p>These caveats are not unique to Wikipedia data; they highlight the general necessity of thoroughly scrutinizing and critically assessing the suitability of any data for addressing substantive research questions.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Everyday data science ethics: Is it OK to work with Wikipedia data?</strong><br> When using data from Wikipedia, it is important to consider the ethical implications of data collection and analysis. Wikipedia is a collaborative platform that relies on the voluntary contributions of its users. As such, it is essential to respect the terms of use and licensing agreements when using Wikipedia data for research purposes. Researchers should also be mindful of the potential biases and inaccuracies that may be present in Wikipedia data. Since entries can be read and edited by both humans and machines, the accuracy of content and validity of metadata are not guaranteed. Researchers should also consider that Wikipedia data relies heavily on user-driven content creation, editing, and usage. This reliance can lead to systematic selection bias and issues with data equivalence (e.g., articles on historical political figures may receive fewer views and edits than those on active politicians, for reasons unrelated to their actual significance). These caveats are not unique to Wikipedia data; they highlight the general necessity of thoroughly scrutinizing and critically assessing the suitability of any data for addressing substantive research questions.</p>
+</div>
+</div>
 <p>&nbsp;</p>
 </section><section id="references" class="level1"><h1>References</h1>
 <hr>

@@ -27,6 +27,20 @@ A web API (Application Programming Interface) is a set of rules and protocols th
 :::
 
 
+::: {.callout-note}
+**Everyday data science ethics: Is data collection from APIs a good thing?**<br>
+Using web data APIs is generally considered better from a data ethics perspective compared to crawling or scraping data from the web for several reasons:
+
+1. **Consent and Permission:** APIs are like an open invitation. When you use them, you’re playing by the data provider’s rules and getting the data with their blessing.
+2. **Data Accuracy and Integrity:** APIs give you clean, structured data, which means fewer mistakes and more reliable info. No need to worry about messy data or errors creeping in.
+3. **Respect for Resources:** Scraping can hammer a website's server and mess things up for other users. APIs are built for automated access and can handle your requests without causing a fuss.
+4. **Privacy and Security:** APIs often require you to log in and prove you have permission to access the data. This keeps private info secure and makes sure only the right people see it.
+5. **Legal Compliance:** Using APIs makes it more likely that you are on the right side of the law. You’re following the provider’s terms of service, so you’re less likely to run into legal trouble for things like copyright issues or unauthorized data use.
+
+All that being said, using an API does not automatically make your data collection ethical. You still need to consider the data provider’s terms of service, privacy policies, and any other ethical considerations that apply to the data you’re collecting.
+:::
+
+
 # Gathering Wikipedia Pageviews to measure public attention
 
 ------------------------------------------------------------------------
@@ -79,7 +93,8 @@ ggplot(philosophers_views, aes(x = date, y = views, color = article)) +
   labs(title = "Pageviews of Philosophers on English Wikipedia",
        x = "Date",
        y = "Pageviews") +
-  theme_minimal()
+  theme_minimal() + 
+  theme(legend.position = "bottom", legend.title = element_blank())
 ```
 
  
@@ -90,9 +105,10 @@ ggplot(philosophers_views, aes(x = date, y = views, color = article)) +
 
 Collecting and analyzing Wikipedia data is straightforward and completely free. This allows researchers to utilize and examine a vast amount of data, providing valuable insights to human knowledge production and consumption. Social science research is increasingly incorporating these advancements, as seen in recent studies (e.g., [Göbel and Munzert 2018](https://doi.org/10.1177/0894439317703579); [Shi et al. 2019](https://doi.org/10.1038/s41562-019-0541-6)).
 
-However, using Wikipedia data comes with limitations and challenges. Since entries can be read and edited by both humans and machines, the accuracy of content and validity of metadata are not guaranteed. Researchers should also consider that Wikipedia data relies heavily on user-driven content creation, editing, and usage. This reliance can lead to systematic selection bias and issues with data equivalence (e.g., articles on historical political figures may receive fewer views and edits than those on active politicians, for reasons unrelated to their actual significance).
-
-These caveats are not unique to Wikipedia data; they highlight the general necessity of thoroughly scrutinizing and critically assessing the suitability of any data for addressing substantive research questions.
+::: {.callout-note}
+**Everyday data science ethics: Is it OK to work with Wikipedia data?**<br>
+When using data from Wikipedia, it is important to consider the ethical implications of data collection and analysis. Wikipedia is a collaborative platform that relies on the voluntary contributions of its users. As such, it is essential to respect the terms of use and licensing agreements when using Wikipedia data for research purposes. Researchers should also be mindful of the potential biases and inaccuracies that may be present in Wikipedia data. Since entries can be read and edited by both humans and machines, the accuracy of content and validity of metadata are not guaranteed. Researchers should also consider that Wikipedia data relies heavily on user-driven content creation, editing, and usage. This reliance can lead to systematic selection bias and issues with data equivalence (e.g., articles on historical political figures may receive fewer views and edits than those on active politicians, for reasons unrelated to their actual significance). These caveats are not unique to Wikipedia data; they highlight the general necessity of thoroughly scrutinizing and critically assessing the suitability of any data for addressing substantive research questions.
+:::
 
  
 
