@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.538">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title> Ethics ✕ Data Science  -</title>
+<meta name="author" content="Simon Munzert">
+<meta name="dcterms.date" content="2024-07-29">
+<title> Ethics ✕ Data Science  - Gathering Wikipedia Pageviews Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +19,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
-
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -68,89 +97,29 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-ethics .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-subtitle','listing-categories','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-ethics'] = new List('listing-ethics', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-<style>html{ scroll-behavior: smooth; }</style>
-<!-- Primary Meta Tags -->
-<title>Ethics ✕ Data Science - Resources for Teaching and Learning</title>
+}</script><style>html{ scroll-behavior: smooth; }</style>
+<!-- Primary Meta Tags --><title>Ethics ✕ Data Science - Resources for Teaching and Learning</title>
 <meta name="title" content="Ethics x Data Science - Resources for Teaching and Learning">
 <meta name="description" content="Welcome to the Ethics x Data Science. Our goal is to provide and share resources for teaching ethics to non-ethicists and data science to non-data-scientists.">
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
+<!-- Open Graph / Facebook --><meta property="og:type" content="website">
 <meta property="og:url" content="https://ds-ethics.org">
-<meta property="og:title" content=" Ethics ✕ Data Science  -">
-<meta property="og:description" content="">
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content=" Ethics ✕ Data Science  - Gathering Wikipedia Pageviews Data">
+<meta property="og:description" content="Basics of API requests and data analysis in R">
+<!-- Primary Meta Tags --><title>Hertie Coding Club - RStudio 101</title>
+<meta name="title" content="Hertie Coding Club - Enable Multithread with data.table in Mac/Intel chips">
+<meta name="description" content="Learn the basics of R: open a project, setting a working directory and navigate RStudio interface">
+<!-- Open Graph / Facebook --><meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hertiecodingclub.com/learn/rstudio/rstudio101/">
+<meta property="og:title" content="Hertie Coding Club - RStudio 101">
+<meta property="og:description" content="Learn the basics of R: open a project, setting a working directory and navigate RStudio interface">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
-
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title"><i class="fa-solid fa-scale-balanced" aria-label="scale-balanced"></i> Ethics <span style="font-size: 18px;">✕</span> Data Science <i class="fa-solid fa-code-branch" aria-label="code-branch"></i></span>
     </a>
   </div>
@@ -160,208 +129,181 @@ window.Quarto = {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../index.html"> <i class="bi bi-house-fill" role="img">
+<li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> <i class="bi bi-house-fill" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../ethics/ethics.html" aria-current="page"> 
+    <a class="nav-link" href="../../../ethics/ethics.html"> 
 <span class="menu-text"><i class="fa-solid fa-scale-balanced" aria-label="scale-balanced"></i> Ethics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../data_science/data_science.html"> 
+    <a class="nav-link" href="../../../data_science/data_science.html"> 
 <span class="menu-text"><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> Data Science</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../for_instructors/instructors.html"> 
+    <a class="nav-link" href="../../../for_instructors/instructors.html"> 
 <span class="menu-text"><i class="fa-solid fa-landmark" aria-label="landmark"></i> For instructors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about/about_us.html"> 
+    <a class="nav-link" href="../../../about/about_us.html"> 
 <span class="menu-text"><i class="fa-solid fa-hand-point-up" aria-label="hand-point-up"></i> About</span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Gathering Wikipedia Pageviews Data</h1>
+            <p class="subtitle lead">Basics of API requests and data analysis in R</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Beginner</div>
+                <div class="quarto-category">APIs</div>
+                <div class="quarto-category">Data collection</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Simon Munzert </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 29, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
-<!-- main -->
-<main class="content column-page" id="quarto-document-content">
-
-
-
-
-<section id="overview" class="level1">
-<h1>Overview</h1>
-<p>Ethics develops skills of qualitative analysis, reasoning, and communication. It is a key component of good decision-making and leadership. The goal of ethics in data science is to identify ethical issues, and articulate them, to draw on ethical vocabulary to analyze options, and to evaluate and communicate arguments for and against a decision.</p>
-<p>This section is dedicated to exploring the complex ethical questions that arise in the field of data science. It’s here that we confront the challenges of balancing innovation with privacy, algorithmic fairness with efficiency, and the pursuit of insight with respect for individual rights. Our goal is to provide you with resources and thought-provoking content that illuminate the ethical dimensions of working with data.</p>
-<section id="ethics" class="level2">
-<h2 class="anchored" data-anchor-id="ethics">Ethics</h2>
-<div id="listing-ethics" class="quarto-listing quarto-listing-container-default">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-ethics-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-ethics'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#gathering-wikipedia-pageviews-to-measure-public-attention" id="toc-gathering-wikipedia-pageviews-to-measure-public-attention" class="nav-link" data-scroll-target="#gathering-wikipedia-pageviews-to-measure-public-attention">Gathering Wikipedia Pageviews to measure public attention</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></nav>
     </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content"><section id="introduction" class="level1"><h1>Introduction</h1>
+<hr>
+<p>Wikipedia contains a wide variety of data, including article contents and metadata such as pageviews, clickstreams, links, backlinks, edits, and revision histories. Pageviews represent the total number of clicks for a specific Wikipedia article. Data on pageviews can be accessed via different channels. First, an <a href="https://pageviews.wmcloud.org/">interactive tool</a> offers summary data, enabling users to compare the popularity of various search items over a specified period. For data scientists, it is more useful to be able to access data in an automated fashion and integration the data collection process into the coding workflow. To that end, a second access option is more attractive: <a href="https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/">Wikimedia’s Analytic API</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Activity,Privacy,Data Collection" data-listing-date-sort="1709074800000" data-listing-file-modified-sort="1721727860025" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1436">
-<div class="thumbnail">
-<p><a href="../ethics/ethics/privacy-activity/index.html" class="no-external"></a></p><a href="../ethics/ethics/privacy-activity/index.html" class="no-external">
-<p><img src="../ethics/ethics/privacy-activity/images/Social.png" class="thumbnail-image"></p>
-</a><p><a href="../ethics/ethics/privacy-activity/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../ethics/ethics/privacy-activity/index.html" class="no-external">Privacy Activity</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../ethics/ethics/privacy-activity/index.html" class="no-external">A simulation on privacy and election data analytics</a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Activity'); return false;">
-Activity
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Privacy'); return false;">
-Privacy
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Data Collection'); return false;">
-Data Collection
+<div class="callout-title-container flex-fill">
+Note
 </div>
 </div>
-</div>
-<div class="metadata">
-<a href="../ethics/ethics/privacy-activity/index.html" class="no-external">
-<div class="listing-date">
-Feb 28, 2024
-</div>
-<div class="listing-author">
-Johannes Himmelreich
-</div>
-<div class="listing-reading-time">
-8 min
-</div>
-</a>
+<div class="callout-body-container callout-body">
+<p><strong>What is an API?</strong><br> A web API (Application Programming Interface) is a set of rules and protocols that allows different software applications to communicate with each other over the internet. A popular form of a web API for data scientists is one that allows applications to access data stored in a database or other data source over the internet. It provides endpoints through which users can send requests to retrieve certain data. For example, a weather data API lets applications request current weather information and forecasts from a weather service’s database.</p>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Foundational Concept,Privacy,Data Collection" data-listing-date-sort="1708902000000" data-listing-file-modified-sort="1721727860024" data-listing-date-modified-sort="1720735200000" data-listing-reading-time-sort="10" data-listing-word-count-sort="1876">
-<div class="thumbnail">
-<p><a href="../ethics/ethics/pathology-of-privacy/index.html" class="no-external"></a></p><a href="../ethics/ethics/pathology-of-privacy/index.html" class="no-external">
-<p><img src="../ethics/ethics/pathology-of-privacy/images/Social.png" class="thumbnail-image"></p>
-</a><p><a href="../ethics/ethics/pathology-of-privacy/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../ethics/ethics/pathology-of-privacy/index.html" class="no-external">The Pathology of Privacy</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../ethics/ethics/pathology-of-privacy/index.html" class="no-external">What’s the state of privacy today? Protecting privacy is a collective effort. It follows that consent is over-rated and ignorance is rational.</a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Foundational Concept'); return false;">
-Foundational Concept
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Privacy'); return false;">
-Privacy
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Data Collection'); return false;">
-Data Collection
-</div>
-</div>
-</div>
-<div class="metadata">
-<a href="../ethics/ethics/pathology-of-privacy/index.html" class="no-external">
-<div class="listing-date">
-Feb 26, 2024
-</div>
-<div class="listing-author">
-Johannes Himmelreich
-</div>
-<div class="listing-reading-time">
-10 min
-</div>
-</a>
+</section><section id="gathering-wikipedia-pageviews-to-measure-public-attention" class="level1"><h1>Gathering Wikipedia Pageviews to measure public attention</h1>
+<hr>
+<p>The code chunks below demonstrates how to collect and graphically display pageviews data using the Wikimedia Analytic API. Usually, in order to access data from an API, the user has to engage with the <a href="https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/">documentation</a> to figure out how the endpoints work, under which condition and how the data can be used, etc. In our case, interaction with the API using the R software has been made straightforward with a dedicated R client. That client is provided via the <a href="https://cran.r-project.org/web//packages/pageviews/index.html">pageviews package</a>.</p>
+<p>With the command <code>article_pageviews()</code>from that package, we can now gather pageviews of any article on specific Wikipedia projects. Let’s use it to settle once and for all who’s the most popular classic philosopher! We will restrict ourselves to the English Wikipedia project (<code>en.wikipedia</code>) and to three philosopher superstars, namely Socrates, Plato, and Aristotle. e also specify the <code>argument user_type = "user"</code>, which ensures that we exclude pageviews generated by bots and spiders. Finally, start and end define the period on which we want to collect pageviews data: January 2020 to June 2024.</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># get pageviews</span></span>
+<span><span class="va">philosophers_views</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">article_pageviews</span><span class="op">(</span></span>
+<span>    project <span class="op">=</span> <span class="st">"en.wikipedia"</span>,</span>
+<span>    article <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Socrates"</span>, <span class="st">"Plato"</span>, <span class="st">"Aristotle"</span><span class="op">)</span>,</span>
+<span>    user_type <span class="op">=</span> <span class="st">"user"</span>,</span>
+<span>    start <span class="op">=</span> <span class="st">"2020010100"</span>,</span>
+<span>    end <span class="op">=</span> <span class="st">"2024063000"</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="co"># overview</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">philosophers_views</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    project language  article     access agent granularity       date views
+1 wikipedia       en Socrates all-access  user       daily 2020-01-01  3527
+2 wikipedia       en Socrates all-access  user       daily 2020-01-02  4037
+3 wikipedia       en Socrates all-access  user       daily 2020-01-03  3891
+4 wikipedia       en Socrates all-access  user       daily 2020-01-04  4073
+5 wikipedia       en Socrates all-access  user       daily 2020-01-05  3740
+6 wikipedia       en Socrates all-access  user       daily 2020-01-06  4266</code></pre>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Foundational Concepts,Bias,Methodology" data-listing-date-sort="1708556400000" data-listing-file-modified-sort="1721749089650" data-listing-date-modified-sort="1720648800000" data-listing-reading-time-sort="17" data-listing-word-count-sort="3254">
-<div class="thumbnail">
-<p><a href="../ethics/ethics/approaches/index.html" class="no-external"></a></p><a href="../ethics/ethics/approaches/index.html" class="no-external">
-<p><img src="../ethics/ethics/approaches/images/Social.png" class="thumbnail-image"></p>
-</a><p><a href="../ethics/ethics/approaches/index.html" class="no-external"></a></p>
+<p>Now, let’s get a brief overview of the relative popularity of our philosophers taking the average pageviews over the entire period as benchmark.</p>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># average pageviews by philosopher</span></span>
+<span><span class="va">philosophers_views</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">article</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>mean_views <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">views</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, </span>
+<span>            median_views <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">views</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">arrange</span><span class="op">(</span><span class="fu">desc</span><span class="op">(</span><span class="va">mean_views</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  article   mean_views median_views
+  &lt;chr&gt;          &lt;dbl&gt;        &lt;dbl&gt;
+1 Aristotle      5184.         5096
+2 Plato          5033.         4934
+3 Socrates       4779.         4646</code></pre>
 </div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../ethics/ethics/approaches/index.html" class="no-external">Thre approaches for data science ethics</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../ethics/ethics/approaches/index.html" class="no-external">Three approaches - and why you should think about how you approach the ethics of data science</a>
 </div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Foundational Concepts'); return false;">
-Foundational Concepts
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Bias'); return false;">
-Bias
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Methodology'); return false;">
-Methodology
+<p>And the winner is… Aristotle! He is the most popular philosopher among the three (both in terms of mean and median), followed by Plato and Socrates. However, the differences are not large, and all three philosophers are still very popular on Wikipedia, garnering roughly 5,000 views per day on average.</p>
+<p>Finally, we can also plot the frequencies of pageviews over time to identify trends in search behavior. As we can see, there are some ups and downs and some notable spikes, but the overall trend is quite stable over time.</p>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Plot pageviews</span></span>
+<span><span class="fu">ggplot</span><span class="op">(</span><span class="va">philosophers_views</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">date</span>, y <span class="op">=</span> <span class="va">views</span>, color <span class="op">=</span> <span class="va">article</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_line</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Pageviews of Philosophers on English Wikipedia"</span>,</span>
+<span>       x <span class="op">=</span> <span class="st">"Date"</span>,</span>
+<span>       y <span class="op">=</span> <span class="st">"Pageviews"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
 </div>
-<div class="metadata">
-<a href="../ethics/ethics/approaches/index.html" class="no-external">
-<div class="listing-date">
-Feb 22, 2024
+<p>&nbsp;</p>
+</section><section id="conclusion" class="level1"><h1>Conclusion</h1>
+<hr>
+<p>Collecting and analyzing Wikipedia data is straightforward and completely free. This allows researchers to utilize and examine a vast amount of data, providing valuable insights to human knowledge production and consumption. Social science research is increasingly incorporating these advancements, as seen in recent studies (e.g., <a href="https://doi.org/10.1177/0894439317703579">Göbel and Munzert 2018</a>; <a href="https://doi.org/10.1038/s41562-019-0541-6">Shi et al.&nbsp;2019</a>).</p>
+<p>However, using Wikipedia data comes with limitations and challenges. Since entries can be read and edited by both humans and machines, the accuracy of content and validity of metadata are not guaranteed. Researchers should also consider that Wikipedia data relies heavily on user-driven content creation, editing, and usage. This reliance can lead to systematic selection bias and issues with data equivalence (e.g., articles on historical political figures may receive fewer views and edits than those on active politicians, for reasons unrelated to their actual significance).</p>
+<p>These caveats are not unique to Wikipedia data; they highlight the general necessity of thoroughly scrutinizing and critically assessing the suitability of any data for addressing substantive research questions.</p>
+<p>&nbsp;</p>
+</section><section id="references" class="level1"><h1>References</h1>
+<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="listing-author">
-Johannes Himmelreich
-</div>
-<div class="listing-reading-time">
-17 min
-</div>
-</a>
+<div class="callout-title-container flex-fill">
+Note
 </div>
 </div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
+<div class="callout-body-container callout-body">
+<p>Learn more: Denis Cohen, Nick Baumann, Simon Munzert (2019, August 26). <em>Studying Politics on and with Wikipedia</em>. MZES Methods Bites. <a href="https://www.mzes.uni-mannheim.de/socialsciencedatalab/article/studying-politics-wikipedia">URL</a></p>
 </div>
 </div>
 
 
-
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -762,23 +704,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="https://creativecommons.org/licenses/by/2.0/">
 <p><i class="fa-regular fa-copyright fa-s" aria-label="copyright"></i> 2024</p>
 </a>
   </li>  
 </ul>
-    </div>   
+</div>   
     <div class="nav-footer-center">
 <p>· <a href="https://quarto.org/"><img src="https://quarto.org/quarto.png" class="img-fluid" alt="Quarto" width="65"></a> engine ·</p>
 </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="https://github.com/ds-ethics">
 <p><i class="fa-brands fa-github fa-lg" aria-label="github"></i></p>
 </a>
@@ -794,12 +735,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
 
 
-
-
-<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

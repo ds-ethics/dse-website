@@ -8,6 +8,7 @@
   {
     "listing": "/data_science/data_science.html",
     "items": [
+      "/data_science/ds/wikipedia_data/index.html",
       "/data_science/ds/bias_ai_compas/index.html",
       "/data_science/ds/social_media_scraping/index.html"
     ]
