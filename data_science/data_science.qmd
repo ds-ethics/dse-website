@@ -78,15 +78,16 @@ document.addEventListener('DOMContentLoaded', function () {
 </style>
 
 
-# Overview
+# Teaching data science for non-data scientists
 
-In today's data-driven world, the power of data science transcends industries, influencing decisions, shaping strategies, and transforming futures. Yet, for many, the field remains shrouded in jargon and complexity. That's where we step in. Whether you're a professional looking to leverage data in your field, a student eager to expand your horizons, or simply a data enthusiast, our platform is designed with you in mind.
+In today's data-informed world, tools of data science transcend industries, influencing decisions, shaping strategies, and transforming futures. Applications of data science also inform government decision-making and play a more central role than ever in people's lives. Yet, for many, the field remains shrouded in jargon and complexity. That's where we step in. Whether you're a professional looking to leverage data in your field, a student eager to expand your horizons, or simply a data enthusiast, our platform is designed with you in mind.
 
-Through a blend of engaging articles, interactive tutorials, and real-world examples, we break down key data science concepts into digestible pieces. From the basics of data analysis and visualization to the intricacies of machine learning and artificial intelligence, we provide a comprehensive learning journey that's both enjoyable and informative. Our goal is to empower you with the knowledge and skills you need to thrive in the data-driven world.
+This website offers a fundamental exploration of data science tailored for non-data scientists, in particular ethicists and philosophers. The goal is to support a foundational understanding of the entire data science pipeline, from data collection and cleaning to analysis and the communication of findings.
+
+A central focus of this project is the ethical reasoning within data science practices. By mastering the fundamental workflows, students will be equipped to critically assess and navigate the ethical dimensions of data usage and interpretation. The materials aim to empower students from diverse academic backgrounds to engage thoughtfully and responsibly with data, fostering a deeper appreciation of its impact across various domains.
 
 
-
-## Data Science  
+## Data science case studies
 
 
 ::: {#data_science}

@@ -10,8 +10,13 @@ comments: false
 
 Welcome to the "For Instructors" section of "Data Science X Ethics". As educators shaping the next generation of data scientists, your role in integrating ethical considerations into the technical curriculum is more crucial than ever. In this era of rapid technological advancement, teaching data science is not just about coding, algorithms, and data analysis; it's equally about instilling a strong ethical foundation in your students. At the same time, if your audience is not primarily composed of ethicists, you may find it challenging to teach data science in a way that resonates with your students.
 
+## Case study materials
+
 We have compiled a set of resources in the sections <a href="../ethics/ethics.html">Ethics</a> and <a href="../data_science/data_science.html"> 
-Data Science</a>. Those resources come in a modular format, i.e., they can be used as standalone units or combined to create a comprehensive course. We have designed these resources to be accessible to non-ethicists and non-data scientists, making it easier for you to integrate them into your curriculum.
+Data Science</a>. Those resources come in a modular format, i.e., they can be used as standalone units or combined to create a comprehensive course. We have designed these resources to be accessible to non-ethicists and non-data scientists, making it easier for you to integrate them into your curriculum. Some require a minimal amount of coding/programming background. The underlying R scripts are available in the respective [GitHub repositories](https://github.com/ds-ethics/dse-website/tree/main/data_science/ds), so you can easily adapt them to your needs.
+
+
+## Lecture materials
 
 In addition, below you find introductory slide decks that you can use to introduce the topics of ethics and data science to your students. Feel free to use and adapt these slides to suit your teaching style and audience. The raw RMarkdown files are stored in this [GitHub repository](https://github.com/ds-ethics/dse-slides) so you can easily modify them to fit your needs.
 

@@ -17,7 +17,7 @@ include-in-header: ../meta.html
 comments: false
 ---
 
-# Overview
+# Teaching ethics for non-ethicists
 
 Ethics develops skills of qualitative analysis, reasoning, and communication. It is a key component of good decision-making and leadership. The goal of ethics in data science is to identify ethical issues, and articulate them, to draw on ethical vocabulary to analyze options, and to evaluate and communicate arguments for and against a decision.
 
@@ -25,7 +25,7 @@ This section is dedicated to exploring the complex ethical questions that arise 
 
 
 
-## Ethics
+## Ethics case studies
 
 ::: {#ethics}
 :::
