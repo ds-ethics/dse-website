@@ -14,7 +14,7 @@ comments: false
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         .subtitle {
-            font-size: 18px;
+            font-size: 9vw;
             font-weight: normal;
             color: white;
             animation: fadeInUp; 
@@ -44,7 +44,7 @@ comments: false
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 50px;
+            font-size: 25vw;
             font-weight: bold;
             color: white;
             animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
@@ -108,19 +108,26 @@ comments: false
 
 <section class="section">
   <div class="image-box">
-    <img src="images/philosophers-dalle.jpeg" alt="" class="img" style='height: 100%; width: 100%; object-fit: contain'>
+    <img src="images/philosophers-dalle_2.jpeg" alt="" class="img" style='   margin-left: 1.4em; height: 100%; width: 100%; object-fit: contain'>
   </div>
-  <div class="content-box">
+  <div class="content-box-right">
     <h2 class="title">
       The issue
     </h2>
-    <p class="text">
+    <p class="text-right">
       If you ever taught a course on data science, you likely found yourself in this situation: You want to cover the ethics of data science. But have only one or two sessions to do so. And: students have no background in ethics! In short, <mark style="background-color: #a6001a; color: white">how do you teach ethics to non-ethicists</mark> within a session or two -- and, perhaps, without having much a background in ethics teaching yourself? </p>
     <p class="text">
       You face a similar issue when you want to teach a course on the ethics of data science: You need to cover the basics of data science, but you have at most two sessions to do so, and your students (and perhaps you yourself) have little no background in data science. In short, you need to <mark style="background-color: #222081; color: white">teach data science to non-data scientists.</mark>
     </p>
   </div>
-  <div class="content-box">
+</section>
+
+  <div style="padding: 50px; background: linear-gradient(to right, #2E3192, #1BFFFF);">
+  </div>
+
+<section class="section">
+  
+  <div class="content-box-left">
     <h2 class="title">
       Ethics &#x2715; Data Science
     </h2>
@@ -132,12 +139,19 @@ comments: false
     </p>
   </div>
   <div class="image-box">
-      <img src="images/datascientists-dalle.jpeg" alt="" class="img" style='height: 100%; width: 100%; object-fit: contain'>
+      <img src="images/datascientists-dalle_2.jpeg" alt="" class="img" style='height: 100%; width: 100%; object-fit: contain'>
     </div>
     
 </section>
 
-</body>
+
+
+
+    
+
+<div style="padding: 70px; background: linear-gradient(to right, #2E3192, #1BFFFF);">
+</div>
+
     <script src="assets/js/demo-2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
