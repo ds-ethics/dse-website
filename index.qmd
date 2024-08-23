@@ -14,7 +14,7 @@ comments: false
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         .subtitle {
-            font-size: 9vw;
+            font-size: 4vw;
             font-weight: normal;
             color: white;
             animation: fadeInUp; 
@@ -44,7 +44,7 @@ comments: false
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 25vw;
+            font-size: 8vw;
             font-weight: bold;
             color: white;
             animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
@@ -62,6 +62,48 @@ comments: false
     }
 }
 
+/* Media query for screens between 768px and 1024px */
+@media screen and (max-width: 1023px) {
+    .subtitle {
+        font-size: 5vw; /* Adjust font size for tablet-sized screens */
+    }
+
+    #animation-text {
+        font-size: 9vw; /* Adjust font size for tablet-sized screens */
+    }
+}
+
+@media screen and (min-width: 440px) and (max-width: 600px) {
+    .subtitle {
+        font-size: 4vw; /* Decrease font size for screens between 600px and 1023px */
+    }
+
+    #animation-text {
+        font-size: 6vw; /* Decrease font size for screens between 600px and 1023px */
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+    .subtitle {
+        font-size: 4vw; /* Decrease font size for screens between 600px and 1023px */
+    }
+
+    #animation-text {
+        font-size: 8vw; /* Decrease font size for screens between 600px and 1023px */
+    }
+}
+
+@media screen and (min-width: 850px) and (max-width: 1024px) {
+    .subtitle {
+        font-size: 3vw; /* Decrease font size for screens between 850px and 1024px */
+    }
+
+    #animation-text {
+        font-size: 6vw; /* Decrease font size for screens between 850px and 1024px */
+    }
+}
+
+
 
 .image-grid {
     display: grid;
@@ -76,6 +118,7 @@ comments: false
 @media screen and (max-width: 600px) {
     .image-grid {
         grid-template-columns: 1fr; /* Stack images in one column on smaller screens */
+        row-gap: 20px; 
     }
 }
     </style>
