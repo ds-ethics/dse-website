@@ -22,7 +22,6 @@ website:
       - text: "{{< fa brands linkedin size=lg >}}"
         href: https://www.linkedin.com
   navbar:
-    title: "Ethics x Data Science"
     type: false
     #logo:
     #href: https://ds-ethics.org
