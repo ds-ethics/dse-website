@@ -9,7 +9,10 @@ comments: false
 ```{=HTML}
 <!doctype html>
 <html lang="en">
+
+
 <head>
+
    <title>Animation Test</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
@@ -127,7 +130,7 @@ comments: false
 <body>    
     <div id="animation-container">
         <div id="animation-text">
-            Ethics &#x2715; Data Science
+            <i class="fa-solid fa-scale-balanced"></i> Ethics &#x2715; Data Science <i class="fa-solid fa-code"></i>
             <div class="subtitle">
                 Resources for teaching <mark style="background-color: #a6001a; color: white"><i class="fa-solid fa-scale-balanced"></i>  ethics for non-ethicists</mark> and<br><mark style="background-color: #222081; color: white"><i class="fa-solid fa-code"></i> data science for non-data scientists</mark>
             </div>

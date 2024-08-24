@@ -6,9 +6,9 @@ website:
  #   policy-url: https://ds-ethics.org
  #   prefs-text: "text"
   #google-analytics: "G-HJEMN0LJY7"
-  title: "{{< fa solid scale-balanced >}} Ethics <span style='font-size: 18px;'>&#x2715;</span> Data Science {{< fa solid code-branch >}}"
+  title: "Ethics ⨉ Data Science"
   #site-url: https://ds-ethics.org
-  #favicon: images/logo.png
+  favicon: images/logo.png
   page-footer:
     left: 
       - text: "{{< fa regular copyright size=s >}} 2024"
