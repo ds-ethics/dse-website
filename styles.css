@@ -2444,13 +2444,33 @@ div.body div.listing-categories div.listing-category{
 }
 
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (max-device-width : 480px) {
-/* Styles */
-/* footer class or footer id */
-.nav-footer {
-bottom: 0 !important;
+@media only screen and (max-width: 600px) {
+    /* Target the left side element */
+    div.nav-footer-left ul.footer-items.list-unstyled {
+        display: flex;
+        justify-content: flex-start; /* Aligns content to the left */
+        width: 50%; /* Adjust the width to take half the available space */
+        padding-right: 0; /* Adjust padding as needed */
+    }
+
+    /* Target the right side element */
+   div.nav-footer-right ul.footer-items.list-unstyled li.nav-item {
+        display: flex;
+        justify-content: flex-end; /* Aligns content to the right */
+        width: 50%; /* Adjust the width to take half the available space */
+        padding-left: 20px; /* Add extra padding to push it more to the right */
+        margin-left: 8em;
+    }
+
+    /* Ensure nav-footer itself is laid out as flex container */
+    div.nav-footer {
+        display: flex;
+        justify-content: space-between; /* Ensures the left and right sections are on opposite sides */
+        align-items: center; /* Vertically align the content */
+        flex-wrap: nowrap; /* Prevent the children from wrapping */
+    }
 }
-}
+
 
 
 .navbar a:focus {
