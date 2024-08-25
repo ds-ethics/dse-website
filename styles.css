@@ -19,6 +19,12 @@ button.navbar-toggler .navbar-toggler-icon {
 
 
 
+/* white color to font entries */
+
+h3.no-anchor.listing-title {
+    color: white !important;
+}
+
 
 /* first two sections */
 
@@ -2202,22 +2208,12 @@ header#title-block-header.quarto-title-block.default div.quarto-title{
   margin-top: -10px;
 }
 
-div#listing-software.quarto-listing.quarto-listing-container-default div.list.quarto-listing-default div.quarto-post.image-right div.body a h3.no-anchor.listing-title{
-  margin-top:20px;
-    font-size: 20px !important;
-}
 
 header#title-block-header.quarto-title-block.default.page-columns.page-full div.quarto-title-banner.page-columns.page-full div.quarto-title.column-body h1.title{
   margin-top:10px;
 }
 
-#listing-software div.listing-title{
 
-}
-
-#listing-software div.listing-subtitle{
-  font-size: 14px !important;
-}
 
 #listing-software div.listing-date{
   font-size: 25px !important;
@@ -2315,35 +2311,19 @@ header#title-block-header.quarto-title-block.default.page-columns.page-full div.
 }
 
  div.listing-title{
-  
+  color: white !important;
   font-size: 1em;
     margin-right: 25px;
 }
 
 div.listing-subtitle{
-  
+    color: white !important;
   font-size: .7em;
   margin-right: 25px;
 }
 
 div.listing-subtitle p span.animate__animated.animate__fadeInDown.animate__delay-.6s{
   margin-right: 25px;
-}
-
-#peer .listing-title{
-  
-  font-size: 1em;
-}
-
-#peer div.listing-subtitle{
-  
-  font-size: .7em;
-  margin-right: 25px;
-}
-
-#listing-Material .listing-title{
-  
-  font-size: 2em;
 }
 
 
@@ -2355,7 +2335,7 @@ div.quarto-post.image-right div.body a p.show,
 .image-right div.listing-categories,
 .image-right .thumbnail,
 .image-right h3.no-anchor.listing-title{
-    color: white;
+    color: white !important;
   margin-left: 25px;
 }
 
@@ -2363,8 +2343,24 @@ div.card-attribution.card-text-small.justify div.listing-author{
   text-transform: capitalize;
 }
 
-h3.no-anchor.listing-title,{
+h3.no-anchor.listing-title a.no-external{
+  color: white !important;
+  font-size: 1.5em;
+}
+
+div.listing-subtitle a.no-external{
+  color: white !important;
+  font-size: 1em;
+}
+
+
+#listing-ethics div.listing-title{
+  color: white !important;
+}
+
+h2.no-anchor.listing-title{
   padding: 1rem;
+  color: white !important;
 }
 
 div.listing-date{
@@ -2378,7 +2374,7 @@ div.quarto-post.image-right,
 .listing-title,
 div.listing-subtitle,
 .animate__delay-\.6s{
-      color: white;
+      color: white !important;
 }
 
 .quarto-category a{
@@ -3230,11 +3226,7 @@ div.about-entity .title{
   color: white;
 }
 
-.quarto-listing-table td.listing-title span{
-  color: #0070c9;
-   text-decoration: underline;
-    font-size: 20px;
-}
+
 
 .quarto-listing-table td.listing-subtitle span{
   color: white;

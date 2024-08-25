@@ -17,10 +17,6 @@ website:
     right:
       - text: "{{< fa brands github size=lg >}}"
         href: https://github.com/ds-ethics
-      - text: "{{< fa brands x-twitter size=lg >}}"
-        href: https://twitter.com
-      - text: "{{< fa brands linkedin size=lg >}}"
-        href: https://www.linkedin.com
   navbar:
     type: false
     #logo:
