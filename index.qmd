@@ -148,13 +148,13 @@ comments: false
         </div>
        <canvas id="canvas"></canvas>
 
-<!--        <canvas id="demo-canvas"></canvas> -->
     </div>
-
+             <div style="padding: 70px; background: linear-gradient(to right, #2E3192, #1BFFFF);">
+  </div>
 
 <div class="section">
   <div class="image-box">
-    <img src="images/philosophers-dalle_2.jpeg" alt="" class="img" style='   margin-left: 1.4em; height: 100%; width: 100%; object-fit: contain'>
+    <img src="images/philosophers-dalle_2.jpeg" alt="" class="img" style='height: 100%; width: 100%; object-fit: contain'>
   </div>
   <div class="content-box-left">
     <h2 class="title">
@@ -183,7 +183,7 @@ comments: false
     </p>
   </div>
   <div class="image-box">
-      <img src="images/datascientists-dalle_2.jpeg" alt="" class="img" style='height: 100%; width: 100%; object-fit: contain'>
+      <img src="images/datascientists-dalle_2.jpeg" alt="" class="img" style=' height: 100%; width: 100%; object-fit: contain'>
     </div>
     
 </div>
