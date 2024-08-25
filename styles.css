@@ -2253,6 +2253,15 @@ header#title-block-header.quarto-title-block.default.page-columns.page-full div.
   color: white !important;
 }
 
+.quarto-categories .quarto-category {
+  padding: .25em .75em;
+  font-size: .65em;
+  text-transform: uppercase;
+  border: solid 3px #FF7F50;
+  border-radius: .5em;
+  color: white !important;
+}
+
 /*publications FER*/
 .card-left {
   border: 3.5px solid #FF7F50;
