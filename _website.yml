@@ -7,7 +7,7 @@ website:
  #   prefs-text: "text"
   #google-analytics: "G-HJEMN0LJY7"
   title: "Ethics ⨉ Data Science"
-  #site-url: https://ds-ethics.org
+  site-url: https://ds-ethics.org
   favicon: images/logo.png
   page-footer:
     left: 
@@ -20,7 +20,7 @@ website:
   navbar:
     type: false
     #logo:
-    #href: https://ds-ethics.org
+    href: https://ds-ethics.org
     collapse-below: lg
     pinned: true
     left:
@@ -38,7 +38,7 @@ website:
         href: about/about_us.qmd
 comments:
   giscus:
-    repo: jurjoroa/dseweb
+    repo: ds-ethics/dse-website
     
 
 
