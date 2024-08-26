@@ -1,10 +1,21 @@
 ---
+title: "About this project"
 page-layout: full
 toc: false
 title-block-banner: false
 include-in-header: ../meta.html
 comments: false
 ---
+
+<style>
+
+div.quarto-title h1.title {
+  color: transparent !important;
+}
+
+</style>
+
+
 
 # About this project
 
