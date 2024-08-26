@@ -19,7 +19,7 @@ code-link: true
 code-copy: true
 title-block-banner: true
 comments: false
-image: images/privacy.png #path/to/image.png
+image: images/privacy_data.png #path/to/image.png
 include-in-header: meta.html
 filters:
    - lightbox
