@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Data Science"
 listing:
   - id: data_science
     contents: "ds/*/index.qmd"
@@ -38,6 +38,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <style>
+
+div.quarto-title h1.title {
+  color: transparent !important;
+}
+
+
 .beginner-category {
     /* Styles for "Beginner" */
     border-color: #4C8CBF !important; /* Sky Blue border */

@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Ethics"
 listing:
   - id: ethics
     contents: "ethics/*/index.qmd"
@@ -16,6 +16,18 @@ title-block-banner: false
 include-in-header: ../meta.html
 comments: false
 ---
+
+
+<style>
+
+div.quarto-title h1.title {
+  color: transparent !important;
+}
+
+</style>
+
+
+
 
 # Teaching ethics for non-ethicists
 

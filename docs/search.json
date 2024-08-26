@@ -72,7 +72,7 @@
   {
     "objectID": "data_science/data_science.html",
     "href": "data_science/data_science.html",
-    "title": "Teaching data science for non-data scientists",
+    "title": "Data Science",
     "section": "",
     "text": "In today’s data-informed world, tools of data science transcend industries, influencing decisions, shaping strategies, and transforming futures. Applications of data science also inform government decision-making and play a more central role than ever in people’s lives. Yet, for many, the field remains shrouded in jargon and complexity. That’s where we step in. Whether you’re a professional looking to leverage data in your field, a student eager to expand your horizons, or simply a data enthusiast, our platform is designed with you in mind.\nThis website offers a fundamental exploration of data science tailored for non-data scientists, in particular ethicists and philosophers. The goal is to support a foundational understanding of the entire data science pipeline, from data collection and cleaning to analysis and the communication of findings.\nA central focus of this project is the ethical reasoning within data science practices. By mastering the fundamental workflows, students will be equipped to critically assess and navigate the ethical dimensions of data usage and interpretation. The materials aim to empower students from diverse academic backgrounds to engage thoughtfully and responsibly with data, fostering a deeper appreciation of its impact across various domains.\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\nBasics of API requests and data analysis in R\n\n\n\nBeginner\n\n\nAPIs\n\n\nData collection\n\n\n\n\n\n\nJul 29, 2024\n\n\nSimon Munzert\n\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nA case study on detecting and mitigating biasusing the COMPAS Recidivism Risk Score Data and Analysis Dataset\n\n\n\nAdvanced\n\n\nBias in AI\n\n\nMitigation\n\n\n\n\n\n\nDec 5, 2023\n\n\nJorge Roa, Carlo Greß, Hannah Schweren\n\n\n47 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nLearn the basic tools for scraping Twitter Data in R\n\n\n\nBeginner\n\n\nWebscraping\n\n\nText\n\n\n\n\n\n\nApr 18, 2023\n\n\nLukas Lehmann\n\n\n12 min\n\n\n\n\n\n\nNo matching items"
   },
@@ -359,7 +359,7 @@
   {
     "objectID": "ethics/ethics.html",
     "href": "ethics/ethics.html",
-    "title": "Teaching ethics for non-ethicists",
+    "title": "Ethics",
     "section": "",
     "text": "Ethics develops skills of qualitative analysis, reasoning, and communication. It is a key component of good decision-making and leadership. The goal of ethics in data science is to identify ethical issues, and articulate them, to draw on ethical vocabulary to analyze options, and to evaluate and communicate arguments for and against a decision.\nThis section is dedicated to exploring the complex ethical questions that arise in the field of data science. It’s here that we confront the challenges of balancing innovation with privacy, algorithmic fairness with efficiency, and the pursuit of insight with respect for individual rights. Our goal is to provide you with resources and thought-provoking content that illuminate the ethical dimensions of working with data.\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\nA simulation on privacy and election data analytics\n\n\n\nActivity\n\n\nPrivacy\n\n\nData Collection\n\n\n\n\n\n\nFeb 28, 2024\n\n\nJohannes Himmelreich\n\n\n8 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat’s the state of privacy today? Protecting privacy is a collective effort. It follows that consent is over-rated and ignorance is rational.\n\n\n\nFoundational Concept\n\n\nPrivacy\n\n\nData Collection\n\n\n\n\n\n\nFeb 26, 2024\n\n\nJohannes Himmelreich\n\n\n10 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nThree approaches - and why you should think about how you approach the ethics of data science\n\n\n\nFoundational Concepts\n\n\nBias\n\n\nMethodology\n\n\n\n\n\n\nFeb 22, 2024\n\n\nJohannes Himmelreich\n\n\n17 min\n\n\n\n\n\n\nNo matching items"
   },
@@ -744,14 +744,14 @@
   {
     "objectID": "ethics/ethics.html#ethics-case-studies",
     "href": "ethics/ethics.html#ethics-case-studies",
-    "title": "Teaching ethics for non-ethicists",
+    "title": "Ethics",
     "section": "",
     "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\nA simulation on privacy and election data analytics\n\n\n\nActivity\n\n\nPrivacy\n\n\nData Collection\n\n\n\n\n\n\nFeb 28, 2024\n\n\nJohannes Himmelreich\n\n\n8 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat’s the state of privacy today? Protecting privacy is a collective effort. It follows that consent is over-rated and ignorance is rational.\n\n\n\nFoundational Concept\n\n\nPrivacy\n\n\nData Collection\n\n\n\n\n\n\nFeb 26, 2024\n\n\nJohannes Himmelreich\n\n\n10 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nThree approaches - and why you should think about how you approach the ethics of data science\n\n\n\nFoundational Concepts\n\n\nBias\n\n\nMethodology\n\n\n\n\n\n\nFeb 22, 2024\n\n\nJohannes Himmelreich\n\n\n17 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "data_science/data_science.html#data-science-case-studies",
     "href": "data_science/data_science.html#data-science-case-studies",
-    "title": "Teaching data science for non-data scientists",
+    "title": "Data Science",
     "section": "",
     "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\nBasics of API requests and data analysis in R\n\n\n\nBeginner\n\n\nAPIs\n\n\nData collection\n\n\n\n\n\n\nJul 29, 2024\n\n\nSimon Munzert\n\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nA case study on detecting and mitigating biasusing the COMPAS Recidivism Risk Score Data and Analysis Dataset\n\n\n\nAdvanced\n\n\nBias in AI\n\n\nMitigation\n\n\n\n\n\n\nDec 5, 2023\n\n\nJorge Roa, Carlo Greß, Hannah Schweren\n\n\n47 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nLearn the basic tools for scraping Twitter Data in R\n\n\n\nBeginner\n\n\nWebscraping\n\n\nText\n\n\n\n\n\n\nApr 18, 2023\n\n\nLukas Lehmann\n\n\n12 min\n\n\n\n\n\n\nNo matching items"
   },

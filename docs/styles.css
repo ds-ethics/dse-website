@@ -11,6 +11,26 @@ div.nav-footer-center i.fa-brands.fa-r-project {
 }
 
 
+/* margin of title and subtitle */
+
+div.quarto-post.image-right div.body{
+  margin-top: 1.5em;
+}
+
+/* margin of authors and date */
+
+div.metadata a.no-external {
+  margin-top: 1.5em;
+}
+
+div.metadata div.listing-author {
+  margin-bottom: 1.5em; /* Adds space below the author */
+}
+
+div.metadata div.listing-date {
+  margin-bottom: 1.5em; /* Adds space above the date */
+}
+
 /* color three lines button */
 
 button.navbar-toggler .navbar-toggler-icon {
@@ -1015,6 +1035,7 @@ header:not(.headroom):not(.quarto-title-block).is-visible {
 
 div.listing-author{
   color: white !important;
+  font-size: 1.1em !important;
 }
 
 .layout_grid_learnr{
