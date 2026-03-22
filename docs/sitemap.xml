@@ -2,6 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ds-ethics.org/index.html</loc>
-    <lastmod>2026-03-22T16:50:16.651Z</lastmod>
+    <lastmod>2026-03-22T21:59:05.258Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ds-ethics.org/ethics/ethics.html</loc>
+    <lastmod>2026-03-22T03:25:46.046Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ds-ethics.org/data_science/data_science.html</loc>
+    <lastmod>2026-03-22T03:38:46.322Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ds-ethics.org/for_instructors/instructors.html</loc>
+    <lastmod>2026-03-22T03:25:46.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ds-ethics.org/about/about_us.html</loc>
+    <lastmod>2026-03-22T03:25:46.016Z</lastmod>
   </url>
 </urlset>
