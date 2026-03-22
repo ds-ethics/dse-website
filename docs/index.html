@@ -164,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
         #animation-container {
             position: relative;
             width: 100%;
-            background: linear-gradient(to right, #2E3192, #1BFFFF);  /* Add black background color */
+            background: linear-gradient(to right, #264653, #e9c46a);  /* Sunset Boulevard */
             flex-direction: column; 
             height: 120vh; 
             margin-top: -90px; 
@@ -179,8 +179,18 @@ ul.task-list li input[type="checkbox"] {
             justify-content: center; 
         }
 
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
         #animation-text {
             position: absolute;
+            z-index: 1;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -246,19 +256,45 @@ ul.task-list li input[type="checkbox"] {
 
 
 .image-grid {
-    display: grid;
-    grid-template-columns: repeat(3, .5fr); /* 3 columns with equal width */
-    gap: 10px; /* Space between grid items */
-    justify-content: center; /* Center grid items horizontally */
-    align-items: center; /* Center grid items vertically */
-    margin-top: 20px; /* Add some space at the top */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 28px;
 }
 
-/* Optional: Responsive adjustments */
+.image-grid img {
+    filter: brightness(0) invert(1);
+    opacity: 0;
+    max-height: 44px;
+    width: auto;
+    object-fit: contain;
+    transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease;
+    animation: logo-rise 0.7s ease forwards;
+}
+
+.image-grid img:nth-child(1) { animation-delay: 0.5s; }
+.image-grid img:nth-child(2) { animation-delay: 0.75s; }
+.image-grid img:nth-child(3) { animation-delay: 1.0s; }
+
+.image-grid img:hover {
+    opacity: 1 !important;
+    transform: translateY(-4px) scale(1.08);
+    filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.65));
+}
+
+@keyframes logo-rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 0.72; transform: translateY(0); }
+}
+
 @media screen and (max-width: 600px) {
     .image-grid {
-        grid-template-columns: 1fr; /* Stack images in one column on smaller screens */
-        row-gap: 20px; 
+        gap: 24px;
+    }
+    .image-grid img {
+        max-height: 32px;
     }
 }
     </style>
@@ -269,7 +305,7 @@ ul.task-list li input[type="checkbox"] {
         <div id="animation-text">
             <i class="fa-solid fa-scale-balanced"></i> Ethics ✕ Data Science <i class="fa-solid fa-code"></i>
             <div class="subtitle">
-                Resources for teaching <mark style="background-color: #a6001a; color: white; border-radius: 5px;"><i class="fa-solid fa-scale-balanced"></i>  ethics for non-ethicists</mark> and<br><mark style="background-color: #222081; color: white; border-radius: 5px;"><i class="fa-solid fa-code"></i> data science for non-data scientists</mark>
+                Resources for teaching <mark class="mark-red"><i class="fa-solid fa-scale-balanced"></i> ethics for non-ethicists</mark> and<br><mark class="mark-blue"><i class="fa-solid fa-code"></i> data science for non-data scientists</mark>
             </div>
             <br>
             <br>
@@ -277,34 +313,34 @@ ul.task-list li input[type="checkbox"] {
             Supported by: 
             </div>
 <div class="image-grid">
-    <img src="images/apsia.svg" alt="Image Description" style="width: 40%; animation: fadeInUp; animation-duration: 10s;">
-    <img src="images/hertie.png" alt="Image Description" style="width: 50%; animation: fadeInUp; animation-duration: 10s;">
-    <img src="images/syr.png" alt="Image Description" style="width: 50%; animation: fadeInUp; animation-duration: 10s;">
+    <img src="images/apsia.svg" alt="APSIA">
+    <img src="images/hertie.png" alt="Hertie School">
+    <img src="images/syr.png" alt="Maxwell School at Syracuse University">
 </div>
 
         </div>
        <canvas id="canvas"></canvas>
 
     </div>
-             <div style="padding: 70px; background: linear-gradient(to right, #2E3192, #1BFFFF);">
+             <div style="padding: 70px; background: linear-gradient(to right, #264653, #e9c46a);">
   </div>
 
 <div class="section">
   <div class="image-box">
-    <img src="images/philosophers-dalle_2.jpeg" alt="" class="img" style="height: 100%; width: 100%; object-fit: contain">
+    <img src="images/philosophers-dalle_2.jpeg" alt="" class="img">
   </div>
   <div class="content-box-left">
     <h2 class="title">
       The issue
     </h2>
     <p class="text-right" style="font-size: 10em;" "="">
-      If you ever taught a course on data science, you likely found yourself in this situation: You want to cover the ethics of data science. But have only one or two sessions to do so. And: students have no background in ethics! In short, <mark style="background-color: #a6001a; color: white; border-radius: 5px;">  how do you teach ethics to non-ethicists </mark> within a session or two -- and, perhaps, without having much a background in ethics teaching yourself?
-      You face a similar issue when you want to teach a course on the ethics of data science: You need to cover the basics of data science, but you have at most two sessions to do so, and your students (and perhaps you yourself) have little no background in data science. In short, you need to <mark style="background-color: #222081; color: white; border-radius: 5px;">teach data science to non-data scientists.</mark>
+      If you ever taught a course on data science, you likely found yourself in this situation: You want to cover the ethics of data science. But have only one or two sessions to do so. And: students have no background in ethics! In short, <mark class="mark-red">how do you teach ethics to non-ethicists</mark> within a session or two — and, perhaps, without having much of a background in ethics teaching yourself?
+      You face a similar issue when you want to teach a course on the ethics of data science: You need to cover the basics of data science, but you have at most two sessions to do so, and your students (and perhaps you yourself) have little no background in data science. In short, you need to <mark class="mark-blue">teach data science to non-data scientists.</mark>
     </p>
   </div>
 </div>
 
-  <div style="padding: 50px; background: linear-gradient(to right, #2E3192, #1BFFFF);">
+  <div style="padding: 50px; background: linear-gradient(to right, #264653, #e9c46a);">
   </div>
 
 <div class="section">
@@ -320,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
     </p>
   </div>
   <div class="image-box">
-      <img src="images/datascientists-dalle_2.jpeg" alt="" class="img" style=" height: 100%; width: 100%; object-fit: contain">
+      <img src="images/datascientists-dalle_2.jpeg" alt="" class="img">
     </div>
     
 </div>
@@ -330,7 +366,7 @@ ul.task-list li input[type="checkbox"] {
 
     
 
-<div style="padding: 70px; background: linear-gradient(to right, #2E3192, #1BFFFF);">
+<div style="padding: 70px; background: linear-gradient(to right, #264653, #e9c46a);">
 </div>
 
     <script src="assets/js/demo-2.js"></script>

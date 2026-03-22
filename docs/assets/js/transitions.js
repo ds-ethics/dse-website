@@ -1,11 +1,13 @@
 (function () {
   'use strict';
 
-  // ── 1. Scroll: navbar glass + progress bar ───────────────────
+  // ── 1. Scroll: navbar glass + progress bar + parallax ────────
   var navbar = document.querySelector('.navbar');
   var progressBar = document.createElement('div');
   progressBar.className = 'scroll-progress-bar';
   document.body.insertBefore(progressBar, document.body.firstChild);
+
+  var parallaxItems = []; // populated in init()
 
   function onScroll() {
     if (navbar) {
@@ -15,6 +17,14 @@
     progressBar.style.width = docHeight > 0
       ? (window.scrollY / docHeight * 100) + '%'
       : '0%';
+
+    // image parallax
+    var winH = window.innerHeight;
+    parallaxItems.forEach(function (item) {
+      var rect = item.section.getBoundingClientRect();
+      var centerOffset = (rect.top + rect.height / 2) - winH / 2;
+      item.img.style.transform = 'translateY(' + (centerOffset * 0.22) + 'px)';
+    });
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -94,11 +104,34 @@
     revealOnScroll('.nav-footer', 'footer-in-view', 0.1);
   }
 
+  // ── 8. Home content section reveal ───────────────────────────
+  function revealHomeSections() {
+    var sections = document.querySelectorAll('.section');
+    if (!sections.length) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('section-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    sections.forEach(function (s) { io.observe(s); });
+  }
+
   // ── Init ──────────────────────────────────────────────────────
   function init() {
+    // cache parallax targets
+    document.querySelectorAll('.section').forEach(function (section) {
+      var img = section.querySelector('.image-box .img');
+      if (img) parallaxItems.push({ section: section, img: img });
+    });
+    onScroll(); // set initial parallax positions
+
     staggerListingItems();
     revealSections();
     revealFooter();
+    revealHomeSections();
   }
 
   if (document.readyState === 'loading') {
