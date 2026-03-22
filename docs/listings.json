@@ -1,8 +1,10 @@
 [
   {
-    "listing": "/for_instructors/instructors.html",
+    "listing": "/ethics/ethics.html",
     "items": [
-      "/for_instructors/slides/approaches/index.html"
+      "/ethics/ethics/privacy-activity/index.html",
+      "/ethics/ethics/pathology-of-privacy/index.html",
+      "/ethics/ethics/approaches/index.html"
     ]
   },
   {
@@ -11,25 +13,6 @@
       "/data_science/ds/wikipedia_data/index.html",
       "/data_science/ds/bias_ai_compas/index.html",
       "/data_science/ds/social_media_scraping/index.html"
-    ]
-  },
-  {
-    "listing": "/data_science/ds/objects/index.html",
-    "items": []
-  },
-  {
-    "listing": "/data_science/i2ds.html",
-    "items": [
-      "/data_science/I2DS/i2ds2021/index.html",
-      "/data_science/I2DS/i2ds2022/index.html"
-    ]
-  },
-  {
-    "listing": "/ethics/ethics.html",
-    "items": [
-      "/ethics/ethics/privacy-activity/index.html",
-      "/ethics/ethics/pathology-of-privacy/index.html",
-      "/ethics/ethics/approaches/index.html"
     ]
   }
 ]

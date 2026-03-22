@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ds-ethics.org/index.html</loc>
-    <lastmod>2026-03-22T02:55:53.925Z</lastmod>
-  </url>
-  <url>
     <loc>https://ds-ethics.org/for_instructors/instructors.html</loc>
-    <lastmod>2026-03-22T01:44:57.584Z</lastmod>
+    <lastmod>2026-03-22T03:25:46.047Z</lastmod>
   </url>
   <url>
     <loc>https://ds-ethics.org/ethics/ethics/pathology-of-privacy/index.html</loc>
@@ -14,11 +10,31 @@
   </url>
   <url>
     <loc>https://ds-ethics.org/ethics/ethics.html</loc>
-    <lastmod>2026-03-22T01:44:57.579Z</lastmod>
+    <lastmod>2026-03-22T03:25:46.046Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ds-ethics.org/about/about_us.html</loc>
+    <lastmod>2026-03-22T03:25:46.016Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ds-ethics.org/data_science/ds/social_media_scraping/index.html</loc>
+    <lastmod>2026-03-22T03:25:46.017Z</lastmod>
   </url>
   <url>
     <loc>https://ds-ethics.org/data_science/ds/bias_ai_compas/index.html</loc>
-    <lastmod>2026-03-22T02:13:03.033Z</lastmod>
+    <lastmod>2026-03-22T03:25:46.017Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ds-ethics.org/data_science/ds/wikipedia_data/index.html</loc>
+    <lastmod>2026-03-22T03:25:46.018Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ds-ethics.org/data_science/data_science.html</loc>
+    <lastmod>2026-03-22T03:38:46.322Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ds-ethics.org/index.html</loc>
+    <lastmod>2026-03-22T04:10:07.871Z</lastmod>
   </url>
   <url>
     <loc>https://ds-ethics.org/ethics/ethics/approaches/index.html</loc>
@@ -27,9 +43,5 @@
   <url>
     <loc>https://ds-ethics.org/ethics/ethics/privacy-activity/index.html</loc>
     <lastmod>2026-03-22T01:44:57.583Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ds-ethics.org/data_science/data_science.html</loc>
-    <lastmod>2026-03-22T01:44:56.176Z</lastmod>
   </url>
 </urlset>
