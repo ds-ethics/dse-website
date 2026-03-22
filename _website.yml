@@ -13,7 +13,7 @@ website:
     left: 
       - text: "{{< fa regular copyright size=s >}} 2024"
         href: https://creativecommons.org/licenses/by/2.0/
-    center: · [![](https://quarto.org/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org/)  engine ·
+    center: "· [Quarto](https://quarto.org/) engine ·"
     right:
       - text: "{{< fa brands github size=lg >}}"
         href: https://github.com/ds-ethics

@@ -39,44 +39,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-.beginner-category {
-    /* Styles for "Beginner" */
-    border-color: #4C8CBF !important; /* Sky Blue border */
-    background-color: #7FB2E5; /* Light Blue background */
-    color: #ffffff; /* White text */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-.intermediate-category {
-    /* Styles for "Intermediate" */
-    background-color: #FFA500; /* Orange background */
-    border-color: #FFA500 !important; /* Orange border */
-    color: #ffffff; /* White text */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-.advanced-category {
-    /* Styles for "Advanced" */
-    background-color: #6A0DAD; /* Purple background */
-    border-color: #6A0DAD !important; /* Purple border */
-    color: #ffffff; /* White text */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-/* Optional: Add hover effects */
-.beginner-category:hover {
-    background-color: #4D9EDB; /* Brighter Blue on hover */
-}
-
-.intermediate-category:hover {
-    background-color: #FF8C00; /* Darker Orange on hover */
-}
-
-.advanced-category:hover {
-    background-color: #7D26CD; /* Darker Purple on hover */
-}
-
-</style>
 
 
 # Teaching data science for non-data scientists

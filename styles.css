@@ -2422,13 +2422,34 @@ div.body div.listing-categories div.listing-category{
 
 
 
-.nav-footer{
+footer.footer hr {
+  display: none;
+}
+
+.nav-footer {
   background: linear-gradient(to right, #2E3192, #1BFFFF);
-  height: 6vh;
-  border: none !important; 
-  padding:0 !important; 
-  margin: 0 !important; 
+  height: auto;
+  min-height: 0;
+  padding: 6px 0 !important;
+  margin: 0 !important;
+  border: none !important;
   border-bottom: none;
+  align-items: center;
+}
+
+.nav-footer p {
+  margin: 0;
+  line-height: 1;
+}
+
+.nav-footer-center a {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.nav-footer .nav-link {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
 }
 
 
@@ -4425,7 +4446,176 @@ html body.nav-fixed.quarto-light div#quarto-content.quarto-container.page-column
 }
 
 
+/* --- Listing category badges ---------------------------- */
+.beginner-category {
+    border-color: #4C8CBF !important;
+    background-color: #7FB2E5;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.beginner-category:hover {
+    background-color: #4D9EDB;
+}
+
+.intermediate-category {
+    background-color: #FFA500;
+    border-color: #FFA500 !important;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.intermediate-category:hover {
+    background-color: #FF8C00;
+}
+
+.advanced-category {
+    background-color: #6A0DAD;
+    border-color: #6A0DAD !important;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.advanced-category:hover {
+    background-color: #7D26CD;
+}
+
 /* Hide Quarto title block on listing/section pages */
 div.quarto-title h1.title {
   color: transparent !important;
+}
+
+
+/* ============================================================
+   TRANSITIONS & FLUIDITY
+   ============================================================ */
+
+:root {
+  --t-fast:     200ms;
+  --t-base:     350ms;
+  --t-slow:     650ms;
+  --ease-out:   cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* --- Page load fade-in ---------------------------------- */
+html:not(.page-loaded) #quarto-content {
+  opacity: 0;
+}
+
+html.page-loaded #quarto-content {
+  animation: page-fade-in var(--t-slow) var(--ease-out) both;
+}
+
+@keyframes page-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Navbar shadow on scroll ---------------------------- */
+.navbar {
+  transition: box-shadow var(--t-base) var(--ease-out) !important;
+}
+
+.navbar-scrolled {
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* --- Nav link transitions ------------------------------- */
+.navbar a.nav-link {
+  transition: color var(--t-base) var(--ease-out),
+              opacity var(--t-base) var(--ease-out) !important;
+}
+
+.navbar a.nav-link:hover {
+  opacity: 0.75;
+}
+
+/* --- Global link transitions ---------------------------- */
+a {
+  transition: color var(--t-fast) var(--ease-out),
+              opacity var(--t-fast) var(--ease-out);
+}
+
+/* --- Staggered listing items ---------------------------- */
+.quarto-listing .list-item,
+.quarto-listing .quarto-post {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity var(--t-slow) var(--ease-out),
+              transform var(--t-slow) var(--ease-out);
+}
+
+.quarto-listing .list-item.item-in-view,
+.quarto-listing .quarto-post.item-in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Content section fade-up ---------------------------- */
+#quarto-content .level2,
+#quarto-content .level3 {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity var(--t-slow) var(--ease-out),
+              transform var(--t-slow) var(--ease-out);
+}
+
+#quarto-content .level2.section-in-view,
+#quarto-content .level3.section-in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Card / tile hover improvements --------------------- */
+.tile,
+.tilef {
+  transition: transform var(--t-base) var(--ease-spring),
+              box-shadow var(--t-base) var(--ease-out) !important;
+}
+
+.tile:hover,
+.tilef:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.38) !important;
+}
+
+.tile img {
+  transition: opacity var(--t-base) var(--ease-out),
+              transform var(--t-base) var(--ease-out);
+}
+
+/* --- Footer reveal -------------------------------------- */
+.nav-footer {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity var(--t-slow) var(--ease-out),
+              transform var(--t-slow) var(--ease-out);
+}
+
+.nav-footer.footer-in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Mobile navbar fade --------------------------------- */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    transition: opacity var(--t-base) var(--ease-out);
+  }
+
+  .navbar-collapse:not(.show) {
+    opacity: 0;
+  }
+
+  .navbar-collapse.show {
+    opacity: 1;
+  }
+}
+
+/* --- Focus ring ----------------------------------------- */
+:focus-visible {
+  outline: 2px solid #1BFFFF;
+  outline-offset: 3px;
+  transition: outline-offset var(--t-fast) var(--ease-out);
 }
