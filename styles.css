@@ -60,7 +60,7 @@ h3.no-anchor.listing-title {
   width:100%;
   height:38vh;
   margin:20px;
-  background-color:#264653;
+  background-color:#1d3557;
     justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   display:inline-block;
@@ -127,7 +127,7 @@ h3.no-anchor.listing-title {
 
 .tile:hover
 {
-/*   background-color:#264653; */
+/*   background-color:#1d3557; */
 box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
   transform:scale(1.05);
 }
@@ -200,13 +200,13 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
 
 .container-footer1{
   background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%),
-            linear-gradient(to right, #264653, #e9c46a);
+            linear-gradient(to right, #1d3557, #ff8c42);
   height:100px;
 }
 
 .container-footer2{
   background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%),
-            linear-gradient(to right, #264653, #e9c46a);
+            linear-gradient(to right, #1d3557, #ff8c42);
   height:300px;
 }
 
@@ -338,7 +338,7 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
   display: block;
   width: 36px;
   height: 3px;
-  background: #e9c46a;
+  background: #ff8c42;
   border-radius: 2px;
   margin-bottom: 0.55em;
 }
@@ -447,7 +447,7 @@ font-size: 0.8em;
 
 html{
   scroll-behavior: smooth;
-  background: linear-gradient(to right, #264653, #e9c46a);
+  background: linear-gradient(to right, #1d3557, #ff8c42);
   background-attachment: fixed;
   min-height: 100%;
 }
@@ -456,7 +456,7 @@ html{
 body {
   font-family: var(--main-font);
   background: transparent;
-  color: #264653;
+  color: #1d3557;
 }
 
 /* Transparent so the html gradient shows through */
@@ -471,13 +471,13 @@ body {
 .sidebar,
 nav#TOC,
 .toc-actions {
-  background-color: #fef3e2;
+  background-color: #ffe66d;
 }
 
 .quarto-title-block,
 .quarto-title-meta {
-  background-color: #fef3e2;
-  border-left: 4px solid #e76f51;
+  background-color: #ffe66d;
+  border-left: 4px solid #ff5a5f;
   padding: 1rem 1.25rem;
   border-radius: 6px;
 }
@@ -536,7 +536,7 @@ hr {
 /**** navbar overrides *****/
 
 .navbar {
-    background: linear-gradient(to right, #264653, #e9c46a); 
+    background: linear-gradient(to right, #1d3557, #ff8c42); 
     position: fixed;
     width: 100%;
 }
@@ -615,13 +615,13 @@ li.nav-item {
 }
 
 .navbar-brand{
-  color: #e76f51 !important;
+  color: #ff5a5f !important;
 }
 
 
 .navbar .navbar-nav .nav-link.active {
     font-weight: 700 !important;
-    color: #e76f51 !important;
+    color: #ff5a5f !important;
 }
 
 .navbar-brand, .navbar-nav li.nav-item a.nav-link {
@@ -652,13 +652,13 @@ li.nav-item {
   width: 0%;
   content: '.'; /* make invisible, dot beneath links */
   color: transparent;
-  background: #e76f51;
+  background: #ff5a5f;
   height: 2px;
 
 }
 
 a:not(.lightbox) {
-  color: #e76f51;
+  color: #ff5a5f;
 }
 
 
@@ -668,29 +668,29 @@ a.nav-link:hover:after {
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-    color: #e76f51 !important;
+    color: #ff5a5f !important;
 }
 
 
 p > a:hover {
-  color: #e76f51;
+  color: #ff5a5f;
   text-decoration: none;
 }
 
 p > a {
-  color: #e76f51;
+  color: #ff5a5f;
   text-decoration: none;
 }
 
 p > a:not(.lightbox) {
   position: relative;
-  color: #e76f51;
+  color: #ff5a5f;
   text-decoration: none;
 }
 
 
 ul.share li a {
-    background-color: #e76f51;
+    background-color: #ff5a5f;
 }
 
 p > a:before:not(img, #TOC) {
@@ -700,18 +700,18 @@ p > a:before:not(img, #TOC) {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #e76f51;
+  background-color: #ff5a5f;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out 0s;
 }
 
 a {
-  color: #e76f51;
+  color: #ff5a5f;
 }
 
 a:hover {
-  color: #e76f51;
+  color: #ff5a5f;
 }
 
 p > a:hover::before {
@@ -741,9 +741,9 @@ div > h1.title {
   margin-block-end: 1rem;
   margin-top: 50px;
   height: 87%;
-  background: linear-gradient(to right, #264653, #e9c46a); 
+  background: linear-gradient(to right, #1d3557, #ff8c42); 
   color: white !important;
-  background-color: #fef3e2 !important;
+  background-color: #ffe66d !important;
   
 }
 
@@ -752,9 +752,9 @@ div > h1.title {
  .quarto-title-banner{
   margin-top: 50px;
   overflow: auto;
-  background: linear-gradient(to right, #264653, #e9c46a); 
+  background: linear-gradient(to right, #1d3557, #ff8c42); 
   color: white !important;
-  background-color: #fef3e2 !important;
+  background-color: #ffe66d !important;
   
 }
 }
@@ -762,9 +762,9 @@ div > h1.title {
 @media screen and (min-width: 2183px) {
  .quarto-title-banner{
    margin-top: .15%;
-  background: linear-gradient(to right, #264653, #e9c46a); 
+  background: linear-gradient(to right, #1d3557, #ff8c42); 
   color: white !important;
-  background-color: #fef3e2 !important;
+  background-color: #ffe66d !important;
   
 }
 }
@@ -838,8 +838,8 @@ width: 100%;
 
 
 .inline-photo {
-  border: 1em solid #e76f51;
-  border-bottom: 4em solid #e76f51;
+  border: 1em solid #ff5a5f;
+  border-bottom: 4em solid #ff5a5f;
   border-radius: .25em;
   box-shadow: 1em 1em 2em .25em #d56679;
   margin: 2em auto;
@@ -1016,7 +1016,7 @@ header:not(.headroom):not(.quarto-title-block).is-visible {
 }
 
 .intro button {
-  background-color: #e9c46a;
+  background-color: #ff8c42;
   color: #000;
   padding: 10px 25px;
   border: none;
@@ -1168,7 +1168,7 @@ div.listing-author{
 .hero-sec{
   width: 100%;
   align-items: flex-start;
-  background-image: linear-gradient(15deg, #264653 0%, #e76f51 150%);
+  background-image: linear-gradient(15deg, #1d3557 0%, #ff5a5f 150%);
   display: flex;
   min-height: 100%;
   justify-content: center;
@@ -1254,7 +1254,7 @@ width: 100%;
   top: 0;
   transform-origin: center;
   transform: scale(1) translateZ(0);
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* updated line */     box-shadow: #264653 2px 2px 5px 2px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* updated line */     box-shadow: #1d3557 2px 2px 5px 2px;
 }
 
 .card_img:hover .card__heading,
@@ -1267,7 +1267,7 @@ width: 100%;
 
 .card_img:hover .card__background{
   transform: scale(1.05) translateZ(0);
-    box-shadow: #264653 12px 12px 5px 2px;
+    box-shadow: #1d3557 12px 12px 5px 2px;
 }
 
 
@@ -1439,23 +1439,23 @@ width: 100%;
 }
 
 .btn-21:active:before {
-  background: linear-gradient(to right, transparent, #e9c46a);
+  background: linear-gradient(to right, transparent, #ff8c42);
 }
 
 .btn-21:active:after {
-  background: linear-gradient(to bottom, transparent, #e9c46a);
+  background: linear-gradient(to bottom, transparent, #ff8c42);
 }
 
 .btn-21 span:active:before {
-  background: linear-gradient(to top, transparent, #e9c46a);
+  background: linear-gradient(to top, transparent, #ff8c42);
 }
 
 .btn-21 span:active:after {
-  background: linear-gradient(to left, transparent, #e9c46a);
+  background: linear-gradient(to left, transparent, #ff8c42);
 }
 
 .btn-21:active {
-  color: #e9c46a;
+  color: #ff8c42;
 }
 
 @keyframes btn-21-right {
@@ -1554,7 +1554,7 @@ display: grid;
 
 .card {
   padding: 1rem;
-  background-color: #fdfaf5;
+  background-color: #ffe66d;
   border-radius: 5px;
   transition: all 0.5s ease-in-out;
   height: 100%;
@@ -1564,7 +1564,7 @@ display: grid;
 
 .card_team {
   padding: 1rem;
-  background-color: #fdfaf5;
+  background-color: #ffe66d;
   border-radius: 5px;
   transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
   height: 100%;
@@ -1585,7 +1585,7 @@ display: grid;
 
 
 .card_team:hover {
-  box-shadow: 1em 1em 2em .25em #e76f51;
+  box-shadow: 1em 1em 2em .25em #ff5a5f;
   transition: all .4s ease;
 }
 
@@ -1780,7 +1780,7 @@ display: grid;
   
   .card, .card_team {
   padding: 1rem 1rem;
-  background-color: #fdfaf5;
+  background-color: #ffe66d;
   border-radius: 5px;
   transition: all 0.5s ease-in-out;
   width: 100%;
@@ -2032,7 +2032,7 @@ h3#hover_esp:hover{
 
 
 .txt-rotate {
-  color: #e76f51;
+  color: #ff5a5f;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -2098,14 +2098,14 @@ transform: scale(1.3);
 
 /*
 code span {
-  color: #e76f51;
+  color: #ff5a5f;
 }
 */
 /*modify code*/
 
 div.sourceCode {
   background: #2a2a2a;
-  border: 3px solid #e76f51;
+  border: 3px solid #ff5a5f;
   border-style: ;
   font-size: .9em;
 }
@@ -2131,7 +2131,7 @@ code span.at {
 }
 
 code span.ot {
-  color: #e76f51;
+  color: #ff5a5f;
 }
 
 code span.ss {
@@ -2162,12 +2162,12 @@ code {
 /*arrows, parenthesis*/
 
 code span.ot { 
-  color: #e76f51 !important;
+  color: #ff5a5f !important;
   
 }
 
 code span.op { 
-  color: #e76f51 !important;
+  color: #ff5a5f !important;
   
 }
 
@@ -2175,7 +2175,7 @@ code span.op {
 
 
 code span.cf {
-  color: #e76f51;
+  color: #ff5a5f;
 }
 
 code span.er {
@@ -2242,8 +2242,8 @@ code span.st {
 /*card events software fer*/
 
 .image-right {
-  border: 2.5px solid #e76f51;
-  background: linear-gradient(to right, rgba(38, 70, 83, 0.8), rgba(233, 196, 106, 0.8));
+  border: 2.5px solid #ff5a5f;
+  background: linear-gradient(to right, rgba(29, 53, 87, 0.8), rgba(255, 140, 66, 0.8));
   border-radius: 10px;
   color: white;
   transition: all 0.5s ease-in-out;
@@ -2350,7 +2350,7 @@ header#title-block-header.quarto-title-block.default.page-columns.page-full div.
   padding: .25em .75em;
   font-size: .65em;
   text-transform: uppercase;
-  border: solid 3px #e76f51;
+  border: solid 3px #ff5a5f;
   border-radius: .5em;
   color: white !important;
 }
@@ -2359,14 +2359,14 @@ header#title-block-header.quarto-title-block.default.page-columns.page-full div.
   padding: .25em .75em;
   font-size: .65em;
   text-transform: uppercase;
-  border: solid 3px #e76f51;
+  border: solid 3px #ff5a5f;
   border-radius: .5em;
   color: white !important;
 }
 
 /*publications FER*/
 .card-left {
-  border: 3.5px solid #e76f51;
+  border: 3.5px solid #ff5a5f;
   background: #c0552a;
   border-radius: 10px;
   color: #016895;
@@ -2464,20 +2464,20 @@ div.listing-subtitle,
 }
 
 #quarto-header .quarto-category{
-   border: 1px solid #e76f51;
+   border: 1px solid #ff5a5f;
    color: white;
 }
 
 #peer .listing-category{
    color: white;
-   border: 1px solid #e76f51;
+   border: 1px solid #ff5a5f;
 }
 
 
 div.body div.listing-categories div.listing-category{
   
    color: white;
-   border: 1px solid #e76f51;
+   border: 1px solid #ff5a5f;
   
 }
 
@@ -2508,7 +2508,7 @@ footer.footer hr {
 }
 
 .nav-footer {
-  background: linear-gradient(to right, #264653, #e9c46a);
+  background: linear-gradient(to right, #1d3557, #ff8c42);
   height: auto;
   min-height: 0;
   padding: 6px 0 !important;
@@ -2841,7 +2841,7 @@ footer.footer hr {
   padding-left: 16px;
   margin: 10px 10px;
   text-align: center;
-  border: 2px solid #e76f51;
+  border: 2px solid #ff5a5f;
   margin-top: -100px;
   margin-bottom: 90px;
 }
@@ -2943,7 +2943,7 @@ display: none;
 
 
 .blue {
-    color: #3498db;
+    color: #2a9d8f;
 }
 
 
@@ -3017,10 +3017,10 @@ display: none;
 hr.sep-2 {
   border: 0; 
   height: 2px; 
-  background-image: linear-gradient(to right, #f0f0f0, #3498db, #e76f51, #f0f0f0)}
+  background-image: linear-gradient(to right, #f0f0f0, #2a9d8f, #ff5a5f, #f0f0f0)}
   
 hr.sep-2-f {
- border: 1px solid #e76f51;
+ border: 1px solid #ff5a5f;
   
 }
 
@@ -3277,7 +3277,7 @@ div.about-entity .title{
 
 .rounded {
   position: relative;
-  background: #fdfaf5;
+  background: #ffe66d;
   border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
   box-shadow: .5em .5em 1em 0em white;
   transition: all .4s ease;
@@ -3311,7 +3311,7 @@ div.about-entity .title{
   width: 100%;
   height: 100%;
   border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
-  box-shadow: .5em .5em 1em 0em #e76f51;
+  box-shadow: .5em .5em 1em 0em #ff5a5f;
   opacity: 0.5;
   transition: all .4s ease;
 }
@@ -3335,14 +3335,14 @@ div.about-entity .title{
 
 /*
 .layout_table #listing-material{
-    box-shadow: 10px 10px #e76f51;
+    box-shadow: 10px 10px #ff5a5f;
 
 }
 */
 
 .quarto-listing-table{
   background: linear-gradient(to left, #000428, #004e92);
-    border: 3px solid #e76f51 !important;
+    border: 3px solid #ff5a5f !important;
 }
 
 .quarto-listing-table th{
@@ -3428,12 +3428,12 @@ width:20vw;
   margin-bottom: 1rem;
   color: black;
   vertical-align: top;
-  border-color: #e76f51;
+  border-color: #ff5a5f;
 }
 
 .table td,
 .table th {
-  border-bottom: 2px solid #e76f51; /* Change this value to increase or decrease the thickness of the cell borders */
+  border-bottom: 2px solid #ff5a5f; /* Change this value to increase or decrease the thickness of the cell borders */
   
 }
 
@@ -3524,7 +3524,7 @@ figcaption {
     width: 100%;
   height: auto;
   margin-top: -14px;
-  box-shadow: -.5em .5em 1em 0em #e76f51; /* Modified box shadow values */
+  box-shadow: -.5em .5em 1em 0em #ff5a5f; /* Modified box shadow values */
 
   /*border-radius: 0% 0% 11% 21% / 10% 10% 0% 21%;*/
 }
@@ -3538,7 +3538,7 @@ figcaption {
 }
 .about .left hr{
    width: -60%;
-  border-top: 3px solid #e76f51;
+  border-top: 3px solid #ff5a5f;
   border-radius: 10px;
   border-bottom: none;
 }
@@ -3642,7 +3642,7 @@ figcaption {
   width: 100%;
   height: auto;
   margin-top: -14px;
-  box-shadow: .5em .5em 1em 0em #e76f51; /* Modified box shadow values */
+  box-shadow: .5em .5em 1em 0em #ff5a5f; /* Modified box shadow values */
 
 }
 
@@ -3654,7 +3654,7 @@ figcaption {
 
 .about2 .right2 hr {
   width: -60%;
-  border-top: 3px solid #e76f51;
+  border-top: 3px solid #ff5a5f;
   border-radius: 10px;
   border-bottom: none;
 }
@@ -3752,7 +3752,7 @@ figcaption {
   width: 100%;
   height: auto;
   margin-top: -14px;
-  box-shadow: -.5em .5em 1em 0em #e76f51; /* Modified box shadow values */
+  box-shadow: -.5em .5em 1em 0em #ff5a5f; /* Modified box shadow values */
 
 }
 
@@ -3764,7 +3764,7 @@ figcaption {
 
 .about3 .left3 hr {
   width: -60%;
-  border-top: 3px solid #e76f51;
+  border-top: 3px solid #ff5a5f;
   border-radius: 10px;
   border-bottom: none;
 }
@@ -3856,7 +3856,7 @@ figcaption {
   width: 100%;
   height: auto;
   margin-top: -14px;
-    box-shadow: .5em .5em 1em 0em #e76f51; /* Modified box shadow values */
+    box-shadow: .5em .5em 1em 0em #ff5a5f; /* Modified box shadow values */
 
 }
 
@@ -3868,7 +3868,7 @@ figcaption {
 
 .about4 .left4 hr {
   width: -60%;
-  border-top: 3px solid #e76f51;
+  border-top: 3px solid #ff5a5f;
   border-radius: 10px;
   border-bottom: none;
 }
@@ -3964,7 +3964,7 @@ figcaption {
   width: 100%;
   height: auto;
   margin-top: -14px;
-  box-shadow: -.5em .5em 1em 0em #e76f51; /* Modified box shadow values */
+  box-shadow: -.5em .5em 1em 0em #ff5a5f; /* Modified box shadow values */
 
 }
 
@@ -3976,7 +3976,7 @@ figcaption {
 
 .about5 .left5 hr {
   width: -60%;
-  border-top: 3px solid #e76f51;
+  border-top: 3px solid #ff5a5f;
   border-radius: 10px;
   border-bottom: none;
 }
@@ -4204,7 +4204,7 @@ html body.nav-fixed.quarto-light header#title-block-header.quarto-title-block.de
   }
   
  h2.anchored{
-    border-bottom: 5px solid #e76f51; /* Adjust as needed */
+    border-bottom: 5px solid #ff5a5f; /* Adjust as needed */
     }
     
 .button_fer, .button_fer_software{
@@ -4605,8 +4605,8 @@ html.page-loaded #quarto-content {
   backdrop-filter: blur(14px) !important;
   -webkit-backdrop-filter: blur(14px) !important;
   background: linear-gradient(to right,
-    rgba(38, 70, 83, 0.92),
-    rgba(231, 111, 81, 0.86)) !important;
+    rgba(29, 53, 87, 0.92),
+    rgba(255, 90, 95, 0.86)) !important;
 }
 
 /* --- Nav link underline indicator ----------------------- */
@@ -4632,7 +4632,7 @@ html.page-loaded #quarto-content {
 
 .navbar a.nav-link:hover,
 .navbar a.nav-link.active {
-  color: #e9c46a !important;
+  color: #ff8c42 !important;
 }
 
 .navbar a.nav-link:hover::after,
@@ -4640,7 +4640,7 @@ html.page-loaded #quarto-content {
   left: 6px !important;
   right: 6px !important;
   width: auto !important;
-  background: #e9c46a !important;
+  background: #ff8c42 !important;
 }
 
 /* --- Global link transitions ---------------------------- */
@@ -4731,7 +4731,7 @@ a {
 
 /* --- Focus ring ----------------------------------------- */
 :focus-visible {
-  outline: 2px solid #e9c46a;
+  outline: 2px solid #ff8c42;
   outline-offset: 3px;
   transition: outline-offset var(--t-fast) var(--ease-out);
 }
@@ -4745,8 +4745,8 @@ a {
   width: 0%;
   background: linear-gradient(
     to right,
-    #e9c46a,
-    #e9c46a,
+    #ff8c42,
+    #ff8c42,
     rgba(255, 170, 85, 0.25)
   );
   z-index: 1031;
@@ -4796,11 +4796,11 @@ mark.mark-blue {
 }
 
 mark.mark-red {
-  background-image: linear-gradient(to right, #e76f51, #e76f51) !important;
+  background-image: linear-gradient(to right, #ff5a5f, #ff5a5f) !important;
 }
 
 mark.mark-blue {
-  background-image: linear-gradient(to right, #f4a261, #f4a261) !important;
+  background-image: linear-gradient(to right, #2a9d8f, #2a9d8f) !important;
 }
 
 /* trigger when section reveals */
