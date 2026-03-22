@@ -7,14 +7,6 @@ include-in-header: ../meta.html
 comments: false
 ---
 
-<style>
-
-div.quarto-title h1.title {
-  color: transparent !important;
-}
-
-</style>
-
 
 
 # About this project

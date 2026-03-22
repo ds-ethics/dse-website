@@ -37,11 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<style>
-
-div.quarto-title h1.title {
-  color: transparent !important;
-}
 
 
 .beginner-category {

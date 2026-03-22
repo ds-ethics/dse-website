@@ -4423,3 +4423,9 @@ html body.nav-fixed.quarto-light div#quarto-content.quarto-container.page-column
     opacity: 1;          /* Full opacity on hover */
     color: #1C4D68;
 }
+
+
+/* Hide Quarto title block on listing/section pages */
+div.quarto-title h1.title {
+  color: transparent !important;
+}

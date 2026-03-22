@@ -1,7 +1,8 @@
 ---
 title:  'Gathering Wikipedia Pageviews Data'
 subtitle: 'Basics of API requests and data analysis in R'
-author: ["Simon Munzert"]
+author:
+  - name: Simon Munzert
 date: "2024-07-29"
 categories: ["Beginner", "APIs", "Data collection"]
 toc: true
