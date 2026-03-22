@@ -1,0 +1,13 @@
+jupyter
+ipykernel
+pandas
+numpy
+matplotlib
+seaborn
+tqdm
+aequitas
+scikit-learn
+keras-tuner
+tensorflow
+aif360
+BlackBoxAuditing
