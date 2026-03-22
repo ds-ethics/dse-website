@@ -1,7 +1,8 @@
 ---
-title:  '{{< animate fadeInDown "Introduction to Social Media Scraping"delay=.6s >}}'
-subtitle: '{{< animate fadeInDown "Learn the basic tools for scraping Twitter Data in R"delay=.6s >}}'
-author: ["Lukas Lehmann"]
+title: "Introduction to Social Media Scraping"
+subtitle: "Learn the basic tools for scraping Twitter Data in R"
+author:
+  - name: Lukas Lehmann
 date: "2023-04-18"
 categories: ["Beginner", "Webscraping", "Text"]
 toc: true

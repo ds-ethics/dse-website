@@ -1,11 +1,15 @@
 ---
 title:  'Bias in AI'
-subtitle: 'A case study on detecting and mitigating biasusing the COMPAS Recidivism Risk Score Data and Analysis Dataset'
-author: ["Jorge Roa", "Carlo Greß", "Hannah Schweren"]
+subtitle: 'A case study on detecting and mitigating bias using the COMPAS Recidivism Risk Score Data and Analysis Dataset'
+author:
+  - name: Jorge Roa
+  - name: Carlo Greß
+  - name: Hannah Schweren
 date: "2023-12-05"
 categories: ["Advanced", "Bias in AI", "Mitigation"]
 toc: true
 draft: false
+freeze: true
 code-link: true
 code-copy: true
 title-block-banner: true

@@ -1,4 +1,5 @@
 ---
+title: "For Instructors"
 page-layout: full
 toc: false
 title-block-banner: false

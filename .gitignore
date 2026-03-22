@@ -6,3 +6,15 @@
 /.quarto/
 
 .DS_Store
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.egg-info/
+
+# Quarto freeze cache
+_freeze/
+
+# macOS artifacts
+Copia de *
